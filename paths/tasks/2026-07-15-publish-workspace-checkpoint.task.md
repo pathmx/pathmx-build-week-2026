@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-15
 due: 2026-07-15
@@ -18,10 +18,12 @@ checkpoint and publish it directly to the remote `main` branch.
 
 ---
 
-## Next Move
+## Result
 
-Audit all modified, deleted, and untracked files for scope, stale links,
-generated or private data, and version-sensitive contracts before staging.
+The complete working tree was audited, verified, committed, reconciled with
+remote `main`, and published without a force push. The cleaned removal of the
+stale `example-1` lab won the only merge conflict while the remote commit
+remains preserved in history.
 
 ---
 
@@ -57,3 +59,7 @@ generated or private data, and version-sensitive contracts before staging.
   the narrow bookshelf used shelf-local overflow without page overflow; no
   browser console errors were reported. The existing port-3102 server and its
   stale output were left untouched.
+- **2026-07-15:** Committed the full checkpoint as `04e8fda`, merged remote
+  `main` as `2dc6138`, resolved its deleted-example overlap in favor of the
+  accepted cleanup, rebuilt 127 artifacts, and pushed the result directly to
+  `origin/main` without force.

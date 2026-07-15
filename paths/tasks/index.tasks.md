@@ -19,7 +19,6 @@ The owner is the accountable human, never a Codex task or session identifier.
 
 | Task | Owner | Next move | Due |
 | --- | --- | --- | --- |
-| [Publish the workspace checkpoint to main](./2026-07-15-publish-workspace-checkpoint.task.md) | Mark | Audit, verify, commit the full tree, and push `main` | July 15 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Land the candidate flow, then assign tester-specific guide copies and run tasks | July 17 |
 
 ---
@@ -55,6 +54,7 @@ No tasks currently need review.
 
 | Task | Owner | Result |
 | --- | --- | --- |
+| [Publish the workspace checkpoint to main](./2026-07-15-publish-workspace-checkpoint.task.md) | Mark | Full worktree audited, merged with remote `main`, and published |
 | [Scaffold Codex task coordination](./2026-07-15-scaffold-codex-task-coordination.task.md) | Mark | Dashboard, agent workflow, stale-reference cleanup, and verification complete |
 
 ---
