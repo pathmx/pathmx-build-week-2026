@@ -9,5 +9,6 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
 ## External Links
 
+- [Build Week Space](https://build-week.pathmx.net/)
 - [Devpost Build Week Project](https://devpost.com/software/learn-anything-dt3ewx)
 - [Learner-facing repository](https://github.com/pathmx/pathmx-learning-starter)

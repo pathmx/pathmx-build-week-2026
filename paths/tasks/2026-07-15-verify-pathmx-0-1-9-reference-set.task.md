@@ -1,6 +1,6 @@
 ---
 type: task
-status: blocked
+status: in-progress
 owner: Mark
 date: 2026-07-15
 due: 2026-07-16
@@ -22,11 +22,11 @@ contracts, then leave reproducible examples that agents can safely copy.
 
 ---
 
-## Blocker And Next Move
+## Next Move
 
-On July 15, `pathmx self-update` still reports 0.1.8. When 0.1.9 is available,
-update first, inspect the released authoring contract, and build the complete
-reference set without adding a compatibility layer based on guesses.
+PathMX 0.1.9 is now available through `pathmx self-update`. Inspect the
+released authoring contract, build the complete reference set, and Play-check
+the focused routes before graduating it.
 
 ---
 
@@ -53,3 +53,5 @@ reference set without adding a compatibility layer based on guesses.
 - **2026-07-15:** Reference Sources are present, but several intentionally name
   0.1.9 as their minimum version. Release verification remains blocked on the
   CLI reaching the updater.
+- **2026-07-15:** `pathmx self-update` now reports 0.1.9. Mark resumed the task
+  and moved it to `in-progress` for released-contract verification.
