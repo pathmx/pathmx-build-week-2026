@@ -11,6 +11,7 @@ related:
   - ../labs/simple-quiz/index.demo.md
   - ../labs/component-patterns/index.demo.md
   - ../labs/bookshelf/index.demo.md
+  - ../labs/kepler-orbit/index.demo.md
 ---
 
 # Verify And Graduate The PathMX 0.1.9 Reference Set
@@ -63,3 +64,11 @@ the focused routes before graduating it.
   registered public routes, and preserved the public 404 control boundary and
   405 read-only boundary. A real browser Play check focused the Tasks link and
   displayed the positional `1 Tasks` link Action hint with no console errors.
+- **2026-07-15:** Added the reviewed Kepler orbit demo from PathMX Core commit
+  `da752ad5c29751e317baef76498e7697617c9f0c` at `/labs/kepler-orbit`. The
+  component source, CSS, and JavaScript remain byte-identical to upstream; only
+  the local route, labs backlink, and source-scoped demo selector changed. A
+  scratch build wrote 141 artifacts with only the existing Tufte token
+  warnings. A real browser check loaded the exact route with its component
+  styling, changed the instrument to the `near-sun` learning state through the
+  visible control, and reported no console errors.

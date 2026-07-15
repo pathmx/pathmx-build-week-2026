@@ -1,0 +1,696 @@
+:self {
+  --orbit-ink: #061018;
+  --orbit-deep: #091923;
+  --orbit-panel: #0d202a;
+  --orbit-paper: #f1f6f4;
+  --orbit-dim: #9db1b5;
+  --orbit-aqua: #88e6d2;
+  --orbit-sun: #ffb05c;
+  --orbit-coral: #ff765f;
+  --orbit-violet: #a898ff;
+  box-sizing: border-box;
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  inline-size: min(100%, 76rem);
+  margin: clamp(1.5rem, 4vh, 3rem) auto 0;
+  border: 1px solid color-mix(in oklch, var(--orbit-aqua) 24%, transparent);
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(145deg, rgba(136, 230, 210, 0.055), transparent 30%),
+    var(--orbit-ink);
+  box-shadow:
+    0 2.4rem 7rem rgba(0, 0, 0, 0.34),
+    inset 0 1px rgba(255, 255, 255, 0.035);
+  color: var(--orbit-paper);
+  overflow: clip;
+  padding: clamp(1rem, 2.4vw, 1.75rem);
+}
+
+:self,
+:self * {
+  box-sizing: border-box;
+}
+
+.kepler-orbit__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.kepler-orbit__header h2 {
+  max-inline-size: 14ch;
+  margin: 0;
+  color: var(--orbit-paper);
+  font-size: clamp(1.75rem, 4vw, 3.5rem);
+  font-weight: 720;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.kepler-orbit__eyebrow,
+.kepler-orbit__lede,
+.kepler-orbit__readout p,
+.kepler-orbit__comparison,
+.kepler-orbit__model-note,
+.kepler-orbit__noscript {
+  margin: 0;
+}
+
+.kepler-orbit__eyebrow,
+.kepler-orbit__readout-kicker {
+  color: var(--orbit-aqua);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 0.68rem;
+  font-weight: 720;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.kepler-orbit__eyebrow {
+  margin-block-end: 0.75rem;
+}
+
+.kepler-orbit__lede {
+  max-inline-size: 32rem;
+  color: var(--orbit-dim);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.kepler-orbit__stages {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-block: 1px solid rgba(157, 177, 181, 0.16);
+}
+
+.kepler-orbit__stages button {
+  position: relative;
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 3rem;
+  border: 0;
+  border-inline-start: 1px solid rgba(157, 177, 181, 0.14);
+  background: transparent;
+  color: var(--orbit-dim);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 680;
+  letter-spacing: 0.02em;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.kepler-orbit__stages button:first-child {
+  border-inline-start: 0;
+}
+
+.kepler-orbit__stages button span {
+  color: color-mix(in oklch, var(--orbit-dim) 58%, transparent);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 0.62rem;
+}
+
+.kepler-orbit__stages button[aria-pressed="true"] {
+  background: rgba(136, 230, 210, 0.08);
+  color: var(--orbit-paper);
+}
+
+.kepler-orbit__stages button[aria-pressed="true"]::after {
+  position: absolute;
+  inset-inline: 22%;
+  inset-block-end: -1px;
+  block-size: 2px;
+  background: var(--orbit-aqua);
+  content: "";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .kepler-orbit__stages button:hover:not(:disabled) {
+    background: rgba(136, 230, 210, 0.055);
+    color: var(--orbit-paper);
+  }
+}
+
+.kepler-orbit__stages button:focus-visible,
+.kepler-orbit__controls button:focus-visible,
+.kepler-orbit__controls input:focus-visible {
+  outline: 2px solid var(--orbit-aqua);
+  outline-offset: 3px;
+}
+
+.kepler-orbit__stages button:disabled,
+.kepler-orbit__controls button:disabled,
+.kepler-orbit__controls input:disabled {
+  cursor: not-allowed;
+  opacity: 0.54;
+}
+
+.kepler-orbit__instrument {
+  display: grid;
+  grid-template-columns: minmax(0, 1.72fr) minmax(15rem, 0.68fr);
+  min-block-size: 31rem;
+  border: 1px solid rgba(157, 177, 181, 0.16);
+  background: var(--orbit-deep);
+}
+
+.kepler-orbit__scene-wrap {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-inline-size: 0;
+  min-block-size: 31rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 61.5% 50%, rgba(255, 176, 92, 0.16), transparent 17rem),
+    radial-gradient(circle at 28% 28%, rgba(168, 152, 255, 0.09), transparent 20rem),
+    #07141d;
+}
+
+.kepler-orbit__scene {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+}
+
+.kepler-orbit__focus-pulse {
+  position: absolute;
+  inset: 0.7rem;
+  z-index: 2;
+  border: 1px solid var(--orbit-aqua);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.kepler-orbit__stars {
+  fill: var(--orbit-paper);
+  opacity: 0.42;
+}
+
+.kepler-orbit__axis {
+  stroke: rgba(157, 177, 181, 0.13);
+  stroke-dasharray: 4 11;
+  stroke-width: 1;
+}
+
+.kepler-orbit__path {
+  fill: none;
+  stroke: rgba(136, 230, 210, 0.46);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.kepler-orbit__time-marks circle {
+  fill: var(--orbit-aqua);
+  opacity: 0.46;
+}
+
+.kepler-orbit__area {
+  stroke: var(--orbit-coral);
+  stroke-width: 1.5;
+  transition: opacity 220ms ease-out;
+  vector-effect: non-scaling-stroke;
+}
+
+.kepler-orbit__area--near {
+  fill: rgba(255, 118, 95, 0.22);
+}
+
+.kepler-orbit__area--far {
+  fill: rgba(255, 118, 95, 0.14);
+}
+
+:self:not([data-state]) .kepler-orbit__area,
+:self[data-state="observe"] .kepler-orbit__area {
+  opacity: 0.08;
+}
+
+:self[data-state="equal-time"] .kepler-orbit__area {
+  opacity: 0.92;
+}
+
+:self[data-state="near-sun"] .kepler-orbit__area--near,
+:self[data-state="far-sun"] .kepler-orbit__area--far {
+  opacity: 0.96;
+}
+
+:self[data-state="near-sun"] .kepler-orbit__area--far,
+:self[data-state="far-sun"] .kepler-orbit__area--near {
+  opacity: 0.1;
+}
+
+:self[data-state="explore"] .kepler-orbit__area {
+  opacity: 0.34;
+}
+
+.kepler-orbit__trail {
+  fill: none;
+  stroke: var(--orbit-aqua);
+  stroke-linecap: round;
+  stroke-width: 4;
+  opacity: 0.42;
+  vector-effect: non-scaling-stroke;
+}
+
+.kepler-orbit__reference {
+  color: var(--orbit-coral);
+  opacity: 0.12;
+  transition: opacity 220ms ease-out;
+}
+
+.kepler-orbit__reference circle {
+  fill: var(--orbit-ink);
+  stroke: currentColor;
+  stroke-width: 3;
+}
+
+.kepler-orbit__reference text {
+  fill: currentColor;
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+.kepler-orbit__reference--far text {
+  text-anchor: start;
+}
+
+.kepler-orbit__reference--near text {
+  text-anchor: end;
+}
+
+:self[data-state="equal-time"] .kepler-orbit__reference,
+:self[data-state="explore"] .kepler-orbit__reference,
+:self[data-state="near-sun"] .kepler-orbit__reference--near,
+:self[data-state="far-sun"] .kepler-orbit__reference--far {
+  opacity: 0.92;
+}
+
+.kepler-orbit__sun-ring,
+.kepler-orbit__sun-core {
+  fill: var(--orbit-sun);
+}
+
+.kepler-orbit__sun-ring {
+  opacity: 0.14;
+}
+
+.kepler-orbit__sun-ring--outer {
+  opacity: 0.055;
+}
+
+.kepler-orbit__sun-core {
+  filter: drop-shadow(0 0 22px rgba(255, 176, 92, 0.72));
+}
+
+.kepler-orbit__planet-halo {
+  fill: var(--orbit-aqua);
+  opacity: 0.12;
+}
+
+.kepler-orbit__planet-core {
+  fill: var(--orbit-aqua);
+  filter: drop-shadow(0 0 10px rgba(136, 230, 210, 0.8));
+}
+
+.kepler-orbit__velocity {
+  fill: none;
+  stroke: var(--orbit-violet);
+  stroke-linecap: round;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.kepler-orbit__labels text {
+  fill: var(--orbit-dim);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  opacity: 0.68;
+  text-anchor: middle;
+}
+
+.kepler-orbit__motion-status {
+  position: absolute;
+  inset-block-end: 0.85rem;
+  inset-inline-start: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0;
+  color: var(--orbit-dim);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.kepler-orbit__motion-status [data-motion-indicator] {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: var(--orbit-dim);
+}
+
+:self[data-running="true"] .kepler-orbit__motion-status [data-motion-indicator] {
+  background: var(--orbit-aqua);
+  box-shadow: 0 0 0.8rem rgba(136, 230, 210, 0.8);
+}
+
+.kepler-orbit__readout {
+  display: grid;
+  align-content: start;
+  gap: 1.1rem;
+  min-inline-size: 0;
+  padding: clamp(1rem, 2.4vw, 1.55rem);
+  border-inline-start: 1px solid rgba(157, 177, 181, 0.16);
+  background:
+    linear-gradient(180deg, rgba(136, 230, 210, 0.045), transparent 48%),
+    var(--orbit-panel);
+}
+
+.kepler-orbit__stage-copy {
+  display: none;
+  min-block-size: 9.8rem;
+}
+
+:self:not([data-state]) .kepler-orbit__stage-copy--fallback,
+:self[data-state="observe"] [data-orbit-copy="observe"],
+:self[data-state="equal-time"] [data-orbit-copy="equal-time"],
+:self[data-state="near-sun"] [data-orbit-copy="near-sun"],
+:self[data-state="far-sun"] [data-orbit-copy="far-sun"],
+:self[data-state="explore"] [data-orbit-copy="explore"] {
+  display: block;
+}
+
+.kepler-orbit__stage-copy h3 {
+  margin: 0.55rem 0 0.65rem;
+  color: var(--orbit-paper);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.kepler-orbit__stage-copy > p:last-child {
+  color: var(--orbit-dim);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.kepler-orbit__metrics {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-block: 1px solid rgba(157, 177, 181, 0.16);
+}
+
+.kepler-orbit__metrics div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding-block: 0.58rem;
+  border-block-start: 1px solid rgba(157, 177, 181, 0.11);
+}
+
+.kepler-orbit__metrics div:first-child {
+  border-block-start: 0;
+}
+
+.kepler-orbit__metrics dt {
+  color: var(--orbit-dim);
+  font-size: 0.7rem;
+}
+
+.kepler-orbit__metrics dd {
+  margin: 0;
+  color: var(--orbit-paper);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 0.82rem;
+}
+
+.kepler-orbit__speed-scale {
+  block-size: 0.24rem;
+  background: rgba(157, 177, 181, 0.14);
+  overflow: hidden;
+}
+
+.kepler-orbit__speed-scale span {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  background: linear-gradient(90deg, var(--orbit-aqua), var(--orbit-violet), var(--orbit-coral));
+  transform: scaleX(0.62);
+  transform-origin: left center;
+}
+
+.kepler-orbit__comparison {
+  color: var(--orbit-dim);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.kepler-orbit__comparison strong {
+  color: var(--orbit-coral);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+}
+
+.kepler-orbit__controls {
+  display: grid;
+  grid-template-columns: auto minmax(10rem, 1fr) minmax(10rem, 1fr) auto;
+  gap: 0.8rem 1.2rem;
+  align-items: end;
+  min-inline-size: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.kepler-orbit__controls legend {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.kepler-orbit__controls label {
+  display: grid;
+  gap: 0.45rem;
+  min-inline-size: 0;
+  color: var(--orbit-dim);
+  font-size: 0.7rem;
+}
+
+.kepler-orbit__controls label span {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.kepler-orbit__controls output {
+  color: var(--orbit-paper);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+}
+
+.kepler-orbit__controls input[type="range"] {
+  inline-size: 100%;
+  accent-color: var(--orbit-aqua);
+}
+
+.kepler-orbit__controls button {
+  min-block-size: 2.65rem;
+  border: 1px solid rgba(157, 177, 181, 0.26);
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--orbit-paper);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 680;
+  padding: 0.6rem 0.8rem;
+  transition:
+    background-color 130ms ease-out,
+    border-color 130ms ease-out,
+    transform 100ms ease-out;
+}
+
+.kepler-orbit__controls button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.kepler-orbit__controls .kepler-orbit__toggle {
+  border-color: color-mix(in oklch, var(--orbit-aqua) 54%, transparent);
+  background: rgba(136, 230, 210, 0.1);
+}
+
+.kepler-orbit__toggle [data-toggle-icon] {
+  display: inline-block;
+  min-inline-size: 1em;
+  margin-inline-end: 0.35rem;
+  color: var(--orbit-aqua);
+}
+
+.kepler-orbit__model-note,
+.kepler-orbit__noscript {
+  color: color-mix(in oklch, var(--orbit-dim) 70%, transparent);
+  font-family: var(--pmx-font-mono, ui-monospace, monospace);
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+.kepler-orbit__noscript {
+  color: var(--orbit-sun);
+}
+
+@container pathmx-runtime (max-width: 54rem) {
+  .kepler-orbit__header {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .kepler-orbit__stages {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .kepler-orbit__stages button {
+    flex: 0 0 auto;
+    min-inline-size: 8.2rem;
+    scroll-snap-align: start;
+  }
+
+  .kepler-orbit__instrument {
+    grid-template-columns: 1fr;
+    min-block-size: 0;
+  }
+
+  .kepler-orbit__scene-wrap {
+    min-block-size: 0;
+  }
+
+  .kepler-orbit__readout {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.8fr);
+    border-block-start: 1px solid rgba(157, 177, 181, 0.16);
+    border-inline-start: 0;
+  }
+
+  .kepler-orbit__stage-copy {
+    min-block-size: 0;
+  }
+
+  .kepler-orbit__metrics {
+    grid-row: span 2;
+  }
+
+  .kepler-orbit__controls {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .kepler-orbit__controls label:last-of-type {
+    grid-column: 2;
+  }
+}
+
+@container pathmx-runtime (max-width: 38rem) {
+  :self {
+    border-inline: 0;
+    border-radius: 0;
+    padding-inline: 0.75rem;
+  }
+
+  .kepler-orbit__instrument {
+    margin-inline: -0.75rem;
+    border-inline: 0;
+  }
+
+  .kepler-orbit__readout {
+    grid-template-columns: 1fr;
+  }
+
+  .kepler-orbit__metrics {
+    grid-row: auto;
+  }
+
+  .kepler-orbit__controls {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .kepler-orbit__controls label:last-of-type {
+    grid-column: auto;
+  }
+
+  .kepler-orbit__motion-status {
+    inset-block-end: 0.45rem;
+    font-size: 0.58rem;
+  }
+
+  .kepler-orbit__reference text,
+  .kepler-orbit__labels text {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kepler-orbit__area,
+  .kepler-orbit__reference,
+  .kepler-orbit__stages button,
+  .kepler-orbit__controls button {
+    transition: none;
+  }
+
+  .kepler-orbit__focus-pulse {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  :self {
+    border-color: CanvasText;
+    background: Canvas;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .kepler-orbit__scene-wrap,
+  .kepler-orbit__readout {
+    background: Canvas;
+  }
+
+  .kepler-orbit__path,
+  .kepler-orbit__area,
+  .kepler-orbit__reference circle,
+  .kepler-orbit__velocity {
+    stroke: CanvasText;
+  }
+
+  .kepler-orbit__area {
+    fill: transparent;
+  }
+}
+
+@media print {
+  :self {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .kepler-orbit__stages,
+  .kepler-orbit__controls,
+  .kepler-orbit__motion-status,
+  .kepler-orbit__focus-pulse {
+    display: none;
+  }
+}

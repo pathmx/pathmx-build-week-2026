@@ -34,3 +34,6 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 - [Bookshelf](./bookshelf/index.demo.md) — a three-tag Literate Component family
   that keeps semantic book markup, responsive shelf overflow, and the shared
   bookcase visual system in readable component definitions.
+- [Kepler orbit](./kepler-orbit/index.demo.md) — a focus-aware orbital field
+  instrument with ordered learning states, direct controls, reduced-motion
+  behavior, and animation scoped to the presented component Beat.
