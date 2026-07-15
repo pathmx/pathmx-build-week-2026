@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-15
 due: 2026-07-16
@@ -23,11 +23,11 @@ contracts, then leave reproducible examples that agents can safely copy.
 
 ---
 
-## Next Move
+## Result
 
-PathMX 0.1.9 is now available through `pathmx self-update`. Inspect the
-released authoring contract, build the complete reference set, and Play-check
-the focused routes before graduating it.
+The released PathMX 0.1.9 CLI builds the complete reference set, and the
+focused labs now provide reproducible examples for components, layouts,
+learner responses, themes, and Play behavior.
 
 ---
 
@@ -72,3 +72,10 @@ the focused routes before graduating it.
   warnings. A real browser check loaded the exact route with its component
   styling, changed the instrument to the `near-sun` learning state through the
   visible control, and reported no console errors.
+- **2026-07-15:** Closed the released-contract review after reconciling the
+  reference prose and authoring guidance with PathMX 0.1.9. `pathmx --version`
+  reports 0.1.9, and the final scratch build wrote 135 artifacts without
+  unresolved Source or asset links. The only diagnostics were the three known
+  Tufte theme-token warnings. No additional browser pass was run for this
+  status-only closure; the focused route and interaction checks are recorded
+  above and in the linked reference artifacts.

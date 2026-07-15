@@ -19,7 +19,6 @@ The owner is the accountable human, never a Codex task or session identifier.
 
 | Task | Owner | Next move | Due |
 | --- | --- | --- | --- |
-| [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Rebuild and Play-check the reference routes against the released CLI | July 16 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Land the candidate flow, then assign tester-specific guide copies and run tasks | July 17 |
 
 ---
@@ -54,6 +53,7 @@ No tasks are currently blocked.
 
 | Task | Owner | Result |
 | --- | --- | --- |
+| [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Released-contract review, full build, and focused reference Play checks complete |
 | [Provision the Build Week Space on muthurd](./2026-07-15-provision-muthurd-space.task.md) | Mark | Clean checkout, current tooling, and read-only `build-week.pathmx.net` Space verified |
 | [Publish the workspace checkpoint to main](./2026-07-15-publish-workspace-checkpoint.task.md) | Mark | Full worktree audited, merged with remote `main`, and published |
 | [Scaffold Codex task coordination](./2026-07-15-scaffold-codex-task-coordination.task.md) | Mark | Dashboard, agent workflow, stale-reference cleanup, and verification complete |
