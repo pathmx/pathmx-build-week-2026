@@ -31,7 +31,8 @@ paths/
 ├── index.path.md
 ├── team/index.guide.md
 ├── labs/index.path.md
-└── reports/index.path.md
+├── reports/index.path.md
+└── work-log/index.path.md
 ```
 
 - `paths/index.path.md` is the project hub.
@@ -39,6 +40,7 @@ paths/
 - `paths/labs/` contains experiments that may fail.
 - `paths/reports/` contains clean-install, workflow, bug, and evaluation
   evidence.
+- `paths/work-log/` contains dated meeting notes, daily logs, and handoffs.
 
 ## Private information
 

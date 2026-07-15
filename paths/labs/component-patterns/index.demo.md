@@ -10,11 +10,11 @@ These examples are reference implementations for Andrew and other Build Week
 agents. Copy the smallest pattern that matches the experiment; do not combine
 all three into every interaction.
 
-| Pattern | Use it for | Canonical seam |
-| --- | --- | --- |
-| Model Stepper | Meaningful stages the Player should traverse | ordered `states` and `state.set` |
-| Outlier Studio | Direct manipulation with temporary browser state | instance locals and `ctx.state` |
-| Sample Stream | Async data plus continuous work | `ctx.data`, loading/failure UI, and `ctx.effect` |
+| Pattern        | Use it for                                       | Canonical seam                                   |
+| -------------- | ------------------------------------------------ | ------------------------------------------------ |
+| Model Stepper  | Meaningful stages the Player should traverse     | ordered `states` and `state.set`                 |
+| Outlier Studio | Direct manipulation with temporary browser state | instance locals and `ctx.state`                  |
+| Sample Stream  | Async data plus continuous work                  | `ctx.data`, loading/failure UI, and `ctx.effect` |
 
 ---
 
@@ -25,10 +25,12 @@ meaningful steps on the component's Beat. The buttons and Player controls use
 the same `state` channel.
 
 <model-stepper
-  states="predict | inspect | explain"
-  label="Outlier reasoning stages"
-  title="Why did the mean move?"
+states="predict | inspect | explain"
+label="Outlier reasoning stages"
+title="Why did the mean move?"
+
 >
+
   <div data-model-panel="predict">
     <strong>Predict:</strong> If the largest value grows, which statistic will
     move farther?

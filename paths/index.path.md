@@ -9,6 +9,7 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 - [Team working agreements](./team/index.guide.md)
 - [Labs](./labs/index.path.md)
 - [Reports](./reports/index.path.md)
+- [Work log and meeting notes](./work-log/index.path.md)
 
 ---
 
