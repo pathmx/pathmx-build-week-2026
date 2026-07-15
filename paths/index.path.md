@@ -3,6 +3,7 @@
 Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
 - [Tasks](./tasks/index.tasks.md)
+- [Changes](./work-log/changes.log.md)
 - [Labs](./labs/index.path.md)
 - [Research/Reference](./research/index.path.md)
 - [Work log/notes](./work-log/index.path.md)

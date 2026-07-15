@@ -49,6 +49,31 @@ pathmx self-update
 - Never commit private team links, credentials, sensitive learner data, raw
   transcripts, or Codex task IDs.
 
+## Change log and pushes
+
+- Tasks record planned work and detailed evidence. The change log records the
+  concise outcome of work that is landing in a shared push; it does not replace
+  the owning task's activity or result.
+- Before pushing new repository work, prepend one entry to
+  `paths/work-log/changes.log.md`, or materially update the newest entry when
+  the outgoing work is part of that same coherent change.
+- Keep the newest entry first and exactly one change entry per `---` Block.
+  Begin each Block with a `##` outcome heading, then concise prose that links
+  the owning task and durable artifacts, records meaningful verification or
+  skipped review, and names any remaining follow-up.
+- Do not copy raw command logs, chat transcripts, commit-by-commit narration,
+  or task activity into the change log.
+- Commit the entry with the work it describes. After fetching the remote and
+  completing normal verification, run:
+
+  ```sh
+  ./scripts/check-change-log.sh origin/main
+  ```
+
+- Do not push when the change-log check fails. One entry may cover multiple
+  outgoing commits when they form one coherent push; a later push needs a new
+  Block or a material update to the current one.
+
 ## Verification
 
 For authored-source changes:

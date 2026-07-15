@@ -34,14 +34,16 @@ paths/
 ├── tasks/index.tasks.md
 ├── labs/index.path.md
 ├── research/index.path.md
-└── work-log/index.path.md
+├── work-log/index.path.md
+└── work-log/changes.log.md
 ```
 
 - `paths/index.path.md` is the project hub.
 - `paths/tasks/` is the Codex-managed work queue and evidence trail.
 - `paths/labs/` contains experiments that may fail.
 - `paths/research/` collects useful external references.
-- `paths/work-log/` contains dated meeting notes, daily logs, and handoffs.
+- `paths/work-log/` contains dated notes, handoffs, and the playable changes log
+  required before shared pushes.
 
 ## Private information
 
