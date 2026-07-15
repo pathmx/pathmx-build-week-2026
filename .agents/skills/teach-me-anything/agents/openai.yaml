@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teach Me Anything"
+  short_description: "Build and adapt a durable PathMX learning path"
+  default_prompt: "Use $teach-me-anything to help me learn a topic through a durable PathMX path."

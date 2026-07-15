@@ -7,6 +7,9 @@ status: draft
 Keep the structure firm enough to prevent collisions and loose enough for each
 person to shape their contribution.
 
+The lanes below are a proposed kickoff default, not a permanent org chart.
+Accept or change them together before the first work block.
+
 ---
 
 ## Ownership
@@ -34,9 +37,12 @@ daily checkpoint unless they resolve a blocker.
 
 | Person | Outcome | Reviewer | Review time |
 | --- | --- | --- | --- |
-| Mark | Pending kickoff | Pending | Pending |
-| Tram | Pending kickoff | Pending | Pending |
-| Andrew | Pending kickoff | Pending | Pending |
+| Mark | Keep the PathMX CLI and Player unblocked for the sprint | Andrew | Daily integration check |
+| Tram | Run and evaluate the golden-loop learner flow without coaching | Mark | After one complete learner run |
+| Andrew | Stress one proving-ground component pattern in a focused lab | Tram | After the interaction is playable |
+
+See [Kickoff Lanes](./kickoff-lanes.guide.md) for the first concrete handoffs
+and the boundary between project experiments and PathMX core work.
 
 ---
 

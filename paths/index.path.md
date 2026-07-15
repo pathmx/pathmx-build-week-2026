@@ -29,6 +29,37 @@ learning, and a clear next step—not only a chat transcript.
 
 ---
 
+## Learning Repo Structure
+
+Three components:
+
+1. Raw materials such as PDFs and videos.
+2. Paths for learning, skills, and progress.
+3. A profile containing learning context, skills, and goals.
+
+- `paths/` - Learning paths
+
+---
+
+## Outcome
+
+- A learner can ask Codex to help them learn “X” with the
+  `$teach-me-anything` skill and get a complete learning space and path playing
+  alongside the agent.
+- A learner can resume and keep track of their progress and goals.
+
+---
+
+## Example Paths (to demo)
+
+- College Example
+- Example of an IRL skill path (e.g. Rubik's Cube or gardening)
+- Learning Memory
+- Adaptive accessibility (dyslexia)
+- Language learning
+
+---
+
 ## Current Decisions
 
 - Team roster: pending kickoff

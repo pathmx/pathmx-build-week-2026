@@ -54,4 +54,4 @@ content before committing a report.
 
 ## Reports
 
-Add dated `.notes.md` files here as testing begins.
+- [Golden Loop First-Slice Verification](./2026-07-14-golden-loop-first-slice.notes.md)
