@@ -9,6 +9,21 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The labs hub now lists only ready demos
+
+The [labs index](../labs/index.path.md) now has one plain `Demos` section that
+links Chess, Tufte theme, layout components, the simple learner quiz,
+Bookshelf, and Kepler orbit. The previous reviewed label is gone.
+
+The unfinished Starter MVP test, slide presentation, and component proving
+ground remain in the repository but are no longer linked from the hub. PathMX
+0.1.9 built 123 artifacts without unresolved Source or asset links; only the
+three known Tufte token warnings remain. Play review was skipped because this
+is a list-only visibility change with no new interaction or presentation
+behavior.
+
+---
+
 ## Agents now update the playable changes log before pushing
 
 The repository now treats this Source as the concise record of landed work.

@@ -50,6 +50,7 @@ No tasks are currently blocked.
 
 | Task | Owner | Result |
 | --- | --- | --- |
+| [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Labs hub now links only the six ready demos; unfinished Sources remain unlinked |
 | [Add a change log workflow](./2026-07-15-add-change-log-workflow.task.md) | Mark | Playable Block-based log, agent push rule, checker, and July 15 history added |
 | [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Released-contract review, full build, and focused reference Play checks complete |
 | [Provision the Build Week Space on muthurd](./2026-07-15-provision-muthurd-space.task.md) | Mark | Clean checkout, current tooling, and read-only `build-week.pathmx.net` Space verified |

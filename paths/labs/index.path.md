@@ -9,17 +9,7 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 
 ---
 
-## Lab Links/Demos
-
-- [Self-learning Starter MVP test](./self-learning-box/manual-test.guide.md) —
-  init-first workflow for testing the candidate CLI, natural Codex onboarding,
-  side-by-side Player handoff, proximal-edge work, durable learner evidence,
-  adaptation, Actor-backed run survey, committed tester evidence, and optional
-  cold resume.
-- [A slide-like presentation](./slides/index.slides.md)
-- [Literate Component Proving Ground](./component-patterns/index.demo.md)
-
-## Reviewed References
+## Demos
 
 - [Chess](./chess/index.demo.md) — a self-contained Literate Component example
   with component resources, keyboard board interaction, and Play Context
