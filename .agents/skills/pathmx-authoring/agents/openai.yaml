@@ -1,4 +1,4 @@
 interface:
   display_name: "PathMX Authoring"
-  short_description: "Write playable PathMX sources"
-  default_prompt: "Use $pathmx-authoring to draft this as a playable PathMX source and verify it."
+  short_description: "Author and verify playable PathMX sources"
+  default_prompt: "Use $pathmx-authoring to create or revise this PathMX source and verify the result."

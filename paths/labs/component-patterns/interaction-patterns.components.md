@@ -165,9 +165,11 @@ componentName: outlier-studio
 
 # Outlier Studio
 
-Use `<outlier-studio>` for a local, data-driven manipulation where browser
-state is exploratory rather than durable learner evidence. The final authored
-value is adjustable; the component recomputes the mean and median.
+Use `<outlier-studio>` for a data-driven manipulation whose private draft can
+become explicit learner evidence. The containing stable Block maps
+`save: responses.save`; this coordinating component owns the one hidden
+`response` control. The component recomputes the mean and median locally and
+submits only the learner's final observation.
 
 ## HTML
 
@@ -192,6 +194,7 @@ value is adjustable; the component recomputes the mean and median.
   <figcaption>
     Move one extreme value and compare how the two summaries respond.
   </figcaption>
+  <input type="hidden" name="response" value="{}" data-outlier-response />
 </figure>
 ```
 
@@ -302,13 +305,26 @@ const output = $("[data-outlier-value]")
 const plot = $("[data-outlier-plot]")
 const meanOutput = $("[data-outlier-mean]")
 const medianOutput = $("[data-outlier-median]")
+const responseField = $("[data-outlier-response]")
 const authored = String(ctx.props.values || "12,13,12,14,13,60")
   .split(",")
   .map(Number)
   .filter(Number.isFinite)
+const savedObservation = Number(ctx.response && ctx.response.observation)
+const parsedMinimum = Number(input.min)
+const parsedMaximum = Number(input.max)
+const minimum = Number.isFinite(parsedMinimum) ? parsedMinimum : 14
+const maximum = Number.isFinite(parsedMaximum) ? parsedMaximum : 100
+function clampObservation(value) {
+  return Math.max(minimum, Math.min(maximum, value))
+}
 const local = ctx.state(function () {
+  const values = authored.length >= 3 ? [...authored] : [12, 13, 60]
+  if (Number.isFinite(savedObservation)) {
+    values[values.length - 1] = clampObservation(savedObservation)
+  }
   return {
-    values: authored.length >= 3 ? authored : [12, 13, 60],
+    values,
   }
 })
 
@@ -347,10 +363,13 @@ function render() {
   output.value = format(values[values.length - 1])
   meanOutput.textContent = format(mean)
   medianOutput.textContent = format(median(values))
+  responseField.value = JSON.stringify({
+    observation: values[values.length - 1],
+  })
 }
 
 on(input, "input", function () {
-  local.values[local.values.length - 1] = Number(input.value)
+  local.values[local.values.length - 1] = clampObservation(Number(input.value))
   render()
 })
 

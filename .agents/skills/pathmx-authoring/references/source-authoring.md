@@ -1,266 +1,187 @@
 # PathMX Source Authoring
 
-Use this reference when writing or reviewing PathMX markdown sources.
+Use this reference when creating or reviewing PathMX Markdown sources.
 
-## Core Model
+## Contents
 
-PathMX starts from normal files:
+- Project discovery
+- Sources and roles
+- Frontmatter and Block data
+- Blocks and Beats
+- Links, imports, and capabilities
+- Interactive and version-sensitive surfaces
+- Review checklist
+
+## Project Discovery
+
+Before authoring:
+
+1. Read the nearest repository instructions.
+2. Inspect `pathmx.config.md`, `pathmx.json`, package scripts, or other local
+   configuration when present.
+3. Check the installed PathMX version before using a recently added feature.
+4. Inspect nearby sources with the same role and reuse their established
+   metadata, directives, and links.
+
+Treat a repository's structure as project policy, not a PathMX requirement.
+PathMX can build sources from many folder layouts and entry files.
+
+## Sources And Roles
+
+PathMX turns files into Sources, Sources into Blocks, and rendered content
+inside Blocks into playable Beats:
 
 ```txt
-repository -> source -> block -> graph -> build artifacts -> runtime/player
+repository -> Source -> Block -> Beat -> build artifacts -> Runtime/Player
 ```
 
-- A source is one authored content node, usually a markdown file.
-- A block is a playable unit inside a source.
-- A path is a curated route through sources and blocks.
-- Links, source data, block data, tags, and plugin facts form the graph.
+The final filename hint determines the canonical build type. Examples:
 
-## Source Roles
+| Filename | Build type | Common role |
+| --- | --- | --- |
+| `index.path.md` | `pathmx/path` | route or hub |
+| `topic.guide.md` | `pathmx/guide` | explanation or reference |
+| `exercise.lab.md` | `pathmx/lab` | guided practice |
+| `feature.demo.md` | `pathmx/demo` | playable example |
+| `deck.slides.md` | `pathmx/slides` | presentation |
+| `notes.notes.md` | `pathmx/notes` | working notes |
+| `family.components.md` | `pathmx/components` | component family |
+| `widget.component.md` | `pathmx/component` | one component |
 
-The current build infers the canonical source type from the filename suffix.
+Projects may use any meaningful suffix. A plain `topic.md` is
+`pathmx/document`. Authored frontmatter `type` describes source-facing domain
+semantics; it does not replace the filename-derived build type.
 
-This is 100% malleable to the domain of the project but as an example, here are some common source roles:
+## Frontmatter And Block Data
 
-| Filename              | Inferred source type | Typical use                     |
-| --------------------- | -------------------- | ------------------------------- |
-| `index.path.md`       | `pathmx/path`        | Root or curated route           |
-| `topic.guide.md`      | `pathmx/guide`       | Stable reference or explanation |
-| `feature.demo.md`     | `pathmx/demo`        | Playable feature/example        |
-| `exercise.lab.md`     | `pathmx/lab`         | Guided practice                 |
-| `deck.slides.md`      | `pathmx/slides`      | Presentation-like source        |
-| `notes.notes.md`      | `pathmx/notes`       | Meeting or project notes        |
-| `thing.components.md` | `pathmx/components`  | Component family                |
-| `thing.component.md`  | `pathmx/component`   | Single component                |
-| `schema.map.md`       | `pathmx/map`         | Source-type map data            |
-
-Prefer a meaningful suffix over a generic `.md` file. Use frontmatter `type`
-for authored/source-facing semantics when useful, but do not assume it
-overrides the inferred build source type.
-
-## Source Frontmatter
-
-Use frontmatter for source-level props: title, description, status, date,
-related links, tags, route, play options, theme/font options, or
-project-specific data.
-
-`title`, `type`, `description`, `image` is auto-inferred from markdown content so do not specifiy unless explicitness is needed.
-
-Standard fields:
+Keep frontmatter short and source-level:
 
 ```md
 ---
-type: guide # only define if not a type-hinted filename suffix
-title: Variables Lab # Only defined if not the first heading
-description: Review concepts before the lab. # Only defined if not the first paragraph/content
-tags:
-  - python
-  - variables
-related: # only use for "hidden inference", explicit markdown links are better
+type: guide
+status: active
+tags: [python, variables]
+related:
   - ./loops.lab.md
 ---
 
-# Variables Lab Prep
+# Variables
 ```
 
-Rules:
+PathMX can derive `title`, `description`, and an image from the Markdown, so
+author them only when the derived value is wrong or explicit metadata matters.
 
-- Use `type`, not new authored `kind` fields.
-- Keep relative links relative to the current source.
-- Do not stuff long prose into frontmatter; put teaching content in blocks.
-- Say whether a capability is implemented, proposed, or experimental when the
-  source is a design or plan.
+Use source-facing `type`; do not introduce a parallel `kind` discriminator.
+Keep prose in the body, and keep local links relative to the current source.
 
-## Blocks And Play Pacing
-
-Separate blocks with a thematic break on its own line:
-
-```md
-# Lesson Title
-
-The opening block orients the reader.
-
----
-
-## Try It
-
-One exercise or inspection task.
-```
-
-PathMX recognizes `---` as a block divider when it is on its own line with
-blank-line separation. Use `***` when the author wants a literal horizontal
-rule inside a block.
-
-Good blocks:
-
-- answer one reader question;
-- can stand alone as a play-mode stop;
-- avoid mixing setup, example, task, answer, and follow-up in one long section;
-- start with a heading or clear visual anchor when the block needs a label;
-- keep tables, code, media, and components close to their explanatory text.
-
-Treat one block as one coherent learner or reviewer move. Useful moves include
-an orientation, one claim with its evidence, a worked-step cluster, one
-experiment state, a decision, a question, or a checkpoint. Split a block when
-the goal, interaction mode, or evidence target changes. Merge fragments that
-only make sense together.
-
-Avoid both extremes:
-
-- do not place an entire lesson or full-screen application in one block unless
-  it exposes a clear internal state or nested-Beat sequence;
-- do not make every sentence its own block unless the short cadence is a
-  deliberate reveal, dramatic pause, or retrieval rhythm.
-
-For learning sources, a reliable sequence across blocks is:
-
-1. orient the learner to the goal or question;
-2. explain, model, or expose the object of study;
-3. ask the learner to inspect, predict, manipulate, or answer;
-4. provide feedback, evidence, or reflection;
-5. link the next useful move.
-
-## Beats Inside Blocks
-
-Authors should shape blocks deliberately and let PathMX project ordinary
-content into Beats. Headings, paragraphs, list items, table rows, media, code
-focus steps, component roots, and ordered component states can become stops in
-the Play route.
-
-Use Beats for reveal rhythm inside one coherent move. Do not hide every
-meaningful learning step inside an opaque component loop. If a dynamic
-component has important stages, expose them through ordered states or explicit
-nested Beats so the Player and block-based review can address them.
-
-Before handing off a substantial playable source:
-
-- preview the actual Player route, not only the Markdown;
-- check that each block has a clear entry point and makes sense in isolation;
-- check forward, backward, and skip-out behavior through nested content;
-- check that dense tables, code, media, and interactive components fit the
-  viewport and do not create accidental stops;
-- check keyboard and touch interaction where the component accepts input;
-- revise the source when the route feels too granular, too sparse, or hides the
-  learner's meaningful steps.
-
-## Block Topmatter
-
-Use block topmatter when a block needs stable identity, metadata, tags, or a
-source-facing role. Comment topmatter stays invisible in rendered Markdown:
+Give a Block stable data with comment topmatter immediately after its divider:
 
 ```md
 ---
 
 <!--
 type: checkpoint
-id: before-you-start
-title: Before You Start
-tags:
-  - prep
+id: predict-output
+title: Predict the Output
+tags: [practice]
 -->
 
-## Before You Start
-
-- Explain what a variable stores.
-- Predict one assignment statement.
+## Predict the Output
 ```
 
-Plain topmatter also works at the top of a block:
+Prefer comment topmatter because it stays valid, invisible Markdown. Use a
+stable `id` when a Block will be linked, annotated, submitted, or used as an
+evidence target.
 
-```md
-id: route-overview
-title: Route Overview
+## Blocks And Beats
 
-## Route Overview
-```
+Put `---` on its own line, with blank lines around it, to start a new Block.
+Use `***` for a literal horizontal rule that should remain inside a Block.
 
-Use stable `id` values for blocks that will be linked, reviewed, or used as
-evidence targets.
+A Block should express one coherent move: orient, explain, model, inspect,
+practice, answer, receive feedback, reflect, or decide. Split when the goal,
+interaction mode, or evidence target changes. Merge fragments that only make
+sense together.
 
-## Links And Directives
+PathMX can project headings, paragraphs, list items, table rows, media, code
+focus steps, component roots, and ordered component states into Beats. Use
+those Beats for reveal or interaction stages within one Block. Do not hide
+meaningful learning steps inside an opaque component loop.
 
-Write normal Markdown links first:
+For a substantial playable source, inspect forward, backward, and skip-out
+behavior; dense tables and code; component viewport fit; and keyboard/touch
+interaction.
+
+## Links, Imports, And Capabilities
+
+Prefer ordinary Markdown and relative paths:
 
 ```md
 [Next lab](./loops.lab.md)
 ![Diagram](./images/flow.png)
 ```
 
-Common PathMX directive-shaped links remain readable Markdown:
+PathMX rewrites known Source links to routes and tracks local assets as build
+dependencies. Use `pathmx mv` or another graph-aware move when available rather
+than manually moving a heavily linked Source.
+
+The default PathMX stack supports these authoring surfaces; configuration can
+disable some of them or add more:
+
+| Capability | Authoring shape |
+| --- | --- |
+| GFM and raw HTML | headings, tables, task lists, footnotes, fenced code, HTML |
+| Tags | frontmatter/block `tags` or inline `#tags` outside code |
+| Wikilinks | `[[Target]]` when the project enables them |
+| Variables | `{{ block.name }}`, `{{ source.title }}`, `{{ value: fallback }}` |
+| Includes | `[@include: Label](./shared.include.md#block-id)` |
+| Source CSS | `[@styles]: ./source.css` |
+| Root CSS | `[@root.styles]: ./bundle.css` in the active root Source |
+| Components | `[@widgets]: ./widgets.components.md` plus custom tags |
+| Callouts | the project's existing `> [!NOTE]`-style pattern |
+| Theme/fonts | named `theme` and `fonts` frontmatter values |
+| Math, Mermaid, highlighting, images, icons | use only when enabled locally |
+
+Read `styling-and-theming.md` before authoring CSS, theme tokens, or fonts; it
+defines directive scope, selector scope, color modes, cascade order, and
+presentation boundaries.
+
+Named directive definitions are useful for reuse:
 
 ```md
-[@include: Shared checklist](./includes/shared-checklist.include.md)
-[@styles]: ./lesson.css
-[@root.styles]: ./theme.css
-![@image.generate prompt="network topology", ar=16:9](./images/topology.png)
+[Shared note][@include.note]
+
+[@include.note]: ./shared.include.md#note
+[@styles.print]: ./print.css
+[@widgets]: ./widgets.components.md
 ```
 
-Use existing directive forms. If a new form seems necessary, document it in a
-plan/design first instead of adding one-off syntax to a source.
+Do not guess directive labels or options. Copy an implemented local example or
+consult the plugin documentation for the installed version.
 
-## Small Playable Source
+## Interactive And Version-Sensitive Surfaces
 
-````md
----
-type: lab
-title: Inspect a Function
-description: A short lab for reading one Python function.
----
+Plain task lists remain portable Markdown. Durable task or question submission
+requires a compatible PathMX version, an Action Mapping, and a Host that can
+execute it. Follow the repository's accepted contract rather than inferring
+persistence from checkboxes, form controls, or component state.
 
-# Inspect a Function
+When supported, a single-choice question uses a stable `type: question` Block,
+a stable `id`, top-level list options, and the installed question Action. Keep
+the question and its options readable without the Player.
 
-By the end, the learner can explain inputs, body, and return value.
+Treat generated images, AI spaceholders, annotations, persistent responses,
+and custom Actions as plugin- or version-sensitive. Verify configuration and
+existing examples before authoring them. Never introduce a proposed API as if
+it were part of the portable baseline.
 
----
+## Review Checklist
 
-<!--
-type: setup
-id: setup
-title: Setup
--->
-
-## Setup
-
-Open `area.py` and find `rectangle_area`.
-
----
-
-<!--
-type: practice
-id: trace
-title: Trace the Function
--->
-
-## Trace the Function
-
-```python
-def rectangle_area(width, height):
-    return width * height
-```
-
-- What are the inputs?
-- What expression computes the output?
-
----
-
-<!--
-type: check
-id: check-yourself
-title: Check Yourself
--->
-
-## Check Yourself
-
-For `rectangle_area(4, 5)`, the result is `20`.
-````
-
-## Authoring Checklist
-
-- Filename suffix matches the source role.
-- Source frontmatter is short and uses `type`, not `kind`.
-- Major ideas are split into `---` blocks.
-- Each block represents one coherent learner or reviewer move.
-- Meaningful stages inside interactive components remain addressable Beats.
-- Important blocks have stable `id` values.
-- Relative links resolve from the current file.
-- Directives are existing PathMX forms, not invented local syntax.
-- The source is readable as plain Markdown and useful in play mode.
+- The filename expresses the Source role.
+- Frontmatter is short; authored discriminators use `type`.
+- Each `---` Block represents one coherent move.
+- Meaningful stages remain addressable Beats.
+- Important Blocks have stable IDs.
+- Links and assets are relative and resolve from the current Source.
+- Directives and interactive contracts exist in the installed PathMX version.
+- The source remains readable as plain Markdown and coherent in Play.

@@ -1,0 +1,272 @@
+:self {
+  --chess-wood: #8a5734;
+  --chess-wood-dark: #51301e;
+  --chess-light: #e9d3a3;
+  --chess-dark: #8f5d36;
+  --chess-accent: #2d7a77;
+  --chess-target: #f2c14e;
+  --chess-light-square-image: linear-gradient(
+    145deg,
+    color-mix(in oklch, white 18%, transparent),
+    transparent 58%
+  );
+  --chess-dark-square-image: linear-gradient(
+    145deg,
+    color-mix(in oklch, white 10%, transparent),
+    transparent 54%
+  );
+  --chess-frame-edge-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--chess-wood) 92%, white) 0 1.2rem,
+    var(--chess-wood) 1.2rem 2.4rem,
+    color-mix(in oklch, var(--chess-wood-dark) 64%, var(--chess-wood)) 2.4rem
+      3.1rem
+  );
+  --chess-selected-overlay-image: linear-gradient(
+    color-mix(in oklch, var(--chess-accent) 28%, transparent),
+    color-mix(in oklch, var(--chess-accent) 28%, transparent)
+  );
+  --chess-target-overlay-image: radial-gradient(
+    circle,
+    color-mix(in oklch, var(--chess-target) 58%, transparent) 0 31%,
+    transparent 33%
+  );
+  display: block;
+  margin-block: 1.5rem;
+}
+
+.pmx-chess-game-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 34rem) minmax(16rem, 1fr);
+  gap: clamp(1rem, 3cqi, 1.5rem);
+  align-items: start;
+}
+
+@container pathmx-runtime (max-width: 47.5rem) {
+  .pmx-chess-game-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pmx-chess-game-board-panel,
+.pmx-chess-game-analysis {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.pmx-chess-board-frame {
+  padding: clamp(0.7rem, 2cqi, 1rem);
+  border: 1px solid color-mix(in oklch, var(--chess-wood-dark) 72%, black);
+  border-radius: 0.7rem;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in oklch, white 15%, transparent),
+      transparent 32%
+    ),
+    var(--chess-frame-edge-image),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--chess-wood) 92%, white) 0 1.2rem,
+      var(--chess-wood) 1.2rem 2.4rem,
+      color-mix(in oklch, var(--chess-wood-dark) 64%, var(--chess-wood)) 2.4rem
+        3.1rem
+    );
+  background-position: center;
+  background-repeat: no-repeat, repeat, repeat;
+  background-size:
+    auto,
+    10rem 4rem,
+    auto;
+  box-shadow:
+    inset 0 0 0 0.25rem color-mix(in oklch, white 16%, transparent),
+    inset 0 0 1.1rem color-mix(in oklch, black 28%, transparent),
+    0 1.3rem 2.2rem color-mix(in oklch, black 24%, transparent);
+}
+
+.pmx-chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklch, black 34%, var(--chess-wood-dark));
+  border-radius: 0.35rem;
+  background: var(--chess-dark);
+  box-shadow: inset 0 0 1.4rem color-mix(in oklch, black 28%, transparent);
+}
+
+.pmx-chess-square {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-inline-size: 0;
+  min-block-size: 0;
+  border: 0;
+  padding: 0;
+  cursor: default;
+  --chess-square-image: var(--chess-light-square-image);
+  background-color: var(--chess-light);
+  background-image: var(--chess-square-image);
+  background-position: center;
+  background-size: cover;
+  color: #2f2118;
+}
+
+.pmx-chess-square[data-square-color="dark"] {
+  --chess-square-image: var(--chess-dark-square-image);
+  background-color: var(--chess-dark);
+  color: #f9ecd2;
+}
+
+.pmx-chess-square[data-square-color="light"] {
+  --chess-square-image: var(--chess-light-square-image);
+  background-color: var(--chess-light);
+}
+
+.pmx-chess-square::before,
+.pmx-chess-square::after {
+  position: absolute;
+  z-index: 2;
+  font-family: var(--pmx-font-mono);
+  font-size: clamp(0.48rem, 1.5cqi, 0.66rem);
+  line-height: 1;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.pmx-chess-square::before {
+  content: attr(data-rank-label);
+  inset-block-start: 0.25rem;
+  inset-inline-start: 0.25rem;
+}
+
+.pmx-chess-square::after {
+  content: attr(data-file-label);
+  inset-block-end: 0.25rem;
+  inset-inline-end: 0.25rem;
+}
+
+.pmx-chess-square[data-selected="true"] {
+  background-image:
+    var(--chess-selected-overlay-image), var(--chess-square-image);
+  outline: 0.22rem solid color-mix(in oklch, var(--chess-accent) 78%, white);
+  outline-offset: -0.22rem;
+}
+
+.pmx-chess-square[data-target="true"] {
+  background-image:
+    var(--chess-target-overlay-image), var(--chess-square-image);
+}
+
+.pmx-chess-square[data-last-move="true"] {
+  box-shadow: inset 0 0 0 999px
+    color-mix(in oklch, var(--chess-accent) 22%, transparent);
+}
+
+.pmx-chess-square:focus-visible {
+  z-index: 3;
+  outline: 0.18rem solid white;
+  outline-offset: -0.18rem;
+}
+
+.pmx-chess-piece {
+  inline-size: 88%;
+  block-size: 88%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(
+    0 0.26rem 0.18rem color-mix(in oklch, black 28%, transparent)
+  );
+  transform: translateY(-1.5%);
+}
+
+.pmx-chess-game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pmx-chess-game-controls button,
+.pmx-chess-game-moves button {
+  border: 1px solid
+    color-mix(in oklch, var(--chess-accent) 42%, var(--pmx-color-border));
+  border-radius: 0.35rem;
+  background: color-mix(in oklch, var(--pmx-color-surface) 88%, white);
+  color: var(--pmx-color-fg);
+  cursor: pointer;
+  font: inherit;
+}
+
+.pmx-chess-game-controls button {
+  padding: 0.42rem 0.72rem;
+}
+
+.pmx-chess-game-controls button:hover,
+.pmx-chess-game-moves button:hover {
+  background: color-mix(
+    in oklch,
+    var(--chess-accent) 14%,
+    var(--pmx-color-surface)
+  );
+}
+
+.pmx-chess-game-status {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  color: var(--pmx-color-muted);
+}
+
+.pmx-chess-game-status strong {
+  color: var(--pmx-color-fg);
+}
+
+.pmx-chess-game-moves {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.25rem 0.38rem;
+  align-items: center;
+  max-block-size: 26rem;
+  overflow: auto;
+  padding: 0.75rem;
+  border: 1px solid var(--pmx-color-border);
+  border-radius: 0.45rem;
+  background: color-mix(in oklch, var(--pmx-color-surface) 88%, transparent);
+}
+
+.pmx-chess-move-number {
+  color: var(--pmx-color-muted);
+  font-family: var(--pmx-font-mono);
+  font-size: 0.82rem;
+}
+
+.pmx-chess-game-moves button {
+  min-inline-size: 0;
+  padding: 0.28rem 0.42rem;
+  text-align: start;
+}
+
+.pmx-chess-game-moves button[aria-current="true"] {
+  background: color-mix(
+    in oklch,
+    var(--chess-accent) 24%,
+    var(--pmx-color-surface)
+  );
+  border-color: var(--chess-accent);
+}
+
+.pmx-chess-game-note {
+  padding: 0.85rem;
+  border: 1px solid var(--pmx-color-border);
+  border-radius: 0.45rem;
+  background: color-mix(in oklch, var(--pmx-color-surface) 92%, white);
+}
+
+.pmx-chess-game-note > :first-child {
+  margin-block-start: 0;
+}
+
+.pmx-chess-game-note > :last-child {
+  margin-block-end: 0;
+}

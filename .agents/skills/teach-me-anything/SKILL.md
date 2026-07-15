@@ -41,10 +41,12 @@ stable explicit IDs for questions, and keep task wording stable across a
 learning episode. A Literate Component may help the learner explore, but its
 private browser state is not submitted evidence.
 
-Use the [golden loop](../../../paths/labs/data-science-golden-loop/index.path.md)
-as a small end-to-end reference. Use the
+Use the
+[simple learner quiz](../../../paths/labs/simple-quiz/index.demo.md) as the
+smallest durable question-and-answer reference. Use the
 [component proving ground](../../../paths/labs/component-patterns/index.demo.md)
-when the lesson needs a rich interaction.
+when the lesson needs a rich interaction. Neither example replaces the full
+linked learning loop above.
 
 ## 4. Observe Durable Evidence
 

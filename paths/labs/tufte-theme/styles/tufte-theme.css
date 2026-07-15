@@ -1,0 +1,409 @@
+@scope (.pmx-document[data-pathmx-source="labs/tufte-theme/index.demo"]) {
+  :scope {
+    --tufte-main-width: 55%;
+    --tufte-note-offset: -58%;
+    --tufte-rule: color-mix(in oklch, var(--pmx-color-fg) 24%, transparent);
+    --tufte-rule-strong: color-mix(in oklch, var(--pmx-color-fg) 72%, transparent);
+
+    counter-reset: tufte-sidenote;
+    padding-block: clamp(2.4rem, 7cqi, 6rem);
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--pmx-color-accent) 24%, transparent);
+  }
+
+  :scope > .pmx-block {
+    inline-size: min(78rem, 100%);
+    max-inline-size: 78rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5cqi, 4rem);
+  }
+
+  :scope > .pmx-block + .pmx-block {
+    margin-block-start: clamp(3.5rem, 8cqi, 7rem);
+  }
+
+  :scope > .pmx-block > :where(h1, h2, h3, p, ul, ol, blockquote, .pmx-code-block, .tufte-epigraph, .tufte-source-note) {
+    inline-size: var(--tufte-main-width);
+    max-inline-size: 100%;
+  }
+
+  :scope > .pmx-block > .pmx-table-scroll {
+    inline-size: min(72%, 52rem);
+    max-inline-size: 100%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  :scope > .pmx-block > h1 {
+    max-inline-size: 14ch;
+    margin-block: 0 0.28em;
+    font-size: clamp(3rem, 7.2cqi, 5.6rem);
+    line-height: 0.96;
+  }
+
+  :scope > .pmx-block > h2 {
+    max-inline-size: 20ch;
+    margin-block: 0 1.1em;
+    font-size: clamp(2rem, 4cqi, 3.15rem);
+    font-style: italic;
+    line-height: 1.04;
+  }
+
+  :scope > .pmx-block > h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  :scope > .pmx-block > p,
+  :scope > .pmx-block > :where(ul, ol) {
+    font-size: clamp(1.12rem, 1.8cqi, 1.36rem);
+  }
+
+  :scope > .pmx-block > p {
+    margin-block: 1.2em;
+    hyphens: auto;
+  }
+
+  :scope > .pmx-block > :where(ul, ol) {
+    padding-inline-start: 1.35em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: color-mix(in oklch, currentColor 52%, transparent);
+    text-decoration-thickness: 0.055em;
+    text-underline-offset: 0.13em;
+  }
+
+  a:hover {
+    text-decoration-color: var(--pmx-color-accent);
+  }
+
+  .tufte-subtitle {
+    margin-block: 0 1.25em !important;
+    color: var(--pmx-color-muted);
+    font-style: italic;
+    font-size: clamp(1.45rem, 3cqi, 2.2rem) !important;
+    line-height: 1.25;
+  }
+
+  .tufte-byline {
+    margin-block: 0 3rem !important;
+    color: var(--pmx-color-muted);
+    font-size: 0.86rem !important;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tufte-newthought {
+    font-variant-caps: small-caps;
+    font-style: normal;
+    letter-spacing: 0.045em;
+  }
+
+  .tufte-sidenote,
+  .tufte-marginnote {
+    float: right;
+    clear: right;
+    inline-size: 50%;
+    margin-inline-end: var(--tufte-note-offset);
+    margin-block: 0.25rem 1rem;
+    color: var(--pmx-color-muted);
+    font-size: 0.78em;
+    font-style: normal;
+    line-height: 1.36;
+    text-align: start;
+    hyphens: none;
+  }
+
+  .tufte-sidenote::before {
+    content: counter(tufte-sidenote) "\a0";
+    color: var(--pmx-color-fg);
+    font-size: 0.82em;
+    vertical-align: super;
+  }
+
+  .tufte-margin-toggle {
+    color: var(--pmx-color-accent);
+    cursor: pointer;
+  }
+
+  .tufte-sidenote-number {
+    counter-increment: tufte-sidenote;
+  }
+
+  .tufte-sidenote-number::after {
+    content: counter(tufte-sidenote);
+    margin-inline: 0.08em;
+    font-size: 0.72em;
+    line-height: 1;
+    vertical-align: super;
+  }
+
+  .tufte-margin-symbol {
+    display: none;
+    margin-inline: 0.12em;
+    font-size: 1.05em;
+  }
+
+  .tufte-margin-toggle-input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .tufte-margin-toggle:has(+ .tufte-margin-toggle-input:focus-visible) {
+    border-radius: 0.1em;
+    outline: 2px solid var(--pmx-color-focus);
+    outline-offset: 0.18em;
+  }
+
+  .tufte-epigraph {
+    margin-block: 3.2rem;
+  }
+
+  .tufte-epigraph blockquote {
+    margin: 0 0 1.3rem;
+    padding: 0;
+    border: 0;
+    color: var(--pmx-color-fg);
+  }
+
+  .tufte-epigraph blockquote p {
+    margin: 0;
+    font-size: 1.22rem;
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  .tufte-epigraph footer {
+    margin-block-start: 0.35rem;
+    color: var(--pmx-color-muted);
+    font-size: 0.86rem;
+    text-align: end;
+  }
+
+  .tufte-epigraph footer::before {
+    content: "— ";
+  }
+
+  .tufte-figure {
+    margin-block: 2.5rem;
+  }
+
+  .tufte-figure-wide {
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  .tufte-figure svg {
+    inline-size: 100%;
+    overflow: visible;
+  }
+
+  .tufte-figure figcaption {
+    max-inline-size: 66ch;
+    margin-block-start: 0.8rem;
+    color: var(--pmx-color-muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .tufte-figure figcaption strong {
+    color: var(--pmx-color-fg);
+    font-variant-caps: small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  .tufte-chart-grid line {
+    stroke: var(--tufte-rule);
+    stroke-width: 1;
+  }
+
+  .tufte-chart-axis,
+  .tufte-chart-labels {
+    fill: var(--pmx-color-muted);
+    font-family: var(--pmx-font-heading);
+    font-size: 18px;
+  }
+
+  .tufte-chart-line {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+  }
+
+  .tufte-chart-line-strong {
+    stroke: var(--pmx-color-accent);
+  }
+
+  .tufte-chart-line-muted {
+    stroke: var(--pmx-color-muted);
+  }
+
+  .tufte-chart-label-strong {
+    fill: var(--pmx-color-accent);
+    font-weight: 700;
+  }
+
+  .tufte-figure-note {
+    margin-block-start: -1.5rem;
+  }
+
+  .pmx-table-scroll table {
+    border-block: 2px solid var(--tufte-rule-strong);
+    font-size: 0.92rem;
+  }
+
+  .pmx-table-scroll :where(th, td) {
+    padding: 0.62rem 0.72rem;
+    border: 0;
+  }
+
+  .pmx-table-scroll thead {
+    border-block-end: 1px solid var(--tufte-rule-strong);
+  }
+
+  .pmx-table-scroll tbody tr + tr {
+    border-block-start: 1px solid var(--tufte-rule);
+  }
+
+  :where(p, li, blockquote) > code {
+    padding: 0.05em 0.22em;
+    border: 0;
+    background: color-mix(in oklch, var(--pmx-color-surface) 74%, transparent);
+    color: inherit;
+    font-size: 0.82em;
+  }
+
+  .pmx-code-block {
+    border: 1px solid var(--tufte-rule);
+    border-radius: 0;
+    background: var(--pmx-color-surface);
+    box-shadow: none;
+  }
+
+  .pmx-code-block pre {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .tufte-source-note {
+    margin-block: 2.5rem;
+    padding-block-start: 1rem;
+    border-block-start: 1px solid var(--tufte-rule);
+    color: var(--pmx-color-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tufte-source-note strong {
+    color: var(--pmx-color-fg);
+    font-variant-caps: small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  @container pathmx-runtime (max-width: 900px) {
+    :scope > .pmx-block {
+      --tufte-main-width: 100%;
+    }
+
+    :scope > .pmx-block > .pmx-table-scroll {
+      inline-size: 100%;
+    }
+
+    .tufte-sidenote,
+    .tufte-marginnote {
+      display: none;
+      float: none;
+      inline-size: auto;
+      margin: 0.8rem 0 1rem 1rem;
+      padding-inline-start: 1rem;
+      border-inline-start: 2px solid var(--pmx-color-accent);
+      font-size: 0.82em;
+    }
+
+    .tufte-margin-symbol {
+      display: inline;
+    }
+
+    .tufte-margin-toggle-input:checked + :is(.tufte-sidenote, .tufte-marginnote) {
+      display: block;
+    }
+
+    .tufte-chart-axis,
+    .tufte-chart-labels {
+      font-size: 22px;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .tufte-chart-line-strong,
+    .tufte-chart-line-muted {
+      stroke: CanvasText;
+    }
+
+    .tufte-chart-line-strong {
+      stroke-width: 7;
+    }
+  }
+
+  @media print {
+    :scope {
+      --pmx-color-bg: white;
+      --pmx-color-fg: black;
+      --pmx-color-muted: #444;
+      --pmx-color-accent: #7a1f18;
+
+      min-block-size: auto;
+      padding-block: 0;
+      font-size: 11pt;
+    }
+
+    :scope > .pmx-block {
+      inline-size: 100%;
+      max-inline-size: none;
+      padding-inline: 0;
+    }
+
+    :scope > .pmx-block > :where(h1, h2, h3, p, ul, ol, blockquote, .pmx-code-block, .tufte-epigraph, .tufte-source-note) {
+      inline-size: 60%;
+    }
+
+    .tufte-sidenote,
+    .tufte-marginnote {
+      display: block;
+    }
+
+    .tufte-margin-symbol,
+    .pmx-code-copy {
+      display: none;
+    }
+
+    a[href]::after {
+      content: none;
+    }
+
+    .tufte-figure,
+    .pmx-table-scroll,
+    .pmx-code-block {
+      break-inside: avoid;
+    }
+  }
+}

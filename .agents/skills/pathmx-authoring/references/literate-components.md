@@ -3,238 +3,296 @@
 Use this reference for `.component.md`, `.components.md`, custom tags, and
 component authoring review.
 
-## Component Sources
+## Contents
 
-The literate plugin expands component definitions from:
+- Definition sources and names
+- Templates and usage
+- Styles and resources
+- Instance script API
+- State and lifecycle
+- Player Context Actions
+- Pacing, boundaries, and review
+
+## Definition Sources And Names
+
+PathMX discovers definitions in:
 
 - `*.component.md` for one component;
 - `*.components.md` for one or more components;
-- sources with `parseComponents: true` when a project intentionally opts in.
+- a Source with `parseComponents: true` when a project opts in explicitly.
 
-Each component definition is a PathMX block with:
+Define one component per PathMX Block with:
 
-- one `html` fence for the template;
-- optional `css` fences for instance styles;
-- optional `js` or `javascript` fences for instance scripts.
+- exactly one `html` fence;
+- zero or more `css` fences or named `[@styles.*]` resources;
+- zero or more `js`/`javascript` fences or named `[@script.*]` resources;
+- optional named `[@asset.*]` and `[@data.*]` resources.
 
-Multi-component files should read like literate programs: prose explains the
-authoring contract, then the implementation fences show how it works.
+Write the Source as a literate program: explain purpose, inputs, slots, behavior,
+and failure modes before or beside the implementation fences.
 
-## Names
+Resolve names in this order:
 
-Component names resolve in this order:
+1. Block `componentName`;
+2. Source `componentName` for a single definition;
+3. the type-hinted filename for `.component.md` or a one-definition
+   `.components.md` Source;
+4. Block `title`, then its first heading, in a multi-definition Source.
 
-1. block-level `componentName`;
-2. source-level `componentName` for single-definition component sources;
-3. filename for `*.component.md` and one-definition `*.components.md`;
-4. block `title`, then first heading, for multi-definition `.components.md`
-   files.
+Prefer explicit or filename-stable names for exported components. Do not let a
+presentation-heading edit accidentally rename a widely used tag.
 
-Prefer stable names. Editing a heading should not unexpectedly rename a tag
-that other sources use.
+## Templates And Usage
 
-## Definition Shape
+Use semantic, accessible HTML for the template:
 
 ````md
-# Flashcard
+# Disclosure Card
 
-Interactive wrapper for front/back faces.
-
-Props:
-
-- `label`: accessible label
-- `ar`: CSS aspect ratio, default `4 / 3`
-
-## HTML
+Use `<disclosure-card>` for a short expandable explanation.
 
 ```html
-<article class="flashcard" states="front | back" role="button" tabindex="0">
-  <yield />
+<article class="disclosure-card" aria-label="{{ label: Details }}">
+  <button type="button" data-toggle>Toggle</button>
+  <div data-body><yield /></div>
 </article>
-```
-
-## CSS
-
-```css
-:self {
-  display: block;
-}
-
-:self[data-state="back"] {
-  transform: rotateY(180deg);
-}
-```
-
-## JavaScript
-
-```js
-on(el, "click", function () {
-  state.set(state.get() === "back" ? "front" : "back")
-})
 ```
 ````
 
-## Templates
+Usage attributes become template props and are copied to the rendered root:
 
-The `html` fence is the component template. Usage attributes become props, and
-`<yield />` receives authored children.
-
-```html
-<section class="callout" aria-label="{{ label: Note }}">
-  <yield />
-</section>
+```md
+<disclosure-card label="Why this works">
+  The median depends on position, not the size of the outlier.
+</disclosure-card>
 ```
 
-Keep the generated HTML semantic. Use normal accessibility attributes and
-button/input elements where interactions require them.
+Use `{{ name }}` for a prop value and `{{ name: fallback }}` for a template
+default. `<yield />` receives ordinary children. Use named slots when the
+contract needs separate regions:
 
-## CSS
+```html
+<article><header><slot name="header" /></header><slot /></article>
+```
 
-Component CSS is scoped to rendered roots for that component.
+```md
+<slotted-card>
+  <slot name="header">Summary</slot>
+  Card body.
+</slotted-card>
+```
 
-- Use `:self` for the component root.
-- Use ordinary selectors for descendants.
-- Use `@dark` and `@light` for color-mode overrides.
-- Prefer container queries against the PathMX runtime container when layout
-  should respond to embedded/player panes instead of the full viewport.
+Keep yielded content useful without JavaScript. Use native buttons, links,
+inputs, labels, landmarks, and ARIA before recreating their behavior.
+
+## Styles And Resources
+
+Component CSS is scoped to rendered roots of that component:
 
 ```css
 :self {
-  --card-bg: white;
   display: grid;
   gap: 0.75rem;
 }
 
+[data-body] {
+  min-inline-size: 0;
+}
+
 @dark {
   :self {
-    --card-bg: oklch(0.2 0.02 250);
+    color-scheme: dark;
+  }
+}
+
+@container pathmx-runtime (max-width: 36rem) {
+  :self {
+    gap: 0.5rem;
   }
 }
 ```
 
-PathMX lowers `:self` and wraps component styles. Authors should not hand-write
-the internal runtime color-scheme attributes.
+- Use `:self` for the component root and ordinary selectors for descendants.
+- Use `@dark` and `@light` instead of PathMX's internal color-scheme hooks.
+- Prefer the `pathmx-runtime` container when layout should follow an embedded,
+  split, or focused content surface rather than the browser viewport.
+- Do not rely on Player DOM structure or generated `data-pmx-*` attributes.
 
-## JavaScript
-
-Instance scripts run once per rendered component root. Do not write page-level
-`querySelectorAll` loops or init guards.
-
-Available locals:
-
-- `el`: current component root;
-- `$`: `el.querySelector(selector)`;
-- `$$`: `Array.from(el.querySelectorAll(selector))`;
-- `on`: event helper with component-scoped missing-target errors;
-- `state`: component state helper for declared `states`;
-- `ctx.attrs`: authored attributes copied from the rendered root;
-- `ctx.props`: definition defaults merged with authored attributes;
-- `ctx.assets`: named asset resources with emitted `url` values;
-- `ctx.data`: named data resources with cached `text()`, `json()`, and
-  `bytes()` readers;
-- `ctx.morph(target, next, options?)`: component-local DOM patch helper;
-- `ctx.transition(update, options?)`: View Transition wrapper with fallback;
-- `ctx.effect(setup, { when })`: restartable continuous-work scope for
-  `visible` or `presented` components;
-- `ctx.state(initial)`: private, browser-local state for this component
-  instance;
-- `ctx.cleanup(fn)`: cleanup for timers, observers, global listeners, and
-  library disposers.
-
-```js
-const button = $("[data-action]")
-
-on(button, "click", function () {
-  ctx.transition(function () {
-    el.toggleAttribute("data-open")
-  })
-})
-
-const timer = setInterval(tick, 1000)
-ctx.cleanup(function () {
-  clearInterval(timer)
-})
-```
-
-Keep scripts component-owned. They should not reach across the page unless the
-component's authoring contract explicitly says it owns that external behavior.
-
-`state` and `ctx.state(...)` are different. Use `state` for a named state that
-the Player should observe or traverse. Use `ctx.state(...)` for private
-implementation data such as counters, cached selections, or handles. Neither
-is durable learner evidence.
-
-Use `ctx.effect(..., { when: "presented" })` for animation frames, intervals,
-audio, or library loops that should stop offscreen or off-Beat. `visible`
-means connected, intersecting, and in a visible document. `presented` means
-visible in browse mode, or visible and active in Play. The scope signal aborts
-before cleanup; setup restarts without overlap. Reduced-motion behavior stays
-an authored decision.
-
-A rendered block-level component root owns its component Beat and receives
-`pathmx:beat-enter`, `pathmx:beat-exit`, and `pathmx:play-step` directly. Do
-not add sibling Beat-host lookups or a page-level Player query.
-
-## Component State And Play
-
-The `states` attribute declares a component state domain.
-
-```html
-<div class="tabs" states="html, css, js">
-  <yield />
-</div>
-```
-
-- `states="front | back"` is an ordered sequence. Play can traverse the states
-  as step beats.
-- `states="html, css, js"` is an unordered set. Play surfaces choices but does
-  not step through them in order.
-- Do not mix `|` and `,` in one states value.
-- State names should be stable, short, and meaningful.
-- Omitted `initial-state` selects the first name. `initial-state=""` starts
-  empty; `state.get()` returns `null` and `state.set(null)` clears it.
-
-Use `state.get()`, `state.set(name)`, `state.on(handler)`, and
-`state.declare(states, { initial?: string | null })` for runtime-declared
-domains. Empty scalar state is never another Player choice. Do not model
-multi-select as a comma-joined scalar value.
-
-Local ESM dependencies should be ordinary linked assets:
+Declare local resources in the definition Block:
 
 ```md
-[@asset.renderer]: ./vendor/renderer.bundle.js
+[@styles.layout]: ./layout.css
+[@script.behavior]: ./behavior.js
+[@asset.renderer]: ./vendor/renderer.js
+[@data.samples]: ./samples.json
 ```
+
+Fenced and linked styles/scripts run in authored order. Read assets through
+`ctx.assets.name.url`. Read data asynchronously through cached
+`ctx.data.name.text()`, `.json()`, or `.bytes()`.
+
+Treat `[@script.*]` as component implementation chunks. For a shared local ESM
+dependency, declare it as an asset and import the emitted URL:
 
 ```js
 const renderer = await import(ctx.assets.renderer.url)
 ```
 
-Native import shares the content-derived emitted URL. Do not invent
-`window.__pathmx*` caches or a `ctx.modules` API.
+Do not invent package resolution, `ctx.modules`, or page-global module caches.
 
-## Blocks, Beats, And Component Pacing
+## Instance Script API
 
-A component does not replace source pacing. The containing block should still
-represent one coherent learner or reviewer move. Use ordered component states
-or explicit nested Beats when the interaction has meaningful stages that
-should appear in the Player route. Keep purely visual micro-state private.
+Each script runs once for one rendered component root. PathMX owns page
+scanning, initialization guards, live-update reinitialization, and disposal.
+Do not add page-level `querySelectorAll` loops or custom init flags.
 
-Large simulations and 3D scenes need a readable entry, an observable learning
-goal, and a clear way to leave the component. A full-screen canvas with all
-teaching logic hidden inside its JavaScript is not a well-paced PathMX source.
+| Local | Meaning |
+| --- | --- |
+| `el` | current rendered component root |
+| `$` | `el.querySelector(selector)` |
+| `$$` | array from `el.querySelectorAll(selector)` |
+| `on` | event helper with automatic cleanup and scoped missing-target errors |
+| `state` | one named Player-visible state domain |
+| `ctx.attrs` | attributes present on the rendered root at initialization |
+| `ctx.props` | definition defaults merged with rendered attributes |
+| `ctx.assets` | named asset records with emitted `url` values |
+| `ctx.data` | named data records with cached async readers |
+| `ctx.morph` | component-owned DOM patching |
+| `ctx.transition` | View Transition wrapper with fallback |
+| `ctx.effect` | restartable work while `visible` or `presented` |
+| `ctx.state` | private browser-local state for this instance |
+| `ctx.play.actions` | owner-bound ephemeral Player commands |
+| `ctx.cleanup` | lifetime cleanup registration |
 
-## Review Checklist
+Keep scripts component-owned. Reach outside `el` only when the component's
+documented contract explicitly owns that external behavior.
 
-- Source role is `.component.md` or `.components.md`.
-- Each definition has a clear prose contract before implementation fences.
-- Component names are stable and not accidentally heading-dependent.
-- CSS uses `:self`, `@dark`, and `@light` instead of internal runtime hooks.
-- JS uses instance locals instead of scanning the whole document.
-- Lifetime listeners/resources are cleaned up with `ctx.cleanup`; continuous
-  work that should pause uses `ctx.effect`.
-- Component state is declared through `states` or `state.declare`, not ad hoc
-  parallel state if play should understand it.
-- The containing block has one clear learning/review move, and meaningful
-  component stages remain addressable in Play.
-- Play lifecycle behavior is verified on the component root and off-Beat work
-  schedules no frames or intervals.
+Use `ctx.morph(target, next, { mode? })` for identity-preserving local updates;
+the default mode patches children and `mode: "element"` patches or replaces the
+target. Wrap an update in `ctx.transition(update, options?)` when a progressive
+View Transition helps. The helper falls back when unsupported or when reduced
+motion should skip it.
+
+Register observers, global listeners, timers, and library disposers with
+`ctx.cleanup`. Use `ctx.effect` for continuous work that should pause:
+
+```js
+ctx.effect(
+  function ({ signal }) {
+    let frame
+    function draw() {
+      if (signal.aborted) return
+      renderFrame()
+      frame = requestAnimationFrame(draw)
+    }
+    frame = requestAnimationFrame(draw)
+    return function () {
+      cancelAnimationFrame(frame)
+    }
+  },
+  { when: "presented" },
+)
+```
+
+`visible` means connected, intersecting, and in a visible document.
+`presented` means visible in browse mode, or visible and active in Play. The
+scope aborts before cleanup and restarts without overlapping its predecessor.
+
+## State And Play
+
+Declare one named state domain on the template or usage root:
+
+```html
+<article states="front | back" initial-state="front">...</article>
+```
+
+- `|` declares an ordered, Play-traversable sequence.
+- `,` declares an unordered choice set that stays one Beat.
+- Never mix separators or use numeric/counting state names.
+- Omitted `initial-state` selects the first state.
+- `initial-state=""` starts empty; `state.get()` returns `null` and
+  `state.set(null)` clears it.
+
+Use `state.get()`, `state.set(value)`, and `state.on(listener)`. Declare a
+data-driven ordered domain with:
+
+```js
+state.declare(
+  [{ name: "predict", label: "Predict" }, "inspect", "explain"],
+  { initial: null },
+)
+```
+
+Use `state` only for one value the Player should observe or traverse. Use
+`ctx.state(initial)` for private draft data, selections, counters, or handles.
+Neither is durable learner evidence.
+
+A rendered Block-level component root owns its component Beat and receives
+`pathmx:beat-enter`, `pathmx:beat-exit`, and `pathmx:play-step` directly. Do not
+look up a sibling Beat host or query Player chrome.
+
+## Player Context Actions
+
+Use Context Actions for ephemeral component-local commands such as Previous,
+Next, Pause, or Reset view:
+
+```js
+function publishActions() {
+  ctx.play.actions.set([
+    {
+      id: "previous-move",
+      label: "Previous move",
+      disabled: moveIndex === 0,
+      run: previousMove,
+    },
+    {
+      id: "next-move",
+      label: "Next move",
+      disabled: moveIndex === moves.length - 1,
+      run: nextMove,
+    },
+  ])
+}
+```
+
+Each action requires a non-empty unique `id`, a non-empty `label`, and a `run`
+function; `disabled` is optional. `set` replaces the root's complete ordered
+list. Republish whenever labels or availability change. Keep boundary actions
+present and disabled so Player-assigned positional shortcuts stay stable.
+
+Use `ctx.play.actions.clear()` to remove the list; instance disposal also
+clears it. Components declare order and behavior, never shortcut keys.
+
+Context Actions are browser-local commands. Never use them for Save, Submit,
+grading, or other durable work. A durable Action must remain backed by the
+project's canonical Action/form contract.
+
+Call `ctx.play.actions` only when the project includes the PathMX browser
+Runtime. Its `run` function may return `void` or a Promise.
+
+## Pacing, Boundaries, And Review
+
+Keep the containing Block coherent even when the component is complex. Expose
+meaningful stages as ordered states or explicit nested Beats; keep hover,
+camera, animation-frame, and purely visual state private. Give large scenes a
+readable entry, observable goal, useful fallback/loading/failure UI, and a
+clear exit.
+
+Do not assume these portable-baseline APIs exist: persistent component state,
+set-valued state, a generic readiness protocol, package module resolution,
+TypeScript/JSX compilation, or framework-specific rendering. Treat
+`ctx.response`, component Save helpers, and similar persistence surfaces as
+available only when the installed PathMX version and repository's accepted
+documentation explicitly provide them.
+
+Review that:
+
+- the definition has one HTML template and a stable name;
+- prose explains props, slots, behavior, and failure modes;
+- markup is semantic and keyboard/touch accessible;
+- CSS uses component and runtime-container scopes;
+- scripts operate on one `el` and clean up owned resources;
+- Player-visible and private state are not confused with durable evidence;
+- Context Actions stay ephemeral;
+- Play, narrow width, reduced motion, live refresh, loading, and failure paths
+  behave coherently.

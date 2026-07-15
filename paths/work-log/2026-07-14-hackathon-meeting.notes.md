@@ -92,35 +92,32 @@ demonstrate how the learner Persona changes the experience.
 
 ### Andrew
 
-- Prototype interactive and exploratory widgets under `paths/labs/` with the
-  assets needed to reproduce them.
+- Prototype interactive and exploratory UX using Literate Components under
+  `paths/labs/`, with the assets needed to reproduce it.
 - Explore the component design system and stress-test its usability.
 - Link the referenced interactive artifacts in the working repository.
 - Set up repository-commit notifications through Slack Workflows or another
   agreed trigger.
 
-### Coordination And Evaluation Lane
+### Tram
 
 - Keep the team aligned and the work organized.
 - Draft a college-student learning-path scenario for the demo.
 - Run Codex-driven tests and evaluations.
-
-The meeting summary did not name the owner of this lane; confirm the owner
-before treating the assignment as accepted.
 
 ---
 
 ## Timeline
 
 - July 14: collect notes, ideas, and examples in the working repository.
-- Thursday, July 16: align explicitly on the build and begin prototyping.
+- July 15: scaffold the repository and prepare the PathMX 0.1.9 release with
+  Player Actions.
+- July 16: begin prototyping various learner scenarios/outcomes.
 - July 18–19: polish, QA, and evaluations.
 - Monday, July 20: reach a feature-complete shape.
 - Tuesday, July 21 at 8:00 PM EDT: submit and record the demo video.
 
-The meeting was recorded on Tuesday, July 14, while the source notes referred
-to "tomorrow (Thursday)." Confirm that Thursday, July 16 is the intended
-alignment checkpoint.
+July 16 is the intended prototyping and alignment checkpoint.
 
 ---
 
@@ -128,8 +125,17 @@ alignment checkpoint.
 
 - What exact Markdown authoring shape should each mutation primitive use?
 - Which three scenarios best prove the product claim in the demo window?
-- Who owns the coordination and evaluation lane and the college scenario?
 - How will the team expose a shared public version without committing private
   links or data?
-- What can make Codex's view of the file structure feel more connected to the
-  live learning experience?
+
+---
+
+## Resolved Follow-ups
+
+- Tram owns coordination, the college-student scenario, and the evaluation
+  lane.
+- Codex-facing coordination now runs through the
+  [Build Week task dashboard](../tasks/index.tasks.md), with one canonical
+  Markdown Source per task.
+- The remaining mutation, scenario, and publication questions are linked to
+  explicit tasks instead of living only in these meeting notes.

@@ -1,119 +1,132 @@
 # PathMX Tooling And Verification
 
-Use this reference before running PathMX commands, previewing output, or
-deciding how much verification an authoring change needs.
+Use this reference before running PathMX commands or choosing verification.
 
-## Public CLI
+## Contents
 
-Install the public CLI with with Bun (install bun first, if needed):
+- Choose the CLI
+- Build and preview safely
+- Match checks to risk
+- Diagnose common failures
+- Report results
+
+## Choose The CLI
+
+Prefer the repository's pinned command, package script, or documented wrapper.
+Check `pathmx --version` and local configuration before relying on a recent
+capability. Do not update PathMX or rewrite project config unless the task
+authorizes it.
+
+When a project has no pinned command, the public package provides `pathmx` and
+the equivalent `pmx` alias:
 
 ```sh
 bun add -g @fellowhumans/pathmx@latest
+pathmx --version
 ```
 
-Make sure the CLI is on the latest version and installed in the user's PATH:
+Use a one-off runner when installation is undesirable:
 
 ```sh
-pathmx --version # check existing version
-pathmx self-update # update to latest version
-pathmx --version # check updated version
+bunx @fellowhumans/pathmx@latest --version
+bunx @fellowhumans/pathmx@latest build
 ```
 
----
-
-PathMX commands:
+Common commands:
 
 ```sh
-pathmx play # start a playable server (default to this for most projects)
-
-pathmx init # initialize a new PathMX project if it needs config, don't do unless needed
-pathmx build # build the deployable PathMX project into a .pathmx directory
-pathmx dev # start a runtime-only dev server
-
-pathmx --help # show all commands and options
+pathmx init                  # create or migrate config; run intentionally
+pathmx build                 # emit build artifacts
+pathmx dev                   # build, serve, watch, and reload content
+pathmx play --open           # open the Player and watch sources
+pathmx serve                 # serve a watched PathMX bundle
+pathmx mv old.md new.md      # move a Source and rewrite backlinks
+pathmx rm unused.md          # delete a Source and unlink backlinks
+pathmx <command> --help      # inspect version-specific options
 ```
 
-The shorter alias is equivalent:
+Use local help as the contract when this reference and an installed version
+differ.
+
+## Build And Preview Safely
+
+Do not overwrite output owned by a running server. For a diagnostic build,
+choose a scratch directory outside the configured live output, for example:
 
 ```sh
-pmx play
+pathmx build -o .pathmx-check
 ```
 
-For one-off usage without a global install:
+Check repository ignore rules before leaving scratch output in the worktree,
+and remove only output created by your own verification.
 
-```sh
-bunx @fellowhumans/pathmx build
-bunx @fellowhumans/pathmx play
-```
+For interactive or presentation changes, preview the actual route with the
+project's normal command. `pathmx play --print-url` can provide a scriptable
+Player URL on versions that support it. Reuse an existing server only when its
+ownership and checkout are clear; never stop an unknown listener merely to
+produce a preview.
 
-## Source Checkout Verification
+When matching a source to a Player route, read the running server's
+`sources.json` and use the route reported for the exact source path. Do not
+guess routes by stripping `.md`.
 
-Inside this PathMX source checkout, use the workspace CLI directly:
+## Match Checks To Risk
 
-```sh
-bun run packages/cli/src/bin.ts build -o .pathmx-check
-```
+For prose or metadata edits:
 
-Use `.pathmx-check` for scratch verification. This may be useful for custom plugins or literate tag development. Do not use the default `.pathmx` directory for checks, because a running `pathmx dev` or `pathmx play` server may own it.
+- inspect the Markdown diff;
+- verify relative links and source roles;
+- build when syntax, config, routes, or generated output could change.
 
-## Preview Loop
+For structural or graph edits:
 
-Use an already-running local PathMX server when it is clearly from the current
-checkout and safe to reuse. In this workspace, the usual server is on port
-`3000` from a tmux pane running one of:
+- run a scratch build;
+- inspect warnings, rewritten links, routes, and affected indexes/manifests;
+- use `pathmx mv`/`rm` when graph-aware rewriting is required.
 
-```sh
-bun run packages/cli/src/bin.ts dev --perf
-bun run packages/cli/src/bin.ts play --perf
-```
+For Literate Components:
 
-## Common Checks
+- confirm definitions resolve and custom tags expand;
+- inspect build diagnostics for duplicate names, missing resources, or invalid
+  state domains;
+- test pointer, keyboard, touch, narrow-width, and reduced-motion behavior;
+- enter and leave the component Beat in Play;
+- confirm continuous work stops off-Beat and cleanup survives live refresh;
+- exercise loading, dependency failure, and fallback UI for async components;
+- verify Context Actions retain order, disabled boundaries, and cleanup.
 
-For content-only changes no build is usaully needed unless the user describes an issue/problem with the output.
+For version-sensitive Actions, generated media, annotations, or plugins:
 
-In that case, diagnose the issue with a scratch build:
+- verify the installed version and configuration first;
+- exercise the canonical browser/server path, not only rendered HTML;
+- confirm persisted output remains readable Source after reload when
+  persistence is part of the accepted contract.
 
-```sh
-bun run packages/cli/src/bin.ts build -o .pathmx-check
-```
+## Diagnose Common Failures
 
-For component-heavy demos, also preview the relevant route and check that:
+- **Wrong Source role:** check the final filename hint; frontmatter `type` does
+  not override the build type.
+- **Broken Source or asset link:** resolve it from the current Source, including
+  query strings and fragments.
+- **Unknown directive:** confirm the plugin is enabled and copy its installed
+  authoring form; do not invent a fallback syntax.
+- **Weak Play pacing:** split or merge `---` Blocks; expose meaningful stages as
+  Beats or component state.
+- **Component not found:** link/import the definition Source and verify its
+  resolved stable name.
+- **Component script failure:** remove page-level scanning, verify selectors,
+  and register owned cleanup.
+- **Stale preview:** confirm the watched checkout and output directory, then use
+  a scratch build before restarting a known server.
+- **Capability mismatch:** report the installed version and missing contract;
+  do not add a source-level polyfill for a runtime or Host feature.
 
-- component definitions resolve;
-- custom tags render in the demo source;
-- interactive controls work with pointer and keyboard;
-- text does not overflow or overlap;
-- play mode can enter and step through useful blocks/beats.
+## Report Results
 
-For generated-image, include, style, or asset changes, check that paths are
-relative to the source file and that missing files produce clear diagnostics.
+Report:
 
-## Failure Triage
-
-- Broken source link: fix the relative link from the current source, not from
-  the repo root unless the syntax explicitly requires root behavior.
-- Unexpected source role: check the filename suffix before changing
-  frontmatter.
-- Weak play pacing: split or merge `---` blocks so each block has one clear
-  review or teaching purpose.
-- Missing block label: add a heading or block `title`.
-- Component not found: ensure the demo links the `.components.md` source and
-  that the component name resolves as expected.
-- Component JS failure: replace page-level DOM scans with instance locals and
-  add `ctx.cleanup` for long-lived effects.
-- Live preview stale: run a scratch build first; restart the dev/play server
-  only when watcher reload is not enough.
-
-## Reporting
-
-When finishing an authoring change, report:
-
-- changed source or skill files;
-- verification command and result;
-- any checks that could not run, with the reason.
-- **Important**: Prefer the PathMX Player route for authored `paths/**/*.md`
-  review. Probe `http://127.0.0.1:3001/sources.json`, match the source `path`
-  to its reported `route`, and use
-  `https://play.pathmx.dev<route>` when that exact tunnel URL is reachable.
-  Fall back to `http://127.0.0.1:3001<route>`, then to the absolute local
-  Markdown link. Keep the local link when citing exact source lines.
+- changed Source and skill files;
+- commands and checks run, with results;
+- inspected Player routes when visual/interactive behavior matters;
+- skipped checks and why;
+- relevant PathMX version or configuration assumptions.

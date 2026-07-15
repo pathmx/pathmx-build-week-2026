@@ -1,7 +1,8 @@
 # PathMX Build Week 2026
 
-Team workspace for OpenAI Build Week 2026: project decisions, learning labs,
-evaluation reports, demo preparation, and submission evidence.
+Team workspace for OpenAI Build Week 2026: task coordination, project
+decisions, learning labs, evaluations, demo preparation, and submission
+evidence.
 
 The reusable learner-facing template lives in the separate
 `pathmx-learning-starter` repository. PathMX Core implementation stays in the
@@ -18,6 +19,7 @@ evidence of learning, and a next step—not only a chat transcript.
 
 ```sh
 bun add -g @fellowhumans/pathmx@latest
+pathmx self-update
 pathmx --version
 pathmx play
 ```
@@ -29,17 +31,16 @@ AGENTS.md
 .agents/skills/pathmx-authoring/SKILL.md
 paths/
 ├── index.path.md
-├── team/index.guide.md
+├── tasks/index.tasks.md
 ├── labs/index.path.md
-├── reports/index.path.md
+├── research/index.path.md
 └── work-log/index.path.md
 ```
 
 - `paths/index.path.md` is the project hub.
-- `paths/team/` records working agreements and accepted ownership.
+- `paths/tasks/` is the Codex-managed work queue and evidence trail.
 - `paths/labs/` contains experiments that may fail.
-- `paths/reports/` contains clean-install, workflow, bug, and evaluation
-  evidence.
+- `paths/research/` collects useful external references.
 - `paths/work-log/` contains dated meeting notes, daily logs, and handoffs.
 
 ## Private information
@@ -50,5 +51,5 @@ team administration through the agreed private channel.
 
 ## Status
 
-Light team scaffold. Roles and the canonical learning topic remain open until
-the team kickoff.
+Active Build Week execution. Current ownership, blockers, next moves, and
+completion evidence live in the [task dashboard](./paths/tasks/index.tasks.md).

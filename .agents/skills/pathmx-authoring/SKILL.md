@@ -1,50 +1,58 @@
 ---
 name: pathmx-authoring
-description: Write, revise, and review PathMX author-facing repositories and playable markdown sources. Use when creating or editing PathMX files, source roles, frontmatter, block topmatter, relative links, directives, literate components, play pacing, or PathMX authoring/tooling guidance.
+description: Author, revise, review, and verify PathMX Markdown sources. Use for source roles, frontmatter, Blocks, Beats, links, directives, variables, includes, CSS, themes, fonts, tasks or questions, Literate Components, Play pacing, and PathMX CLI preview or build checks in any repository.
 ---
 
 # PathMX Authoring
 
-Write PathMX sources that stay useful as plain Markdown and become good
-playable documents in PathMX.
-
-## Grounding
-
-1. In an existing PathMX repo, read local agent instructions first. For this
-   workspace that means `readme.md`, `paths/index.path.md`, and
-   `paths/inbox/index.inbox.md`.
-2. Inspect nearby sources with the same role before inventing a new pattern.
-3. Prefer relative links to source files and assets so PathMX can rewrite,
-   move, and verify the graph.
-4. Verify authoring changes with scratch output, not a live `.pathmx`
-   directory that may belong to a running dev/play server.
-
-## Reference Routing
-
-Load only the reference needed for the current task:
-
-- `references/source-authoring.md`: use for all PathMX source roles, frontmatter, block topmatter, links, directives, and play pacing.
-- `references/literate-components.md`: use for custom tags, HTML/CSS/JS fences, component state, and component authoring review.
-- `references/tooling-and-verification.md`: use before running PathMX commands, previewing output, or deciding how to verify a repo-local authoring change.
+Create readable Markdown that also works as a coherent PathMX source graph and
+playable experience.
 
 ## Workflow
 
-1. Identify the source role and audience e.g. path, guide, demo, lab, notes, spec, decision, or project-specific role. These may vary by repo.
-2. Draft or revise the source as normal Markdown first. Add PathMX capability
-   only when it improves navigation, review, learning, or interaction.
-3. Split major playable moments with thematic breaks (`---`) on their own
-   lines with blank lines around them.
-4. Add source frontmatter and block topmatter when it improves metadata,
-   search, routing, play labels, or agent continuity.
-5. Keep blocks self-contained enough to work in play mode. A block should be a
-   useful teaching, review, or demo beat, not an arbitrary wall of prose.
-6. Use existing directives and components by linking their source definitions.
-   Do not silently invent new directive syntax for one document.
+1. Read the nearest repository instructions and inspect its PathMX config,
+   installed version, entry sources, and nearby examples. Do not assume a
+   particular folder layout or project workflow.
+2. Identify the source's role and audience. Prefer the repository's existing
+   type-hinted filename conventions.
+3. Draft ordinary Markdown first. Add PathMX metadata or capabilities only when
+   they improve structure, reuse, navigation, presentation, or interaction.
+4. Shape each Block as one coherent reader, learner, or reviewer move. Use
+   Beats for meaningful reveal or interaction stages inside that move.
+5. Preserve relative links and reuse existing directives, components, and
+   project conventions. Do not invent syntax or runtime APIs.
+6. Verify in proportion to the change, using the project's pinned tooling and
+   a scratch output directory when building.
 
-## Output Expectations
+## Reference Routing
 
-- For new sources, include a short note naming the source role, why the block
-  pacing is appropriate, and what command verified it.
-- For reviews, lead with concrete authoring issues: broken links, weak block
-  pacing, missing metadata, non-playable structure, or component contracts that do not match the literate runtime.
-- For broader repo work, keep documented workflows and bookkeeping up to date.
+Read the complete reference that matches the task:
+
+- `references/source-authoring.md` — source roles, metadata, Blocks, Beats,
+  links, built-in capabilities, and review.
+- `references/styling-and-theming.md` — source and root CSS, selector scope,
+  theme tokens, color modes, fonts, cascade order, and print.
+- `references/literate-components.md` — component definitions, templates,
+  resources, styles, scripts, state, lifecycle, and Player Context Actions.
+- `references/tooling-and-verification.md` — CLI selection, builds, preview,
+  diagnostics, and verification.
+
+For CSS, theme, or font work, read the source-authoring and styling references.
+For component styling, also read the Literate Component reference. Read the
+tooling reference before running PathMX commands.
+
+## Guardrails
+
+- Keep sources useful as plain Markdown.
+- Use source-facing `type`, not a new `kind` discriminator.
+- Prefer relative source and asset links so graph-aware tools can move,
+  rewrite, and verify them.
+- Treat local repository instructions and pinned PathMX versions as
+  authoritative for enabled or version-sensitive capabilities.
+- Use only implemented contracts. When a capability is proposed, absent, or
+  version-mismatched, report the boundary instead of polyfilling it in source.
+
+## Handoff
+
+Report the changed sources, the verification performed, and any skipped checks
+or version/configuration assumptions.

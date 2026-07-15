@@ -1,0 +1,14 @@
+{
+  "wp": "White pawn",
+  "wn": "White knight",
+  "wb": "White bishop",
+  "wr": "White rook",
+  "wq": "White queen",
+  "wk": "White king",
+  "bp": "Black pawn",
+  "bn": "Black knight",
+  "bb": "Black bishop",
+  "br": "Black rook",
+  "bq": "Black queen",
+  "bk": "Black king"
+}
