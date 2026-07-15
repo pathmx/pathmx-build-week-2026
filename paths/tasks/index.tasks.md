@@ -19,7 +19,7 @@ The owner is the accountable human, never a Codex task or session identifier.
 
 | Task | Owner | Next move | Due |
 | --- | --- | --- | --- |
-| [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Land the candidate flow, then assign tester-specific guide copies and run tasks | July 17 |
+| [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 
 ---
 
@@ -33,13 +33,10 @@ No tasks currently need review.
 
 | Task | Owner | Next move | Due |
 | --- | --- | --- | --- |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Tour the reviewed labs, then use Codex and the repo-local skill on one small lab | July 17 |
+| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Add any useful research or idea Source and link it from the research index | July 18 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
-| [Prototype learner scenarios](./2026-07-15-prototype-learner-scenarios.task.md) | Andrew | Choose a scenario and build the smallest coherent flow | July 18 |
-| [Draft the college-student scenario](./2026-07-15-draft-college-student-scenario.task.md) | Tram | Choose the learning outcome and outline its learner journey | July 18 |
-| [Define and run Codex-driven evaluations](./2026-07-15-run-codex-driven-evaluations.task.md) | Tram | Define the first reproducible evaluation case | July 19 |
-| [Select the demo story and video outline](./2026-07-15-select-demo-story.task.md) | Tram | Rank the candidate scenarios against the product claim | July 18 |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Unassigned | Name an owner and audit the starter's current gap | July 20 |
-| [Set up repository commit notifications](./2026-07-15-set-up-commit-notifications.task.md) | Andrew | Choose the team-safe notification trigger | July 16 |
 
 ---
 

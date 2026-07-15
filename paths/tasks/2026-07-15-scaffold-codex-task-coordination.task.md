@@ -56,3 +56,14 @@ reference now points to the current durable quiz example.
   `quick_validate.py`.
 - **Skipped:** Play review was not needed because this change adds ordinary
   prose and tables without new interactive or presentation behavior.
+- **2026-07-15:** Refreshed the queue around the current team handoffs. Andrew's
+  next work now tours the reviewed labs and tests the repo-local authoring
+  skill; Tram's three unstarted assignments are consolidated into one open
+  research contribution; the unused commit-notification task was removed;
+  Mark's MVP guide remains explicitly in progress and not ready for testers.
+  The authoring skill now matches `~/sources/pathmx` at `c50ab7c`, including
+  its design-engineering reference. PathMX 0.1.9 built 126 artifacts with only
+  the three known Tufte token warnings, the skill validator passed, all nine
+  canonical task files appear once on the dashboard, and `git diff --check`
+  passed. Play was skipped because the PathMX changes are task prose, links,
+  and guidance rather than new interactive behavior.

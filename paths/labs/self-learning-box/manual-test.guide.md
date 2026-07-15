@@ -4,7 +4,6 @@ status: active
 date: 2026-07-15
 related:
   - ../../tasks/2026-07-15-spike-starter-init-flow.task.md
-  - ../../tasks/2026-07-15-run-codex-driven-evaluations.task.md
   - https://github.com/pathmx/pathmx-learning-starter
   - https://github.com/pathmx/pathmx/blob/main/paths/inbox/2026-07-15-pathmx-starter-init-mvp.issue.md
   - https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.design.md

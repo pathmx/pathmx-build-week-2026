@@ -1,6 +1,6 @@
 ---
 name: pathmx-authoring
-description: Author, revise, review, and verify PathMX Markdown sources. Use for source roles, frontmatter, Blocks, Beats, links, directives, variables, includes, CSS, themes, fonts, tasks or questions, Literate Components, Play pacing, and PathMX CLI preview or build checks in any repository.
+description: Author, revise, review, and verify PathMX Markdown sources. Use for source roles, frontmatter, Blocks, Beats, links, directives, variables, includes, CSS, themes, fonts, tasks or questions, Literate Components, interactive or presentational design engineering, learning and focus flows, Play pacing, and PathMX CLI preview or build checks in any repository.
 ---
 
 # PathMX Authoring
@@ -10,9 +10,9 @@ playable experience.
 
 ## Workflow
 
-1. Read the nearest repository instructions and inspect its PathMX config,
-   installed version, entry sources, and nearby examples. Do not assume a
-   particular folder layout or project workflow.
+1. Read the nearest repository instructions, then inspect only the config,
+   version, entry Source, and nearby examples relevant to the requested change.
+   Do not assume a particular folder layout or preload broad workspace indexes.
 2. Identify the source's role and audience. Prefer the repository's existing
    type-hinted filename conventions.
 3. Draft ordinary Markdown first. Add PathMX metadata or capabilities only when
@@ -26,7 +26,9 @@ playable experience.
 
 ## Reference Routing
 
-Read the complete reference that matches the task:
+Open a reference only when that surface is part of the task. Read the relevant
+sections needed to make and verify the change; do not preload unrelated
+references:
 
 - `references/source-authoring.md` — source roles, metadata, Blocks, Beats,
   links, built-in capabilities, and review.
@@ -34,12 +36,18 @@ Read the complete reference that matches the task:
   theme tokens, color modes, fonts, cascade order, and print.
 - `references/literate-components.md` — component definitions, templates,
   resources, styles, scripts, state, lifecycle, and Player Context Actions.
+- `references/design-engineering.md` — visual direction, hierarchy, interaction
+  feedback, motion, Block/Beat focus flow, responsive composition, performance,
+  and rendered polish review.
 - `references/tooling-and-verification.md` — CLI selection, builds, preview,
   diagnostics, and verification.
 
-For CSS, theme, or font work, read the source-authoring and styling references.
-For component styling, also read the Literate Component reference. Read the
-tooling reference before running PathMX commands.
+For CSS, theme, or font work, use the source-authoring and styling references.
+For component styling, also use the Literate Component reference. Consult the
+design-engineering reference for interactive or presentational Literate
+Components and custom HTML/CSS, after the applicable Source, styling, and
+component contracts. Consult the tooling reference before version-sensitive,
+graph-mutating, or preview commands.
 
 ## Guardrails
 

@@ -30,9 +30,9 @@ installer into competition scope.
 
 ## Next Move
 
-Get the general named Starter init contract reviewed, land the candidate CLI
-and portable teaching skill, create one guide copy and hub task per tester,
-then run the
+Finish and publish the MVP guide flow and required initializer path. Keep the
+tester handoff pending until the guide is actually ready, then create one guide
+copy and hub task per tester and run the
 [self-learning Starter MVP test](../labs/self-learning-box/manual-test.guide.md)
 from two uniquely generated folders with fresh Codex tasks.
 
@@ -104,3 +104,6 @@ from two uniquely generated folders with fresh Codex tasks.
   reports the expanded guide at the same route with 23 Blocks and HTTP 200;
   live survey submission remains deliberately unclaimed until 0.1.9 or the
   packed candidate is used with a tester copy.
+- **2026-07-15:** Mark is continuing the MVP guide and initializer flow with a
+  goal of publishing it later today. It is not ready for Andrew or Tram's
+  tester handoff yet; their current work does not depend on it.

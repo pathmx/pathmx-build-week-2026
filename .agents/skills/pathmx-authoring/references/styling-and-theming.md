@@ -99,8 +99,13 @@ Set named token groups in frontmatter:
 theme:
   color:
     accent: oklch(0.58 0.18 250)
+  measure: 72ch
   prose:
-    width: 72ch
+    size: 1rem
+    leading: 1.65
+    flow: 1em
+  shape:
+    radius: 0.5rem
   code:
     bg: oklch(0.96 0 0)
   dark:
@@ -110,8 +115,11 @@ theme:
 ```
 
 PathMX maps these values to public `--pmx-*` variables consumed by runtime
-CSS. Theme values on the root Source apply across its bundle; a child Source
-can override values for its own rendered document.
+CSS. `measure` controls document width; `prose.size`, `prose.leading`, and
+`prose.flow` control typography and vertical rhythm. A frontmatter theme
+applies only to that Source's mounted document. Navigating to another Source
+selects its own theme or the Runtime defaults. Use `[@root.styles]` when token
+overrides should deliberately span a root bundle.
 
 By default, themes follow the runtime or Player scheme and the user's system
 preference. Put mode-specific tokens under `light:` and `dark:`. Lock a Source
@@ -170,9 +178,13 @@ PathMX's effective order is:
 Do not assume Tailwind, Tailwind Preflight, or a `.prose` wrapper exists. Let
 component CSS own component internals while inheriting `--pmx-*` tokens.
 
-The runtime view uses `.pmx-page`, `.pmx-document`, `.pmx-block`, and
-`.pmx-code-block`. Player chrome and other augmented interfaces are separate
-surfaces and should keep their own scope.
+The runtime view uses `.pmx-page`, `.pmx-document`, `.pmx-block`, `.pmx-prose`,
+and `.pmx-code-block`. `.pmx-block` is the scene/focus boundary; `.pmx-prose`
+owns ordinary Markdown typography. Literate Components receive
+`data-pathmx-prose="off"` automatically so baseline prose selectors do not
+style their internal UI. Authors can use the same attribute on custom nested
+interfaces. Player chrome and other augmented interfaces are separate surfaces
+and should keep their own scope.
 
 The runtime already provides print, focus, forced-colors, reduced-motion, and
 readability defaults. Extend those defaults narrowly instead of replacing
@@ -183,7 +195,7 @@ them wholesale.
 Review the rendered result, not only the CSS source. Check the applicable set:
 
 - default, light, dark, system, and deliberately forced color schemes;
-- root inheritance and child theme overrides;
+- source-local themes and deliberate root-style token overrides;
 - included Blocks and the Sources that receive their Block-scoped styles;
 - wide and narrow layouts, including `pathmx-runtime` container behavior;
 - print output for print-specific work;
