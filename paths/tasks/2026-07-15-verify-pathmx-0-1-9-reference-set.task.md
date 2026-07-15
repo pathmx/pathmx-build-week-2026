@@ -55,3 +55,11 @@ the focused routes before graduating it.
   CLI reaching the updater.
 - **2026-07-15:** `pathmx self-update` now reports 0.1.9. Mark resumed the task
   and moved it to `in-progress` for released-contract verification.
+- **2026-07-15:** Diagnosed `build-week.pathmx.net` serving the pre-0.1.9
+  Player from a gateway process that had remained alive since July 4. Restarted
+  only the `net.pathmx.spaces-gateway` launch agent; the Cloudflare tunnel kept
+  its existing process. The replacement gateway loaded PathMX 0.1.9, emitted
+  the current Player and Runtime asset hashes, returned HTTP 200 for all seven
+  registered public routes, and preserved the public 404 control boundary and
+  405 read-only boundary. A real browser Play check focused the Tasks link and
+  displayed the positional `1 Tasks` link Action hint with no console errors.
