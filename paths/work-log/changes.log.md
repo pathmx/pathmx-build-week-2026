@@ -9,6 +9,23 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The public Build Week Space now runs PathMX 0.1.10
+
+PathMX 0.1.10 is installed on `muthurd`, and the replacement Spaces gateway is
+serving its bundled Player at
+[build-week.pathmx.net](https://build-week.pathmx.net/). Only the gateway was
+restarted; the existing Cloudflare tunnel kept the same process throughout.
+
+The public Player JavaScript and Player/runtime CSS hashes changed from the
+0.1.9 bundle. The root, tasks, labs, changes log, and Kepler demo routes all
+returned HTTP 200, while the private health path remained 404 and a write
+request remained 405. Visual review was skipped because asset identity and the
+public read-only behavior were verified directly. Detailed deployment evidence
+is recorded in the
+[owning task](../tasks/2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md).
+
+---
+
 ## The labs hub now lists only ready demos
 
 The [labs index](../labs/index.path.md) now has one plain `Demos` section that
