@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 reviewer: Andrew
 date: 2026-07-16
@@ -20,6 +20,18 @@ contracts.
 
 ---
 
+## Result
+
+Added the [YouTube Learning Skill](../research/youtube-learning-skill.path.md)
+research note and linked it from the
+[Research](../research/index.path.md) index. The note separates the current
+official YouTube caption boundary from the proposed Codex skill, PathMX
+player/transcript experience, helper scripts, question shape, and MVP path.
+
+Review by Andrew was assigned but skipped for this concise research capture.
+
+---
+
 ## Done When
 
 - The research note separates current YouTube platform constraints from the
@@ -33,5 +45,9 @@ contracts.
 
 ## Activity
 
+- **2026-07-16:** Added and linked the research note. `pathmx self-update`
+  confirmed 0.1.13 is current. `pathmx build -o .pathmx-check --clean` passed
+  with 184 artifacts and only the three known Tufte theme warnings.
+  `git diff --check` passed for the touched research and task files.
 - **2026-07-16:** Claimed for a concise research note on a YouTube learning
   skill and transcript-backed PathMX quiz/player flow.

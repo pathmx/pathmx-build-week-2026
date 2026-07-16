@@ -24,7 +24,6 @@ the task has a named owner.
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
-| [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Andrew | Draft and link the YouTube learning skill research note | July 16 |
 
 ---
 
@@ -57,13 +56,14 @@ No tasks are currently blocked.
 
 | Task | Owner | Reviewer | Result |
 | --- | --- | --- | --- |
+| [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Andrew | Research note captures official YouTube constraints, skill package, player shape, and MVP path |
 | [Spike practice interview voice agent](./2026-07-16-spike-practice-interview-voice.task.md) | Mark | Tram | Immersive Realtime interview simulator, research note, and proposed Host Action shape added |
 | [Add task reviewers to the workflow](./2026-07-16-add-task-reviewers.task.md) | Mark | Andrew | Reviewer frontmatter, dashboard projection, and Codex workflow guidance added |
 | [Sync the PathMX authoring skill](./2026-07-16-sync-pathmx-authoring-skill.task.md) | Mark | Andrew | Complete canonical package synchronized; repeatable check/write command verified |
 | [Resolve the Campus Constellation merge](./2026-07-15-resolve-campus-constellation-merge.task.md) | Mark | Tram | Both outcomes preserved as valid Blocks; conflict markers and whitespace errors removed |
 | [Add a reviewed 3D Globe reference](./2026-07-15-add-three-globe-reference.task.md) | Mark | Andrew | One-scene local-data globe copied from reviewed Core, linked, and verified in Browse and Play |
 | [Update the muthurd gateway to PathMX 0.1.10](./2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md) | Mark | Andrew | CLI updated, gateway replaced, tunnel preserved, and public 0.1.10 assets verified |
-| [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Tram | Labs hub now links only the six ready demos; unfinished Sources remain unlinked |
+| [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Tram | Labs hub now links only ready demos; unfinished Sources remain unlinked |
 | [Add a change log workflow](./2026-07-15-add-change-log-workflow.task.md) | Mark | Andrew | Playable Block-based log, agent push rule, checker, and July 15 history added |
 | [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Andrew | Released-contract review, full build, and focused reference Play checks complete |
 | [Provision the Build Week Space on muthurd](./2026-07-15-provision-muthurd-space.task.md) | Mark | Andrew | Clean checkout, current tooling, and read-only `build-week.pathmx.net` Space verified |
