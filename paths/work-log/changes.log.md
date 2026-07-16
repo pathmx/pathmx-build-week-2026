@@ -9,6 +9,16 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The task dashboard drops a stale demo count
+
+The [task dashboard](../tasks/index.tasks.md) result for narrowing the labs
+index no longer hardcodes "six" ready demos. The reviewed 3D globe reference
+landed after that task, so the hub now links seven; the row now reads
+count-agnostic to match the [labs index](../labs/index.path.md) and stay true
+as the demo set changes.
+
+---
+
 ## Campus Constellation turns college networking into interactive practice
 
 The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
