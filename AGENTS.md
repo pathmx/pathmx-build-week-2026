@@ -18,6 +18,10 @@ pathmx self-update
 ```
 
 - **Important:** Use the `pathmx-authoring` skill for all PathMX content.
+- Treat the repo-local skill as a byte-for-byte mirror of canonical PathMX. Do
+  not customize the copied package here; make reusable changes in canonical
+  PathMX and use its `sync:pathmx-authoring` check/write command to reconcile
+  this repository.
 - Use ordinary readable Markdown as the source of truth.
 - Use type-hinted filenames and relative Markdown links.
 - Separate major playable moments with `---` on its own line.

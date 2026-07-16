@@ -14,6 +14,7 @@ patterns.
 ## Contents
 
 - [Frame The Focus Move](#frame-the-focus-move)
+- [Write The Experience Brief](#write-the-experience-brief)
 - [Choose The Smallest Surface](#choose-the-smallest-surface)
 - [Design Blocks And Beats Together](#design-blocks-and-beats-together)
 - [Compose A Subject-Specific Visual System](#compose-a-subject-specific-visual-system)
@@ -45,6 +46,87 @@ when interaction makes the concept materially easier to inspect.
 Keep the subject visible in the art direction. A cell explorer, proof studio,
 historical timeline, and product walkthrough should not become the same grid of
 equal-weight cards with different labels.
+
+## Write The Experience Brief
+
+Before building an ambitious visual or interactive surface, write a compact
+brief that describes the experience independently of its implementation. Use
+this step when arrival, spatial composition, continuous behavior, multiple
+modes, or a showpiece interaction materially affects understanding. Skip it for
+ordinary prose and straightforward built-in presentation.
+
+Name the experience in observable terms:
+
+| Field | Question |
+| --- | --- |
+| Thesis | What should this medium let the learner understand, feel, or do that static prose cannot? |
+| Arrival | What is already visible, active, and understandable before the first action? |
+| Anti-targets | What plausible but disappointing or misleading result must this not become? |
+| Surface map | Which regions, layers, scales, or anchors must remain related and legible? |
+| Arc | How does attention or agency progress from arrival through inspection, action, feedback, and exit? |
+| Controls | Which small set of meaningful actions or modes need a clear default and reset? |
+| Visible consequences | What observable evidence proves that each promised action, state, or behavior exists? |
+| Protected invariants | Which conceptual, spatial, visual, or interaction truths define the experience? |
+| Degradation order | What may simplify first, and what must survive every supported capability level? |
+| Evidence and fallback | What sourcing, uncertainty, accessibility, reduced-motion, loading, failure, and non-JavaScript result matters? |
+| Proof | Which rendered scenarios will demonstrate that the brief was fulfilled? |
+
+Keep the brief short enough to guide decisions. Prefer one decisive thesis,
+two or three anti-targets, and a small number of protected invariants over a
+catalog of adjectives. Separate experience requirements from implementation
+choices such as a rendering library, shader technique, or component API. Add
+those choices only after inspecting the repository's accepted capabilities.
+
+Use an archetype as a prompt, not as a required taxonomy:
+
+| Experience shape | Useful design question |
+| --- | --- |
+| World or panorama | How do overview, navigation, and close inspection each reward attention? |
+| Timeline or transformation | What stays continuous while time or state changes? |
+| Playable challenge | What is the immediate action, feedback, goal, and reset loop? |
+| Living artwork or artifact | What fidelity establishes recognition before interpretation or transformation begins? |
+| Impossible vantage or scale | What anchors orientation, embodiment, and relative size? |
+| Natural, physical, or data process | Which cycle, causal relationship, or emergent behavior should become observable? |
+
+A brief for an orbit explorer might look like this:
+
+> **Thesis:** Make changing orbital speed visibly reshape the orbit instead of
+> presenting the relationship as a formula alone.
+>
+> **Arrival:** The body is already moving on an elliptical orbit; its velocity
+> vector, current speed, and swept area are visible without opening a panel.
+>
+> **Anti-targets:** Not a decorative solar system, not a passive animation, and
+> not a control board that visually outweighs the orbit.
+>
+> **Surface map:** Keep the central body, full orbit, moving body, velocity
+> vector, and focused explanation spatially related at every supported width.
+>
+> **Arc:** Observe one period, predict the effect of a speed change, adjust it,
+> compare the new path, then explain the result.
+>
+> **Controls:** Pause or resume, adjust speed at the current point, and reset to
+> the authored orbit. Camera movement remains private implementation state.
+>
+> **Visible consequences:** A speed change immediately updates the vector,
+> predicted path, period, and comparison trace.
+>
+> **Protected invariants:** Orbital geometry, relative vector direction, the
+> predict-adjust-compare sequence, and a dependable reset remain correct.
+>
+> **Degradation order:** Reduce stars, glow, trail density, and interpolation
+> smoothness before simplifying the orbit, vectors, labels, or feedback.
+>
+> **Evidence and fallback:** Cite the modeled relationship, expose the
+> approximation, preserve keyboard operation and reduced motion, and yield a
+> labeled static diagram plus explanation when the simulation cannot run.
+>
+> **Proof:** Inspect arrival, every authored state, backward Play, reset,
+> reduced motion, narrow width, low capability, and non-JavaScript output.
+
+After the brief is credible, use the surface ladder, then map its arc to
+Blocks, Beats, and component state. If the brief cannot say what the learner
+does or notices, visual ambition alone does not justify a custom surface.
 
 ## Choose The Smallest Surface
 
@@ -115,6 +197,11 @@ Build hierarchy before decoration:
 - adapt layout through the `pathmx-runtime` container when the surface may be
   embedded, split, focused, or viewed narrowly.
 
+When custom color or typography materially shapes the surface, use the color
+and typography references after the styling contract. Align text, icons, and
+asymmetric shapes optically when geometric centering still looks wrong, and
+keep the adjustment owned by the component that renders the shape.
+
 Avoid repeated equal-weight cards, decorative density, viewport-locked
 composition, and effects that reduce text or code readability. Do not restyle
 Player chrome from authored Source.
@@ -136,6 +223,11 @@ success, empty, and error.
 - Anchor transforms, popovers, and reveals to the control or location that
   caused them.
 - Preserve visible focus and an obvious keyboard order.
+- Give custom pointer targets at least `24×24` CSS pixels or enough separation
+  to satisfy [WCAG 2.2 target-spacing rules](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
+  Prefer `44×44` for frequent, consequential, or touch-primary controls when
+  the composition allows it. Expanded hit areas must not overlap adjacent
+  controls.
 - Use pointer capture and protect against extra touches when a custom drag
   interaction needs them.
 - Keep component and Player controls on the same `state` channel when they
@@ -179,6 +271,11 @@ Use keyframes for controlled sequences that should run as authored, not for UI
 that may reverse repeatedly. Prefer transform and opacity for high-frequency
 motion, but measure the real surface instead of turning that heuristic into a
 ban on necessary layout changes.
+
+Render an established default state settled. Do not animate it merely because
+the page or component mounted; use an arrival animation only when that entry is
+an intentional authored Beat or explains the subject. Animate later state
+changes through the normal interruptible and reduced-motion paths.
 
 ## Use PathMX Focus Lifecycles
 
@@ -281,10 +378,16 @@ Beat-entry behavior is essential.
   active.
 - Avoid inherited CSS-variable writes in frame-by-frame hot paths when they
   force a large subtree to recalculate.
+- Add `will-change` only after an observed first-frame stutter and only for the
+  specific compositor-friendly property that changes. Never use
+  `will-change: all`; unnecessary layers consume memory.
 - Exercise loading, empty, dependency-failure, and reduced-capability states.
 - Keep controls usable before decorative assets or motion finish loading.
 - Preserve readable yielded or surrounding content when JavaScript, WebGL,
   audio, or a remote dependency is unavailable.
+- Protect the brief's defining invariants under every supported quality level.
+  Reduce ambient density, decorative effects, and interpolation richness before
+  simplifying the concept, meaningful controls, or observable feedback.
 
 Use only capabilities implemented by the installed PathMX version. Report a
 missing lifecycle or state contract rather than hiding it with a page-global
@@ -298,6 +401,8 @@ focus flow.
 
 Check the applicable set:
 
+- the brief's arrival, anti-targets, visible consequences, protected
+  invariants, and degradation order;
 - first-glance hierarchy and the dominant learning object;
 - Browse and Play behavior;
 - Block arrival, each Beat entry, ordered state steps, backward movement,
@@ -309,6 +414,7 @@ Check the applicable set:
 - wide, narrow, embedded, and focused containers;
 - light, dark, system, and deliberately forced schemes;
 - keyboard, pointer, and touch operation;
+- pointer-target size, spacing, and non-overlapping extended hit areas;
 - visible focus, contrast, forced colors, and reduced motion;
 - loading, empty, failure, and reduced-capability states;
 - live refresh and instance cleanup; and

@@ -22,9 +22,12 @@ Source.
 
 PathMX 0.1.10 built the space successfully with both component roots, scoped
 styles, scripts, and ordered Player states resolved. `git diff --check` also
-passed. Visual, keyboard, pointer, and narrow-container Play review remain
-before final acceptance; detailed evidence is recorded in the
-[owning task](../tasks/2026-07-15-contribute-research-explorations.task.md).
+passed. The merge cleanup preserved this entry and the Three Globe outcome as
+separate Blocks; its verification is recorded in the
+[cleanup task](../tasks/2026-07-15-resolve-campus-constellation-merge.task.md).
+Visual, keyboard, pointer, and narrow-container Play review remain before final
+acceptance; detailed evidence is recorded in the
+[owning research task](../tasks/2026-07-15-contribute-research-explorations.task.md).
 
 ---
 

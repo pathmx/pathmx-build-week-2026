@@ -278,6 +278,13 @@ camera, animation-frame, and purely visual state private. Give large scenes a
 readable entry, observable goal, useful fallback/loading/failure UI, and a
 clear exit.
 
+For a large scene or simulation, translate the experience brief into one
+component contract before coding: initial render, Player-visible state, private
+interaction state, reset behavior, continuous `presented` work, observable
+consequences, protected invariants, and degradation order. Do not expose a
+camera pose, particle count, or render-quality tier as authored state unless it
+is itself a meaningful learner step.
+
 Do not assume these portable-baseline APIs exist: persistent component state,
 set-valued state, a generic readiness protocol, package module resolution,
 TypeScript/JSX compilation, or framework-specific rendering. Treat
@@ -293,6 +300,8 @@ Review that:
 - CSS uses component and runtime-container scopes;
 - scripts operate on one `el` and clean up owned resources;
 - Player-visible and private state are not confused with durable evidence;
+- the initial render, reset, low-capability result, and protected invariants
+  match the experience brief;
 - Context Actions stay ephemeral;
 - Play, narrow width, reduced motion, live refresh, loading, and failure paths
   behave coherently.

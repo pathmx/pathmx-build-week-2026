@@ -1,6 +1,6 @@
 ---
 name: pathmx-authoring
-description: Author, revise, review, and verify PathMX Markdown sources. Use for source roles, frontmatter, Blocks, Beats, links, directives, variables, includes, CSS, themes, fonts, tasks or questions, Literate Components, interactive or presentational design engineering, learning and focus flows, Play pacing, and PathMX CLI preview or build checks in any repository.
+description: Author, revise, review, and verify PathMX Markdown sources. Use for source roles, frontmatter, Blocks, Beats, links, directives, variables, includes, CSS, themes, color, contrast, typography, fonts, tasks or questions, Literate Components, interactive or presentational design engineering, learning and focus flows, Play pacing, and PathMX CLI preview or build checks in any repository.
 ---
 
 # PathMX Authoring
@@ -15,13 +15,16 @@ playable experience.
    Do not assume a particular folder layout or preload broad workspace indexes.
 2. Identify the source's role and audience. Prefer the repository's existing
    type-hinted filename conventions.
-3. Draft ordinary Markdown first. Add PathMX metadata or capabilities only when
+3. For ambitious visual or interactive work, write a short experience brief
+   before choosing Blocks or implementation: name the thesis, arrival,
+   anti-targets, arc, meaningful controls, protected invariants, and proof.
+4. Draft ordinary Markdown first. Add PathMX metadata or capabilities only when
    they improve structure, reuse, navigation, presentation, or interaction.
-4. Shape each Block as one coherent reader, learner, or reviewer move. Use
+5. Shape each Block as one coherent reader, learner, or reviewer move. Use
    Beats for meaningful reveal or interaction stages inside that move.
-5. Preserve relative links and reuse existing directives, components, and
+6. Preserve relative links and reuse existing directives, components, and
    project conventions. Do not invent syntax or runtime APIs.
-6. Verify in proportion to the change, using the project's pinned tooling and
+7. Verify in proportion to the change, using the project's pinned tooling and
    a scratch output directory when building.
 
 ## Reference Routing
@@ -34,6 +37,10 @@ references:
   links, built-in capabilities, and review.
 - `references/styling-and-theming.md` — source and root CSS, selector scope,
   theme tokens, color modes, fonts, cascade order, and print.
+- `references/color-and-contrast.md` — semantic color roles, OKLCH, modes,
+  contrast pairs, gamut, fallbacks, and color review.
+- `references/typography.md` — hierarchy, measure, wrapping, interface text,
+  font behavior, language direction, and typography review.
 - `references/literate-components.md` — component definitions, templates,
   resources, styles, scripts, state, lifecycle, and Player Context Actions.
 - `references/design-engineering.md` — visual direction, hierarchy, interaction
@@ -41,13 +48,22 @@ references:
   and rendered polish review.
 - `references/tooling-and-verification.md` — CLI selection, builds, preview,
   diagnostics, and verification.
+- `references/question-play-verification.md` — direct choice actions,
+  text-control focus, durable submission, forward navigation, and test-response
+  cleanup in the Player.
 
-For CSS, theme, or font work, use the source-authoring and styling references.
-For component styling, also use the Literate Component reference. Consult the
-design-engineering reference for interactive or presentational Literate
-Components and custom HTML/CSS, after the applicable Source, styling, and
-component contracts. Consult the tooling reference before version-sensitive,
-graph-mutating, or preview commands.
+For CSS, theme, color, or font work, use the source-authoring and styling
+references. Also read the color or typography reference when that craft surface
+is part of the task. For component styling, also use the Literate Component
+reference. Consult the design-engineering reference for interactive or
+presentational Literate Components and custom HTML/CSS, after the applicable
+Source, styling, and component contracts. Consult the tooling reference before
+version-sensitive, graph-mutating, or preview commands.
+
+For task or question authoring, read the source-authoring reference. When the
+work includes answering, submitting, restoring, or advancing from a question
+in Play, also read the question Play verification reference and follow its
+write-cleanup boundary.
 
 ## Guardrails
 
