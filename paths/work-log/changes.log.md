@@ -9,6 +9,7 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+<<<<<<< HEAD
 ## Campus Constellation turns college networking into interactive practice
 
 The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
@@ -25,6 +26,23 @@ styles, scripts, and ordered Player states resolved. `git diff --check` also
 passed. Visual, keyboard, pointer, and narrow-container Play review remain
 before final acceptance; detailed evidence is recorded in the
 [owning task](../tasks/2026-07-15-contribute-research-explorations.task.md).
+=======
+## A reviewed local-resource 3D globe joins the demo set
+
+The [Three Globe reference](../labs/three-globe/index.demo.md) now provides one
+focused, data-backed scene at `/labs/three-globe`. It copies the reviewed
+`<three-globe-scene>` component, network JSON, local Three.js bundle, local NASA
+Earth texture, and provenance notices from immutable upstream commit
+`35af1917`; the labs index links the new route.
+
+The public PathMX 0.1.10 build produced 142 artifacts. Desktop and 390 px Play
+reviews covered texture and data readiness, direct drag, responsive layout,
+and component Beat presentation. The focused upstream gauntlet passed all
+eight lifecycle, refresh, interaction, and failure checks, and the strict
+maintainability review found no blocker. Canvas rotation remains pointer-only
+and auto-rotation does not yet opt out for reduced motion; those limits are
+recorded in the [owning task](../tasks/2026-07-15-add-three-globe-reference.task.md).
+>>>>>>> 32dec503cfb7c5ee8d09878b4dcf9ceb406004b4
 
 ---
 
