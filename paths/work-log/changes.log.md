@@ -9,6 +9,23 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Campus Constellation stops leaking implementation detail into learner copy
+
+Two learner-facing surfaces in the
+[Campus Constellation path](../research/campus-constellation-networking.path.md)
+no longer expose persistence or agent internals. The "Choose Your North Star"
+question prompt drops "saved as readable learning evidence," and the
+adaptive-plan closing no longer narrates that Codex updates the path "outside the
+chat." Per the authoring contract (`source-authoring.md`, Interactive And
+Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
+data — the question's `submission`/`response` topmatter and a `note` on the
+adaptive-plan Block — while the learner copy states only the decision and next
+move. The scoped PathMX 0.1.13 build produced 161 artifacts with no new warnings
+(only the three known Tufte token diagnostics), and `git diff --check` passed.
+Research-owner sign-off remains before this lands on shared `main`.
+
+---
+
 ## The task dashboard drops a stale demo count
 
 The [task dashboard](../tasks/index.tasks.md) result for narrowing the labs
