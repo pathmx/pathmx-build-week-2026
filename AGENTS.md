@@ -38,17 +38,21 @@ pathmx self-update
 - Use only these task statuses: `ready`, `in-progress`, `review`, `blocked`, and
   `done`.
 - Before starting work, find or create its task, set `status: in-progress`, name
-  the accountable human in `owner`, and update the dashboard in the same
-  change. Never use a Codex task ID or agent session as an owner.
-- A prompt to track or add work creates and links a task. A prompt to take or
-  work on a task claims it. A prompt to block, review, or finish a task updates
-  both the task and dashboard. A prompt to refresh the board reconciles every
-  task file with the dashboard.
+  the accountable human in `owner`, name a reviewer in `reviewer`, and update
+  the dashboard in the same change. Never use a Codex task ID or agent session
+  as an owner or reviewer.
+- Reviewers must be Mark, Tram, or Andrew. Prefer a reviewer who is not the
+  owner whenever the task has a named owner.
+- A prompt to track or add work creates and links a task with a reviewer. A
+  prompt to take or work on a task claims it. A prompt to block, review, or
+  finish a task updates both the task and dashboard. A prompt to refresh the
+  board reconciles every task file with the dashboard.
 - Keep task bodies concise: outcome, next move, done-when checks, and dated
   activity or result notes. Put implementation in the appropriate lab or
   external repository and link it from the task.
 - To finish work, record the checks run and any skipped verification, link the
-  result artifacts, set `status: done`, and move its dashboard row to Done.
+  result artifacts, record the reviewer outcome or skipped review, set
+  `status: done`, and move its dashboard row to Done.
 - Record decisions and accepted changes in this repository, not only in chat.
 - Never commit private team links, credentials, sensitive learner data, raw
   transcripts, or Codex task IDs.

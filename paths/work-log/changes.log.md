@@ -9,6 +9,46 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Practice interview voice-agent spike maps the Realtime path
+
+The new
+[Practice Interview Voice Agent](../research/practice-interview-voice-agent.path.md)
+research note records the proposed OpenAI Realtime WebRTC architecture, prompt
+shape, server-side scoring boundary, and unlanded Host Action contracts for
+starting a session, scoring a turn, and saving durable evidence. The companion
+[Practice Interview Simulator](../labs/practice-interview/index.demo.md) lab
+adds an immersive local simulation with a room scene, mission-style interview
+modes, live transcript signals, debrief ranking, targeted follow-up, polish or
+practice routing, and a dossier-style evidence packet so reviewers can inspect
+the learning loop without live OpenAI credentials.
+
+The owning
+[practice-interview task](../tasks/2026-07-16-spike-practice-interview-voice.task.md)
+records the checks. PathMX 0.1.13 is current, the final scratch build passed
+with 178 artifacts and only the known Tufte theme warnings, `git diff --check`
+passed, the expected Sources appeared in the scratch graph, and headless Chrome
+exercised desktop and mobile simulator paths through `/labs/practice-interview`.
+Tram remains the assigned human reviewer.
+
+---
+
+## Task workflow now assigns explicit reviewers
+
+The task workflow now records a `reviewer` in every task Source and projects it
+on the [task dashboard](../tasks/index.tasks.md). Reviewer assignment is limited
+to Mark, Tram, or Andrew; owners remain the accountable humans, and the review
+lane now has a named reader for each task.
+
+The change is tracked in the
+[reviewer workflow task](../tasks/2026-07-16-add-task-reviewers.task.md).
+`pathmx self-update` confirmed PathMX 0.1.13 is current, the scratch PathMX
+build passed with only the three known Tufte theme warnings, and
+`git diff --check` passed. Play review was skipped because this is workflow
+prose, frontmatter, and dashboard table work with no new interaction behavior;
+Andrew remains the assigned human reviewer.
+
+---
+
 ## Campus Constellation turns college networking into interactive practice
 
 The new [Campus Constellation path](../research/campus-constellation-networking.path.md)

@@ -1,6 +1,7 @@
 .DS_Store
 .pathmx/
 .pathmx-check/
+.pathmx*
 node_modules/
 .env
 .env.*
