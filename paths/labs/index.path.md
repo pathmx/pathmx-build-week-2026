@@ -27,3 +27,6 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 - [Kepler orbit](./kepler-orbit/index.demo.md) — a focus-aware orbital field
   instrument with ordered learning states, direct controls, reduced-motion
   behavior, and animation scoped to the presented component Beat.
+- [3D globe](./three-globe/index.demo.md) — a data-backed Three.js scene with
+  local network data, a local Earth texture, direct rotation, and animation
+  scoped to the presented component Beat.

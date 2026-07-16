@@ -1,0 +1,113 @@
+{
+  "points": [
+    {
+      "id": "nyc",
+      "name": "New York",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "value": 5.8,
+      "color": "#22d3ee",
+      "label": "NYC",
+      "ring": true
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "lat": 51.5072,
+      "lng": -0.1276,
+      "value": 5.1,
+      "color": "#a78bfa",
+      "label": "LDN",
+      "ring": true
+    },
+    {
+      "id": "lagos",
+      "name": "Lagos",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "value": 3.8,
+      "color": "#fbbf24",
+      "label": "LOS",
+      "ring": true
+    },
+    {
+      "id": "dubai",
+      "name": "Dubai",
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "value": 4.4,
+      "color": "#fb7185",
+      "label": "DXB"
+    },
+    {
+      "id": "mumbai",
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "value": 4.6,
+      "color": "#34d399",
+      "label": "BOM"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "lat": 1.3521,
+      "lng": 103.8198,
+      "value": 4.7,
+      "color": "#60a5fa",
+      "label": "SIN",
+      "ring": true
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "lat": 35.6762,
+      "lng": 139.6503,
+      "value": 5.3,
+      "color": "#f472b6",
+      "label": "TYO",
+      "ring": true
+    },
+    {
+      "id": "sydney",
+      "name": "Sydney",
+      "lat": -33.8688,
+      "lng": 151.2093,
+      "value": 3.5,
+      "color": "#38bdf8",
+      "label": "SYD"
+    },
+    {
+      "id": "sao-paulo",
+      "name": "Sao Paulo",
+      "lat": -23.5558,
+      "lng": -46.6396,
+      "value": 4.2,
+      "color": "#f97316",
+      "label": "SAO"
+    },
+    {
+      "id": "san-francisco",
+      "name": "San Francisco",
+      "lat": 37.7749,
+      "lng": -122.4194,
+      "value": 4.9,
+      "color": "#2dd4bf",
+      "label": "SFO",
+      "ring": true
+    }
+  ],
+  "arcs": [
+    { "from": "san-francisco", "to": "tokyo", "color": ["#2dd4bf", "#f472b6"] },
+    { "from": "san-francisco", "to": "nyc", "color": ["#2dd4bf", "#22d3ee"] },
+    { "from": "nyc", "to": "london", "color": ["#22d3ee", "#a78bfa"] },
+    { "from": "london", "to": "lagos", "color": ["#a78bfa", "#fbbf24"] },
+    { "from": "london", "to": "dubai", "color": ["#a78bfa", "#fb7185"] },
+    { "from": "dubai", "to": "mumbai", "color": ["#fb7185", "#34d399"] },
+    { "from": "mumbai", "to": "singapore", "color": ["#34d399", "#60a5fa"] },
+    { "from": "singapore", "to": "tokyo", "color": ["#60a5fa", "#f472b6"] },
+    { "from": "singapore", "to": "sydney", "color": ["#60a5fa", "#38bdf8"] },
+    { "from": "sao-paulo", "to": "nyc", "color": ["#f97316", "#22d3ee"] },
+    { "from": "sao-paulo", "to": "london", "color": ["#f97316", "#a78bfa"] }
+  ]
+}

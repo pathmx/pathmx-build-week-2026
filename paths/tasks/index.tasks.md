@@ -50,6 +50,7 @@ No tasks are currently blocked.
 
 | Task | Owner | Result |
 | --- | --- | --- |
+| [Add a reviewed 3D Globe reference](./2026-07-15-add-three-globe-reference.task.md) | Mark | One-scene local-data globe copied from reviewed Core, linked, and verified in Browse and Play |
 | [Update the muthurd gateway to PathMX 0.1.10](./2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md) | Mark | CLI updated, gateway replaced, tunnel preserved, and public 0.1.10 assets verified |
 | [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Labs hub now links only the six ready demos; unfinished Sources remain unlinked |
 | [Add a change log workflow](./2026-07-15-add-change-log-workflow.task.md) | Mark | Playable Block-based log, agent push rule, checker, and July 15 history added |

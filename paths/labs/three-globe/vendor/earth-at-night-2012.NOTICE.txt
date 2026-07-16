@@ -1,0 +1,17 @@
+Earth at Night 2012
+
+Local demo texture: earth-at-night-2012.jpg
+Source: https://svs.gsfc.nasa.gov/30028/
+Downloaded: 2026-07-15
+SHA-256: 18ee3bd634967a2cacbe9513ba42ff56fe382b3b43604c4cb7e5935309a3ea5d
+
+Credit requested by the source:
+
+NASA Earth Observatory image by Robert Simmon, using Suomi NPP VIIRS data
+provided courtesy of Chris Elvidge (NOAA National Geophysical Data Center).
+Suomi NPP is the result of a partnership between NASA, NOAA, and the
+Department of Defense.
+
+The checked-in 1024x512 JPEG is the source page's `earthatnight2012_print.jpg`
+download. It is loaded locally at runtime so the PathMX demo does not depend
+on a third-party image host.
