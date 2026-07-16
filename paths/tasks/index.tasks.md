@@ -25,7 +25,9 @@ The owner is the accountable human, never a Codex task or session identifier.
 
 ## Review
 
-No tasks currently need review.
+| Task | Owner | Next move | Due |
+| --- | --- | --- | --- |
+| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Review both Campus Constellation components in Play with keyboard and pointer | July 18 |
 
 ---
 
@@ -34,7 +36,6 @@ No tasks currently need review.
 | Task | Owner | Next move | Due |
 | --- | --- | --- | --- |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Tour the reviewed labs, then use Codex and the repo-local skill on one small lab | July 17 |
-| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Add any useful research or idea Source and link it from the research index | July 18 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Unassigned | Name an owner and audit the starter's current gap | July 20 |
 

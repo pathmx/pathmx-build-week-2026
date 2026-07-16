@@ -9,6 +9,25 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Campus Constellation turns college networking into interactive practice
+
+The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
+helps college students define a networking goal, choose a difficulty, rehearse
+conversations, complete a real-world mission, and use evidence to select their
+next practice. Its companion
+[Literate Components](../research/campus-constellation.components.md) add a
+clickable relationship-orbit map and a five-state awkward-moment rehearsal
+deck, while three durable questions preserve the learner's choices in readable
+Source.
+
+PathMX 0.1.10 built the space successfully with both component roots, scoped
+styles, scripts, and ordered Player states resolved. `git diff --check` also
+passed. Visual, keyboard, pointer, and narrow-container Play review remain
+before final acceptance; detailed evidence is recorded in the
+[owning task](../tasks/2026-07-15-contribute-research-explorations.task.md).
+
+---
+
 ## The public Build Week Space now runs PathMX 0.1.10
 
 PathMX 0.1.10 is installed on `muthurd`, and the replacement Spaces gateway is
