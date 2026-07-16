@@ -51,6 +51,8 @@ No tasks are currently blocked.
 
 | Task | Owner | Result |
 | --- | --- | --- |
+| [Sync the PathMX authoring skill](./2026-07-16-sync-pathmx-authoring-skill.task.md) | Mark | Complete canonical package synchronized; repeatable check/write command verified |
+| [Resolve the Campus Constellation merge](./2026-07-15-resolve-campus-constellation-merge.task.md) | Mark | Both outcomes preserved as valid Blocks; conflict markers and whitespace errors removed |
 | [Add a reviewed 3D Globe reference](./2026-07-15-add-three-globe-reference.task.md) | Mark | One-scene local-data globe copied from reviewed Core, linked, and verified in Browse and Play |
 | [Update the muthurd gateway to PathMX 0.1.10](./2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md) | Mark | CLI updated, gateway replaced, tunnel preserved, and public 0.1.10 assets verified |
 | [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Labs hub now links only the six ready demos; unfinished Sources remain unlinked |

@@ -50,15 +50,34 @@ differ.
 
 ## Build And Preview Safely
 
-Do not overwrite output owned by a running server. For a diagnostic build,
-choose a scratch directory outside the configured live output, for example:
+Do not overwrite output owned by a running server. For a focused diagnostic
+build, name the Source under review and choose a scratch directory outside the
+configured live output:
 
 ```sh
-pathmx build -o .pathmx-check
+pathmx build paths/demos/example.demo.md -o .pathmx-check --clean
 ```
+
+Omit the entry only when intentionally verifying the configured or conventional
+default Path. If the command yields after printing the PathMX ASCII-art startup
+logo, the CLI has launched but the build has not necessarily finished. Keep
+polling the same process until it exits. Count the build as passed only when all
+three postconditions hold:
+
+1. the process exits successfully;
+2. its summary reports at least one built Path; and
+3. the expected Source appears in the relevant scratch `sources.json`.
+
+The startup logo, a quiet first chunk, or an empty output directory is
+incomplete evidence, not a successful build.
 
 Check repository ignore rules before leaving scratch output in the worktree,
 and remove only output created by your own verification.
+
+Before using a repository wrapper, inspect what it regenerates. A combined
+Runtime/Player check may update tracked packaged assets before running tests.
+Compare `git status` before and after, and retain those generated changes only
+when the task owns the corresponding source change.
 
 For interactive or presentation changes, preview the actual route with the
 project's normal command. `pathmx play --print-url` can provide a scriptable
@@ -69,6 +88,10 @@ produce a preview.
 When matching a source to a Player route, read the running server's
 `sources.json` and use the route reported for the exact source path. Do not
 guess routes by stripping `.md`.
+
+After changing browser code, Runtime CSS, or packaged assets, explicitly reload
+the review tab before acceptance testing. Watcher health alone does not prove
+that the tab replaced its previously loaded module.
 
 ## Match Checks To Risk
 
@@ -89,6 +112,9 @@ For Literate Components:
 - confirm definitions resolve and custom tags expand;
 - inspect build diagnostics for duplicate names, missing resources, or invalid
   state domains;
+- turn an applicable experience brief into rendered scenarios for arrival,
+  meaningful modes, visible consequences, reset, re-entry, protected
+  invariants, and the declared degradation order;
 - test pointer, keyboard, touch, narrow-width, and reduced-motion behavior;
 - enter and leave the component Beat in Play;
 - confirm continuous work stops off-Beat and cleanup survives live refresh;
@@ -101,6 +127,10 @@ For version-sensitive Actions, generated media, annotations, or plugins:
 - exercise the canonical browser/server path, not only rendered HTML;
 - confirm persisted output remains readable Source after reload when
   persistence is part of the accepted contract.
+
+For question submission and Play navigation, follow
+`question-play-verification.md`; the canonical browser path can write real
+`response` and `submission` data back to the Source.
 
 ## Diagnose Common Failures
 
@@ -128,5 +158,9 @@ Report:
 - changed Source and skill files;
 - commands and checks run, with results;
 - inspected Player routes when visual/interactive behavior matters;
+- build postconditions: completed exit, built-Path count, and expected Source
+  presence in scratch output;
+- any response data written during browser verification and how it was kept or
+  removed;
 - skipped checks and why;
 - relevant PathMX version or configuration assumptions.

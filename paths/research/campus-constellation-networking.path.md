@@ -49,6 +49,11 @@ id: choose-north-star
 title: Choose Your North Star
 actions:
   submit: questions.submitSingleChoice
+response:
+  choice: Become more confident starting conversations
+submission:
+  status: submitted
+  run: run-bd5a56fa-fc1c-4972-87b2-41b8a77b8b7e
 -->
 
 ## Choose Your North Star
@@ -155,8 +160,8 @@ title: Build a Modular Introduction
 
 Create your introduction from three small pieces:
 
-> **Present:** “I’m a second-year computer science student…”  
-> **Curiosity:** “…exploring how network engineers keep systems reliable…”  
+> **Present:** “I’m a second-year computer science student…”<br>
+> **Curiosity:** “…exploring how network engineers keep systems reliable…”<br>
 > **Bridge:** “…and your work on the campus network made me curious about what beginners often misunderstand.”
 
 Put the pieces together, then adapt the length:
@@ -253,7 +258,7 @@ After class or at office hours, use your 15-second introduction and ask one Curi
 
 Send a brief request:
 
-> **Subject:** Student curious about your path into ___  
+> **Subject:** Student curious about your path into ___<br>
 > Hello ___, I’m a ___ student exploring ___. I found your work through ___. Would you be open to a 15–20 minute conversation about your experience? I’m especially curious about ___. I understand if your schedule does not allow it. Thank you for considering it.
 
 Set a deadline, location, and backup version. If the full mission becomes impossible, complete the next smaller version instead of abandoning the practice.

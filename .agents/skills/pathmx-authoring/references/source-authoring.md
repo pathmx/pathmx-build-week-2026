@@ -37,16 +37,16 @@ repository -> Source -> Block -> Beat -> build artifacts -> Runtime/Player
 
 The final filename hint determines the canonical build type. Examples:
 
-| Filename | Build type | Common role |
-| --- | --- | --- |
-| `index.path.md` | `pathmx/path` | route or hub |
-| `topic.guide.md` | `pathmx/guide` | explanation or reference |
-| `exercise.lab.md` | `pathmx/lab` | guided practice |
-| `feature.demo.md` | `pathmx/demo` | playable example |
-| `deck.slides.md` | `pathmx/slides` | presentation |
-| `notes.notes.md` | `pathmx/notes` | working notes |
-| `family.components.md` | `pathmx/components` | component family |
-| `widget.component.md` | `pathmx/component` | one component |
+| Filename               | Build type          | Common role              |
+| ---------------------- | ------------------- | ------------------------ |
+| `index.path.md`        | `pathmx/path`       | route or hub             |
+| `topic.guide.md`       | `pathmx/guide`      | explanation or reference |
+| `exercise.lab.md`      | `pathmx/lab`        | guided practice          |
+| `feature.demo.md`      | `pathmx/demo`       | playable example         |
+| `deck.slides.md`       | `pathmx/slides`     | presentation             |
+| `notes.notes.md`       | `pathmx/notes`      | working notes            |
+| `family.components.md` | `pathmx/components` | component family         |
+| `widget.component.md`  | `pathmx/component`  | one component            |
 
 Projects may use any meaningful suffix. A plain `topic.md` is
 `pathmx/document`. Authored frontmatter `type` describes source-facing domain
@@ -74,7 +74,7 @@ author them only when the derived value is wrong or explicit metadata matters.
 Use source-facing `type`; do not introduce a parallel `kind` discriminator.
 Keep prose in the body, and keep local links relative to the current source.
 
-Give a Block stable data with comment topmatter immediately after its divider:
+Not every block needs topmatter. Topmatter should be used when the block needs a stable identity or requires additional data to rende. When appropriate, give a Block stable data with comment topmatter immediately after its divider:
 
 ```md
 ---
@@ -128,19 +128,19 @@ than manually moving a heavily linked Source.
 The default PathMX stack supports these authoring surfaces; configuration can
 disable some of them or add more:
 
-| Capability | Authoring shape |
-| --- | --- |
-| GFM and raw HTML | headings, tables, task lists, footnotes, fenced code, HTML |
-| Tags | frontmatter/block `tags` or inline `#tags` outside code |
-| Wikilinks | `[[Target]]` when the project enables them |
-| Variables | `{{ block.name }}`, `{{ source.title }}`, `{{ value: fallback }}` |
-| Includes | `[@include: Label](./shared.include.md#block-id)` |
-| Source CSS | `[@styles]: ./source.css` |
-| Root CSS | `[@root.styles]: ./bundle.css` in the active root Source |
-| Components | `[@widgets]: ./widgets.components.md` plus custom tags |
-| Callouts | the project's existing `> [!NOTE]`-style pattern |
-| Theme/fonts | named `theme` and `fonts` frontmatter values |
-| Math, Mermaid, highlighting, images, icons | use only when enabled locally |
+| Capability                                 | Authoring shape                                                   |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| GFM and raw HTML                           | headings, tables, task lists, footnotes, fenced code, HTML        |
+| Tags                                       | frontmatter/block `tags` or inline `#tags` outside code           |
+| Wikilinks                                  | `[[Target]]` when the project enables them                        |
+| Variables                                  | `{{ block.name }}`, `{{ source.title }}`, `{{ value: fallback }}` |
+| Includes                                   | `[@include: Label](./shared.include.md#block-id)`                 |
+| Source CSS                                 | `[@styles]: ./source.css`                                         |
+| Root CSS                                   | `[@root.styles]: ./bundle.css` in the active root Source          |
+| Components                                 | `[@widgets]: ./widgets.components.md` plus custom tags            |
+| Callouts                                   | the project's existing `> [!NOTE]`-style pattern                  |
+| Theme/fonts                                | named `theme` and `fonts` frontmatter values                      |
+| Math, Mermaid, highlighting, images, icons | use only when enabled locally                                     |
 
 Read `styling-and-theming.md` before authoring CSS, theme tokens, or fonts; it
 defines directive scope, selector scope, color modes, cascade order, and
@@ -170,6 +170,14 @@ When supported, a single-choice question uses a stable `type: question` Block,
 a stable `id`, top-level list options, and the installed question Action. Keep
 the question and its options readable without the Player.
 
+Keep learner-facing question copy focused on the learner's goal, decision,
+constraints, or next move. Do not mix implementation commentary into the
+prompt—for example, that an answer is saved as readable evidence, written to
+Source, submitted through an Action, or consumed by an agent. Put maintainer
+context in hidden Block data, comments, or reviewer documentation. When
+persistence or data use needs a learner-facing disclosure for trust or consent,
+present it deliberately as product policy rather than as question instruction.
+
 Treat generated images, AI spaceholders, annotations, persistent responses,
 and custom Actions as plugin- or version-sensitive. Verify configuration and
 existing examples before authoring them. Never introduce a proposed API as if
@@ -182,6 +190,8 @@ it were part of the portable baseline.
 - Each `---` Block represents one coherent move.
 - Meaningful stages remain addressable Beats.
 - Important Blocks have stable IDs.
+- Question copy contains only goal-relevant learner instructions; internal
+  persistence, provenance, and agent details live outside the prompt.
 - Links and assets are relative and resolve from the current Source.
 - Directives and interactive contracts exist in the installed PathMX version.
 - The source remains readable as plain Markdown and coherent in Play.

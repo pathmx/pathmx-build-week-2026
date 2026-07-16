@@ -136,6 +136,10 @@ theme:
 PathMX does not currently ship a theme preset registry. Do not use
 `theme: graphite` or `theme.preset`; they warn and are ignored.
 
+Use `color-and-contrast.md` when selecting or converting colors, shaping light
+and dark compositions, checking gamut, or verifying rendered contrast pairs.
+Keep this reference authoritative for the implemented theme shape.
+
 ## Load And Select Fonts
 
 Declare hosted stylesheets with `href` or local font faces with `src`:
@@ -164,6 +168,10 @@ copied to content-hashed font artifacts and registered through generated
 `fonts` loads or defines faces; it does not select them for content. Select
 faces with `theme.font.body`, `theme.font.heading`, and `theme.font.mono`, and
 include a PathMX fallback token.
+
+Use `typography.md` for hierarchy, measure, wrapping, changing values, font
+behavior, language direction, and rendered typography review. Keep this
+reference authoritative for the implemented `fonts` and theme contracts.
 
 ## Respect The Cascade And Boundaries
 
@@ -199,7 +207,9 @@ Review the rendered result, not only the CSS source. Check the applicable set:
 - included Blocks and the Sources that receive their Block-scoped styles;
 - wide and narrow layouts, including `pathmx-runtime` container behavior;
 - print output for print-specific work;
-- keyboard focus, forced colors, reduced motion, contrast, and readable code;
+- actual foreground/background pairs across interactive states and color modes;
+- hierarchy, measure, wrapping, font fallback, zoom, and text-spacing changes;
+- keyboard focus, forced colors, reduced motion, and readable code;
 - live CSS refresh after editing an imported file;
 - selector leakage into other documents, components, or host UI; and
 - build diagnostics for missing assets, invalid directives, or unsupported
