@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: review
 owner: Tram
 reviewer: Mark
 date: 2026-07-15
@@ -24,9 +24,8 @@ experience, evaluation, or final story.
 
 ## Next Move
 
-Refactor each major Campus Constellation learning feature into an independent
-Literate Component, replace the recovery deck with randomized practice
-flashcards, and verify the complete path in Browse and Play.
+Mark reviews the campus-at-night visual system alongside the independent Play
+beats, with special attention to narrow layout and keyboard focus.
 
 ---
 
@@ -42,6 +41,32 @@ flashcards, and verify the complete path in Browse and Play.
 
 ## Activity
 
+- **2026-07-17:** Fixed direct component controls after rendered testing showed
+  that enabled options did not change their visible selection. Every component
+  now declares an initial state, reads `state.get()` inside state-change
+  notifications, and renders direct-control feedback immediately while using
+  the same state channel as Play. Browser checks confirmed Reach, Stretch,
+  Guide, and Reveal coaching all update; the focused 133-artifact build and
+  `git diff --check` passed.
+- **2026-07-17:** Added a distinct campus-at-night visual system informed by
+  Campaign Forge's hierarchy: a strong arrival, route-like cyan and gold
+  accents, map-grid atmosphere, framed callouts, and clearer table surfaces.
+  The focused PathMX 0.1.13 build produced 133 artifacts with only the three
+  known Tufte warnings. Browse review confirmed the title, section nodes, and
+  flashcard hierarchy; the browser console had no errors. Narrow-layout and
+  keyboard review remain with Mark.
+- **2026-07-17:** Reopened the task for a visual-design pass using Campaign
+  Forge as a composition reference while keeping a distinct campus-at-night
+  identity and preserving the networking learning flow.
+- **2026-07-17:** Split the experience into eleven independent Literate
+  Components and mapped every staged interaction to ordered Player beats. The
+  recovery practice now draws from seven randomized awkward-moment cards,
+  presents the prompt before coaching, and resets to the prompt beat for each
+  new card. PathMX 0.1.13 built the focused path with 132 artifacts; only the
+  three known Tufte theme warnings remained. Browse and Play exposed the new
+  component beats, direct flashcard controls reset correctly, browser logs had
+  no errors, and `git diff --check` passed. Mark's keyboard and visual review
+  remains.
 - **2026-07-17:** Reopened implementation with reviewer Mark retained. The
   experience brief keeps native questions durable while giving every other
   learning move an independent, keyboard-accessible component. Recovery

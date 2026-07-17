@@ -8,9 +8,30 @@ tags:
 related:
   - ./index.path.md
   - ../tasks/2026-07-15-contribute-research-explorations.task.md
+theme:
+  forceColorScheme: dark
+  color:
+    bg: "#07111f"
+    fg: "#eef7ff"
+    muted: "#a9bdd0"
+    surface: "#0d1c2d"
+    link: "#79e6ff"
+    accent: "#36c9d7"
+    border: "#294158"
+    focus: "#ffd166"
+  font:
+    heading: 'Avenir Next, Avenir, Inter, var(--pmx-font-heading)'
+  measure: 74ch
+  prose:
+    size: 1rem
+    leading: 1.7
+    flow: 1.05em
+  shape:
+    radius: 0.85rem
 ---
 
 [@constellation]: ./campus-constellation.components.md
+[@styles]: ./campus-constellation.css
 
 # Campus Constellation
 
@@ -55,7 +76,7 @@ response:
   choice: Become more confident starting conversations
 submission:
   status: submitted
-  run: run-bd5a56fa-fc1c-4972-87b2-41b8a77b8b7e
+  run: run-d4a639f3-cdd8-4f03-94e9-65a743b378d1
 -->
 
 ## Choose Your North Star
@@ -339,6 +360,11 @@ id: next-route-signal
 title: What Needs Practice Next?
 actions:
   submit: questions.submitSingleChoice
+response:
+  choice: The mission felt comfortable; I am ready for more challenge
+submission:
+  status: submitted
+  run: run-3a8b3d21-803d-418d-a459-3c809ea28aad
 -->
 
 ## What Felt Hardest?

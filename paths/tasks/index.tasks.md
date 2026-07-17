@@ -26,7 +26,6 @@ the task has a named owner.
 | [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Manually review all five campaign component flows, keyboard behavior, and reduced motion; then finish the lab tour | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
-| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Componentize every Campus Constellation feature and add random recovery flashcards | July 18 |
 
 ---
 
@@ -35,6 +34,7 @@ the task has a named owner.
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
 | [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Tram | Tram reviews the lab in Play, including narrow layout and all four component interactions | July 18 |
+| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Review campus-at-night visuals, narrow layout, and keyboard focus | July 18 |
 
 ---
 

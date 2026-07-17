@@ -15,7 +15,7 @@ Independent, progressively enhanced practice surfaces for the Campus Constellati
 Four ordered learning moves that the Player and learner can traverse.
 
 ```html
-<section class="loop" states="wonder | reach | listen | return" aria-label="{{ label: Networking learning loop }}">
+<section class="loop" states="wonder | reach | listen | return" initial-state="wonder" aria-label="{{ label: Networking learning loop }}">
   <header><p>Networking loop</p><h3 data-loop-title>Wonder</h3></header>
   <nav data-loop-controls aria-label="Learning-loop stages"></nav>
   <p data-loop-copy>Decide what you genuinely want to learn.</p>
@@ -46,7 +46,7 @@ const copy = $('[data-loop-copy]')
 Object.entries(moves).forEach(function ([name, move]) {
   const button = document.createElement('button')
   button.type = 'button'; button.textContent = move[0]; button.dataset.loopState = name
-  on(button, 'click', function () { state.set(name) })
+  on(button, 'click', function () { render(name); state.set(name) })
   controls.append(button)
 })
 function render(name) {
@@ -54,7 +54,7 @@ function render(name) {
   title.textContent = move[0]; copy.textContent = move[1]
   $$('[data-loop-state]').forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.loopState === name)) })
 }
-state.on(render); render(state.get())
+state.on(function(){render(state.get())}); render(state.get())
 ```
 
 ---
@@ -66,7 +66,7 @@ state.on(render); render(state.get())
 Turns a broad goal into a visible, editable target. Draft text is not durable evidence.
 
 ```html
-<section class="planner" aria-label="{{ label: North Star goal planner }}">
+<section class="planner" states="timeframe | purpose | topic | review" initial-state="timeframe" aria-label="{{ label: North Star goal planner }}">
   <header><p>Goal studio</p><h3>Make your North Star specific</h3></header>
   <div class="fields">
     <label>Time frame<input data-weeks type="number" min="1" max="16" value="4" /></label>
@@ -90,7 +90,9 @@ output { display:block; padding:1rem; border-inline-start:.3rem solid var(--pmx-
 ```js
 const weeks = $('[data-weeks]'), purpose = $('[data-purpose]'), topic = $('[data-topic]'), output = $('[data-goal]')
 function render() { output.textContent = `Over the next ${weeks.value || 1} weeks, I want networking to help me ${purpose.value} in ${topic.value || 'a field I care about'}.` }
+function show(name){const targets={timeframe:weeks,purpose:purpose,topic:topic,review:output};const target=targets[name];if(target&&target.focus)target.focus();$$('[data-play-current]').forEach(function(el){el.removeAttribute('data-play-current')});if(target)target.closest('label')?.setAttribute('data-play-current','')}
 on(weeks,'input',render); on(purpose,'change',render); on(topic,'input',render); render()
+state.on(function(){show(state.get())})
 ```
 
 ---
@@ -102,7 +104,7 @@ on(weeks,'input',render); on(purpose,'change',render); on(topic,'input',render);
 Compares the three practice levels without replacing the durable level question.
 
 ```html
-<section class="difficulty" aria-label="{{ label: Practice difficulty explorer }}">
+<section class="difficulty" states="warmup | stretch | expedition" initial-state="warmup" aria-label="{{ label: Practice difficulty explorer }}">
   <header><p>Choose a useful stretch</p><h3 data-level-title>Warm-up</h3></header>
   <div data-level-controls role="group" aria-label="Difficulty levels"></div>
   <p data-level-copy></p><p><strong>Mission:</strong> <span data-level-mission></span></p>
@@ -123,9 +125,9 @@ const levels = {
   expedition:['Expedition','Best when you are ready for purposeful outreach.','Request a 15–20 minute informational conversation.'],
 }
 const controls=$('[data-level-controls]'), title=$('[data-level-title]'), copy=$('[data-level-copy]'), mission=$('[data-level-mission]')
-Object.entries(levels).forEach(function([name,item]) { const b=document.createElement('button'); b.type='button'; b.textContent=item[0]; b.dataset.level=name; on(b,'click',function(){select(name)}); controls.append(b) })
+Object.entries(levels).forEach(function([name,item]) { const b=document.createElement('button'); b.type='button'; b.textContent=item[0]; b.dataset.level=name; on(b,'click',function(){select(name);state.set(name)}); controls.append(b) })
 function select(name){ const item=levels[name]; title.textContent=item[0]; copy.textContent=item[1]; mission.textContent=item[2]; $$('[data-level]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.level===name))}) }
-select('warmup')
+state.on(function(){select(state.get())});select(state.get())
 ```
 
 ---
@@ -137,7 +139,7 @@ select('warmup')
 Explores four relationship perspectives around one learner goal.
 
 ```html
-<section class="constellation" aria-label="{{ label: Relationship constellation }}">
+<section class="constellation" states="beside | ahead | guide | field" initial-state="beside" aria-label="{{ label: Relationship constellation }}">
   <header><p>Your North Star</p><h3>{{ goal: Explore a career direction }}</h3></header>
   <div class="orbits" data-orbit-controls></div>
   <article aria-live="polite"><p data-orbit-label></p><h4 data-orbit-people></h4><p data-orbit-purpose></p><p><strong>Try asking:</strong> <span data-orbit-question></span></p></article>
@@ -157,8 +159,8 @@ button[aria-pressed="true"] { background:var(--pmx-color-accent,#635bff); color:
 ```js
 const choices={beside:['Beside me','Classmate, teammate, or resident assistant','Learn from shared experiences and nearby opportunities.','“What helped you choose this course, club, or major?”'],ahead:['One step ahead','Senior student, recent graduate, or teaching assistant','Learn near-term choices and mistakes they remember.','“What do you wish you had tried one year earlier?”'],guide:['Guide','Professor, advisor, coach, or campus staff','Find resources and practical ways to prepare.','“What experience would help me test whether this field fits?”'],field:['Field signal','Alum, practitioner, recruiter, or community leader','Understand daily work and changing expectations.','“What does a normal week include that students rarely see?”']}
 const controls=$('[data-orbit-controls]'), label=$('[data-orbit-label]'), people=$('[data-orbit-people]'), purpose=$('[data-orbit-purpose]'), question=$('[data-orbit-question]')
-Object.entries(choices).forEach(function([name,item]){const b=document.createElement('button');b.type='button';b.textContent=item[0];b.dataset.orbit=name;on(b,'click',function(){select(name)});controls.append(b)})
-function select(name){const item=choices[name];label.textContent=item[0];people.textContent=item[1];purpose.textContent=item[2];question.textContent=item[3];$$('[data-orbit]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.orbit===name))})} select('beside')
+Object.entries(choices).forEach(function([name,item]){const b=document.createElement('button');b.type='button';b.textContent=item[0];b.dataset.orbit=name;on(b,'click',function(){select(name);state.set(name)});controls.append(b)})
+function select(name){const item=choices[name];label.textContent=item[0];people.textContent=item[1];purpose.textContent=item[2];question.textContent=item[3];$$('[data-orbit]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.orbit===name))})} state.on(function(){select(state.get())});select(state.get())
 ```
 
 ---
@@ -170,7 +172,7 @@ function select(name){const item=choices[name];label.textContent=item[0];people.
 Builds a short introduction from three editable modules.
 
 ```html
-<section class="builder" aria-label="{{ label: Introduction builder }}">
+<section class="builder" states="present | curiosity | bridge | practice" initial-state="present" aria-label="{{ label: Introduction builder }}">
   <header><p>Conversation opener</p><h3>Build, then say it aloud</h3></header>
   <label>Present<input data-present value="I’m a second-year computer science student" /></label>
   <label>Curiosity<input data-curiosity value="exploring how network engineers keep systems reliable" /></label>
@@ -192,6 +194,7 @@ button { min-block-size:2.75rem; justify-self:start; border:0; border-radius:999
 const fields=[$('[data-present]'),$('[data-curiosity]'),$('[data-bridge]')], output=$('[data-introduction]'), status=$('[data-copy-status]')
 function render(){output.textContent=`${fields[0].value}, ${fields[1].value}, and ${fields[2].value}.`} fields.forEach(function(f){on(f,'input',render)})
 on($('[data-copy]'),'click',async function(){try{await navigator.clipboard.writeText(output.textContent);status.textContent='Copied. Now practice saying it naturally.'}catch{status.textContent='Copy is unavailable; select the introduction manually.'}});render()
+state.on(function(){const target={present:fields[0],curiosity:fields[1],bridge:fields[2],practice:output}[state.get()];if(target&&target.focus)target.focus()})
 ```
 
 ---
@@ -203,7 +206,7 @@ on($('[data-copy]'),'click',async function(){try{await navigator.clipboard.write
 Lets the learner choose three conversation questions in a purposeful order.
 
 ```html
-<section class="ladder" aria-label="{{ label: Curiosity question ladder }}">
+<section class="ladder" states="story | reality | judgment | action | bridge" initial-state="story" aria-label="{{ label: Curiosity question ladder }}">
   <header><p>Choose up to three</p><h3>Build your conversation route</h3></header>
   <div data-question-list></div><p data-question-count aria-live="polite"></p>
 </section>
@@ -219,8 +222,10 @@ button[aria-pressed="true"] { border-color:var(--pmx-color-accent,#635bff); back
 ```js
 const questions=['Story — How did you first become interested in this field?','Reality — What does a normal week look like that students rarely see?','Judgment — What separates someone who enjoys this work from someone who only likes the idea?','Action — What small project would you recommend at my stage?','Bridge — What other perspective should I seek before deciding?']
 const list=$('[data-question-list]'), count=$('[data-question-count]'), selected=ctx.state(new Set())
-questions.forEach(function(text,index){const b=document.createElement('button');b.type='button';b.textContent=text;b.dataset.index=String(index);on(b,'click',function(){selected.has(index)?selected.delete(index):selected.add(index);render()});list.append(b)})
+const names=['story','reality','judgment','action','bridge']
+questions.forEach(function(text,index){const b=document.createElement('button');b.type='button';b.textContent=text;b.dataset.index=String(index);b.dataset.questionState=names[index];on(b,'click',function(){selected.has(index)?selected.delete(index):selected.add(index);state.set(names[index]);render()});list.append(b)})
 function render(){const full=selected.size>=3;$$('[data-index]').forEach(function(b){const active=selected.has(Number(b.dataset.index));b.setAttribute('aria-pressed',String(active));b.disabled=full&&!active});count.textContent=`${selected.size} of 3 selected. ${selected.size===3?'You have a conversation route.':'Choose another question.'}`}render()
+state.on(function(){const current=$(`[data-question-state="${state.get()}"]`);if(current)current.focus()})
 ```
 
 ---
@@ -232,7 +237,7 @@ function render(){const full=selected.size>=3;$$('[data-index]').forEach(functio
 Random prompt-first practice. The learner rehearses before revealing a model response; random order stays private browser state.
 
 ```html
-<section class="flashcards" states="prompt | coaching" aria-label="{{ label: Random networking recovery flashcards }}">
+<section class="flashcards" states="prompt | coaching" initial-state="prompt" aria-label="{{ label: Random networking recovery flashcards }}">
   <header><p>Random practice card <span data-card-count></span></p><h3>What would you say?</h3></header>
   <article class="card" aria-live="polite">
     <p class="scenario" data-card-scenario></p>
@@ -265,10 +270,10 @@ const cards=[
 const scenario=$('[data-card-scenario]'), response=$('[data-card-response]'), encouragement=$('[data-card-encouragement]'), coaching=$('[data-card-coaching]'), reveal=$('[data-reveal]'), count=$('[data-card-count]')
 const deck=ctx.state({remaining:[],current:-1,seen:0})
 function refill(){deck.remaining=cards.map(function(_,i){return i})}
-function randomNext(){if(!deck.remaining.length)refill();const pick=Math.floor(Math.random()*deck.remaining.length);deck.current=deck.remaining.splice(pick,1)[0];deck.seen+=1;const card=cards[deck.current];scenario.textContent=card[0];response.textContent=card[1];encouragement.textContent=card[2];count.textContent=`${deck.seen}`;state.set('prompt')}
+function randomNext(){if(!deck.remaining.length)refill();const pick=Math.floor(Math.random()*deck.remaining.length);deck.current=deck.remaining.splice(pick,1)[0];deck.seen+=1;const card=cards[deck.current];scenario.textContent=card[0];response.textContent=card[1];encouragement.textContent=card[2];count.textContent=`${deck.seen}`;renderState('prompt');state.set('prompt')}
 function renderState(name){const revealed=name==='coaching';coaching.hidden=!revealed;reveal.disabled=revealed}
-on(reveal,'click',function(){state.set('coaching')});on($('[data-next]'),'click',randomNext);on($('[data-reset]'),'click',function(){deck.remaining=[];deck.seen=0;randomNext()})
-state.on(renderState)
+on(reveal,'click',function(){renderState('coaching');state.set('coaching')});on($('[data-next]'),'click',randomNext);on($('[data-reset]'),'click',function(){deck.remaining=[];deck.seen=0;randomNext()})
+state.on(function(){renderState(state.get())})
 randomNext()
 ```
 
@@ -281,7 +286,7 @@ randomNext()
 Shows one actionable 48-hour mission at a time.
 
 ```html
-<section class="mission" aria-label="{{ label: Networking mission picker }}"><header><p>Next 48 hours</p><h3 data-mission-title></h3></header><div data-mission-controls></div><p data-mission-copy></p><p><strong>Backup version:</strong> <span data-mission-backup></span></p></section>
+<section class="mission" states="warmup | stretch | expedition" initial-state="warmup" aria-label="{{ label: Networking mission picker }}"><header><p>Next 48 hours</p><h3 data-mission-title></h3></header><div data-mission-controls></div><p data-mission-copy></p><p><strong>Backup version:</strong> <span data-mission-backup></span></p></section>
 ```
 
 ```css
@@ -290,7 +295,7 @@ Shows one actionable 48-hour mission at a time.
 
 ```js
 const missions={warmup:['Warm-up','Ask one classmate what helped them choose this course, club, or major.','Write the question now and ask it at your next shared class.'],stretch:['Stretch','Use your introduction and one Curiosity Ladder question with a professor, staff member, or club peer.','Send a short message requesting five minutes instead.'],expedition:['Expedition','Request a 15–20 minute informational conversation with an alum or professional.','Draft the request and ask a professor or friend for one introduction.']}
-const controls=$('[data-mission-controls]'),title=$('[data-mission-title]'),copy=$('[data-mission-copy]'),backup=$('[data-mission-backup]');Object.entries(missions).forEach(function([name,item]){const b=document.createElement('button');b.type='button';b.textContent=item[0];b.dataset.mission=name;on(b,'click',function(){select(name)});controls.append(b)});function select(name){const item=missions[name];title.textContent=item[0];copy.textContent=item[1];backup.textContent=item[2];$$('[data-mission]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mission===name))})}select('warmup')
+const controls=$('[data-mission-controls]'),title=$('[data-mission-title]'),copy=$('[data-mission-copy]'),backup=$('[data-mission-backup]');Object.entries(missions).forEach(function([name,item]){const b=document.createElement('button');b.type='button';b.textContent=item[0];b.dataset.mission=name;on(b,'click',function(){select(name);state.set(name)});controls.append(b)});function select(name){const item=missions[name];title.textContent=item[0];copy.textContent=item[1];backup.textContent=item[2];$$('[data-mission]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.mission===name))})}state.on(function(){select(state.get())});select(state.get())
 ```
 
 ---
@@ -302,7 +307,7 @@ const controls=$('[data-mission-controls]'),title=$('[data-mission-title]'),copy
 Supports immediate reflection; drafts remain browser-local until carried into durable learner evidence.
 
 ```html
-<section class="reflection" aria-label="{{ label: Practice evidence reflection }}"><header><p>Capture the signal</p><h3>What changed?</h3></header><label>Confidence before <input data-before type="range" min="1" max="5" value="2" /><output data-before-value>2</output></label><label>Confidence after <input data-after type="range" min="1" max="5" value="3" /><output data-after-value>3</output></label><label>One thing I learned<textarea data-learned></textarea></label><label>One thing I handled well<textarea data-well></textarea></label><p data-reflection-summary aria-live="polite"></p></section>
+<section class="reflection" states="before | after | reflect" initial-state="before" aria-label="{{ label: Practice evidence reflection }}"><header><p>Capture the signal</p><h3>What changed?</h3></header><label>Confidence before <input data-before type="range" min="1" max="5" value="2" /><output data-before-value>2</output></label><label>Confidence after <input data-after type="range" min="1" max="5" value="3" /><output data-after-value>3</output></label><label>One thing I learned<textarea data-learned></textarea></label><label>One thing I handled well<textarea data-well></textarea></label><p data-reflection-summary aria-live="polite"></p></section>
 ```
 
 ```css
@@ -310,7 +315,7 @@ Supports immediate reflection; drafts remain browser-local until carried into du
 ```
 
 ```js
-const before=$('[data-before]'),after=$('[data-after]'),beforeValue=$('[data-before-value]'),afterValue=$('[data-after-value]'),summary=$('[data-reflection-summary]');function render(){beforeValue.value=before.value;afterValue.value=after.value;const change=Number(after.value)-Number(before.value);summary.textContent=change>0?'Your confidence increased. Name the behavior that helped.':change<0?'The mission exposed a useful challenge. Make the next practice smaller and specific.':'Confidence held steady. Look for one concrete behavior you improved.'}on(before,'input',render);on(after,'input',render);render()
+const before=$('[data-before]'),after=$('[data-after]'),beforeValue=$('[data-before-value]'),afterValue=$('[data-after-value]'),summary=$('[data-reflection-summary]');function render(){beforeValue.value=before.value;afterValue.value=after.value;const change=Number(after.value)-Number(before.value);summary.textContent=change>0?'Your confidence increased. Name the behavior that helped.':change<0?'The mission exposed a useful challenge. Make the next practice smaller and specific.':'Confidence held steady. Look for one concrete behavior you improved.'}on(before,'input',render);on(after,'input',render);state.on(function(){const target={before:before,after:after,reflect:$('[data-learned]')}[state.get()];if(target)target.focus()});render()
 ```
 
 ---
@@ -322,7 +327,7 @@ const before=$('[data-before]'),after=$('[data-after]'),beforeValue=$('[data-bef
 Builds a concise thank-you from evidence that the learner listened.
 
 ```html
-<section class="followup" aria-label="{{ label: Follow-up message builder }}"><header><p>Close the loop</p><h3>Write a reason-based thank-you</h3></header><label>What they explained<input data-explained /></label><label>What changed for you<input data-changed /></label><label>What you will try<input data-try /></label><output data-message aria-live="polite"></output></section>
+<section class="followup" states="learn | change | act | preview" initial-state="learn" aria-label="{{ label: Follow-up message builder }}"><header><p>Close the loop</p><h3>Write a reason-based thank-you</h3></header><label>What they explained<input data-explained /></label><label>What changed for you<input data-changed /></label><label>What you will try<input data-try /></label><output data-message aria-live="polite"></output></section>
 ```
 
 ```css
@@ -330,7 +335,7 @@ Builds a concise thank-you from evidence that the learner listened.
 ```
 
 ```js
-const explained=$('[data-explained]'),changed=$('[data-changed]'),trying=$('[data-try]'),message=$('[data-message]');function value(field,fallback){return field.value.trim()||fallback}function render(){message.textContent=`Thank you for explaining ${value(explained,'your experience')}. Your point about ${value(changed,'what matters in this field')} changed how I’m thinking. I’m going to ${value(trying,'act on your advice')}. I appreciate your time.`}[explained,changed,trying].forEach(function(field){on(field,'input',render)});render()
+const explained=$('[data-explained]'),changed=$('[data-changed]'),trying=$('[data-try]'),message=$('[data-message]');function value(field,fallback){return field.value.trim()||fallback}function render(){message.textContent=`Thank you for explaining ${value(explained,'your experience')}. Your point about ${value(changed,'what matters in this field')} changed how I’m thinking. I’m going to ${value(trying,'act on your advice')}. I appreciate your time.`}[explained,changed,trying].forEach(function(field){on(field,'input',render)});state.on(function(){const target={learn:explained,change:changed,act:trying,preview:message}[state.get()];if(target&&target.focus)target.focus()});render()
 ```
 
 ---
@@ -342,7 +347,7 @@ const explained=$('[data-explained]'),changed=$('[data-changed]'),trying=$('[dat
 Previews the next practice from the learner's hardest moment without replacing the durable reflection question.
 
 ```html
-<section class="advisor" aria-label="{{ label: Next practice advisor }}"><header><p>Adaptive route</p><h3>What needs practice next?</h3></header><select data-challenge><option value="start">Starting the conversation</option><option value="continue">Keeping it going</option><option value="anxiety">Managing anxiety</option><option value="followup">Following up</option><option value="challenge">I am ready for more challenge</option></select><p data-route aria-live="polite"></p></section>
+<section class="advisor" states="start | continue | anxiety | followup | challenge" initial-state="start" aria-label="{{ label: Next practice advisor }}"><header><p>Adaptive route</p><h3>What needs practice next?</h3></header><select data-challenge><option value="start">Starting the conversation</option><option value="continue">Keeping it going</option><option value="anxiety">Managing anxiety</option><option value="followup">Following up</option><option value="challenge">I am ready for more challenge</option></select><p data-route aria-live="polite"></p></section>
 ```
 
 ```css
@@ -350,5 +355,5 @@ Previews the next practice from the learner's hardest moment without replacing t
 ```
 
 ```js
-const routes={start:'Repeat a Warm-up with three people while keeping the same introduction.',continue:'Practice three Curiosity Ladder questions and one listening follow-up.',anxiety:'Choose a shorter mission and rehearse two random recovery flashcards first.',followup:'Draft one thank-you and one reason-based return message.',challenge:'Move one orbit outward and request a longer informational conversation.'};const select=$('[data-challenge]'),route=$('[data-route]');function render(){route.textContent=routes[select.value]}on(select,'change',render);render()
+const routes={start:'Repeat a Warm-up with three people while keeping the same introduction.',continue:'Practice three Curiosity Ladder questions and one listening follow-up.',anxiety:'Choose a shorter mission and rehearse two random recovery flashcards first.',followup:'Draft one thank-you and one reason-based return message.',challenge:'Move one orbit outward and request a longer informational conversation.'};const select=$('[data-challenge]'),route=$('[data-route]');function render(name){const next=name||select.value;select.value=next;route.textContent=routes[next]}on(select,'change',function(){render(select.value);state.set(select.value)});state.on(function(){render(state.get())});render(state.get())
 ```
