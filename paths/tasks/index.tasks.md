@@ -23,6 +23,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Capture Andrew demo strategy notes off main](./2026-07-17-andrew-demo-strategy-notes.task.md) | Andrew | Mark | Review personal scratch notes; promote selected slices only when ready | July 21 |
 | [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Manually review all five campaign component flows, keyboard behavior, and reduced motion; then finish the lab tour | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |

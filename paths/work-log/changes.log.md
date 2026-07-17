@@ -9,6 +9,21 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Andrew parks Build Week demo strategy notes off the team hub
+
+Andrew's personal scratchpad now lives under
+[`paths/andrew/`](../andrew/index.path.md) with
+[wedge, demo, and long-term memory notes](../andrew/2026-07-17-build-week-wedge-demo-memory.notes.md)
+covering Build Week judging criteria, the dual-surface local loop, demo
+methods, hero learn-topics, and non-course path genres. The folder is
+intentionally unlinked from the team hub so it can stay on Andrew's branch
+until he promotes selected ideas. Tracked in the
+[owning task](../tasks/2026-07-17-andrew-demo-strategy-notes.task.md).
+PathMX 0.1.13 scratch build verification is recorded there; Play review was
+skipped because these are ordinary notes with no new interaction behavior.
+
+---
+
 ## A Dungeons & Dragons campaign workshop joins the lab demos
 
 [Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
