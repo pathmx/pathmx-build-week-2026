@@ -1,6 +1,6 @@
 ---
 type: task
-status: review
+status: in-progress
 owner: Tram
 reviewer: Mark
 date: 2026-07-15
@@ -24,9 +24,9 @@ experience, evaluation, or final story.
 
 ## Next Move
 
-Review the Campus Constellation path in Play: exercise all four relationship
-orbits and five recovery states with keyboard and pointer, then confirm that
-the HTML interactions complement the three durable learner choices.
+Refactor each major Campus Constellation learning feature into an independent
+Literate Component, replace the recovery deck with randomized practice
+flashcards, and verify the complete path in Browse and Play.
 
 ---
 
@@ -42,6 +42,11 @@ the HTML interactions complement the three durable learner choices.
 
 ## Activity
 
+- **2026-07-17:** Reopened implementation with reviewer Mark retained. The
+  experience brief keeps native questions durable while giving every other
+  learning move an independent, keyboard-accessible component. Recovery
+  practice becomes a randomized prompt-first flashcard with explicit reveal
+  and next-card controls.
 - **2026-07-15:** Added
   [`campus-constellation.components.md`](../research/campus-constellation.components.md)
   with a clickable four-orbit relationship map and a five-state recovery
