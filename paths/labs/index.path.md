@@ -11,6 +11,9 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 
 ## Demos
 
+- [Dungeons & Dragons campaign workshop](./campaign-forge/index.demo.md) — a
+  portable, Block-paced exercise that turns one fantasy premise into factions,
+  places, a flexible first session, and a reusable campaign card.
 - [Chess](./chess/index.demo.md) — a self-contained Literate Component example
   with component resources, keyboard board interaction, and Play Context
   Actions.

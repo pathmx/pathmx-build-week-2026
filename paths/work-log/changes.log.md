@@ -9,6 +9,24 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A Dungeons & Dragons campaign workshop joins the lab demos
+
+[Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
+turns one fantasy premise into a campaign promise, faction triangle, five-place
+map, flexible first session, pressure test, and reusable campaign card. It is
+grounded in *The Lanterns of Duskmere* while keeping every planning move
+portable to another tabletop campaign; the [labs index](../labs/index.path.md)
+now links the workshop.
+
+The owning [authoring-skill task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+records Browse and Play review, the mobile layout correction, and the
+Player-level keyboard-navigation observation. PathMX 0.1.13 built the current
+graph successfully with 187 artifacts; only the three pre-existing Tufte theme
+warnings remain. Mark is the assigned reviewer, and Andrew's broader
+reviewed-lab tour remains open.
+
+---
+
 ## Practice interview voice-agent spike maps the Realtime path
 
 The new
