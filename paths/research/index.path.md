@@ -3,6 +3,7 @@
 Helpful links and references for the build week project.
 
 - [Campus Constellation: College Networking Skills](./campus-constellation-networking.path.md)
+- [Play Cursor Hints](./play-cursor-hints.path.md)
 - [Practice Interview Voice Agent](./practice-interview-voice-agent.path.md)
 - [YouTube Learning Skill](./youtube-learning-skill.path.md)
 - [Teach Skill (Matt Pocock)](https://www.aihero.dev/learn-anything-with-my-teach-skill)

@@ -1,6 +1,6 @@
 ---
 type: task
-status: review
+status: in-progress
 owner: Mark
 reviewer: Tram
 date: 2026-07-16
@@ -11,6 +11,7 @@ related:
   - ../labs/component-patterns/index.demo.md
   - ../labs/component-patterns/interaction-patterns.components.md
   - ../research/campus-constellation-networking.path.md
+  - ../research/play-cursor-hints.path.md
 ---
 
 # Build Focus Components
@@ -29,9 +30,10 @@ microcopy for the pause or reset move itself.
 
 ## Next Move
 
-Review the Focus Components lab in Play. Exercise the ordered Focus Lens
-states, Breath Pacer timing and reset controls, Reflection Prompt local draft,
-Grounding Check keyboard checklist, and narrow-screen layout.
+Review the reworked Focus Beats lab in Play. Play the estimation micro-lesson
+end to end, exercising the held `beat-think` reveal in Play and Browse, the
+`beat-timer` start/pause/off-Beat pause behavior, the timed `beat-pause` dots,
+the self-settling `beat-breathe`, reduced motion, and narrow-screen layout.
 
 ---
 
@@ -71,3 +73,30 @@ Grounding Check keyboard checklist, and narrow-screen layout.
   Breath Pacer phase controls, Reflection Prompt local draft and clear, and
   Grounding Check progress. Visual screenshot review found and fixed the narrow
   Breath Pacer layout before moving this to review.
+- **2026-07-17:** Reworked after design feedback that the first set was off:
+  the widget-card components rebuilt Player navigation, exposed breathing
+  phases as Player-traversable states, and demoed as a catalog instead of a
+  learning experience. Replaced them with a minimal typographic family —
+  `beat-pause`, `beat-breathe`, `beat-think`, and `beat-timer` — where the
+  Player does the pacing, timing stays private interaction state, and only the
+  held-question reveal uses ordered states. The lab is now a playable
+  two-minute Fermi-estimation micro-lesson plus an author-facing grammar.
+  Learner-facing framing is "Focus Beats". Returned to in-progress pending
+  verification and Tram's re-review.
+- **2026-07-17:** Verified the rework with `pathmx build
+  paths/labs/focus-components/index.demo.md -o .pathmx-check --clean` (PathMX
+  0.1.13): clean exit, one built Path, both sources in the scratch
+  `sources.json`, and all four `beat-*` tags expanded in the rendered demo
+  HTML. Rendered-output inspection caught a named-`slot` pass-through that
+  duplicated the `beat-think` prompt; reworked it to a `prompt` attribute plus
+  yielded continuation (no other slot usage exists in this repo to prove the
+  contract). Skipped: interactive Play review in a browser — the Chrome
+  automation extension was not connected; a watched Player was left running at
+  `http://127.0.0.1:3181/labs/focus-components` for manual review.
+- **2026-07-17:** Playing the lab surfaced that the Play cursor cannot reflect
+  a beat's intent — jarring next to a quiet breath beat, no authored anchor
+  for advanced layouts, no way to yield in immersive Blocks. Captured the
+  Core follow-up as [Play Cursor Hints](../research/play-cursor-hints.path.md):
+  a bounded trait model (shape, presence, anchor) with variant presets,
+  Player-owned rendering, and an accessibility floor. No lab-side polyfill,
+  per the chrome boundary.

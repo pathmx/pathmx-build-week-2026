@@ -1,140 +1,129 @@
 ---
-title: Focus Components
-description: A test lab for Literate Components that help learners pause, focus, reflect, and reset.
+title: Focus Beats
+description: Minimal beat components — pause, breathe, think, timed focus — demonstrated inside a playable micro-lesson.
 route: /labs/focus-components
 theme:
   color:
     accent: "#0f766e"
     focus: "#b45309"
-    surface: "#ffffff"
-    border: "#d7ded9"
-    muted: "#59665f"
   dark:
     color:
-      bg: "#101412"
-      fg: "#eef4ef"
-      surface: "#17201b"
-      border: "#33423a"
-      muted: "#b0beb5"
       accent: "#5eead4"
       focus: "#fbbf24"
-  measure: 88ch
 ---
 
 [@focus]: ./focus.components.md
 
-# Focus Components
+# Focus Beats
 
-This lab gives us a concrete set of Literate Components to test before naming
-the family or deciding what should graduate into the learner Starter.
+Focus beats are punctuation for attention. Each one is a small, quiet mark in
+the flow — a rest, a breath, a held question, a timebox — that curriculum can
+drop between moves to shape how a lesson feels to play through.
 
-The working product name is **Focus Components**. The learner-facing move is
-still “take a beat”: pause, narrow attention, regulate effort, then return to
-the path with a clearer next action.
+The family's design rules:
 
----
+- A beat is typographic, not a widget. No cards, no chrome, no dashboards;
+  whitespace and stillness carry the design.
+- The Player does the pacing. Advancing the lesson is the interaction; a beat
+  makes that moment feel intentional.
+- A beat never blocks, scores, diagnoses, plays audio, or records. All state
+  stays in the browser.
 
-<!--
-type: experiment
-id: focus-lens
-title: Single-task Focus Lens
--->
-
-## Single-task Focus Lens
-
-Use this when a learner is about to start a task and needs to choose one
-specific next action instead of reading everything at once.
-
-<focus-lens
-  eyebrow="Focus component"
-  title="Choose one useful next action"
-  states="notice | narrow | begin"
->
-  <section data-focus-panel="notice" data-label="Notice">
-    <h3>Notice the whole task.</h3>
-    <p>Read the prompt once. Let your eye find the part that feels most actionable.</p>
-  </section>
-  <section data-focus-panel="narrow" data-label="Narrow">
-    <h3>Narrow to one input.</h3>
-    <p>Pick the source, sentence, diagram, or question you will work with first.</p>
-  </section>
-  <section data-focus-panel="begin" data-label="Begin">
-    <h3>Start with the smallest visible move.</h3>
-    <p>Write one sentence, make one mark, or run one check. Then continue from evidence.</p>
-  </section>
-</focus-lens>
+The micro-lesson below uses all four beats in earnest. Play it end to end
+first; the author-facing grammar follows it.
 
 ---
 
 <!--
-type: experiment
-id: breath-pacer
-title: Breath Pacer
+type: lesson
+id: estimate-arrival
+title: A Two-Minute Estimate
 -->
 
-## Breath Pacer
+## A two-minute estimate
 
-Use this when a learner needs a short reset before continuing. It has no audio,
-no durable evidence, and no hidden scoring.
+You are going to produce a defensible number for something you have never
+counted: **how many piano tuners work in Chicago?**
 
-<breath-pacer
-  eyebrow="Take a beat"
-  title="Four quiet breaths"
-  inhale="4"
-  hold="2"
-  exhale="6"
-  rest="2"
-/>
+No searching, no calculator. The skill being trained is decomposition —
+turning one unknowable number into a chain of roughly knowable ones.
+
+<beat-breathe cycles="2">Two slow breaths, and commit to doing this without looking anything up.</beat-breathe>
+
+---
+
+<beat-think prompt="Before any arithmetic: is the answer closer to 10, 100, or 1,000? Pick one and hold it.">
+  Most people's instinct lands near 100. The next two minutes find out whether
+  a reasoned chain agrees with your gut — not whether it beats it.
+</beat-think>
+
+---
+
+Build the chain out of numbers you can half-know: people in Chicago, people
+per household, households with a piano, tunings a piano needs per year, and
+tunings one tuner can do in a year.
+
+<beat-timer minutes="2">Work the chain with round numbers. A wrong-but-reasoned answer beats no answer.</beat-timer>
+
+<beat-pause seconds="6">Hold your number. Don't revise it yet.</beat-pause>
+
+---
+
+## One worked chain
+
+About 2.7 million people, at roughly 2.5 per household, is about a million
+households. If one in twenty has a piano, that is 50,000 pianos, each tuned
+about once a year — 50,000 tunings. A tuner doing four a day, five days a
+week, does about 1,000 a year. So Chicago supports on the order of **fifty
+piano tuners**.
+
+Fermi's point was never the number. Honest links rarely miss by more than a
+factor of two each, and their errors tend to cancel.
+
+<beat-think prompt="Where did your chain diverge from this one — and did the divergence change the order of magnitude?">
+  One shaky link rarely moves the exponent. Optimism in every link is what
+  ruins an estimate, which is also why writing the chain down beats holding it
+  in your head.
+</beat-think>
 
 ---
 
 <!--
-type: experiment
-id: reflection-prompt
-title: Reflection Prompt
+id: grammar
+title: The Grammar
 -->
 
-## Reflection Prompt
+## The grammar
 
-Use this after an answer, practice round, or review note. The draft is private
-browser-local state; a separate question or response Block should own durable
-learner evidence.
+Four beats, one authoring shape each. All of them read as plain Markdown, keep
+state in the browser, and never gate forward movement.
 
-<reflection-prompt
-  eyebrow="Reflect"
-  title="Name what changed"
-  prompts="What is clearer now? | What still feels noisy? | What is the next honest move?"
-  placeholder="Write one private sentence..."
-/>
+| Beat | The move | Props |
+| --- | --- | --- |
+| `<beat-pause>` | A typographic rest. With `seconds`, its three dots fill quietly while the learner sits with the moment. | `seconds` (optional) |
+| `<beat-breathe>` | A short breath cycle before demanding work. Runs only while presented, settles on its own, and stays settled. | `cycles` (3), `inhale` (4), `exhale` (6) |
+| `<beat-think>` | A held question. The prompt stands alone as its own Beat; advancing — or Reveal in Browse — uncovers the continuation. | `cue`, `reveal` |
+| `<beat-timer>` | A timebox for doing, not reading. Learner-started, pausable, pauses itself off-Beat, never auto-advances. | `minutes` (2), `cue` |
+
+Authored, a beat reads as one quiet line in the source:
+
+```md
+<beat-pause seconds="6">Hold your number. Don't revise it yet.</beat-pause>
+
+<beat-think prompt="Before any arithmetic: 10, 100, or 1,000?">
+  Most instincts land near 100.
+</beat-think>
+```
 
 ---
 
-<!--
-type: experiment
-id: grounding-check
-title: Grounding Check
--->
+## Boundaries
 
-## Grounding Check
-
-Use this after overload, failure, or a high-stakes practice moment. It gives the
-learner a small checklist that restores agency without pretending to diagnose or
-solve the underlying stress.
-
-<grounding-check
-  eyebrow="Reset"
-  title="Come back to the room"
-/>
-
----
-
-## Review Notes
-
-- `focus-lens` exposes meaningful stages as ordered Player-traversable state.
-- `breath-pacer` runs timing only while presented and starts paused for reduced
-  motion users.
-- `reflection-prompt` keeps draft notes local and deliberately avoids durable
-  response contracts.
-- `grounding-check` is a keyboard-friendly checklist with local reset behavior.
+- All beat state is browser-local. A durable reflection or answer belongs to a
+  question Block with a real response contract, never to a beat.
+- Timing and breathing are private interaction state, not Player states;
+  skipping forward never steps a learner through animation phases.
+- Reduced motion swaps animation for immediate state changes and plain text.
+- Without JavaScript, every beat renders as readable prose.
 
 [Back to the labs index](../index.path.md)
