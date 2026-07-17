@@ -42,6 +42,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Evaluate Sound Effect Support In PathMX](./2026-07-17-evaluate-sound-effect-support.task.md) | Unassigned | Andrew | Evaluate Cuelume and compare declarative, component-owned, and authored-asset approaches | July 20 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Tram | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Unassigned | Andrew | Name an owner and audit the starter's current gap | July 20 |
 
