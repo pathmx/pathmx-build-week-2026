@@ -58,7 +58,7 @@ submission:
 
 ## Choose Your North Star
 
-First, choose the outcome that matters most right now. Your answer is saved as readable learning evidence.
+First, choose the outcome that matters most right now.
 
 - Explore a career or field
 - Prepare for internships or jobs
@@ -336,6 +336,7 @@ Choose the closest answer. This evidence tells the coach what to emphasize next.
 type: adaptive-plan
 id: choose-next-route
 title: Choose the Next Route
+note: The three saved question choices (north-star, level, hardest) let Codex personalize the next mission while PathMX preserves the readable curriculum outside the chat.
 -->
 
 ## Let Evidence Choose Your Next Practice
@@ -355,7 +356,7 @@ Your weekly rhythm:
 
 > **Coach encouragement:** “A network grows one remembered conversation at a time. You already know the next small move.”
 
-The three saved choices—North Star, practice level, and hardest moment—give Codex enough evidence to update this path with a more personal next mission while keeping the curriculum readable outside the chat.
+Your three choices—North Star, practice level, and hardest moment—shape the next mission you practice.
 
 ---
 
