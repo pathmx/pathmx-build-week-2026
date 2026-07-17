@@ -1,8 +1,41 @@
 const CHESS_JS_URL =
   "https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js"
 
+const DEFAULT_CHESS_PIECE_NAMES = {
+  wp: "White pawn",
+  wn: "White knight",
+  wb: "White bishop",
+  wr: "White rook",
+  wq: "White queen",
+  wk: "White king",
+  bp: "Black pawn",
+  bn: "Black knight",
+  bb: "Black bishop",
+  br: "Black rook",
+  bq: "Black queen",
+  bk: "Black king",
+}
+
 function loadChessJs() {
   return import(CHESS_JS_URL)
+}
+
+function normalizeChessPieceNames(pieceNames) {
+  return Object.assign({}, DEFAULT_CHESS_PIECE_NAMES, pieceNames || {})
+}
+
+function loadChessPieceNames(ctx) {
+  if (!ctx || !ctx.data || !ctx.data.pieces) {
+    return Promise.resolve(normalizeChessPieceNames())
+  }
+  return ctx.data.pieces.json().then(
+    function (pieceNames) {
+      return normalizeChessPieceNames(pieceNames)
+    },
+    function () {
+      return normalizeChessPieceNames()
+    },
+  )
 }
 
 function createChessAssetMap(assets) {
@@ -47,6 +80,11 @@ function chessPieceKey(piece) {
   return piece.color + piece.type
 }
 
+function chessPieceName(pieceNames, piece) {
+  const key = chessPieceKey(piece)
+  return (pieceNames && pieceNames[key]) || DEFAULT_CHESS_PIECE_NAMES[key] || key
+}
+
 function createChessBoardFragment(
   document,
   squares,
@@ -88,7 +126,7 @@ function createChessBoardFragment(
     square.setAttribute(
       "aria-label",
       piece
-        ? entry.square + ", " + pieceNames[chessPieceKey(piece)]
+        ? entry.square + ", " + chessPieceName(pieceNames, piece)
         : entry.square + ", empty",
     )
     if (piece) {
@@ -98,7 +136,7 @@ function createChessBoardFragment(
       img.className = "pmx-chess-piece"
       img.dataset.chessPieceImage = key
       img.src = assetMap[key]
-      img.alt = pieceNames[key]
+      img.alt = chessPieceName(pieceNames, piece)
       if (pieceTransition && pieceTransition.to === entry.square) {
         img.style.viewTransitionName = pieceTransition.name
         img.style.viewTransitionClass = "pmx-chess-piece-move"

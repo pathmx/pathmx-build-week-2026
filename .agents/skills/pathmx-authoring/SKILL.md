@@ -35,6 +35,9 @@ references:
 
 - `references/source-authoring.md` — source roles, metadata, Blocks, Beats,
   links, built-in capabilities, and review.
+- `references/plugin-backed-authoring.md` — implemented plugin-backed
+  authoring shapes, including table focus steps, code steps, spaceholders,
+  image directives, includes, and optional rendering plugins.
 - `references/styling-and-theming.md` — source and root CSS, selector scope,
   theme tokens, color modes, fonts, cascade order, and print.
 - `references/color-and-contrast.md` — semantic color roles, OKLCH, modes,
@@ -52,18 +55,16 @@ references:
   text-control focus, durable submission, forward navigation, and test-response
   cleanup in the Player.
 
-For CSS, theme, color, or font work, use the source-authoring and styling
-references. Also read the color or typography reference when that craft surface
-is part of the task. For component styling, also use the Literate Component
-reference. Consult the design-engineering reference for interactive or
-presentational Literate Components and custom HTML/CSS, after the applicable
-Source, styling, and component contracts. Consult the tooling reference before
-version-sensitive, graph-mutating, or preview commands.
+Combine references by task:
 
-For task or question authoring, read the source-authoring reference. When the
-work includes answering, submitting, restoring, or advancing from a question
-in Play, also read the question Play verification reference and follow its
-write-cleanup boundary.
+| Task surface | Read |
+| --- | --- |
+| CSS, themes, color modes, or fonts | `source-authoring` and `styling-and-theming`; add `color-and-contrast` or `typography` when that craft surface is part of the task |
+| Literate Component styling | the styling set above plus `literate-components` |
+| Interactive or presentational components, custom HTML/CSS | `design-engineering`, after the applicable Source, styling, and component contracts |
+| Plugin-backed syntax, generated media, directive pipelines, table or code stepping, includes, optional render plugins | `source-authoring` and `plugin-backed-authoring` |
+| Task or question authoring | `source-authoring`; when the work answers, submits, restores, or advances a question in Play, add `question-play-verification` and follow its write-cleanup boundary |
+| Version-sensitive, graph-mutating, or preview commands | `tooling-and-verification`, before running them |
 
 ## Guardrails
 

@@ -23,6 +23,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 
 ---
@@ -56,6 +57,7 @@ No tasks are currently blocked.
 
 | Task | Owner | Reviewer | Result |
 | --- | --- | --- | --- |
+| [Record July 16 Working Session Notes](./2026-07-16-record-working-session-notes.task.md) | Mark | Tram | Sanitized meeting notes added to the work log and linked from the work-log index |
 | [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Andrew | Research note captures official YouTube constraints, skill package, player shape, and MVP path |
 | [Spike practice interview voice agent](./2026-07-16-spike-practice-interview-voice.task.md) | Mark | Tram | Immersive Realtime interview simulator, research note, and proposed Host Action shape added |
 | [Add task reviewers to the workflow](./2026-07-16-add-task-reviewers.task.md) | Mark | Andrew | Reviewer frontmatter, dashboard projection, and Codex workflow guidance added |
