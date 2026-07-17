@@ -9,6 +9,20 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A shared resources and inspiration page collects what the team has been sharing
+
+A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
+from the [research index](../research/index.path.md), gathers the walkthrough
+Looms, generative Perplexity artifacts, UI/product inspiration (Dilum Sanjaya,
+the Spaceholders demo, the Player beat-navigation design spec, the hosted
+reference labs), and the tools on the team's radar (Glaze, Supertonic TTS, and
+the observability/audit-log podcast clip) that had been living only in Slack.
+Personal and private links — family/news artifacts and the Devpost invite — were
+deliberately kept out per the repo guardrails and the research index's
+contributing note.
+
+---
+
 ## A Dungeons & Dragons campaign workshop joins the lab demos
 
 [Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
