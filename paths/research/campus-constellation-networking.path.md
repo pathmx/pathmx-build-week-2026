@@ -8,9 +8,30 @@ tags:
 related:
   - ./index.path.md
   - ../tasks/2026-07-15-contribute-research-explorations.task.md
+theme:
+  forceColorScheme: dark
+  color:
+    bg: "#07111f"
+    fg: "#eef7ff"
+    muted: "#a9bdd0"
+    surface: "#0d1c2d"
+    link: "#79e6ff"
+    accent: "#36c9d7"
+    border: "#294158"
+    focus: "#ffd166"
+  font:
+    heading: 'Avenir Next, Avenir, Inter, var(--pmx-font-heading)'
+  measure: 74ch
+  prose:
+    size: 1rem
+    leading: 1.7
+    flow: 1.05em
+  shape:
+    radius: 0.85rem
 ---
 
 [@constellation]: ./campus-constellation.components.md
+[@styles]: ./campus-constellation.css
 
 # Campus Constellation
 
@@ -41,6 +62,8 @@ Use this loop:
 
 Your first goal is not “build a huge network.” It is **have one useful, human conversation**.
 
+<networking-loop label="Wonder, reach, listen, and return" />
+
 ---
 
 <!--
@@ -53,7 +76,7 @@ response:
   choice: Become more confident starting conversations
 submission:
   status: submitted
-  run: run-bd5a56fa-fc1c-4972-87b2-41b8a77b8b7e
+  run: run-d4a639f3-cdd8-4f03-94e9-65a743b378d1
 -->
 
 ## Choose Your North Star
@@ -95,6 +118,8 @@ Now define evidence that would make the goal real:
 
 **Your North Star is allowed to change.** A conversation that changes your direction is progress, not failure.
 
+<north-star-planner label="Make a networking goal specific" />
+
 ---
 
 <!--
@@ -103,6 +128,11 @@ id: set-practice-level
 title: Set Your Practice Level
 actions:
   submit: questions.submitSingleChoice
+response:
+  choice: Stretch — one five-minute conversation
+submission:
+  status: submitted
+  run: run-1aa8487e-8109-4768-b92d-8edcc307ce61
 -->
 
 ## Set Your Practice Level
@@ -122,6 +152,8 @@ Choose the version that feels challenging but possible today. Your selection bec
 If your confidence is **1–2 out of 5**, start with Warm-up. At **3**, try Stretch. At **4–5**, choose any level based on your goal—not ego.
 
 > **Coach encouragement:** “Choosing a smaller mission is not avoiding growth. It is designing a practice you can actually complete.”
+
+<difficulty-explorer label="Compare three practice difficulty levels" />
 
 ---
 
@@ -168,11 +200,13 @@ Put the pieces together, then adapt the length:
 
 - **5 seconds:** name + shared context;
 - **15 seconds:** present + curiosity + bridge;
-- **30 seconds:** add one experience or reason the topic matters to you.
+- **30 seconds:** add one experience or reason the topic matters to you.[^c1]
 
 Avoid reciting your résumé. The introduction succeeds when it gives the other person an easy place to enter the conversation.
 
 > **Coach encouragement:** “You do not need the perfect words. You need a clear reason for this conversation.”
+
+<introduction-builder label="Build a modular networking introduction" />
 
 ---
 
@@ -195,6 +229,8 @@ Begin broad, listen, then climb toward detail:
 Choose only three questions. A good conversation follows what the person says instead of racing through a script.
 
 **Listening challenge:** after each answer, ask one follow-up that begins with **what**, **how**, or **why**.
+
+<curiosity-ladder label="Choose three questions for a conversation" />
 
 ---
 
@@ -232,7 +268,7 @@ Pick one card and respond aloud:
 
 > **Coach encouragement:** “A graceful exit or honest question is a networking skill. Awkward does not mean unsuccessful.”
 
-<recovery-deck label="Practice five networking recovery scenarios" />
+<recovery-flashcards label="Practice random networking recovery scenarios" />
 
 ---
 
@@ -263,6 +299,8 @@ Send a brief request:
 
 Set a deadline, location, and backup version. If the full mission becomes impossible, complete the next smaller version instead of abandoning the practice.
 
+<mission-picker label="Choose a 48-hour networking mission" />
+
 ---
 
 <!--
@@ -287,6 +325,8 @@ Do not score the interaction by whether it produced an internship, referral, or 
 
 > **Coach encouragement:** “You created evidence by trying. Even a declined invitation teaches you that you can reach out respectfully and continue.”
 
+<evidence-reflection label="Reflect on confidence and learning evidence" />
+
 ---
 
 <!--
@@ -310,6 +350,8 @@ Then choose a **reason-based return**, not a calendar-only ping:
 
 The relationship does not need constant maintenance. It needs honest context when you return.
 
+<follow-up-builder label="Build a listening-based follow-up message" />
+
 ---
 
 <!--
@@ -318,6 +360,11 @@ id: next-route-signal
 title: What Needs Practice Next?
 actions:
   submit: questions.submitSingleChoice
+response:
+  choice: The mission felt comfortable; I am ready for more challenge
+submission:
+  status: submitted
+  run: run-3a8b3d21-803d-418d-a459-3c809ea28aad
 -->
 
 ## What Felt Hardest?
@@ -358,6 +405,8 @@ Your weekly rhythm:
 
 Your three choices—North Star, practice level, and hardest moment—shape the next mission you practice.
 
+<route-advisor label="Preview a next practice route" />
+
 ---
 
 <!--
@@ -392,3 +441,5 @@ title: Sources and Project Implications
 Test this path with one college student. Observe whether they can select a realistic mission, complete it within 48 hours, and use their evidence to choose the next practice without needing a generic “network more” instruction.
 
 [Return to Research](./index.path.md)
+
+[^c1]: **@lenubaotram2606** (2026-07-17 17:05 +00:00): hi

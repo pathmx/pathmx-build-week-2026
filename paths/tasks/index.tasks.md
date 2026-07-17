@@ -34,7 +34,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
-| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Mark reviews both Campus Constellation components in Play with keyboard and pointer | July 18 |
+| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Review campus-at-night visuals, narrow layout, and keyboard focus | July 18 |
 
 ---
 

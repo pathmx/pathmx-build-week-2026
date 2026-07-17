@@ -89,7 +89,7 @@ Andrew remains the assigned human reviewer.
 
 ---
 
-## Campus Constellation stops leaking implementation detail into learner copy
+## Campus Constellation becomes a Play-by-beat practice constellation
 
 Two learner-facing surfaces in the
 [Campus Constellation path](../research/campus-constellation-networking.path.md)
@@ -100,9 +100,32 @@ chat." Per the authoring contract (`source-authoring.md`, Interactive And
 Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
 data — the question's `submission`/`response` topmatter and a `note` on the
 adaptive-plan Block — while the learner copy states only the decision and next
-move. The scoped PathMX 0.1.13 build produced 161 artifacts with no new warnings
-(only the three known Tufte token diagnostics), and `git diff --check` passed.
-Research-owner sign-off remains before this lands on shared `main`.
+move. Its companion
+[component family](../research/campus-constellation.components.md) now gives
+each of eleven learning features an independent interaction and aligns every
+meaningful stage with ordered Player beats. Seven randomized awkward-moment
+flashcards keep the learner on a prompt beat before revealing coaching and
+reset to a new prompt for the next card.
+
+The path now also carries a distinct campus-at-night visual system informed by
+Campaign Forge's strong arrival and instrument-like framing: deep navy space,
+cyan route signals, warm gold checkpoints, a subtle map grid, framed callouts,
+and clearer table surfaces. The metaphor remains specific to campus routes and
+relationship constellations rather than borrowing the fantasy lab's identity.
+
+Direct component controls now also share a correctly initialized state
+channel with Play. State listeners read the current value explicitly, and
+buttons provide immediate visible feedback, fixing options that looked enabled
+but did not change when clicked.
+
+The focused PathMX 0.1.13 build produced 133 artifacts with no new warnings
+(only the three known Tufte token diagnostics). Browse and Play exposed the
+ordered component beats, the flashcard reveal and random-reset flow worked,
+browser review confirmed the new arrival and flashcard hierarchy with no
+new console errors; direct checks covered Reach, Stretch, Guide, and Reveal
+coaching. `git diff --check` passed. The owning
+[research task](../tasks/2026-07-15-contribute-research-explorations.task.md)
+is with Mark for keyboard and visual review.
 
 ---
 
