@@ -9,6 +9,32 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A Dungeons & Dragons campaign workshop joins the lab demos
+
+[Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
+turns one fantasy premise into a campaign promise, faction triangle, five-place
+map, flexible first session, pressure test, and reusable campaign card. It is
+grounded in *The Lanterns of Duskmere* while keeping every planning move
+portable to another tabletop campaign; the [labs index](../labs/index.path.md)
+now links the workshop. Its lantern-lit field-guide presentation now includes
+five focused Literate Components: the lantern pressure clock, an interactive
+faction triangle, the Duskmere field map, a choice-responsive session spine,
+and a deterministic consequence forge. Each keeps its underlying campaign
+model readable without JavaScript and uses native direct controls plus ordered
+Player states where traversal teaches the idea.
+
+The owning [authoring-skill task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+records Browse and Play review, the mobile layout correction, and the
+Player-level keyboard-navigation observation. PathMX 0.1.13 built the complete
+graph successfully with 203 artifacts; the component Sources resolved in the
+generated manifest, direct selection and Player Context Actions worked, and
+the 390 × 844 layout had no horizontal overflow. Only the three pre-existing
+Tufte theme warnings remain. Mark still needs to manually review keyboard
+activation, reduced motion, and the complete visual flow; Andrew's broader
+reviewed-lab tour remains open.
+
+---
+
 ## Practice interview voice-agent spike maps the Realtime path
 
 The new
