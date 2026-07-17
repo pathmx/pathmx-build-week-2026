@@ -5,7 +5,32 @@ title: Build a Dungeons & Dragons Campaign
 description: A compact, playable workshop for turning one fantasy premise into a campaign and a runnable first session.
 route: /labs/campaign-forge
 tags: [tabletop, campaign-design, storytelling]
+theme:
+  forceColorScheme: dark
+  color:
+    bg: "#10100f"
+    fg: "#f5ecda"
+    muted: "#c3b69f"
+    surface: "#1b1a17"
+    link: "#f3c969"
+    accent: "#e9ad43"
+    border: "#554a38"
+    focus: "#ffe29a"
+  font:
+    heading: 'Georgia, "Times New Roman", var(--pmx-font-heading)'
+  measure: 74ch
+  prose:
+    size: 1rem
+    leading: 1.68
+    flow: 1.05em
+  shape:
+    radius: 0.65rem
+  code:
+    bg: "#171612"
 ---
+
+[@campaign]: ./lantern-clock.component.md
+[@styles]: ./campaign-forge.css
 
 # Build a Dungeons & Dragons Campaign
 
@@ -52,6 +77,11 @@ For Duskmere:
 > **Promise:** Protect a strange marsh town while uncovering why its guardian
 > lanterns are failing. **Pressure:** Each dark lantern lets something ancient
 > move closer. **Choice:** Repair the old pact, replace it, or break it.
+
+Advance the lantern clock to see how pressure changes the situation without
+deciding what the players must do.
+
+<lantern-clock />
 
 Notice what is missing: the correct ending. The players will create that at the
 table.

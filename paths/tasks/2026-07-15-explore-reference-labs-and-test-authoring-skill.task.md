@@ -8,6 +8,8 @@ due: 2026-07-17
 related:
   - ../labs/index.path.md
   - ../labs/campaign-forge/index.demo.md
+  - ../labs/campaign-forge/lantern-clock.component.md
+  - ../labs/campaign-forge/campaign-forge.css
   - ../labs/kepler-orbit/index.demo.md
   - ../../.agents/skills/pathmx-authoring/SKILL.md
 ---
@@ -24,8 +26,9 @@ small, coherent lab change.
 
 ## Next Move
 
-Review the new campaign-design demo in Play, then finish Andrew's tour of the
-reviewed labs and record which authoring patterns were useful or confusing.
+Mark manually reviews the field-guide theme, direct-control keyboard behavior,
+and reduced-motion result in Play; then Andrew finishes the reviewed-lab tour
+and records which authoring patterns were useful or confusing.
 
 ---
 
@@ -45,6 +48,23 @@ reviewed labs and record which authoring patterns were useful or confusing.
 
 ## Activity
 
+- **2026-07-16:** Added the preferred first visual-interaction slice: a scoped
+  lantern-lit field-guide theme and the
+  [`<lantern-clock>` component](../labs/campaign-forge/lantern-clock.component.md).
+  The clock exposes ordered `bright | dim | dark` Player states, native direct
+  controls, reset/advance Context Actions, readable pressure and faction
+  consequences, and a static no-script starting state. PathMX 0.1.13 built the
+  focused graph with 104 artifacts; the final complete graph build wrote 191
+  artifacts, with only the three known Tufte warnings. Browse and Play review
+  covered all states, forward and reverse Context Actions, pointer feedback,
+  and a 390 × 844 viewport with no horizontal overflow. Controls are enabled
+  native buttons with ordinary tab order and visible state labels. The in-app
+  browser automation focused the direct buttons but did not dispatch activation
+  through synthetic Enter or Space, matching the earlier Player-control
+  observation, so Mark should manually verify keyboard activation. The CSS has
+  no ambient animation and removes its short state transitions for reduced
+  motion; preference emulation and the no-JavaScript fallback were inspected in
+  source but not exercised live.
 - **2026-07-16:** Andrew claimed the authoring test with the prompt: “let's go
   ahead and do run with a dungeons & dragons campaign example and add that as
   one of the labs demos in pathmx”. The chosen scope is one portable,

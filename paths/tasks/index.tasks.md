@@ -23,7 +23,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
-| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Review the campaign-design demo in Play, then finish the reviewed-lab tour | July 17 |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Manually review the campaign theme, keyboard behavior, and reduced motion; then finish the lab tour | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 
 ---
