@@ -30,6 +30,10 @@ theme:
 ---
 
 [@campaign]: ./lantern-clock.component.md
+[@factions]: ./faction-triangle.component.md
+[@duskmere-map]: ./duskmere-map.component.md
+[@session-spine]: ./session-spine.component.md
+[@consequence-forge]: ./consequence-forge.component.md
 [@styles]: ./campaign-forge.css
 
 # Build a Dungeons & Dragons Campaign
@@ -144,6 +148,8 @@ something understandable that creates a cost for somebody else.
 - **Reason:** The town was built on land stolen from the marsh.
 - **Cost:** Hundreds of living residents would lose their homes.
 
+<faction-triangle />
+
 Draw a triangle. Put one faction at each corner. On every edge, write one thing
 the neighboring factions can cooperate on and one thing they cannot forgive.
 Now any alliance carries tension.
@@ -166,6 +172,8 @@ that can change the campaign.
 3. **The Glasshouse:** Which alchemist is hiding the beacon's true cost?
 4. **Wickkeeper Hall:** Whose name has appeared in the succession book?
 5. **The Sunken Road:** What returns when travelers carry no flame?
+
+<duskmere-map />
 
 For your campaign, name five places. Beside each, write:
 
@@ -209,6 +217,11 @@ The rescue reveals a sealed message addressed to a character.
 
 Whichever lead the party follows, a second lantern fails. The faction they
 ignored acts without them.
+
+Rehearse the four-part structure and change the lead to see how the world can
+answer without breaking the session.
+
+<session-spine />
 
 The leads can happen in any order. The consequence responds to the party
 instead of punishing them for missing your preferred scene.
@@ -269,6 +282,10 @@ Failure should create the next decision. It should not close the book.
 
 For Duskmere, a failed rescue might save the courier but lose the message to
 the marsh. Now the party must decide who to trust about its contents.
+
+Compare three ways the same rescue can move play forward:
+
+<consequence-forge />
 
 ---
 
