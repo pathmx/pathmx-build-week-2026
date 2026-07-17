@@ -9,6 +9,46 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A shared resources and inspiration page collects what the team has been sharing
+
+A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
+from the [research index](../research/index.path.md), gathers the walkthrough
+Looms, generative Perplexity artifacts, UI/product inspiration (Dilum Sanjaya,
+the Spaceholders demo, the Player beat-navigation design spec, the hosted
+reference labs), and the tools on the team's radar (Glaze, Supertonic TTS, and
+the observability/audit-log podcast clip) that had been living only in Slack.
+Personal and private links — family/news artifacts and the Devpost invite — were
+deliberately kept out per the repo guardrails and the research index's
+contributing note.
+
+---
+
+## A Dungeons & Dragons campaign workshop joins the lab demos
+
+[Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
+turns one fantasy premise into a campaign promise, faction triangle, five-place
+map, flexible first session, pressure test, and reusable campaign card. It is
+grounded in *The Lanterns of Duskmere* while keeping every planning move
+portable to another tabletop campaign; the [labs index](../labs/index.path.md)
+now links the workshop. Its lantern-lit field-guide presentation now includes
+five focused Literate Components: the lantern pressure clock, an interactive
+faction triangle, the Duskmere field map, a choice-responsive session spine,
+and a deterministic consequence forge. Each keeps its underlying campaign
+model readable without JavaScript and uses native direct controls plus ordered
+Player states where traversal teaches the idea.
+
+The owning [authoring-skill task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+records Browse and Play review, the mobile layout correction, and the
+Player-level keyboard-navigation observation. PathMX 0.1.13 built the complete
+graph successfully with 203 artifacts; the component Sources resolved in the
+generated manifest, direct selection and Player Context Actions worked, and
+the 390 × 844 layout had no horizontal overflow. Only the three pre-existing
+Tufte theme warnings remain. Mark still needs to manually review keyboard
+activation, reduced motion, and the complete visual flow; Andrew's broader
+reviewed-lab tour remains open.
+
+---
+
 ## Practice interview voice-agent spike maps the Realtime path
 
 The new
@@ -46,6 +86,23 @@ build passed with only the three known Tufte theme warnings, and
 `git diff --check` passed. Play review was skipped because this is workflow
 prose, frontmatter, and dashboard table work with no new interaction behavior;
 Andrew remains the assigned human reviewer.
+
+---
+
+## Campus Constellation stops leaking implementation detail into learner copy
+
+Two learner-facing surfaces in the
+[Campus Constellation path](../research/campus-constellation-networking.path.md)
+no longer expose persistence or agent internals. The "Choose Your North Star"
+question prompt drops "saved as readable learning evidence," and the
+adaptive-plan closing no longer narrates that Codex updates the path "outside the
+chat." Per the authoring contract (`source-authoring.md`, Interactive And
+Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
+data — the question's `submission`/`response` topmatter and a `note` on the
+adaptive-plan Block — while the learner copy states only the decision and next
+move. The scoped PathMX 0.1.13 build produced 161 artifacts with no new warnings
+(only the three known Tufte token diagnostics), and `git diff --check` passed.
+Research-owner sign-off remains before this lands on shared `main`.
 
 ---
 

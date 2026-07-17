@@ -23,6 +23,8 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Manually review all five campaign component flows, keyboard behavior, and reduced motion; then finish the lab tour | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 | [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Componentize every Campus Constellation feature and add random recovery flashcards | July 18 |
 
@@ -40,7 +42,6 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
-| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Tour the reviewed labs, then use Codex and the repo-local skill on one small lab | July 17 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Tram | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Unassigned | Andrew | Name an owner and audit the starter's current gap | July 20 |
 
@@ -56,6 +57,7 @@ No tasks are currently blocked.
 
 | Task | Owner | Reviewer | Result |
 | --- | --- | --- | --- |
+| [Record July 16 Working Session Notes](./2026-07-16-record-working-session-notes.task.md) | Mark | Tram | Sanitized meeting notes added to the work log and linked from the work-log index |
 | [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Andrew | Research note captures official YouTube constraints, skill package, player shape, and MVP path |
 | [Spike practice interview voice agent](./2026-07-16-spike-practice-interview-voice.task.md) | Mark | Tram | Immersive Realtime interview simulator, research note, and proposed Host Action shape added |
 | [Add task reviewers to the workflow](./2026-07-16-add-task-reviewers.task.md) | Mark | Andrew | Reviewer frontmatter, dashboard projection, and Codex workflow guidance added |

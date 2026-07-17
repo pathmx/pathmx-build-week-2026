@@ -9,4 +9,5 @@ help the team reconstruct what happened and what comes next.
 
 - [Build Week Changes](./changes.log.md) — newest landed work first, with one
   playable change entry per Block.
+- [July 16 Working Session Notes](./2026-07-16-working-session.notes.md)
 - [July 14 Hackathon Meeting](./2026-07-14-hackathon-meeting.notes.md)

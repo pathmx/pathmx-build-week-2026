@@ -83,7 +83,7 @@ function setStatus(message) {
   if (status) status.textContent = message
 }
 
-Promise.all([loadChessJs(), ctx.data.pieces.json()])
+Promise.all([loadChessJs(), loadChessPieceNames(ctx)])
   .then(function ([module, pieceNames]) {
     const Chess = module.Chess
     let chess
@@ -106,10 +106,18 @@ Promise.all([loadChessJs(), ctx.data.pieces.json()])
     let focusedSquare = (initialFocusEntry || squares[0]).square
 
     function render() {
+      const ownerDocument = board.ownerDocument || document
+      const activeElement = ownerDocument.activeElement
+      const shouldRestoreFocus =
+        isInteractive &&
+        activeElement &&
+        board.contains(activeElement) &&
+        typeof activeElement.blur === "function"
+      if (shouldRestoreFocus) activeElement.blur()
       ctx.morph(
         board,
         createChessBoardFragment(
-          board.ownerDocument || document,
+          ownerDocument,
           squares,
           chess,
           pieceNames,
@@ -123,6 +131,7 @@ Promise.all([loadChessJs(), ctx.data.pieces.json()])
           },
         ),
       )
+      if (shouldRestoreFocus) focusSquare(focusedSquare)
     }
 
     function focusSquare(square) {
@@ -425,7 +434,7 @@ function setStatus(message) {
   if (status) status.textContent = message
 }
 
-Promise.all([loadChessJs(), ctx.data.pieces.json()])
+Promise.all([loadChessJs(), loadChessPieceNames(ctx)])
   .then(function ([module, pieceNames]) {
     const Chess = module.Chess
     const pgnElement = content && content.querySelector("[data-chess-pgn]")

@@ -74,7 +74,9 @@ author them only when the derived value is wrong or explicit metadata matters.
 Use source-facing `type`; do not introduce a parallel `kind` discriminator.
 Keep prose in the body, and keep local links relative to the current source.
 
-Not every block needs topmatter. Topmatter should be used when the block needs a stable identity or requires additional data to rende. When appropriate, give a Block stable data with comment topmatter immediately after its divider:
+Not every Block needs topmatter. Use topmatter when the Block needs a stable
+identity or additional data to render. When appropriate, give a Block stable
+data with comment topmatter immediately after its divider:
 
 ```md
 ---
@@ -103,10 +105,12 @@ practice, answer, receive feedback, reflect, or decide. Split when the goal,
 interaction mode, or evidence target changes. Merge fragments that only make
 sense together.
 
-PathMX can project headings, paragraphs, list items, table rows, media, code
-focus steps, component roots, and ordered component states into Beats. Use
-those Beats for reveal or interaction stages within one Block. Do not hide
-meaningful learning steps inside an opaque component loop.
+PathMX can project headings, paragraphs, list items, table rows, authored table
+focus steps, media, code focus steps, component roots, and ordered component
+states into Beats. Use those Beats for reveal or interaction stages within one
+Block. Do not hide meaningful learning steps inside an opaque component loop.
+Read `plugin-backed-authoring.md` before authoring table focus steps, code
+steps, generated media, or other plugin-shaped Play surfaces.
 
 For a substantial playable source, inspect forward, backward, and skip-out
 behavior; dense tables and code; component viewport fit; and keyboard/touch
@@ -157,7 +161,9 @@ Named directive definitions are useful for reuse:
 ```
 
 Do not guess directive labels or options. Copy an implemented local example or
-consult the plugin documentation for the installed version.
+consult the plugin documentation for the installed version. For directive
+pipelines, image generation, includes, and optional rendering plugins, use
+`plugin-backed-authoring.md` as the practical authoring checklist.
 
 ## Interactive And Version-Sensitive Surfaces
 

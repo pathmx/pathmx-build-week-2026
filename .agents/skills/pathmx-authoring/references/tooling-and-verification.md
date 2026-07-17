@@ -155,7 +155,7 @@ For question submission and Play navigation, follow
 
 Report:
 
-- changed Source and skill files;
+- changed Source and asset files;
 - commands and checks run, with results;
 - inspected Player routes when visual/interactive behavior matters;
 - build postconditions: completed exit, built-Path count, and expected Source
