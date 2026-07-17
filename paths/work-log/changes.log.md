@@ -9,6 +9,20 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A shared resources and inspiration page collects what the team has been sharing
+
+A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
+from the [research index](../research/index.path.md), gathers the walkthrough
+Looms, generative Perplexity artifacts, UI/product inspiration (Dilum Sanjaya,
+the Spaceholders demo, the Player beat-navigation design spec, the hosted
+reference labs), and the tools on the team's radar (Glaze, Supertonic TTS, and
+the observability/audit-log podcast clip) that had been living only in Slack.
+Personal and private links — family/news artifacts and the Devpost invite — were
+deliberately kept out per the repo guardrails and the research index's
+contributing note.
+
+---
+
 ## A Dungeons & Dragons campaign workshop joins the lab demos
 
 [Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
@@ -72,6 +86,23 @@ build passed with only the three known Tufte theme warnings, and
 `git diff --check` passed. Play review was skipped because this is workflow
 prose, frontmatter, and dashboard table work with no new interaction behavior;
 Andrew remains the assigned human reviewer.
+
+---
+
+## Campus Constellation stops leaking implementation detail into learner copy
+
+Two learner-facing surfaces in the
+[Campus Constellation path](../research/campus-constellation-networking.path.md)
+no longer expose persistence or agent internals. The "Choose Your North Star"
+question prompt drops "saved as readable learning evidence," and the
+adaptive-plan closing no longer narrates that Codex updates the path "outside the
+chat." Per the authoring contract (`source-authoring.md`, Interactive And
+Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
+data — the question's `submission`/`response` topmatter and a `note` on the
+adaptive-plan Block — while the learner copy states only the decision and next
+move. The scoped PathMX 0.1.13 build produced 161 artifacts with no new warnings
+(only the three known Tufte token diagnostics), and `git diff --check` passed.
+Research-owner sign-off remains before this lands on shared `main`.
 
 ---
 
