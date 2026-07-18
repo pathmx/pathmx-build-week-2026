@@ -30,10 +30,12 @@ small, coherent lab change.
 
 ## Next Move
 
-Mark manually reviews the field-guide theme, all five component flows,
-direct-control keyboard behavior, and reduced-motion result in Play; then
-Andrew finishes the reviewed-lab tour and records which authoring patterns were
-useful or confusing.
+Andrew continues the field-guide tour with Campaign Forge: reproduce the
+focused-Beat, code-Beat, and arrow-key behavior; record when pointer interaction
+changes keyboard ownership; and test one visual-scale change at a time in the
+local live preview. Mark then reviews the campaign field-guide theme, all five
+component flows, direct-control keyboard behavior, and reduced-motion result in
+Play.
 
 ---
 
@@ -51,7 +53,57 @@ useful or confusing.
 
 ---
 
+## Lab Review Field Guide
+
+Use the same compact pass for each demo:
+
+1. Name the learner-facing purpose and the first useful thing to do.
+2. Follow Browse and Play forward, backward, and out of the lab.
+3. Check that direct controls, selected labels, diagrams, readouts, and Player
+   state agree.
+4. Exercise pointer and keyboard control, a narrow width, reduced motion, and a
+   static or failure fallback where the lab needs one.
+5. Record one reusable pattern, one confusing moment or gap, and the smallest
+   useful follow-up.
+
+| Lab | What it demonstrates | Focus for this review |
+| --- | --- | --- |
+| [Dialectic spiral](../labs/dialectic-spiral/index.demo.md) | A conceptual instrument driven by ordered states and a generative canvas | Verify that each stage button and Player step agree across the selected pill, spiral position, explanatory readout, metrics, and paused or running state. Exercise scrub, pace, reset, schemes, narrow width, reduced motion, and the no-JavaScript fallback. |
+| [D&D campaign workshop](../labs/campaign-forge/index.demo.md) | A Block workshop composed from five field-guide components | Follow every component flow and its context actions; check private choices, keyboard behavior, a 390 px view, reduced motion, and static fallback content. |
+| [Chess](../labs/chess/index.demo.md) | A move-based board interaction with replayable state | Check move selection and replay, image and square focus, labels, optional data, and full keyboard operation. |
+| [Tufte theme](../labs/tufte-theme/index.demo.md) | A reading-first visual theme with sidenotes and charts | Review light and dark schemes, sidenotes, chart legibility, narrow layout, print behavior, and visible warnings or caveats. |
+| [Layout components](../labs/layout-components/index.demo.md) | Reusable layout composition and semantic ordering | Confirm reading order, composition, container behavior, narrow layout, focus visibility, and a plain-Markdown fallback. |
+| [Simple learner quiz](../labs/simple-quiz/index.demo.md) | A small answer-and-feedback learning loop | Try answer, submit, forward, revisit, and restored-state paths; confirm useful evidence and clean test-response handling. |
+| [Bookshelf](../labs/bookshelf/index.demo.md) | A compact visual collection interface | Review item composition, overflow, keyboard access, narrow width, readable markup, and behavior without enhancement. |
+| [Kepler orbit](../labs/kepler-orbit/index.demo.md) | A stateful scientific visualization | Check Player and direct-control synchronization, labels, orbit state, presented animation, re-entry, keyboard use, narrow width, reduced motion, and cleanup. |
+| [Focus beats](../labs/focus-components/index.demo.md) | Beat pacing, focus, and typographic presentation | Review entry and exit, replay, focus movement, reduced motion, and whether the pacing clarifies the learning move. |
+| [3D globe](../labs/three-globe/index.demo.md) | An interactive data texture and spatial visualization | Try direct rotation, labels, narrow width, reduced motion, off-Beat and re-entry behavior, and the failure fallback. |
+| [Practice interview simulator](../labs/practice-interview/index.demo.md) | A simulated conversational practice room | Review fallback content, turn progression, permissions and failure states, keyboard access, evidence capture, and the boundary between demonstrated and proposed behavior. |
+
+Keep observations in this task while they are part of the tour. Create and link
+a separate task when a finding needs implementation, a PathMX Core contract
+change, or its own acceptance criteria.
+
+---
+
 ## Activity
+
+- **2026-07-18:** Andrew's public-Space review of Campaign Forge found three
+  related presentation questions. Code areas do not always appear in the
+  focused Player view when expected; arrow-key Beat navigation is intermittent,
+  especially after clicking interactive content; and the focused presentation
+  can feel too small and minimal to establish a strong starting Beat. The
+  current PathMX 0.1.17 build recognizes the Campaign Card fence as a single
+  `code` Beat, so the Source is not dropping it. Reproduce whether the Player
+  fails to bring that Beat into view or whether focus moves into a component,
+  button, copy control, or scrollable code region and changes keyboard
+  ownership. Treat visual scale separately as an authored theme/CSS experiment
+  unless the same small presentation appears across unrelated Core demos.
+- **2026-07-18:** Added a shared field guide for reviewing every demo in the
+  labs hub. Andrew began with Dialectic Spiral and observed a stage-control
+  mismatch: selecting `Synthesis` changes the active pill, while the canvas can
+  remain visually near the opening `Logic of Being` state. The implementation
+  follow-up is tracked in the Dialectic Spiral task.
 
 - **2026-07-16:** Extended the Duskmere workshop in the preferred sequence with
   four focused Literate Components: a

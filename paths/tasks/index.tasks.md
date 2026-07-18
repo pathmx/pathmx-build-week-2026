@@ -25,7 +25,7 @@ the task has a named owner.
 | --- | --- | --- | --- | --- |
 | [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
 | [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Tram | Rework landed as minimal Focus Beats; review the rebuilt micro-lesson lab in Play | July 18 |
-| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Manually review all five campaign component flows, keyboard behavior, and reduced motion; then finish the lab tour | July 17 |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 
 ---
@@ -34,7 +34,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
-| [Build a native PathMX generative-artifact lab](./2026-07-17-build-native-generative-artifact-lab.task.md) | Mark | Tram | Review the Dialectic Spiral lab in Play across schemes, widths, and reduced motion | July 19 |
+| [Build a native PathMX generative-artifact lab](./2026-07-17-build-native-generative-artifact-lab.task.md) | Mark | Tram | Reproduce the stage-control mismatch, resolve the accidental footnote, then finish the visual and interaction review | July 19 |
 | [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Review campus-at-night visuals, narrow layout, and keyboard focus | July 18 |
 
 ---

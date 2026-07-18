@@ -9,6 +9,27 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Lab reviews gain a shared field guide and concrete Player follow-ups
+
+The [authoring-skill review task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+now gives Andrew one compact review method and a lab-specific focus for every
+demo in the hub. It also records the Campaign Forge observations from the
+public Space: its Campaign Card code fence is present as one built `code` Beat,
+but the focused Player can fail to show it as expected; arrow-key traversal can
+become intermittent after pointer interaction; and the focused presentation
+can feel too small. The next review separates authored visual scale from Player
+focus and keyboard ownership before filing a PathMX Core issue.
+
+The [Dialectic Spiral task](../tasks/2026-07-17-build-native-generative-artifact-lab.task.md)
+now tracks the mismatch between a selected stage pill and the visible spiral
+state, plus the accidental `[^c1]` annotation and its Actor-session evidence.
+No lab implementation or Actor evidence is part of this task-tracking change.
+PathMX 0.1.17 built the focused task graph with 234 artifacts; only the three
+known Tufte-theme warnings remain. Mark and Tram retain their assigned review
+boundaries, and the interaction findings still require focused reproduction.
+
+---
+
 ## The Hegelian Spiral Perplexity artifact becomes a native Dialectic Spiral lab
 
 The [Dialectic Spiral lab](../labs/dialectic-spiral/index.demo.md) ports the

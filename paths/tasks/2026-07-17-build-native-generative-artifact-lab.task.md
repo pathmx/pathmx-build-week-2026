@@ -29,9 +29,11 @@ stepping through Play can enact the dialectic rather than autoplay it.
 
 ## Next Move
 
-Review the [Dialectic Spiral lab](../labs/dialectic-spiral/index.demo.md) in
-Play: arrival, each ordered state, scrub/speed/reset behavior, light and dark
-schemes, narrow width, and reduced motion.
+Reproduce Andrew's stage-control mismatch and make the selected pill, canvas
+position, readout, metrics, and motion state visibly agree for direct clicks
+and Player steps. Resolve the accidental `[^c1]` annotation in the demo Source,
+then finish the Play review across scrub, pace, reset, schemes, narrow width,
+reduced motion, and the no-JavaScript fallback.
 
 ---
 
@@ -49,6 +51,17 @@ schemes, narrow width, and reduced motion.
 ---
 
 ## Activity
+
+- **2026-07-18:** Andrew's manual Play pass found that selecting `Synthesis`
+  updates the active stage pill while the canvas can remain visually near the
+  opening `Logic of Being` state. Reproduce this with both direct stage clicks
+  and Player traversal, then verify that the trace, explanatory readout, turn,
+  moment, ascent, and paused or running state all agree.
+- **2026-07-18:** An accidental `[^c1]` annotation was added after “The honest
+  shape is a spiral.” with the note “noteworthy,” alongside Actor session
+  evidence from the Play pass. Treat both as review evidence; decide whether to
+  remove or rewrite the annotation before approval without deleting the Actor
+  evidence by accident.
 
 - **2026-07-17:** Studied the five shared Perplexity artifacts (Shape of the
   Day, Hegelian Spiral, Burn Rate/The AI Bubble, Eggs, Markdown→HTML) from
