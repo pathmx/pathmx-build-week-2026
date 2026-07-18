@@ -6,7 +6,7 @@ related:
   - ../../tasks/2026-07-15-spike-starter-init-flow.task.md
   - https://github.com/pathmx/pathmx-learning-starter
   - https://github.com/pathmx/pathmx/blob/main/paths/inbox/2026-07-15-pathmx-starter-init-mvp.issue.md
-  - https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.design.md
+  - https://github.com/pathmx/pathmx/blob/main/paths/docs/pathmx-starter-init-mvp.design.md
   - https://learn.chatgpt.com/docs/quickstart.md
   - https://learn.chatgpt.com/docs/browser.md
 ---
@@ -64,7 +64,7 @@ Each tester uses:
 
 - a unique destination folder that does not already exist;
 - a fresh Codex project and task with no pasted Build Week context;
-- the same candidate or public PathMX CLI version when comparing runs;
+- the same public PathMX CLI version, 0.1.17 or later, when comparing runs;
 - only fictional or non-sensitive learner information; and
 - a topic small enough to produce one observable attempt during the run.
 
@@ -72,9 +72,9 @@ Do not initially tell Codex which files to edit, which local skill to invoke,
 or how to structure a PathMX Source. Discovering that workflow is part of the
 test.
 
-If the candidate `pathmx init <folder> --template self-learning` command has
-not landed, record **blocked by release**. Do not substitute a Git clone and
-report that the init flow passed.
+If `pathmx init --help` does not show a project path and
+`--template <repository-name>`, record **blocked by release**. Do not
+substitute a Git clone and report that the init flow passed.
 
 ---
 
@@ -85,8 +85,11 @@ to a tester-specific Source in that person's branch or clone:
 
 ```sh
 mkdir -p paths/labs/self-learning-box/runs
+run_date=$(date +%F)
+tester_slug=mark
+run_guide="paths/labs/self-learning-box/runs/${run_date}-${tester_slug}.guide.md"
 cp paths/labs/self-learning-box/manual-test.guide.md \
-  paths/labs/self-learning-box/runs/YYYY-MM-DD-<tester>.guide.md
+  "$run_guide"
 ```
 
 Create a matching task named
@@ -134,34 +137,51 @@ pathmx --version
 pathmx init --help
 ```
 
-The help must show a project path and `--template`. If it does not, classify
-the run as **blocked by release** and stop. Do not use a private Core checkout
-unless the team explicitly labels the run as a packed-candidate test.
+The version must be 0.1.17 or later, and the help must show a project path and
+`--template <repository-name>`. If either check fails, classify the run as
+**blocked by release** and stop. Do not use a private Core checkout unless the
+team explicitly labels the run as a packed-candidate test.
 
 ---
 
 ## 2. Create A Fresh Self-Learning Space
 
-From the parent directory where you want the test folder:
+From the parent directory where you want the test folder, replace `mark` with
+your own short name:
 
 ```sh
-pathmx init pathmx-learning-test-<your-name> --template self-learning
+starter_space=pathmx-learning-test-mark
+pathmx init "$starter_space" --template pathmx-learning-starter
 ```
 
-The command should create a new folder and print the Starter revision plus the
-next commands. Record the complete summary.
+The command should create a new folder and print the exact Starter revision,
+official-skills revision, managed-skills receipt, and next commands. Record the
+complete summary.
 
 Before opening Codex, check only these setup facts:
 
 ```sh
-cd pathmx-learning-test-<your-name>
+starter_space=pathmx-learning-test-mark
+cd "$starter_space"
 test -f AGENTS.md
 test -f paths/index.path.md
-test -f .agents/skills/teach-me-anything/SKILL.md
+test -f .agents/skills/path/SKILL.md
+test -f .agents/skills/pathmx/SKILL.md
+test -f .agents/pathmx-skills.receipt.json
+test -L .claude/skills
+test ! -e .git
+```
+
+Confirm that the installed skills are already current:
+
+```sh
+pathmx init --skills
 ```
 
 Do not repair missing files. A missing instruction, home Source, or teaching
-skill is an init or release-asset failure.
+skill is an init or release-asset failure. The skills update should report that
+the managed official skills are already current; any changed or conflicting
+package is a setup failure worth recording.
 
 The generated folder should be ordinary and learner-owned. It should not carry
 the Build Week repository's tasks, reports, work log, or private context.
@@ -334,7 +354,7 @@ whether the required first proximal-edge cycle succeeded.
 | --- | --- |
 | **Box pass** | Init, Player, natural Codex onboarding, one proximal-edge activity, return handoff, durable evidence, and adaptation work without rescue or repair. |
 | **Conditional pass** | The loop works, but Codex needed the one rescue prompt or another recorded intervention. |
-| **Blocked** | The candidate release, Player, Browser availability needed by the chosen setup, or durable Action path is unavailable, so the intended flow cannot be evaluated honestly. |
+| **Blocked** | The installed release, Player, Browser availability needed by the chosen setup, or durable Action path is unavailable, so the intended flow cannot be evaluated honestly. |
 | **Box fail** | The run needs private context, file repair, unsupported syntax, transcript-only state, or an adaptation unsupported by saved evidence. |
 
 Classify the narrowest owner:
@@ -359,12 +379,12 @@ smaller owner.
 Return to this tester-specific guide in the Build Week Player after completing
 the learning loop. Submit every survey question below.
 
-These questions require PathMX 0.1.9 or the matching packed candidate with
-`questions.submitSingleChoice`. Each submission should write the selected label
-to `response.choice` in this Source. Reload the page and confirm every choice
-remains selected. If the questions render without inputs or the choices do not
-persist, record the survey as **blocked by Actor/input release** rather than
-editing `response.choice` by hand.
+This complete workflow requires PathMX 0.1.17 or later, which includes
+`questions.submitSingleChoice`. Each submission should write the selected
+label to `response.choice` in this Source. Reload the page and confirm every
+choice remains selected. If the questions render without inputs or the choices
+do not persist, record the survey as **blocked by Actor/input release** rather
+than editing `response.choice` by hand.
 
 The survey is intentionally short and decision-oriented. It measures a
 different seam in each question instead of asking for a general satisfaction
@@ -503,7 +523,9 @@ task.
 Before committing, verify the survey itself exercised the durable input path:
 
 ```sh
-run_guide=paths/labs/self-learning-box/runs/YYYY-MM-DD-<tester>.guide.md
+run_date=$(date +%F)
+tester_slug=mark
+run_guide="paths/labs/self-learning-box/runs/${run_date}-${tester_slug}.guide.md"
 test "$(rg -c '^response:$' "$run_guide")" -eq 7
 test "$(rg -c '^  choice: .+' "$run_guide")" -eq 7
 git diff --check
@@ -522,6 +544,8 @@ Use this report shape:
 - Environment: OS, Codex surface, Browser availability and permissions
 - PathMX CLI: exact version or packed candidate revision
 - Starter: exact revision printed by init
+- Official skills: exact revision printed by init
+- Official skills receipt:
 - Init command and summary:
 - Topic and available time:
 - Observable outcome Codex established:

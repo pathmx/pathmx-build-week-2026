@@ -11,7 +11,7 @@ related:
   - ../labs/self-learning-box/manual-test.guide.md
   - https://github.com/pathmx/pathmx-learning-starter
   - https://github.com/pathmx/pathmx/blob/main/paths/inbox/2026-07-15-pathmx-starter-init-mvp.issue.md
-  - https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.design.md
+  - https://github.com/pathmx/pathmx/blob/main/paths/docs/pathmx-starter-init-mvp.design.md
   - https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.plan.md
 ---
 
@@ -41,9 +41,9 @@ from two uniquely generated folders with fresh Codex tasks.
 
 ## Done When
 
-- Two independent testers record the full workflow beginning with the candidate
-  `pathmx init <folder> --template self-learning` command, including exact CLI
-  and Starter revisions.
+- Two independent testers record the full workflow beginning with
+  `pathmx init <folder> --template pathmx-learning-starter`, including exact
+  CLI, Starter, and official-skills revisions.
 - Each run reaches a working Player, natural Codex onboarding, an initial
   profile and path, one proximal-edge task, an explicit return from Player to
   Codex, one durable learner submission, and one evidence-based adaptation—or
@@ -74,7 +74,7 @@ from two uniquely generated folders with fresh Codex tasks.
   `2019cc8749445e244041b21828a865bf2ddf904c`.
 - **2026-07-15:** Core scope is tracked as the general
   [named Starter init issue](https://github.com/pathmx/pathmx/blob/main/paths/inbox/2026-07-15-pathmx-starter-init-mvp.issue.md),
-  [contract packet](https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.design.md),
+  [contract packet](https://github.com/pathmx/pathmx/blob/main/paths/docs/pathmx-starter-init-mvp.design.md),
   and
   [implementation plan](https://github.com/pathmx/pathmx/blob/main/paths/plans/pathmx-starter-init-mvp.plan.md).
 - **2026-07-15:** `pathmx self-update --check` confirmed 0.1.8 is current.
@@ -108,3 +108,11 @@ from two uniquely generated folders with fresh Codex tasks.
 - **2026-07-15:** Mark is continuing the MVP guide and initializer flow with a
   goal of publishing it later today. It is not ready for Andrew or Tram's
   tester handoff yet; their current work does not depend on it.
+- **2026-07-18:** Public PathMX 0.1.17 materialized the now-public,
+  template-enabled Starter at `c51758516dd87dbf788a4d7fdb11ea505dfe1faa`
+  with official skills at `24cfcdf9e6f0f80dad8bdb1a60f158c73c151ec2`.
+  The generated Space contained the current `path` and `pathmx` skills plus the
+  managed receipt, built one Path with 37 artifacts, and served the learner
+  home at `/index.path` with HTTP 200. The quick and full manual guides now use
+  the released repository name and current generated layout. A real learner
+  response and survey submission remain for the independent tester runs.
