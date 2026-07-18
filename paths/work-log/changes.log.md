@@ -9,6 +9,32 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Andrew's Chess walkthrough becomes navigation review evidence
+
+Andrew's [July 18 labs walkthrough](https://www.loom.com/share/0c6e72c323c84ebd8ead8e0256c23f25)
+now appears with the other [shared walkthroughs](../research/resources.path.md),
+and a dated [review summary](./2026-07-18-andrew-labs-review.notes.md) preserves
+the useful observations without committing the raw transcript. The review
+captures Command-K discovery, Chess interaction and temporary state, keyboard
+ownership after entering a component, Play-mode continuity, missing final-Beat
+confirmation, and the need to distinguish internal from external links before
+activation.
+
+A new [navigation and link-affordance task](../tasks/2026-07-18-clarify-player-navigation-and-link-affordances.task.md)
+assigns Andrew and Mark the broader Player review. The active
+[Chess task](../tasks/2026-07-17-fix-chess-piece-disappearing.task.md) now owns
+the concrete reference cleanup: the local lab and helper files remain intact,
+but the canonical directory and three upstream GitHub file links all return
+404. PathMX preserves those destinations correctly as external links, so this
+is not a route-rewriting failure. PathMX 0.1.17 built the task graph with 240
+artifacts and only the three known Tufte-theme warnings; a fresh watched preview
+also served the new Sources successfully. Remaining work is to replace the
+broken Chess links, test the visible external-link contract, reproduce the
+component-focus and end-of-Path experience, and gather exact evidence for the
+separately mentioned login issue.
+
+---
+
 ## Lab reviews gain a shared field guide and concrete Player follow-ups
 
 The [authoring-skill review task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)

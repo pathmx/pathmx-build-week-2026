@@ -67,3 +67,12 @@ not skip child reconciliation on the clicked `<button>`.
 - **2026-07-17:** Reopened after deployed replay evidence showed
   `ctx.data.pieces.json()` can 404 for the component-scoped chess-game data
   artifact, leaving the replay board empty before PGN rendering starts.
+- **2026-07-18:** Andrew's labs walkthrough found that the canonical Chess
+  directory link and all three neighboring upstream helper links return 404.
+  The local `/labs/chess` route, components, runtime, stylesheets, data, and
+  assets remain intact, and built HTML preserves the GitHub URLs as external,
+  so this is not a PathMX rewrite failure. Replace the three helper links with
+  `./chess-runtime.js`, `./chess-board.css`, and `./chess-game.css`; remove or
+  replace the canonical directory link until a public immutable Core target is
+  verified. The broader visible external-link affordance is tracked in
+  [Clarify Player Navigation And Link Affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md).

@@ -28,6 +28,10 @@ Recorded product walkthroughs and feedback passes. Watch at 1.5×–2×.
   UI feedback found while testing.
 - [Build Week Loom](https://www.loom.com/share/9e2cd679a0c544fe88ab02bc976756a9)
   — additional walkthrough shared to the team.
+- [Chess, navigation, and end-of-Path walkthrough](https://www.loom.com/share/0c6e72c323c84ebd8ead8e0256c23f25)
+  — Andrew's exploratory review of Command-K discovery, Chess interaction,
+  link destinations, keyboard focus, component state, and completion cues;
+  summarized in the [July 18 work-log note](../work-log/2026-07-18-andrew-labs-review.notes.md).
 
 ---
 

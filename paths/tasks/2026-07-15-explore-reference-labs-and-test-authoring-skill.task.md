@@ -88,6 +88,13 @@ change, or its own acceptance criteria.
 
 ## Activity
 
+- **2026-07-18:** Andrew continued the field-guide tour with Chess. The
+  [July 18 review summary](../work-log/2026-07-18-andrew-labs-review.notes.md)
+  preserves the Loom's observations about discovery, component focus, local
+  state, Play continuity, and end-of-Path uncertainty. The broken canonical
+  source link and broader destination/completion questions moved into a
+  [separate navigation task](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md)
+  with Mark as reviewer.
 - **2026-07-18:** Andrew's public-Space review of Campaign Forge found three
   related presentation questions. Code areas do not always appear in the
   focused Player view when expected; arrow-key Beat navigation is intermittent,
