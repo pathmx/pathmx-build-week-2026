@@ -27,6 +27,7 @@ the task has a named owner.
 | [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Tram | Rework landed as minimal Focus Beats; review the rebuilt micro-lesson lab in Play | July 18 |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
+| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Andrew | Review the Player-native reshape, confirm the submission boundary, and assign the accepted MVP lanes | July 20 |
 
 ---
 
@@ -46,7 +47,6 @@ the task has a named owner.
 | [Clarify Player navigation and link affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md) | Andrew | Mark | Reproduce internal/external links, Chess focus boundaries, and the final-Beat experience | July 20 |
 | [Evaluate Sound Effect Support In PathMX](./2026-07-17-evaluate-sound-effect-support.task.md) | Unassigned | Andrew | Evaluate Cuelume and compare declarative, component-owned, and authored-asset approaches | July 20 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Tram | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Unassigned | Andrew | Name an owner and audit the starter's current gap | July 20 |
 
 ---
 

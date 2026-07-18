@@ -1,12 +1,13 @@
 ---
 type: task
-status: ready
-owner: unassigned
+status: in-progress
+owner: Mark
 reviewer: Andrew
 date: 2026-07-15
 due: 2026-07-20
 related:
   - ../work-log/2026-07-14-hackathon-meeting.notes.md
+  - ../work-log/2026-07-18-player-native-learning-reshape.brief.md
 ---
 
 # Prepare The Learner Starter And Submission
@@ -20,8 +21,9 @@ repeatable submission without copying private team material into either repo.
 
 ## Next Move
 
-Name an accountable owner, inspect the learner starter's current state, and
-list the smallest gaps between the working labs and the submission experience.
+Review the Player-native learning reshape with the team, confirm the
+judge-facing repository boundary, and turn the accepted MVP journey into
+concrete owner/reviewer lanes.
 
 ---
 
@@ -37,4 +39,10 @@ list the smallest gaps between the working labs and the submission experience.
 
 ## Activity
 
-No activity recorded yet.
+- **2026-07-18:** Claimed by Mark for the Build Week recalibration. The new
+  direction keeps the learner and learning agent inside the Player, narrows the
+  learner-facing Starter, and treats proprietary PathMX Core as a packaged
+  pre-existing dependency rather than the submitted repository.
+- **2026-07-18:** The standalone reshape brief built successfully as one Path
+  with PathMX 0.1.17. Its generated route is
+  `/work-log/2026-07-18-player-native-learning-reshape.brief`.
