@@ -11,6 +11,9 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 
 ## Demos
 
+- [Dialectic spiral](./dialectic-spiral/index.demo.md) — a native port of the
+  Hegelian Spiral Perplexity artifact: a scheme-aware canvas instrument whose
+  thesis→antithesis→synthesis stages are ordered, Play-traversable states.
 - [Dungeons & Dragons campaign workshop](./campaign-forge/index.demo.md) — a
   portable, Block-paced exercise that turns one fantasy premise into factions,
   places, a flexible first session, and a reusable campaign card.

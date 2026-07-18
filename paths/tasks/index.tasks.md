@@ -34,6 +34,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Build a native PathMX generative-artifact lab](./2026-07-17-build-native-generative-artifact-lab.task.md) | Mark | Tram | Review the Dialectic Spiral lab in Play across schemes, widths, and reduced motion | July 19 |
 | [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Review campus-at-night visuals, narrow layout, and keyboard focus | July 18 |
 
 ---

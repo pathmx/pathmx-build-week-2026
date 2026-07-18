@@ -1,0 +1,580 @@
+:self {
+  /* Moment palette — light: inked, printable; dark: luminous (original artifact) */
+  --ds-thesis: #2a6b9e;
+  --ds-antithesis: #b23a5e;
+  --ds-synthesis: #6d4fa3;
+  --ds-gold: #a3781a;
+  --ds-glow: 0.35;
+
+  --ds-ink: var(--pmx-color-fg, #211f1a);
+  --ds-dim: var(--pmx-color-muted, #6f6a5c);
+  --ds-line: color-mix(in oklab, var(--pmx-color-fg, #211f1a) 14%, transparent);
+  --ds-panel: color-mix(in oklab, var(--pmx-color-bg, #f6f3ec) 72%, var(--pmx-color-fg, #211f1a) 3%);
+  --ds-well: color-mix(in oklab, var(--pmx-color-bg, #f6f3ec) 88%, var(--pmx-color-fg, #211f1a) 4%);
+  --ds-guide: color-mix(in oklab, var(--ds-synthesis) 16%, transparent);
+
+  position: relative;
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+  box-sizing: border-box;
+  inline-size: 100%;
+  margin-block: clamp(1.6rem, 4vh, 2.8rem);
+  border: 1px solid var(--ds-line);
+  border-radius: 1.1rem;
+  padding: clamp(1.1rem, 2.6vw, 2rem);
+  background: var(--ds-panel);
+  color: var(--ds-ink);
+  box-shadow: 0 20px 55px color-mix(in oklab, var(--pmx-color-fg, #211f1a) 9%, transparent);
+}
+
+@dark {
+  :self {
+    --ds-thesis: #5ec8ff;
+    --ds-antithesis: #ff6b8b;
+    --ds-synthesis: #b388ff;
+    --ds-gold: #ffd166;
+    --ds-glow: 1;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:self * {
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.dialectic-spiral__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.8rem 2rem;
+}
+
+.dialectic-spiral__eyebrow {
+  margin: 0 0 0.45rem;
+  color: var(--ds-dim);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__header h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.dialectic-spiral__lede {
+  max-inline-size: 34ch;
+  margin: 0;
+  color: var(--ds-dim);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Stage rail */
+
+.dialectic-spiral__stages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.dialectic-spiral__stages button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--ds-line);
+  border-radius: 999px;
+  padding: 0.42rem 0.9rem;
+  background: transparent;
+  color: var(--ds-dim);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 550;
+  cursor: pointer;
+  transition:
+    color 160ms ease-out,
+    border-color 160ms ease-out,
+    background 160ms ease-out;
+}
+
+.dialectic-spiral__stages button span {
+  color: color-mix(in oklab, var(--ds-dim) 62%, transparent);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dialectic-spiral__stages button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dialectic-spiral__stages button:not(:disabled):hover {
+    border-color: color-mix(in oklab, var(--ds-synthesis) 55%, transparent);
+    color: var(--ds-ink);
+  }
+}
+
+.dialectic-spiral__stages button[aria-pressed="true"] {
+  border-color: var(--ds-synthesis);
+  background: color-mix(in oklab, var(--ds-synthesis) 14%, transparent);
+  color: var(--ds-ink);
+}
+
+/* Instrument: scene + readout */
+
+.dialectic-spiral__instrument {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(16rem, 1fr);
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+  align-items: stretch;
+}
+
+.dialectic-spiral__scene-wrap {
+  position: relative;
+  overflow: clip;
+  border: 1px solid var(--ds-line);
+  border-radius: 0.9rem;
+  background:
+    radial-gradient(
+      120% 90% at 72% -8%,
+      color-mix(in oklab, var(--ds-synthesis) 12%, transparent),
+      transparent 58%
+    ),
+    var(--ds-well);
+}
+
+.dialectic-spiral__scene,
+.dialectic-spiral__static {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 720 / 520;
+}
+
+.dialectic-spiral__static {
+  display: none;
+  padding: 4%;
+}
+
+:self:not([data-state]) .dialectic-spiral__scene {
+  display: none;
+}
+
+:self:not([data-state]) .dialectic-spiral__static {
+  display: block;
+}
+
+.dialectic-spiral__static-axis {
+  stroke: var(--ds-line);
+  stroke-dasharray: 2 6;
+}
+
+.dialectic-spiral__static-path {
+  fill: none;
+  stroke: var(--ds-synthesis);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.dialectic-spiral__static-nodes circle {
+  fill: var(--ds-synthesis);
+}
+
+.dialectic-spiral__static-apex {
+  fill: var(--ds-gold);
+}
+
+.dialectic-spiral__static-label {
+  fill: var(--ds-ink);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dialectic-spiral__focus-pulse {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--ds-synthesis) 70%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialectic-spiral__motion-status {
+  position: absolute;
+  inset-block-end: 0.65rem;
+  inset-inline-start: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--ds-dim);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__motion-status [data-motion-indicator] {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: var(--ds-dim);
+  opacity: 0.5;
+}
+
+:self[data-running="true"] .dialectic-spiral__motion-status [data-motion-indicator] {
+  background: var(--ds-synthesis);
+  opacity: 1;
+  animation: dialectic-spiral-pulse 2s ease-out infinite;
+}
+
+@keyframes dialectic-spiral-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--ds-synthesis) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 0.55rem transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :self[data-running="true"] .dialectic-spiral__motion-status [data-motion-indicator] {
+    animation: none;
+  }
+}
+
+/* Readout */
+
+.dialectic-spiral__readout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-inline-size: 0;
+  border: 1px solid var(--ds-line);
+  border-radius: 0.9rem;
+  padding: clamp(0.9rem, 2vw, 1.3rem);
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--ds-synthesis) 6%, transparent), transparent 46%),
+    var(--ds-well);
+}
+
+.dialectic-spiral__stage-copy {
+  display: none;
+  min-block-size: 7.6rem;
+}
+
+:self:not([data-state]) .dialectic-spiral__stage-copy--fallback,
+:self[data-state="observe"] [data-spiral-copy="observe"],
+:self[data-state="thesis"] [data-spiral-copy="thesis"],
+:self[data-state="antithesis"] [data-spiral-copy="antithesis"],
+:self[data-state="synthesis"] [data-spiral-copy="synthesis"],
+:self[data-state="climb"] [data-spiral-copy="climb"],
+:self[data-state="absolute"] [data-spiral-copy="absolute"] {
+  display: block;
+}
+
+.dialectic-spiral__readout-kicker {
+  margin: 0;
+  color: var(--ds-gold);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__stage-copy h3 {
+  margin: 0.5rem 0 0.55rem;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.dialectic-spiral__stage-copy > p:last-child {
+  margin: 0;
+  color: var(--ds-dim);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.dialectic-spiral__triad {
+  border-block-start: 1px solid var(--ds-line);
+  padding-block-start: 0.85rem;
+}
+
+.dialectic-spiral__triad-stage {
+  margin: 0;
+  color: var(--ds-dim);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__triad-stage [data-triad-moment] {
+  color: var(--ds-synthesis);
+}
+
+.dialectic-spiral__triad-pair {
+  margin: 0.4rem 0 0.35rem;
+  font-size: 0.98rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition: opacity 200ms ease-out;
+}
+
+.dialectic-spiral__triad-desc {
+  margin: 0;
+  color: var(--ds-dim);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Metrics */
+
+.dialectic-spiral__metrics {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-block: 1px solid var(--ds-line);
+}
+
+.dialectic-spiral__metrics div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding-block: 0.5rem;
+}
+
+.dialectic-spiral__metrics div + div {
+  border-block-start: 1px solid color-mix(in oklab, var(--ds-line) 55%, transparent);
+}
+
+.dialectic-spiral__metrics dt {
+  margin: 0;
+  color: var(--ds-dim);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__metrics dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Legend chips */
+
+.dialectic-spiral__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dialectic-spiral__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--ds-line);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  color: var(--ds-dim);
+  font-size: 0.76rem;
+  font-weight: 550;
+  transition:
+    color 180ms ease-out,
+    border-color 180ms ease-out,
+    opacity 180ms ease-out;
+}
+
+.dialectic-spiral__legend li span {
+  inline-size: 0.6rem;
+  block-size: 0.6rem;
+  border-radius: 0.2rem;
+}
+
+.dialectic-spiral__legend [data-legend-moment="thesis"] span {
+  background: var(--ds-thesis);
+}
+
+.dialectic-spiral__legend [data-legend-moment="antithesis"] span {
+  background: var(--ds-antithesis);
+}
+
+.dialectic-spiral__legend [data-legend-moment="synthesis"] span {
+  background: var(--ds-synthesis);
+}
+
+:self[data-moment] .dialectic-spiral__legend li {
+  opacity: 0.55;
+}
+
+:self[data-moment="thesis"] .dialectic-spiral__legend [data-legend-moment="thesis"],
+:self[data-moment="antithesis"] .dialectic-spiral__legend [data-legend-moment="antithesis"],
+:self[data-moment="synthesis"] .dialectic-spiral__legend [data-legend-moment="synthesis"] {
+  border-color: color-mix(in oklab, currentColor 40%, transparent);
+  color: var(--ds-ink);
+  opacity: 1;
+}
+
+/* Controls */
+
+.dialectic-spiral__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.4rem;
+  margin: 0;
+  border: 1px solid var(--ds-line);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--ds-well);
+}
+
+.dialectic-spiral__controls legend {
+  padding-inline: 0.4rem;
+  color: var(--ds-dim);
+  font-family: var(--pmx-font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dialectic-spiral__toggle,
+.dialectic-spiral__reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 2.4rem;
+  border: 1px solid var(--ds-line);
+  border-radius: 0.6rem;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  color: var(--ds-ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease-out,
+    background 160ms ease-out,
+    transform 90ms ease-out;
+}
+
+.dialectic-spiral__toggle:not(:disabled):active,
+.dialectic-spiral__reset:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dialectic-spiral__toggle:not(:disabled):hover,
+  .dialectic-spiral__reset:not(:disabled):hover {
+    border-color: color-mix(in oklab, var(--ds-synthesis) 60%, transparent);
+  }
+}
+
+.dialectic-spiral__toggle[aria-pressed="true"] {
+  border-color: var(--ds-synthesis);
+  background: color-mix(in oklab, var(--ds-synthesis) 14%, transparent);
+}
+
+.dialectic-spiral__controls label {
+  display: grid;
+  flex: 1 1 13rem;
+  gap: 0.35rem;
+  min-inline-size: 11rem;
+}
+
+.dialectic-spiral__controls label > span {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ds-dim);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.dialectic-spiral__controls output {
+  font-variant-numeric: tabular-nums;
+}
+
+.dialectic-spiral__controls input[type="range"] {
+  inline-size: 100%;
+  block-size: 1.4rem;
+  margin: 0;
+  accent-color: var(--ds-synthesis);
+}
+
+.dialectic-spiral__controls :disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Notes */
+
+.dialectic-spiral__model-note,
+.dialectic-spiral__noscript {
+  margin: 0;
+  color: color-mix(in oklab, var(--ds-dim) 82%, transparent);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Narrow containers */
+
+@container pathmx-runtime (max-width: 56rem) {
+  .dialectic-spiral__instrument {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dialectic-spiral__stage-copy {
+    min-block-size: 0;
+  }
+
+  .dialectic-spiral__lede {
+    max-inline-size: none;
+  }
+}
+
+@media print {
+  :self {
+    box-shadow: none;
+  }
+
+  .dialectic-spiral__controls,
+  .dialectic-spiral__motion-status {
+    display: none;
+  }
+}

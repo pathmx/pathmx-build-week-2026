@@ -9,6 +9,26 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The Hegelian Spiral Perplexity artifact becomes a native Dialectic Spiral lab
+
+The [Dialectic Spiral lab](../labs/dialectic-spiral/index.demo.md) ports the
+shared [Hegelian Spiral](https://hegelianspiral.pplx.app/) artifact into the
+Player as a `<dialectic-spiral>` Literate Component: a canvas spiral that
+reads its palette from CSS custom properties (so one drawing routine follows
+light and dark schemes), exposes observe → thesis → antithesis → synthesis →
+climb → absolute as ordered Play-traversable states, pauses animation outside
+its presented Beat, and degrades to a labeled static SVG without JavaScript.
+A companion [design-notes research page](../research/perplexity-artifact-design-notes.notes.md)
+records the cross-artifact CSS/style techniques worth reusing (oklab
+`color-mix` surfaces, editorial Fraunces/Inter pairing, tabular-nums readouts,
+scene-plus-readout layout) and flags candidates for Core or the starter theme.
+The [owning task](../tasks/2026-07-17-build-native-generative-artifact-lab.task.md)
+records verification — PathMX 0.1.13 build with only the known Tufte warnings,
+component wiring confirmed in the built HTML — and is in review with Tram for
+the rendered Play pass across schemes, widths, and reduced motion.
+
+---
+
 ## A shared resources and inspiration page collects what the team has been sharing
 
 A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
