@@ -351,6 +351,11 @@ The game tag owns the reader controls, move list, board rendering, and note
 selection. The source remains normal PGN plus authored notes, so the game can be
 edited without touching JavaScript.
 
+At narrow runtime widths, the board, controls, move list, and active note
+compress into one Player-friendly column. The move list remains independently
+scrollable so the current board and analysis stay legible without horizontal
+overflow.
+
 [@styles.game]: ./chess-game.css
 [@script.runtime]: ./chess-runtime.js
 [@data.pieces]: ./chess-pieces.json

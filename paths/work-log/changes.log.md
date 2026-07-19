@@ -9,6 +9,38 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## A beginner chess-opening lesson exercises the canonical components
+
+[Build Before You Attack](../labs/chess-opening-lesson/index.demo.md) turns the
+canonical Chess Board and Chess Game components into a short beginner lesson
+on controlling the center, developing pieces, and making the king safe. Its
+annotated Italian Game replay exposes only the meaningful teaching moments in
+Play, followed by a concrete development-move practice board. The shared Chess
+Game layout now compresses the board, controls, move list, and active note into
+a single narrow Player-friendly column. The owning
+[lesson task](../tasks/2026-07-19-build-chess-opening-lesson.task.md) remains in
+progress for Andrew's language, phone-scale, touch, and real-keyboard pass
+before Mark reviews graduation to the learner starter.
+
+The same review also records two canonical-component follow-ups without
+presenting them as completed fixes. The new
+[promotion task](../tasks/2026-07-19-add-chess-promotion-choice.task.md) calls
+for an accessible queen, rook, bishop, or knight choice with queen as the
+fallback. The active
+[navigation task](../tasks/2026-07-18-clarify-player-navigation-and-link-affordances.task.md)
+now includes the reproduced component-link rewrite collision: the first link
+to an imported component Source retains its raw relative Markdown address and
+404s on an extensionless route, although the nested component route exists.
+
+PathMX 0.1.18 built the complete graph with 266 artifacts and only the three
+known Tufte-theme warnings. Live Browse and Play checks covered replay forward
+and backward movement, direct board interaction, retained piece rendering,
+Player Context Actions, focus restoration, and a 390 × 844 layout without
+horizontal overflow. Synthetic keyboard activation remained inconclusive, so
+real-device keyboard and touch review is explicitly still required.
+
+---
+
 ## Labs walkthrough yields a workspace link audit and Player follow-ups
 
 Andrew's continuing lab review is now captured in the

@@ -270,3 +270,37 @@
 .pmx-chess-game-note > :last-child {
   margin-block-end: 0;
 }
+
+@container pathmx-runtime (max-width: 28rem) {
+  :self {
+    margin-block: 0.5rem;
+  }
+
+  .pmx-chess-game-layout,
+  .pmx-chess-game-board-panel,
+  .pmx-chess-game-analysis {
+    gap: 0.55rem;
+  }
+
+  .pmx-chess-board-frame {
+    inline-size: min(100%, 15.5rem);
+    margin-inline: auto;
+    padding: 0.55rem;
+  }
+
+  .pmx-chess-game-controls {
+    justify-content: center;
+  }
+
+  .pmx-chess-game-status {
+    text-align: center;
+  }
+
+  .pmx-chess-game-moves {
+    max-block-size: 3.25rem;
+  }
+
+  .pmx-chess-game-note {
+    padding: 0.65rem;
+  }
+}

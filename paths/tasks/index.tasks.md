@@ -23,10 +23,11 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Build a chess opening lesson with the canonical components](./2026-07-19-build-chess-opening-lesson.task.md) | Andrew | Mark | Run a human language and phone-scale pass, then send the stable lesson to Mark for graduation review | July 20 |
 | [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
 | [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Tram | Rework landed as minimal Focus Beats; review the rebuilt micro-lesson lab in Play | July 18 |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
-| [Clarify Player navigation and link affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md) | Andrew | Mark | Review the link index, restart Player, and reproduce Kepler viewport plus quiz live-update behavior | July 20 |
+| [Clarify Player navigation and link affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md) | Andrew | Mark | Reproduce the mobile Beat-advance controls, then review the link index, Kepler viewport, and quiz live-update behavior | July 20 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Andrew | Review the Player-native reshape, confirm the submission boundary, and assign the accepted MVP lanes | July 20 |
 
@@ -45,6 +46,7 @@ the task has a named owner.
 
 | Task | Owner | Reviewer | Next move | Due |
 | --- | --- | --- | --- | --- |
+| [Add an explicit chess promotion choice](./2026-07-19-add-chess-promotion-choice.task.md) | Andrew | Mark | Add an accessible choice to the canonical interactive board, with queen as the fallback, then sync its consumers | July 20 |
 | [Evaluate Sound Effect Support In PathMX](./2026-07-17-evaluate-sound-effect-support.task.md) | Unassigned | Andrew | Evaluate Cuelume and compare declarative, component-owned, and authored-asset approaches | July 20 |
 | [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Tram | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
 

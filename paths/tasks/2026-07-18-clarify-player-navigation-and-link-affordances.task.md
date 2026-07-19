@@ -19,18 +19,21 @@ related:
 ## Outcome
 
 Make it clear where a link will go, when an interactive component owns the
-keyboard, and when a learner has reached the end of a Path so navigation feels
-intentional instead of broken.
+keyboard, how a learner advances Beat by Beat on touch devices, and when a
+learner has reached the end of a Path so navigation feels intentional instead
+of broken.
 
 ---
 
 ## Next Move
 
-Andrew reviews the workspace link index, then reproduces the Kepler viewport
-and quiz save-and-forward cases after restarting the local Player. Record when
-scrolling belongs to a tall component versus Player navigation, and whether a
-successful Source write reconciles in the fresh session. Mark then reviews the
-evidence and helps separate Build Week content fixes from PathMX Core work.
+Andrew reviews the workspace link index, then reproduces the Kepler viewport,
+quiz save-and-forward, and mobile Beat-advance cases after restarting the local
+Player. Record when scrolling belongs to a tall component versus Player
+navigation, whether a successful Source write reconciles in the fresh session,
+and how a right-handed touch learner can advance without relying on the
+bottom-left keypad. Mark then reviews the evidence and helps separate Build
+Week content fixes from PathMX Core work.
 
 ---
 
@@ -51,6 +54,11 @@ evidence and helps separate Build Week content fixes from PathMX Core work.
   navigation has a deliberate same-tab, new-tab, or host-browser contract.
 - Component focus entry and exit are reproducible, with expected Player arrow
   behavior recorded before and after interacting with Chess.
+- On a mobile-sized touch viewport, the available Beat-by-Beat navigation
+  controls, their placement, reachability, and any gesture alternatives are
+  recorded. If the only available control is the bottom-left keypad, document
+  that right-handed ergonomics limitation as a concrete Core recommendation
+  for Mark to evaluate.
 - A component Beat taller than the Player viewport can be inspected without a
   scroll gesture unexpectedly advancing to the next Beat, or the limitation is
   recorded as a concrete Core recommendation.
@@ -67,6 +75,24 @@ evidence and helps separate Build Week content fixes from PathMX Core work.
 
 ## Activity
 
+- **2026-07-19:** Reproduced Andrew's Chess component-link report on PathMX
+  0.1.18. The first `Chess Components` anchor at `/labs/chess` resolved in
+  relation metadata but retained `href="./chess.components.md"`, producing
+  `/labs/chess.components.md` and a 404; the actual nested route
+  `/labs/chess/chess.components` returned 200. The first link to that imported
+  Source was bound to the adjacent `@chess-components` reference-definition
+  relation, while later links to the same Source were rewritten correctly.
+  Renaming or removing the first link moved the raw address to the next one,
+  confirming a relation/rewrite collision rather than a copy collision. No
+  source workaround landed: keep the portable relative links and route the
+  underlying rewrite to PathMX Core instead of hardcoding a deployment URL.
+- **2026-07-19:** Added a mobile-navigation question for Mark's review. The
+  reported current experience exposes Beat-by-Beat advance through the keypad
+  arrows at the bottom left of the screen; this is not a natural reach for a
+  right-handed phone user. Verify the available touch controls and gestures on
+  a mobile-sized Player before treating the observation as a Core defect, then
+  record an actionable navigation recommendation if no ergonomic alternative
+  exists.
 - **2026-07-18:** Added the
   [workspace link audit](../research/workspace-link-audit.notes.md). A fresh
   preview returned all 68 document routes successfully. Across 622 generated
