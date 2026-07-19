@@ -9,6 +9,34 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Labs walkthrough yields a workspace link audit and Player follow-ups
+
+Andrew's continuing lab review is now captured in the
+[field-guide task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+and the dated [review notes](./2026-07-18-andrew-labs-review.notes.md). Kepler
+Orbit works overall, but its tall instrument can extend below the Player
+viewport while a scroll intended to inspect it can advance the Beat. The Simple
+Learner Quiz successfully wrote and rendered durable answers, but the open
+Player remained at `Saved. Updating...` and did not make forward navigation
+clear. Those test responses were removed so the shared quiz remains unanswered.
+
+The new [workspace link audit](../research/workspace-link-audit.notes.md) checks
+73 Markdown Sources and a fresh generated preview. All 223 authored internal
+targets exist and all 68 generated document routes return successfully. Four
+first reference-definition links—Bookshelf, Chess, Layout, and 3D Globe—are
+emitted one directory too high on extensionless demo routes. Of 69 unique
+external URLs, 48 work directly or through expected redirects; 19 canonical
+PathMX GitHub targets are inaccessible without authentication, one is gated by
+Devpost login, and one is an unresolved component template. No external target
+was proven malformed or dead. The owning
+[navigation task](../tasks/2026-07-18-clarify-player-navigation-and-link-affordances.task.md)
+is now in progress with Mark reviewing the split between Build Week link
+cleanup and PathMX Core fixes. PathMX 0.1.17 built the complete graph with only
+the three known Tufte-theme warnings; visual browser link QA remains follow-up
+because browser control was unavailable during the audit.
+
+---
+
 ## Andrew's Chess walkthrough becomes navigation review evidence
 
 Andrew's [July 18 labs walkthrough](https://www.loom.com/share/0c6e72c323c84ebd8ead8e0256c23f25)

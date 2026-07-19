@@ -8,6 +8,7 @@ Helpful links and references for the build week project.
 - [YouTube Learning Skill](./youtube-learning-skill.path.md)
 - [Perplexity Artifact Design Notes](./perplexity-artifact-design-notes.notes.md)
 - [Shared Resources & Inspiration](./resources.path.md)
+- [Workspace Link Audit](./workspace-link-audit.notes.md)
 - [Teach Skill (Matt Pocock)](https://www.aihero.dev/learn-anything-with-my-teach-skill)
 - [PathMX v1 Site](https://pathmx.dev)
 
