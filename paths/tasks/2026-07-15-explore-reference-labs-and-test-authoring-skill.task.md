@@ -88,6 +88,19 @@ change, or its own acceptance criteria.
 
 ## Activity
 
+- **2026-07-18:** Andrew completed a mostly successful Kepler Orbit pass. The
+  direct instrument worked, but its lower plate was initially outside the
+  Player viewport; a scroll intended to reveal it could instead advance the
+  Beat. In the Simple Learner Quiz, the three test choices persisted into the
+  Markdown Source and rendered output. Auto-advance is not part of the question
+  contract, but the forward action was unclear and the open Player did not
+  settle from `Saved. Updating...`. These shared Player questions are recorded
+  in the [navigation task](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md).
+- **2026-07-18:** Bookshelf and Layout review found the same component-definition
+  navigation failure: the nested Sources exist, but generated relative anchors
+  flatten to `/labs/bookshelf.components.md` and `/labs/layout.components.md`
+  and return 404. Exact route evidence is recorded in the
+  [navigation task](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md).
 - **2026-07-18:** Andrew continued the field-guide tour with Chess. The
   [July 18 review summary](../work-log/2026-07-18-andrew-labs-review.notes.md)
   preserves the Loom's observations about discovery, component focus, local
