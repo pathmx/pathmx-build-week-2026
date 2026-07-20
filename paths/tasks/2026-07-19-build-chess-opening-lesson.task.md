@@ -1,8 +1,7 @@
 ---
 type: task
-status: review
+status: done
 owner: Andrew
-reviewer: Mark
 date: 2026-07-19
 due: 2026-07-20
 related:

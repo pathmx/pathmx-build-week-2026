@@ -1,8 +1,7 @@
 ---
 type: task
-status: in-progress
-owner: Andrew
-reviewer: Mark
+status: done
+owner: Mark
 date: 2026-07-18
 due: 2026-07-20
 related:
@@ -25,15 +24,11 @@ of broken.
 
 ---
 
-## Next Move
+## Result
 
-Andrew reviews the workspace link index, then reproduces the Kepler viewport,
-quiz save-and-forward, and mobile Beat-advance cases after restarting the local
-Player. Record when scrolling belongs to a tall component versus Player
-navigation, whether a successful Source write reconciles in the fresh session,
-and how a right-handed touch learner can advance without relying on the
-bottom-left keypad. Mark then reviews the evidence and helps separate Build
-Week content fixes from PathMX Core work.
+Dropped from the Build Week task board. Player navigation and link-affordance
+work continues as Mark's ongoing PathMX Core work; the notes and audits in this
+file remain as background evidence.
 
 ---
 
@@ -131,3 +126,5 @@ Week content fixes from PathMX Core work.
   presented visibly. GitHub returns 404 for all four authored upstream Chess
   URLs; the local lab and helper copies remain available, and the concrete link
   cleanup is routed to the existing Chess task.
+- **2026-07-20:** Removed from the Build Week task board. Ownership moved to
+  Mark as ongoing Core work rather than a tracked submission task.

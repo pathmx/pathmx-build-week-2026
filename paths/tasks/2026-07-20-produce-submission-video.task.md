@@ -2,7 +2,6 @@
 type: task
 status: in-progress
 owner: Mark
-reviewer: Andrew
 date: 2026-07-20
 due: 2026-07-21
 related:
@@ -18,6 +17,8 @@ related:
 
 Publish an accurate, audible, under-three-minute demo that uses a PathMX slide
 deck as both the script and a cloneable meta-demo.
+
+The final deck should live [here](../presentation/walkthrough.slides.md)
 
 ---
 

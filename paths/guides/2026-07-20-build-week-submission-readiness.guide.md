@@ -35,7 +35,7 @@ submission target: **7:30 PM EDT**, leaving a 30-minute recovery buffer.
 
 ## July 20 Check-In — Immediate Handoff
 
-Accepted working direction:
+### Accepted working direction:
 
 - [x] Frame the submission as durable learning alongside agents.
 - [x] Use **portable, executable curriculum** as the central concept.
@@ -47,15 +47,15 @@ Accepted working direction:
       multi-user behavior as future work.
 - [x] Build the video around a playable PathMX slide deck.
 
-Mark's immediate follow-ups:
+### Mark's immediate follow-ups:
 
-- [ ] Publish and announce the shared submission scaffold in this repository.
+- [x] Publish and announce the shared submission scaffold in this repository.
 - [ ] Add a persistent project-folder setup step to the learner workflow.
 - [ ] Draft the PathMX slide deck; target content-complete on July 20.
 - [ ] Retest Tram's revised `paths` skill after it is pushed.
 - [ ] Polish, record, upload, and verify the video by 7:00 PM EDT on July 21.
 
-Inputs Mark is waiting on:
+### Inputs Mark is waiting on:
 
 - [ ] Andrew drafts **What it does**.
 - [ ] Andrew selects and adds the third high-impact example and judge route.

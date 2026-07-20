@@ -1,8 +1,7 @@
 ---
 type: task
-status: ready
+status: done
 owner: Unassigned
-reviewer: Andrew
 date: 2026-07-17
 due: 2026-07-20
 related:

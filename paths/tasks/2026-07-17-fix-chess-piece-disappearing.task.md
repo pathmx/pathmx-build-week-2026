@@ -1,8 +1,7 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
-reviewer: Andrew
 date: 2026-07-17
 due: 2026-07-17
 related:

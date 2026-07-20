@@ -2,7 +2,6 @@
 type: task
 status: done
 owner: Mark
-reviewer: Tram
 date: 2026-07-16
 due: 2026-07-17
 related:

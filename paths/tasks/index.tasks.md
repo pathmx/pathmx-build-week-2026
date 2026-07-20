@@ -2,91 +2,67 @@
 type: task-dashboard
 status: active
 date: 2026-07-15
-reviewers: [Mark, Tram, Andrew]
 ---
 
 # Build Week Tasks
 
 This is the working queue for humans and Codex through the July 21 submission.
 Each linked task file is the source of truth; this dashboard projects its
-status, owner, reviewer, next move, and due date. Row order is priority within a
-lane.
+status, owner, next move, and due date. Row order is priority within a lane.
 
-Status moves through `ready`, `in-progress`, `review`, `blocked`, and `done`.
+Status moves through `in-progress` and `done`.
+
 The owner is the accountable human, never a Codex task or session identifier.
-The reviewer is Mark, Tram, or Andrew; prefer someone other than the owner when
-the task has a named owner.
+
+Player navigation and link-affordance work continues as Mark's ongoing Core
+work and is not tracked as a Build Week task.
 
 ---
 
 ## In Progress
 
-| Task | Owner | Reviewer | Next move | Due |
-| --- | --- | --- | --- | --- |
-| [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Andrew | Make chess replay resilient when the optional piece-label data resource is missing, then verify replay rendering | July 17 |
-| [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Tram | Rework landed as minimal Focus Beats; review the rebuilt micro-lesson lab in Play | July 18 |
-| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
-| [Clarify Player navigation and link affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md) | Andrew | Mark | Reproduce the mobile Beat-advance controls, then review the link index, Kepler viewport, and quiz live-update behavior | July 20 |
-| [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Andrew | Publish the shared scaffold, lock remaining story decisions, and support clean-session verification | July 21 |
-| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Andrew | Draft the PathMX slide deck, show the Codex-to-durable-Source workflow, and tour the accepted examples | July 21 |
-
----
-
-## Review
-
-| Task | Owner | Reviewer | Next move | Due |
-| --- | --- | --- | --- | --- |
-| [Build a chess opening lesson with the canonical components](./2026-07-19-build-chess-opening-lesson.task.md) | Andrew | Mark | Review the official lesson with every half-move exposed sequentially in Player | July 20 |
-| [Build a native PathMX generative-artifact lab](./2026-07-17-build-native-generative-artifact-lab.task.md) | Mark | Tram | Reproduce the stage-control mismatch, resolve the accidental footnote, then finish the visual and interaction review | July 19 |
-| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Mark | Review campus-at-night visuals, narrow layout, and keyboard focus | July 18 |
-
----
-
-## Ready
-
-| Task | Owner | Reviewer | Next move | Due |
-| --- | --- | --- | --- | --- |
-| [Add an explicit chess promotion choice](./2026-07-19-add-chess-promotion-choice.task.md) | Andrew | Mark | Add an accessible choice to the canonical interactive board, with queen as the fallback, then sync its consumers | July 20 |
-| [Evaluate Sound Effect Support In PathMX](./2026-07-17-evaluate-sound-effect-support.task.md) | Unassigned | Andrew | Evaluate Cuelume and compare declarative, component-owned, and authored-asset approaches | July 20 |
-| [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Tram | Agree on pull-only versus bidirectional authority and conflict behavior | July 16 |
-
----
-
-## Blocked
-
-No tasks are currently blocked.
+| Task | Owner | Next move | Due |
+| --- | --- | --- | --- |
+| [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md) | Tram | Push the revised `paths` workflow skill from the Saturday test, then retest with Mark | July 21 |
+| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | After skills land, Mark + Tram rescaffold the Starter; hold Andrew's review until after | July 21 |
+| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Draft the PathMX slide deck, show the Codex-to-durable-Source workflow, and tour the accepted examples | July 21 |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
 
 ---
 
 ## Done
 
-| Task | Owner | Reviewer | Result |
-| --- | --- | --- | --- |
-| [Record July 16 Working Session Notes](./2026-07-16-record-working-session-notes.task.md) | Mark | Tram | Sanitized meeting notes added to the work log and linked from the work-log index |
-| [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Andrew | Research note captures official YouTube constraints, skill package, player shape, and MVP path |
-| [Spike practice interview voice agent](./2026-07-16-spike-practice-interview-voice.task.md) | Mark | Tram | Immersive Realtime interview simulator, research note, and proposed Host Action shape added |
-| [Add task reviewers to the workflow](./2026-07-16-add-task-reviewers.task.md) | Mark | Andrew | Reviewer frontmatter, dashboard projection, and Codex workflow guidance added |
-| [Sync the PathMX authoring skill](./2026-07-16-sync-pathmx-authoring-skill.task.md) | Mark | Andrew | Complete canonical package synchronized; repeatable check/write command verified |
-| [Resolve the Campus Constellation merge](./2026-07-15-resolve-campus-constellation-merge.task.md) | Mark | Tram | Both outcomes preserved as valid Blocks; conflict markers and whitespace errors removed |
-| [Add a reviewed 3D Globe reference](./2026-07-15-add-three-globe-reference.task.md) | Mark | Andrew | One-scene local-data globe copied from reviewed Core, linked, and verified in Browse and Play |
-| [Update the muthurd gateway to PathMX 0.1.10](./2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md) | Mark | Andrew | CLI updated, gateway replaced, tunnel preserved, and public 0.1.10 assets verified |
-| [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Tram | Labs hub now links only ready demos; unfinished Sources remain unlinked |
-| [Add a change log workflow](./2026-07-15-add-change-log-workflow.task.md) | Mark | Andrew | Playable Block-based log, agent push rule, checker, and July 15 history added |
-| [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Andrew | Released-contract review, full build, and focused reference Play checks complete |
-| [Provision the Build Week Space on muthurd](./2026-07-15-provision-muthurd-space.task.md) | Mark | Andrew | Clean checkout, current tooling, and read-only `build-week.pathmx.net` Space verified |
-| [Publish the workspace checkpoint to main](./2026-07-15-publish-workspace-checkpoint.task.md) | Mark | Andrew | Full worktree audited, merged with remote `main`, and published |
-| [Scaffold Codex task coordination](./2026-07-15-scaffold-codex-task-coordination.task.md) | Mark | Tram | Dashboard, agent workflow, stale-reference cleanup, and verification complete |
+| Task | Owner | Result |
+| --- | --- | --- |
+| [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md) | Mark | Focus Beats experiment landed as a minimal typographic lab (`beat-pause`, `beat-breathe`, `beat-think`, `beat-timer`); Core cursor-hint follow-up captured in research |
+| [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md) | Mark | Interactive board keeps moved pieces visible; external-link cleanup remains open as Core follow-up |
+| [Build a chess opening lesson with the canonical components](./2026-07-19-build-chess-opening-lesson.task.md) | Andrew | Official lesson linked from the Labs hub with every half-move exposed sequentially in Player |
+| [Build a native PathMX generative-artifact lab](./2026-07-17-build-native-generative-artifact-lab.task.md) | Mark | Dialectic Spiral landed as a native Player lab with the Perplexity design DNA captured in a research note |
+| [Contribute research explorations and ideas](./2026-07-15-contribute-research-explorations.task.md) | Tram | Campus Constellation path landed with the campus-at-night visual system and independent Play beats |
+| [Add an explicit chess promotion choice](./2026-07-19-add-chess-promotion-choice.task.md) | Andrew | Root cause traced to the canonical board's first-match move lookup; the promotion choice is deferred past submission |
+| [Evaluate Sound Effect Support In PathMX](./2026-07-17-evaluate-sound-effect-support.task.md) | Unassigned | Cuelume-based evaluation scoped with open questions recorded; deferred past submission |
+| [Design scheduled Git sync for muthurd](./2026-07-15-design-scheduled-git-sync.task.md) | Mark | Pull-only deployment recorded as the safe first slice; automation deferred past submission |
+| [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Public template-enabled Starter published and verified; remaining tester runs continue under the learner starter and submission task |
+| [Record July 16 Working Session Notes](./2026-07-16-record-working-session-notes.task.md) | Mark | Sanitized meeting notes added to the work log and linked from the work-log index |
+| [Add YouTube Learning Skill Research](./2026-07-16-add-youtube-learning-research.task.md) | Mark | Research note captures official YouTube constraints, skill package, player shape, and MVP path |
+| [Spike practice interview voice agent](./2026-07-16-spike-practice-interview-voice.task.md) | Mark | Immersive Realtime interview simulator, research note, and proposed Host Action shape added |
+| [Add task reviewers to the workflow](./2026-07-16-add-task-reviewers.task.md) | Mark | Reviewer frontmatter and dashboard projection added; later dropped from the live board |
+| [Sync the PathMX authoring skill](./2026-07-16-sync-pathmx-authoring-skill.task.md) | Mark | Complete canonical package synchronized; repeatable check/write command verified |
+| [Resolve the Campus Constellation merge](./2026-07-15-resolve-campus-constellation-merge.task.md) | Mark | Both outcomes preserved as valid Blocks; conflict markers and whitespace errors removed |
+| [Add a reviewed 3D Globe reference](./2026-07-15-add-three-globe-reference.task.md) | Mark | One-scene local-data globe copied from reviewed Core, linked, and verified in Browse and Play |
+| [Update the muthurd gateway to PathMX 0.1.10](./2026-07-15-update-muthurd-gateway-pathmx-0-1-10.task.md) | Mark | CLI updated, gateway replaced, tunnel preserved, and public 0.1.10 assets verified |
+| [Narrow the labs index to ready demos](./2026-07-15-narrow-labs-index.task.md) | Mark | Labs hub now links only ready demos; unfinished Sources remain unlinked |
+| [Add a change log workflow](./2026-07-15-add-change-log-workflow.task.md) | Mark | Playable Block-based log, agent push rule, checker, and July 15 history added |
+| [Verify and graduate the PathMX 0.1.9 reference set](./2026-07-15-verify-pathmx-0-1-9-reference-set.task.md) | Mark | Released-contract review, full build, and focused reference Play checks complete |
+| [Provision the Build Week Space on muthurd](./2026-07-15-provision-muthurd-space.task.md) | Mark | Clean checkout, current tooling, and read-only `build-week.pathmx.net` Space verified |
+| [Publish the workspace checkpoint to main](./2026-07-15-publish-workspace-checkpoint.task.md) | Mark | Full worktree audited, merged with remote `main`, and published |
+| [Scaffold Codex task coordination](./2026-07-15-scaffold-codex-task-coordination.task.md) | Mark | Dashboard, agent workflow, stale-reference cleanup, and verification complete |
 
 ---
 
 ## Codex Shortcuts
 
-- **Track or add work:** create a dated `.task.md` Source, assign a reviewer,
-  and add its row.
+- **Track or add work:** create a dated `.task.md` Source and add its row.
 - **Take or work on a task:** claim it as `in-progress` before implementation.
-- **Block or review a task:** update its Source, reviewer, and row in one
-  change.
-- **Finish a task:** link artifacts, record verification and review outcome,
-  and move it to Done.
+- **Finish a task:** link artifacts, record verification, and move it to Done.
 - **Refresh the board:** reconcile all task frontmatter with these lanes.

@@ -2,7 +2,6 @@
 type: task
 status: in-progress
 owner: Mark
-reviewer: Andrew
 date: 2026-07-15
 due: 2026-07-21
 related:
@@ -11,6 +10,7 @@ related:
   - ../work-log/2026-07-20-build-week-checkin.notes.md
   - ../work-log/2026-07-20-devpost-submission-draft.notes.md
   - ../guides/2026-07-20-build-week-submission-readiness.guide.md
+  - ./2026-07-20-update-pathmx-skills.task.md
   - ./2026-07-20-produce-submission-video.task.md
 ---
 
@@ -25,16 +25,20 @@ repeatable submission without copying private team material into either repo.
 
 ## Next Move
 
-Publish the shared submission scaffold, lock the project name, third example,
-repository URLs, and public claims, then support the PathMX slide-deck demo and
-clean-session Starter verification.
+Wait for Tram's
+[skills update](./2026-07-20-update-pathmx-skills.task.md), then Mark and Tram
+rescaffold the learner Starter around that package. Hold Andrew's review until
+after that rescaffold lands; then lock remaining story decisions and run
+clean-session verification.
 
 ---
 
 ## Done When
 
 - Reusable learner-facing content lives in the starter repository.
+- The Starter ships the updated `pathmx-skills` package and a fresh scaffold.
 - A clean learner can install or update PathMX and launch the experience.
+- Andrew reviews only after the rescaffold is in place.
 - Submission links contain no private invitations, credentials, learner data,
   raw transcripts, or Codex task identifiers.
 - The public path used by the demo is verified before recording.
@@ -58,3 +62,6 @@ clean-session Starter verification.
   examples; Andrew owns a third. Mark owns the shared scaffold, persistent
   project-folder step, slide deck, and final video. Tram owns the revised
   `paths` workflow skill and a retest with Mark.
+- **2026-07-20:** Next blocker is updating `pathmx-skills` (Tram in progress),
+  then rescaffolding the Starter (Mark + Tram). Andrew's review waits until
+  that rescaffold is done.

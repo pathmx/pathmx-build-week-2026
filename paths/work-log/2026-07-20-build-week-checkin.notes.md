@@ -5,6 +5,7 @@ date: 2026-07-20
 title: July 20 Build Week Check-In
 related:
   - ../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md
+  - ../tasks/2026-07-20-update-pathmx-skills.task.md
   - ../tasks/2026-07-20-produce-submission-video.task.md
   - ./2026-07-20-devpost-submission-draft.notes.md
   - ../guides/2026-07-20-build-week-submission-readiness.guide.md

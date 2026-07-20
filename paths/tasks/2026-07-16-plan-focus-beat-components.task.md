@@ -1,8 +1,7 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
-reviewer: Tram
 date: 2026-07-16
 due: 2026-07-18
 related:
@@ -28,12 +27,12 @@ microcopy for the pause or reset move itself.
 
 ---
 
-## Next Move
+## Result
 
-Review the reworked Focus Beats lab in Play. Play the estimation micro-lesson
-end to end, exercising the held `beat-think` reveal in Play and Browse, the
-`beat-timer` start/pause/off-Beat pause behavior, the timed `beat-pause` dots,
-the self-settling `beat-breathe`, reduced motion, and narrow-screen layout.
+Closed as a Build Week experiment. The Focus Beats lab and minimal typographic
+family (`beat-pause`, `beat-breathe`, `beat-think`, `beat-timer`) remain as the
+durable artifact; Play cursor-hint follow-up is recorded in
+[Play Cursor Hints](../research/play-cursor-hints.path.md).
 
 ---
 
@@ -100,3 +99,5 @@ the self-settling `beat-breathe`, reduced motion, and narrow-screen layout.
   a bounded trait model (shape, presence, anchor) with variant presets,
   Player-owned rendering, and an accessibility floor. No lab-side polyfill,
   per the chrome boundary.
+- **2026-07-20:** Closed as done. Treated as a successful experiment rather than
+  a submission-critical lane; no further Build Week review required.
