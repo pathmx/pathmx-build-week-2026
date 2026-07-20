@@ -43,7 +43,6 @@ title: Replay A Sound Opening
 <chess-game
   orientation="white"
   initial-ply="0"
-  play-grain="notes"
   label="Italian Game opening principles"
 >
   <template data-chess-pgn>

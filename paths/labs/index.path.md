@@ -20,6 +20,10 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 - [Chess](./chess/index.demo.md) — a self-contained Literate Component example
   with component resources, keyboard board interaction, and Play Context
   Actions.
+- [Chess opening lesson](./chess-opening-lesson/index.demo.md) — a short
+  beginner lesson that uses the canonical Chess Game and Chess Board components
+  to teach center control, development, and king safety through replay and
+  practice.
 - [Tufte theme](./tufte-theme/index.demo.md) — source-local theme tokens and a
   scoped editorial stylesheet with responsive sidenotes, charts, and print
   treatment.

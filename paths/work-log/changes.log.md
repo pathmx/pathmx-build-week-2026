@@ -14,13 +14,13 @@ related:
 [Build Before You Attack](../labs/chess-opening-lesson/index.demo.md) turns the
 canonical Chess Board and Chess Game components into a short beginner lesson
 on controlling the center, developing pieces, and making the king safe. Its
-annotated Italian Game replay exposes only the meaningful teaching moments in
-Play, followed by a concrete development-move practice board. The shared Chess
-Game layout now compresses the board, controls, move list, and active note into
-a single narrow Player-friendly column. The owning
-[lesson task](../tasks/2026-07-19-build-chess-opening-lesson.task.md) remains in
-progress for Andrew's language, phone-scale, touch, and real-keyboard pass
-before Mark reviews graduation to the learner starter.
+annotated Italian Game replay now exposes every half-move sequentially in Play
+while retaining the teaching notes, followed by a concrete development-move
+practice board. The shared Chess Game layout compresses the board, controls,
+move list, and active note into a single narrow Player-friendly column, and the
+official [Labs hub](../labs/index.path.md) now links the lesson. The owning
+[lesson task](../tasks/2026-07-19-build-chess-opening-lesson.task.md) is in
+review for Mark's graduation decision.
 
 The same review also records two canonical-component follow-ups without
 presenting them as completed fixes. The new
@@ -32,12 +32,14 @@ now includes the reproduced component-link rewrite collision: the first link
 to an imported component Source retains its raw relative Markdown address and
 404s on an extensionless route, although the nested component route exists.
 
-PathMX 0.1.18 built the complete graph with 266 artifacts and only the three
-known Tufte-theme warnings. Live Browse and Play checks covered replay forward
-and backward movement, direct board interaction, retained piece rendering,
-Player Context Actions, focus restoration, and a 390 × 844 layout without
-horizontal overflow. Synthetic keyboard activation remained inconclusive, so
-real-device keyboard and touch review is explicitly still required.
+PathMX 0.1.19 built the complete graph with only the three known Tufte-theme
+warnings. Live Browse and Play checks covered replay forward and backward
+movement, direct board interaction, retained piece rendering, Player Context
+Actions, focus restoration, and a 390 × 844 layout without horizontal
+overflow. A final Player pass confirmed the replay advances from the starting
+position through `1. e4`, `1... e5`, and `2. Nf3`, then returns through the same
+positions. Synthetic keyboard activation remained inconclusive, so real-device
+keyboard and touch review is explicitly still required.
 
 ---
 
