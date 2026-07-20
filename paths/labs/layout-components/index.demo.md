@@ -20,15 +20,13 @@ route: /labs/layout-components
 - Import the [layout component definitions](./layout.components.md) for
   `<box>`, `<hstack>`, `<vstack>`, `<zstack>`, `<grid>`, and `<center>`.
 - Copy the
-  [demo stylesheet](https://github.com/pathmx/pathmx/blob/main/paths/demos/styles/layout-demo.css)
+  [demo stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/styles/layout-demo.css)
   only when reusing this lab's example cards and workspace presentation.
 
 Minimum PathMX: `@fellowhumans/pathmx@0.1.9`.
 
-Upstream review source:
-[canonical Layout demo](https://github.com/pathmx/pathmx/blob/main/paths/demos/layout.demo.md).
-The immutable reviewed-commit link replaces this branch link when the Core
-release gate lands.
+Reviewed upstream commit:
+[canonical Layout demo](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/layout.demo.md).
 
 ---
 
