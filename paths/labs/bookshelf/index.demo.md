@@ -25,12 +25,10 @@ bookcase supplies the shared frame and color tokens.
 
 Minimum PathMX: `@fellowhumans/pathmx@0.1.9`.
 
-Upstream review sources:
-[canonical Bookshelf demo](https://github.com/pathmx/pathmx/blob/main/paths/demos/bookshelf.demo.md)
+Reviewed upstream commit:
+[canonical Bookshelf demo](https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/bookshelf.demo.md)
 and
-[component definitions](https://github.com/pathmx/pathmx/blob/main/paths/demos/bookshelf.components.md).
-The immutable reviewed-commit links replace these branch links when the Core
-release gate lands.
+[component definitions](https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/bookshelf.components.md).
 
 ---
 

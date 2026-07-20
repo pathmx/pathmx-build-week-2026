@@ -19,10 +19,10 @@ FEN, allow local legal moves, and replay a famous game from PGN.
 
 - Start with the [Literate Component definitions](./chess.components.md).
 - Keep the shared
-  [runtime helper](https://github.com/pathmx/pathmx/blob/main/paths/demos/chess/chess-runtime.js),
-  [board stylesheet](https://github.com/pathmx/pathmx/blob/main/paths/demos/chess/chess-board.css),
+  [runtime helper](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-runtime.js),
+  [board stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-board.css),
   and
-  [replay stylesheet](https://github.com/pathmx/pathmx/blob/main/paths/demos/chess/chess-game.css)
+  [replay stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-game.css)
   beside the definitions.
 - Copy [piece labels](./chess-pieces.json) and the vendored
   [Cburnett SVG set and license](./assets/pieces/cburnett/README.md) when using
@@ -31,10 +31,8 @@ FEN, allow local legal moves, and replay a famous game from PGN.
 Minimum PathMX: `@fellowhumans/pathmx@0.1.9`. This reference uses
 `ctx.play.actions` and intentionally has no 0.1.8 compatibility path.
 
-Upstream review source:
-[canonical Chess demo](https://github.com/pathmx/pathmx/tree/main/paths/demos/chess).
-The immutable reviewed-commit link replaces this branch link when the Core
-release gate lands.
+Reviewed upstream commit:
+[canonical Chess demo](https://github.com/pathmx/pathmx/tree/94e34fb8/paths/demos/chess).
 
 ---
 

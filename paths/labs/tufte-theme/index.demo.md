@@ -42,14 +42,12 @@ theme:
 
 <aside class="tufte-source-note">
   <strong>What to copy.</strong> The
-  <a href="https://github.com/pathmx/pathmx/blob/main/paths/demos/tufte-theme/index.demo.md">landing Source</a>
+  <a href="https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/tufte-theme/index.demo.md">landing Source</a>
   contains the theme tokens and responsive sidenote markup; the
-  <a href="https://github.com/pathmx/pathmx/blob/main/paths/demos/tufte-theme/styles/tufte-theme.css">scoped stylesheet</a>
+  <a href="https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/tufte-theme/styles/tufte-theme.css">scoped stylesheet</a>
   owns the editorial
   presentation. Minimum PathMX: <code>@fellowhumans/pathmx@0.1.9</code>.
-  Review source: <a href="https://github.com/pathmx/pathmx/tree/main/paths/demos/tufte-theme">canonical Tufte theme demo</a>.
-  The immutable reviewed-commit link replaces this branch link when the Core
-  release gate lands.
+  Reviewed upstream commit: <a href="https://github.com/pathmx/pathmx/tree/da752ad5/paths/demos/tufte-theme">canonical Tufte theme demo</a>.
 </aside>
 
 This demo adapts ideas from [Tufte CSS](https://edwardtufte.github.io/tufte-css/):
