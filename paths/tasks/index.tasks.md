@@ -28,7 +28,8 @@ the task has a named owner.
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Mark | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time | July 17 |
 | [Clarify Player navigation and link affordances](./2026-07-18-clarify-player-navigation-and-link-affordances.task.md) | Andrew | Mark | Reproduce the mobile Beat-advance controls, then review the link index, Kepler viewport, and quiz live-update behavior | July 20 |
 | [Spike the Starter init flow](./2026-07-15-spike-starter-init-flow.task.md) | Mark | Andrew | Finish and publish the MVP guide flow; tester handoff waits until it is ready | July 17 |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Andrew | Review the Player-native reshape, confirm the submission boundary, and assign the accepted MVP lanes | July 20 |
+| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Andrew | Publish the shared scaffold, lock remaining story decisions, and support clean-session verification | July 21 |
+| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Andrew | Draft the PathMX slide deck, show the Codex-to-durable-Source workflow, and tour the accepted examples | July 21 |
 
 ---
 

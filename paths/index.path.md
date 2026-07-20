@@ -12,6 +12,9 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 ## Current Direction
 
 - [Build Week Reshape: Learning Happens in the Player](./work-log/2026-07-18-player-native-learning-reshape.brief.md)
+- [July 20 Build Week Check-In](./work-log/2026-07-20-build-week-checkin.notes.md)
+- [Devpost Submission Draft](./work-log/2026-07-20-devpost-submission-draft.notes.md)
+- [Submission Readiness Checklist](./guides/2026-07-20-build-week-submission-readiness.guide.md)
 
 ## External Links
 
