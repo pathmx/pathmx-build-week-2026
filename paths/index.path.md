@@ -99,8 +99,8 @@ Our team built out our work using in the same repository (very meta). Having our
 
 These are the demos, presentation materials, and other work we built during the build week.
 
-- [Submission walkthrough](./presentation/submission-walkthrough.slides.md)
-- [Agent Loop Evals](./presentation/walkthrough.slides.md)
-- [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
-- [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
-- [PathMX Skills](https://github.com/pathmx/pathmx-skills)
+- [Submission walkthrough](./presentation/submission-walkthrough.slides.md): The three-minute public Path that tells the learning story end to end.
+- [Agent Loop Evals](./presentation/walkthrough.slides.md): Internal review of the eval harness, scoring evidence, and what the agent loop proved.
+- [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week): Labs, tasks, and the living record of Build Week collaboration.
+- [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter): The learner-facing starter for durable personal learning Paths.
+- [PathMX Skills](https://github.com/pathmx/pathmx-skills): Canonical agent skills for authoring PathMX and guiding personal learning.

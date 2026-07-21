@@ -308,33 +308,23 @@
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.35rem 0.45rem;
+    /* Inline flow so "Title: description" wraps mid-sentence instead of
+       treating the colon+blurb as a separate flex item on narrow widths. */
+    display: block;
     padding: 0.78rem 1.05rem;
     border: 1px solid color-mix(in oklch, var(--pmx-color-border) 78%, transparent);
     border-radius: 1rem;
     background: var(--pmx-color-surface);
     color: var(--pmx-color-muted);
     box-shadow: 0 0.45rem 1.1rem color-mix(in oklch, var(--pmx-color-fg) 5%, transparent);
-    transition:
-      border-color 160ms ease,
-      box-shadow 160ms ease,
-      transform 160ms ease;
+    line-height: 1.45;
+    transition: background-color 160ms ease, box-shadow 160ms ease;
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li:hover,
   :scope > .pmx-block > ul:has(> li > a) > li:focus-within {
-    border-color: color-mix(in oklch, var(--pmx-color-accent) 40%, var(--pmx-color-border));
-    box-shadow: 0 0.65rem 1.35rem color-mix(in oklch, var(--pmx-color-accent) 12%, transparent);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    :scope > .pmx-block > ul:has(> li > a) > li:hover,
-    :scope > .pmx-block > ul:has(> li > a) > li:focus-within {
-      transform: translateY(-0.08rem);
-    }
+    background: color-mix(in oklch, var(--pmx-color-accent) 8%, var(--pmx-color-surface));
+    box-shadow: 0 0.55rem 1.2rem color-mix(in oklch, var(--pmx-color-fg) 7%, transparent);
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li > a {
@@ -345,9 +335,10 @@
     text-decoration: none;
   }
 
-  :scope > .pmx-block > ul:has(> li > a) > li > a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.16em;
+  :scope > .pmx-block > ul:has(> li > a) > li > a:hover,
+  :scope > .pmx-block > ul:has(> li > a) > li > a:focus-visible {
+    color: var(--pmx-color-accent);
+    text-decoration: none;
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li .pmx-icon {

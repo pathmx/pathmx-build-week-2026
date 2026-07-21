@@ -83,13 +83,8 @@ pathmx self-update
 
 ## Verification
 
-For authored-source changes:
-
-```sh
-pathmx build -o .pathmx-check
-```
-
-Use `pathmx play` for visual review. When reproducibility matters, record the
+Prefer the active `pathmx play` server for visual review. Do not rebuild into its
+out directory while it is running. When reproducibility matters, record the
 environment, versions, reproduction steps, expected result, actual result, and
 evidence in the owning task. Create a separate report only when an evaluation
 needs a durable standalone artifact.

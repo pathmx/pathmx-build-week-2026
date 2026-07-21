@@ -48,3 +48,6 @@ title, summary, and `href` when the showcase picks lock.
   (only known Tufte-theme and unrelated work-log link warnings). Live Player
   review at `/index.path` confirmed the three-card grid, TBD labels, and
   Coming soon CTAs.
+- **2026-07-21:** Hub polish follow-up: removed feature-card hover lift that
+  clipped against the block, dropped list hover border/underline shift, and
+  added short Featured Work descriptions.

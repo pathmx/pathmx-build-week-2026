@@ -491,27 +491,21 @@ Slots:
   box-shadow: 0 0.85rem 1.8rem color-mix(in oklch, var(--pmx-color-fg) 8%, transparent);
   transition:
     border-color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
+    box-shadow 160ms ease;
 }
 
 :self:hover,
 :self:focus-visible {
   border-color: color-mix(in oklch, var(--pmx-color-accent) 42%, var(--pmx-color-border));
-  box-shadow: 0 1rem 2rem color-mix(in oklch, var(--pmx-color-accent) 14%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--pmx-color-accent) 28%, transparent),
+    0 1rem 2rem color-mix(in oklch, var(--pmx-color-accent) 14%, transparent);
   outline: none;
 }
 
 :self:focus-visible {
   outline: 2px solid var(--pmx-color-focus);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :self:hover,
-  :self:focus-visible {
-    transform: translateY(-0.12rem);
-  }
+  outline-offset: 2px;
 }
 
 .project-feature-label,
