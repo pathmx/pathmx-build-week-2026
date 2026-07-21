@@ -52,3 +52,7 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   personal atlas that connects five researched Greenville coffee shops to city
   context, privacy-safe human threads, one next outing, and a durable field
   note.
+- [Campus Constellation](./campus-constellation/index.demo.md) — a 20-minute
+  networking mission Path: pick a North Star, draft one modular ask, rehearse
+  awkward moments with random flashcards, and leave with a 48-hour real-world
+  mission plus a reason-based follow-up.

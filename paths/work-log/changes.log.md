@@ -15,10 +15,52 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:28:11-04:00"
+date: "2026-07-21T22:30:00-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## Campus Constellation graduates from research into the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Campus Constellation was moved from `paths/research/` into a new
+[`paths/labs/campus-constellation/`](../labs/campus-constellation/index.demo.md)
+directory alongside its eleven Literate Components and scoped stylesheet, so
+the college-networking mission Path now sits beside the other playable demos
+on the [Labs hub](../labs/index.path.md). The three prefilled learner
+`response` / `submission` fixtures on the `choose-north-star`,
+`set-practice-level`, and `next-route-signal` question Blocks were cleared so
+a new learner arrives at unanswered questions, and the CSS `@scope` selectors
+now target `data-pathmx-source="labs/campus-constellation/index.demo"` so the
+campus-at-night visual system continues to apply after the move. The old
+research entry was rewritten as a graduated pointer stub that keeps inbound
+`related:` links resolving from six task and note Sources, historical
+change-log references were retargeted so the graph builds without unresolved
+links, and the one existing actor Play session was retargeted to the new
+demo path. The [owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
+carries the readiness findings and detailed verification.
+
+Verified with `pathmx build` (PathMX 0.1.25): clean before (384 artifacts) and
+after (24 artifacts written, 0 deleted, 0 warnings) the move. `pathmx route
+paths/labs/campus-constellation/index.demo.md` resolves to
+`/labs/campus-constellation`; the research stub still resolves to
+`/research/campus-constellation-networking.path`. A repository-owned
+`pathmx play` server returned HTTP 200 for both routes and the served demo
+carries every one of the eleven component tags plus the new scoped
+`data-pathmx-source`. Narrow-viewport, keyboard, reduced-motion, forced-color,
+and no-JS behavior were reconfirmed by inspection in the moved Sources and
+served HTML, not by live browser interaction; Andrew or Mark can double-check
+in review.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:28:11-04:00"
+-->
 
 ## A next-demo shortlist parks post-submission lab ideas
 
@@ -562,7 +604,7 @@ date: "2026-07-17T15:20:40-04:00"
 </change-published>
 
 Two learner-facing surfaces in the
-[Campus Constellation path](../research/campus-constellation-networking.path.md)
+[Campus Constellation path](../labs/campus-constellation/index.demo.md)
 no longer expose persistence or agent internals. The "Choose Your North Star"
 question prompt drops "saved as readable learning evidence," and the
 adaptive-plan closing no longer narrates that Codex updates the path "outside the
@@ -571,7 +613,7 @@ Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
 data — the question's `submission`/`response` topmatter and a `note` on the
 adaptive-plan Block — while the learner copy states only the decision and next
 move. Its companion
-[component family](../research/campus-constellation.components.md) now gives
+[component family](../labs/campus-constellation/campus-constellation.components.md) now gives
 each of eleven learning features an independent interaction and aligns every
 meaningful stage with ordered Player beats. Seven randomized awkward-moment
 flashcards keep the learner on a prompt beat before revealing coaching and
@@ -745,11 +787,11 @@ date: "2026-07-15T23:07:00-04:00"
   Published {{ block.date }}
 </change-published>
 
-The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
+The new [Campus Constellation path](../labs/campus-constellation/index.demo.md)
 helps college students define a networking goal, choose a difficulty, rehearse
 conversations, complete a real-world mission, and use evidence to select their
 next practice. Its companion
-[Literate Components](../research/campus-constellation.components.md) add a
+[Literate Components](../labs/campus-constellation/campus-constellation.components.md) add a
 clickable relationship-orbit map and a five-state awkward-moment rehearsal
 deck, while three durable questions preserve the learner's choices in readable
 Source.

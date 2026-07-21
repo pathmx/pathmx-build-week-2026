@@ -1,4 +1,4 @@
-@scope (.pmx-document[data-pathmx-source="research/campus-constellation-networking.path"]) {
+@scope (.pmx-document[data-pathmx-source="labs/campus-constellation/index.demo"]) {
   :scope {
     --campus-cyan: #36c9d7;
     --campus-sky: #79e6ff;
@@ -99,7 +99,7 @@
 }
 
 @media (forced-colors: active) {
-  @scope (.pmx-document[data-pathmx-source="research/campus-constellation-networking.path"]) {
+  @scope (.pmx-document[data-pathmx-source="labs/campus-constellation/index.demo"]) {
     :scope,
     blockquote,
     table,
@@ -110,7 +110,7 @@
 }
 
 @media print {
-  @scope (.pmx-document[data-pathmx-source="research/campus-constellation-networking.path"]) {
+  @scope (.pmx-document[data-pathmx-source="labs/campus-constellation/index.demo"]) {
     :scope,
     blockquote,
     table,
