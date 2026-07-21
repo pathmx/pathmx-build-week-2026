@@ -103,16 +103,40 @@ you do not need to clone this repository or know Bun, Git, or PathMX first.
 
 <div class="pmx-wide">
 <grid cols="3" gap="4">
-  <team-member name="Mark Johnson" role="Learning system + integration" initials="MJ">
+  <team-member
+    name="Mark Johnson"
+    role="Learning system + integration"
+    initials="MJ"
+    href="https://www.linkedin.com/in/wmdmark/"
+  >
+    <slot name="avatar">
+      <img src="./assets/mark-avatar.jpg" alt="Mark Johnson" />
+    </slot>
     Shaped the PathMX learning model, Starter architecture, eval harness, and
     the integration work connecting Codex authoring to the Player.
   </team-member>
-  <team-member name="Tram Le" role="Learner testing + research" initials="TL">
+  <team-member
+    name="Tram Le"
+    role="Learner testing + research"
+    initials="TL"
+    href="https://www.linkedin.com/in/tramle2606/"
+  >
+    <slot name="avatar">
+      <img src="./assets/tram-avatar.jpg" alt="Tram Le" />
+    </slot>
     Tested the early learner loop as a beginner, contributed the Campus
     Constellation exploration, and surfaced the structure and waiting-time
     problems that drove the buffered `/learn` workflow.
   </team-member>
-  <team-member name="Andrew Miller" role="Learning labs + review" initials="AM">
+  <team-member
+    name="Andrew Miller"
+    role="Learning labs + review"
+    initials="AM"
+    href="https://www.linkedin.com/in/andrew-miller-37b97582/"
+  >
+    <slot name="avatar">
+      <img src="./assets/andrew-avatar.png" alt="Andrew Miller" />
+    </slot>
     Built and tested the chess lesson, developed the Relationship Garden and
     Greenville concepts, and reviewed the authoring workflow through concrete
     learning experiments.

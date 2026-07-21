@@ -579,14 +579,16 @@ Slots:
 
 # Team Member
 
-Bio card for hub team grids. Supports a short role line, yielded bio copy, and
-an avatar region that can hold initials now and a photo later.
+Bio card for hub team grids. Supports a short role line, yielded bio copy, an
+avatar region, and an optional LinkedIn profile link.
 
 Props:
 
 - `name`: display name, defaults to `Teammate`
 - `role`: short role or contribution line, defaults to `Contributor`
 - `initials`: fallback avatar text when the avatar slot is empty, defaults to `?`
+- `href`: optional LinkedIn (or other profile) URL. Leave at `#` to hide the
+  profile link.
 
 Slots:
 
@@ -608,6 +610,26 @@ Slots:
     <div class="team-member-bio">
       <slot />
     </div>
+    <a
+      class="team-member-profile"
+      href="{{ href: # }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        class="team-member-profile-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+        />
+        <rect width="4" height="12" x="2" y="9" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+      <span>LinkedIn</span>
+    </a>
   </div>
 </article>
 ```
@@ -706,6 +728,56 @@ Slots:
 
 .team-member-bio > * + * {
   margin-block-start: 0.5rem;
+}
+
+.team-member-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+  margin-block-start: 0.45rem;
+  padding: 0.28rem 0.65rem 0.28rem 0.5rem;
+  border: 1px solid color-mix(in oklch, var(--pmx-color-border) 80%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--pmx-color-accent) 8%, var(--pmx-color-surface));
+  color: var(--pmx-color-link);
+  font-size: 0.82rem;
+  font-weight: 680;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.team-member-profile[href="#"],
+.team-member-profile:not([href]) {
+  display: none;
+}
+
+.team-member-profile:hover,
+.team-member-profile:focus-visible {
+  border-color: color-mix(in oklch, var(--pmx-color-accent) 45%, var(--pmx-color-border));
+  background: color-mix(in oklch, var(--pmx-color-accent) 14%, var(--pmx-color-surface));
+  color: var(--pmx-color-accent);
+  outline: none;
+}
+
+.team-member-profile:focus-visible {
+  outline: 2px solid var(--pmx-color-focus);
+  outline-offset: 2px;
+}
+
+.team-member-profile-icon {
+  inline-size: 0.95rem;
+  block-size: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @container pathmx-runtime (max-width: 28rem) {

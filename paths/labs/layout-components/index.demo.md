@@ -178,18 +178,23 @@ Use `<project-feature>` for linked hub teasers. Spatial layout stays on
 ## Team Member Cards
 
 Use `<team-member>` for hub bios. Initials fill the avatar until a portrait
-lands in the `avatar` slot.
+lands in the `avatar` slot. Pass `href` for an optional LinkedIn chip.
 
 <div class="pmx-wide">
 <grid cols="3" gap="4">
-  <team-member name="Ada Example" role="Guide author" initials="AE">
-    Placeholder bio for a teammate card.
+  <team-member
+    name="Ada Example"
+    role="Guide author"
+    initials="AE"
+    href="https://www.linkedin.com/"
+  >
+    Placeholder bio for a teammate card with a LinkedIn chip.
   </team-member>
   <team-member name="Ned Example" role="Lab builder" initials="NE">
-    Placeholder bio for a teammate card.
+    Placeholder bio for a teammate card without a profile link.
   </team-member>
   <team-member name="Joy Example" role="Research lead" initials="JE">
-    Placeholder bio for a teammate card.
+    Placeholder bio for a teammate card without a profile link.
   </team-member>
 </grid>
 </div>
