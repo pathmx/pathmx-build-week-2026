@@ -45,8 +45,9 @@ Mark Johnson created the PathMX methodology, framework, and Player before the
 event. During Build Week, the team built or meaningfully extended the Learning
 Labs workspace, learner Starter, agent skills, interactive examples, reusable
 components, evaluation harness and evidence, and the workflow for preserving
-human-agent decisions. Closed-source PathMX Core changes supported the public
-work but are not the submission's primary technical claim.
+human-agent decisions. PathMX is currently in Labs, with its Core source kept
+private while its APIs and product boundaries stabilize. Core changes supported
+the public work but are not the submission's primary technical claim.
 
 The [PathMX Core progress log](./paths/work-log/pathmx-changes.log.md) records
 that boundary without exposing the private Core repository.
@@ -60,7 +61,7 @@ Follow the instructions at https://raw.githubusercontent.com/pathmx/pathmx-skill
 ```
 
 That hosted file is the canonical bootstrap. The agent checks or installs Bun,
-sets up the latest stable PathMX CLI, creates a repository from the Learning
+sets up the current PathMX Labs release, creates a repository from the Learning
 Starter, asks a short set of learner questions, and launches the Player. See
 the [judge and learner walkthrough](./paths/guides/start-learning-with-codex.guide.md)
 for expected checkpoints and fallbacks.
@@ -82,12 +83,12 @@ the same repo-local skills under `.agents/skills/`.
 
 ## Local setup and test
 
-Prerequisite: [Bun](https://bun.sh/). The verified submission CLI version is
-PathMX `0.1.24`.
+Prerequisite: [Bun](https://bun.sh/). Until the submission is frozen, local
+verification follows the latest published PathMX Labs CLI.
 
 ```sh
-bunx @fellowhumans/pathmx@0.1.24 build paths/index.path.md -o .pathmx-check --clean
-bunx @fellowhumans/pathmx@0.1.24 play
+bunx @fellowhumans/pathmx@latest build paths/index.path.md -o .pathmx-check --clean
+bunx @fellowhumans/pathmx@latest play
 ```
 
 The first command is the reproducible build check. The second launches the

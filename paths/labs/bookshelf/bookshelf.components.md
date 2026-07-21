@@ -14,11 +14,11 @@ alignment.
 
 # Book
 
-Each book is a cover image sitting on the shelf. Give it an `isbn` and it pulls the cover from Open Library's Covers API. The `title` prop becomes the alt text.
+Each book is a cover image sitting on the shelf. Give it an `isbn` and it pulls the cover from Open Library's Covers API. The `title` prop becomes the alt text and the hover / Play tip.
 
-The cover gets a subtle right-edge gradient to fake a spine, and a top-edge highlight that catches imaginary light from above.
+The cover gets a subtle right-edge gradient to fake a spine, and a top-edge highlight that catches imaginary light from above. A compact title card appears on fine-pointer hover and whenever the book is the active Play Beat (`data-pathmx-presentation-active`).
 
-The markup is deliberately just the cover object. Shelf spacing and wood are
+The markup keeps the cover object and tip together. Shelf spacing and wood are
 owned by parent components, so a book can move between shelves without carrying layout
 rules with it.
 
@@ -37,11 +37,13 @@ rules with it.
     <span class="book-edge" aria-hidden="true"></span>
     <span class="book-highlight" aria-hidden="true"></span>
   </div>
+  <div class="book-title-tip" aria-hidden="true">{{ title }}</div>
 </div>
 ```
 
-The style gives the rendered book root a lift interaction, then draws the cover
-edge inside the image frame. The edge is CSS, not an extra authoring concern.
+The style lifts the book, draws the cover edge inside the image frame, and
+reveals the title tip on hover or active Play focus. The edge and tip are CSS,
+not extra authoring concerns.
 
 ## CSS
 
@@ -97,15 +99,92 @@ edge inside the image frame. The edge is CSS, not an extra authoring concern.
   pointer-events: none;
 }
 
+.book-title-tip {
+  /* Paper card stays readable over dark wood in light and dark themes. */
+  --book-tip-bg: #f3eee4;
+  --book-tip-fg: #1b1712;
+  --book-tip-border: rgba(40, 28, 18, 0.35);
+
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.4rem);
+  z-index: 4;
+  box-sizing: border-box;
+  min-inline-size: 4.75rem;
+  max-inline-size: min(12rem, 70vw);
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--book-tip-border);
+  border-radius: 0.35rem;
+  background: var(--book-tip-bg);
+  color: var(--book-tip-fg);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.28),
+    0 10px 22px rgba(0, 0, 0, 0.38);
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(0.3rem);
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.book-title-tip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  inline-size: 0.55rem;
+  block-size: 0.55rem;
+  border-right: 1px solid var(--book-tip-border);
+  border-bottom: 1px solid var(--book-tip-border);
+  background: var(--book-tip-bg);
+  transform: translateX(-50%) translateY(-55%) rotate(45deg);
+}
+
+:self[data-pathmx-presentation-active] {
+  z-index: 5;
+  transform: translateY(-8px);
+}
+
+:self[data-pathmx-presentation-active] .book-title-tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+:self[data-pathmx-presentation-active] .book-cover {
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--pmx-color-focus, #0f7a8a) 70%, white),
+    1px 1px 3px rgba(0, 0, 0, 0.4),
+    -1px 0 2px rgba(0, 0, 0, 0.15);
+}
+
 @media (hover: hover) and (pointer: fine) {
   :self:hover {
-    z-index: 1;
+    z-index: 4;
     transform: translateY(-6px);
+  }
+
+  :self:hover .book-title-tip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  :self[data-pathmx-presentation-active]:hover {
+    z-index: 5;
+    transform: translateY(-8px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :self {
+  :self,
+  .book-title-tip {
     transition: none;
   }
 }
@@ -113,7 +192,7 @@ edge inside the image frame. The edge is CSS, not an extra authoring concern.
 
 ## Example
 
-<book title="The Count of Monte Cristo" isbn="9780140449266" />
+<book title="Neuromancer" isbn="9780441569595" />
 
 ---
 
@@ -178,10 +257,12 @@ image's title alt text remains the readable fallback.
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  padding-bottom: 4px;
+  /* Keep title tips inside this scrollport; overflow-x:auto otherwise clips them. */
+  padding-block: 2.75rem 4px;
   position: relative;
   z-index: 2;
   overflow-x: auto;
+  overflow-y: hidden;
   justify-content: safe center;
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;
@@ -226,9 +307,9 @@ image's title alt text remains the readable fallback.
 ## Example
 
 <shelf>
-  <book title="The Count of Monte Cristo" isbn="9780140449266" />
-  <book title="Slaughterhouse-Five" isbn="9780385333481" />
-  <book title="Les Miserables" isbn="9780451419439" />
+  <book title="Neuromancer" isbn="9780441569595" />
+  <book title="Snow Crash" isbn="9780553380958" />
+  <book title="Exhalation" isbn="9781101972120" />
 </shelf>
 
 ---
@@ -261,6 +342,7 @@ The styles do most of the work. We define a set of wood-tone CSS custom properti
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow: visible;
   background: var(--bookshelf-wood-dark);
   border: 6px solid var(--bookshelf-wood-darker);
   border-radius: 6px;
@@ -292,20 +374,20 @@ bookcase:
 ```html
 <bookcase>
   <shelf>
-    <book title="To Kill a Mockingbird" isbn="9780060935467" />
-    <book title="The Catcher in the Rye" isbn="9780316769488" />
-    <book title="Crime and Punishment" isbn="9780486415871" />
+    <book title="Neuromancer" isbn="9780441569595" />
+    <book title="Snow Crash" isbn="9780553380958" />
+    <book title="Exhalation" isbn="9781101972120" />
   </shelf>
   <shelf>
-    <book title="The Left Hand of Darkness" isbn="9780441478125" />
-    <book title="Dune" isbn="9780441172719" />
-    <book title="Project Hail Mary" isbn="9780593135204" />
-    <book title="The Martian" isbn="9780553418026" />
+    <book title="Gödel, Escher, Bach" isbn="9780465026562" />
+    <book title="Superintelligence" isbn="9780199678112" />
+    <book title="Human Compatible" isbn="9780525558613" />
+    <book title="The Alignment Problem" isbn="9780393635829" />
   </shelf>
   <shelf>
-    <book title="Pride and Prejudice" isbn="9780141439518" />
-    <book title="Jane Eyre" isbn="9780141441146" />
-    <book title="The Great Gatsby" isbn="9780743273565" />
+    <book title="Hackers and Painters" isbn="9780596006624" />
+    <book title="Code" isbn="9780735611313" />
+    <book title="Co-Intelligence" isbn="9780593716717" />
   </shelf>
 </bookcase>
 ```
@@ -314,20 +396,20 @@ bookcase:
 
 <bookcase>
   <shelf>
-    <book title="To Kill a Mockingbird" isbn="9780060935467" />
-    <book title="The Catcher in the Rye" isbn="9780316769488" />
-    <book title="Crime and Punishment" isbn="9780486415871" />
+    <book title="Neuromancer" isbn="9780441569595" />
+    <book title="Snow Crash" isbn="9780553380958" />
+    <book title="Exhalation" isbn="9781101972120" />
   </shelf>
   <shelf>
-    <book title="The Left Hand of Darkness" isbn="9780441478125" />
-    <book title="Dune" isbn="9780441172719" />
-    <book title="Project Hail Mary" isbn="9780593135204" />
-    <book title="The Martian" isbn="9780553418026" />
+    <book title="Gödel, Escher, Bach" isbn="9780465026562" />
+    <book title="Superintelligence" isbn="9780199678112" />
+    <book title="Human Compatible" isbn="9780525558613" />
+    <book title="The Alignment Problem" isbn="9780393635829" />
   </shelf>
   <shelf>
-    <book title="Pride and Prejudice" isbn="9780141439518" />
-    <book title="Jane Eyre" isbn="9780141441146" />
-    <book title="The Great Gatsby" isbn="9780743273565" />
+    <book title="Hackers and Painters" isbn="9780596006624" />
+    <book title="Code" isbn="9780735611313" />
+    <book title="Co-Intelligence" isbn="9780593716717" />
   </shelf>
 </bookcase>
 

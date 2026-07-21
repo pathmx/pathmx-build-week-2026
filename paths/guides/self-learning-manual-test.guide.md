@@ -83,6 +83,15 @@ During a module build, look for staged updates such as “the skeleton is ready�
 and “verification is starting.” These should describe real repository progress,
 not generic reassurance.
 
+Do not ask Codex to use subagents in a normal measured run. After map
+confirmation, record whether the `/learn` instructions start bounded child
+threads, which files each owns, whether the parent remains responsive, and
+whether worker output is integrated before handoff. No workers should author
+sessions before confirmation or edit the first session, shared indexes,
+profile, or activity state. Record the actual child model when the harness
+exposes it; a named agent or model request is not proof that the child used a
+different model.
+
 ---
 
 ## 3. Run one scripted learner scenario
@@ -279,6 +288,8 @@ Also record these non-scored release signals:
 - slowest turn and number of turns over five minutes;
 - time to first useful update and the longest silent gap;
 - whether module skeleton and verification updates matched visible progress;
+- child-worker count, models, file boundaries, and whether delegation improved
+  module time or only changed the silent gaps;
 - whether an integrated Browser worked or a fallback was needed;
 - every rescue prompt, manual repair, or permission surprise.
 

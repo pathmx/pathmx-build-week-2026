@@ -433,14 +433,13 @@ Props:
 # Project Feature
 
 Opinionated feature card for hub pages and featured-work grids. Use it when a
-composition needs a linked project teaser with a label, title, short summary,
+composition needs a linked project teaser with an icon, title, short summary,
 and clear call to action. Keep spatial arrangement on `<grid>` or the stacks;
 this tag owns the card chrome.
 
 Props:
 
 - `title`: feature heading, defaults to `Project feature`
-- `label`: small eyebrow above the title, defaults to `Feature`
 - `href`: destination URL or Source path, defaults to `#`
 - `cta`: footer action text, defaults to `Explore`
 
@@ -458,9 +457,10 @@ Slots:
   href="{{ href: # }}"
   aria-label="{{ title: Project feature }}"
 >
-  <span class="project-feature-icon"><slot name="icon" /></span>
-  <p class="project-feature-label">{{ label: Feature }}</p>
-  <h3 class="project-feature-title">{{ title: Project feature }}</h3>
+  <div class="project-feature-heading">
+    <span class="project-feature-icon"><slot name="icon" /></span>
+    <h3 class="project-feature-title">{{ title: Project feature }}</h3>
+  </div>
   <div class="project-feature-body">
     <slot />
   </div>
@@ -508,7 +508,7 @@ Slots:
   outline-offset: 2px;
 }
 
-.project-feature-label,
+.project-feature-heading,
 .project-feature-title,
 .project-feature-body,
 .project-feature-body > *,
@@ -516,8 +516,16 @@ Slots:
   margin: 0;
 }
 
+.project-feature-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-inline-size: 0;
+}
+
 .project-feature-icon {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   inline-size: 2.4rem;
@@ -533,17 +541,9 @@ Slots:
   display: none;
 }
 
-.project-feature-label {
-  color: color-mix(in oklch, var(--pmx-color-accent) 72%, var(--pmx-color-fg));
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
 .project-feature-title {
-  max-inline-size: 16ch;
+  flex: 1 1 auto;
+  min-inline-size: 0;
   color: var(--pmx-color-fg);
   font-size: clamp(1.15rem, 2.2cqi, 1.35rem);
   font-weight: 720;
@@ -579,14 +579,16 @@ Slots:
 
 # Team Member
 
-Bio card for hub team grids. Supports a short role line, yielded bio copy, and
-an avatar region that can hold initials now and a photo later.
+Bio card for hub team grids. Supports a short role line, yielded bio copy, an
+avatar region, and an optional LinkedIn profile link.
 
 Props:
 
 - `name`: display name, defaults to `Teammate`
 - `role`: short role or contribution line, defaults to `Contributor`
 - `initials`: fallback avatar text when the avatar slot is empty, defaults to `?`
+- `href`: optional LinkedIn (or other profile) URL. Leave at `#` to hide the
+  profile link.
 
 Slots:
 
@@ -608,6 +610,26 @@ Slots:
     <div class="team-member-bio">
       <slot />
     </div>
+    <a
+      class="team-member-profile"
+      href="{{ href: # }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        class="team-member-profile-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+        />
+        <rect width="4" height="12" x="2" y="9" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+      <span>LinkedIn</span>
+    </a>
   </div>
 </article>
 ```
@@ -708,6 +730,56 @@ Slots:
   margin-block-start: 0.5rem;
 }
 
+.team-member-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+  margin-block-start: 0.45rem;
+  padding: 0.28rem 0.65rem 0.28rem 0.5rem;
+  border: 1px solid color-mix(in oklch, var(--pmx-color-border) 80%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--pmx-color-accent) 8%, var(--pmx-color-surface));
+  color: var(--pmx-color-link);
+  font-size: 0.82rem;
+  font-weight: 680;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.team-member-profile[href="#"],
+.team-member-profile:not([href]) {
+  display: none;
+}
+
+.team-member-profile:hover,
+.team-member-profile:focus-visible {
+  border-color: color-mix(in oklch, var(--pmx-color-accent) 45%, var(--pmx-color-border));
+  background: color-mix(in oklch, var(--pmx-color-accent) 14%, var(--pmx-color-surface));
+  color: var(--pmx-color-accent);
+  outline: none;
+}
+
+.team-member-profile:focus-visible {
+  outline: 2px solid var(--pmx-color-focus);
+  outline-offset: 2px;
+}
+
+.team-member-profile-icon {
+  inline-size: 0.95rem;
+  block-size: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 @container pathmx-runtime (max-width: 28rem) {
   :self {
     grid-template-columns: minmax(0, 1fr);
@@ -751,7 +823,6 @@ Featured project teasers use the dedicated card:
 <grid cols="3" gap="4">
   <project-feature
     title="Project feature one"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -760,7 +831,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature two"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -769,7 +839,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature three"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -806,7 +875,6 @@ Featured project teasers use the dedicated card:
 <grid cols="3" gap="4">
   <project-feature
     title="Project feature one"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -815,7 +883,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature two"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -824,7 +891,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature three"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >

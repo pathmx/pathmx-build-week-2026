@@ -22,12 +22,13 @@ Core work that landed from July 13 through the July 21 submission deadline and
 directly strengthened the learning experiences built here. It is not a commit
 feed or a claim that the framework itself was created during Build Week.
 
-The Core repository is private, so every entry is written to stand on its own.
+PathMX is currently in Labs, with its Core source kept private while its APIs
+and product boundaries stabilize, so every entry is written to stand on its
+own.
 This remains a living journal until the 8 PM deadline: new work is prepended,
 and a CLI version is called published only after the public package and its
 installed commands verify together. At this snapshot the latest verified CLI
-is 0.1.23. The registry advertises 0.1.24, but `pathmx self-update` still
-resolves the installed binary as 0.1.23, so 0.1.24 is not yet counted below.
+is 0.1.25: the public registry, `pathmx self-update`, `pathmx`, and `pmx` agree.
 
 ## Play becomes quieter, clearer, and more resilient
 

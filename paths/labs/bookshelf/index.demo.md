@@ -1,79 +1,58 @@
 ---
-title: Bookshelf Demo
-description: A copyable Literate Component family for composing a skeuomorphic bookshelf from books, shelves, and a bookcase.
+title: Bookshelf
+description: A skeuomorphic bookshelf composed from books, shelves, and a bookcase.
 route: /labs/bookshelf
 ---
 
 [@bookshelf]: ./bookshelf.components.md
 
-# Bookshelf Demo
+# Bookshelf
 
-This reference composes three small Literate Components into one visual model:
-books supply cover data, shelves own horizontal overflow and wood planks, and a
-bookcase supplies the shared frame and color tokens.
-
-## What to copy
-
-- Import the [bookshelf component definitions](./bookshelf.components.md) for
-  `<book>`, `<shelf>`, and `<bookcase>`.
-- Copy the complete family when you want the shared shelf and bookcase styling;
-  each definition keeps its markup and component-scoped CSS together.
-- Give every `<book>` a readable `title` and an ISBN. Covers load from the
-  [Open Library Covers API](https://openlibrary.org/dev/docs/api/covers) at
-  runtime, so the title remains the image fallback when a remote cover is
-  unavailable.
-
-Minimum PathMX: `@fellowhumans/pathmx@0.1.9`.
-
-Reviewed upstream commit:
-[canonical Bookshelf demo](https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/bookshelf.demo.md)
-and
-[component definitions](https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/bookshelf.components.md).
-
----
-
-## One model, three component boundaries
+A Build Week shelf: minds and civilization SF, cyberpunk systems fiction,
+recent AI-adjacent novels, alignment philosophy, and computing culture. Hover a
+book or step to it in Play to read the title card.
 
 <bookcase>
   <shelf>
-    <book title="Jane Eyre" isbn="9780141441146" />
-    <book title="Pride and Prejudice" isbn="9780141439518" />
-    <book title="Wuthering Heights" isbn="9780141439556" />
-    <book title="Crime and Punishment" isbn="9780486415871" />
-    <book title="Les Miserables" isbn="9780451419439" />
-    <book title="To Kill a Mockingbird" isbn="9780060935467" />
-  </shelf>
-  <shelf>
-    <book title="The Great Gatsby" isbn="9780743273565" />
-    <book title="The Catcher in the Rye" isbn="9780316769488" />
-    <book title="Slaughterhouse-Five" isbn="9780385333481" />
-    <book title="The Count of Monte Cristo" isbn="9780140449266" />
-    <book title="Animal Farm" isbn="9780451526342" />
-    <book title="Fahrenheit 451" isbn="9781451673319" />
-  </shelf>
-  <shelf>
+    <book title="I, Robot" isbn="9780553382563" />
     <book title="Dune" isbn="9780441172719" />
-    <book title="The Lord of the Rings" isbn="9780618640157" />
-    <book title="The Hobbit" isbn="9780547928227" />
-    <book title="The Hitchhiker's Guide to the Galaxy" isbn="9780345391803" />
     <book title="The Left Hand of Darkness" isbn="9780441478125" />
-    <book title="Harry Potter and the Sorcerer's Stone" isbn="9780590353427" />
+    <book title="The Dispossessed" isbn="9780061054884" />
+    <book title="Solaris" isbn="9780156027601" />
+    <book title="Childhood's End" isbn="9780345347954" />
   </shelf>
   <shelf>
-    <book title="The Martian" isbn="9780553418026" />
+    <book title="Neuromancer" isbn="9780441569595" />
+    <book title="Snow Crash" isbn="9780553380958" />
+    <book title="The Diamond Age" isbn="9780553380965" />
+    <book title="Accelerando" isbn="9780441014156" />
+    <book title="Blindsight" isbn="9780765319647" />
+    <book title="Permutation City" isbn="9780061054815" />
+  </shelf>
+  <shelf>
+    <book title="The Three-Body Problem" isbn="9780765377067" />
+    <book title="Exhalation" isbn="9781101972120" />
+    <book title="Stories of Your Life and Others" isbn="9781931520720" />
+    <book title="Do Androids Dream of Electric Sheep?" isbn="9780345404473" />
+    <book title="Klara and the Sun" isbn="9780593318171" />
     <book title="Project Hail Mary" isbn="9780593135204" />
-    <book title="The Name of the Wind" isbn="9780756404741" />
-    <book title="A Wrinkle in Time" isbn="9780312367541" />
-    <book title="Brave New World" isbn="9780060850524" />
-    <book title="The Midnight Library" isbn="9780525559474" />
   </shelf>
   <shelf>
-    <book title="Sapiens" isbn="9780062316097" />
-    <book title="Thinking, Fast and Slow" isbn="9780374533557" />
-    <book title="Educated" isbn="9780399590504" />
-    <book title="The Alchemist" isbn="9780062315007" />
-    <book title="The Silent Patient" isbn="9781250301697" />
+    <book title="Gödel, Escher, Bach" isbn="9780465026562" />
+    <book title="Superintelligence" isbn="9780199678112" />
+    <book title="Life 3.0" isbn="9781101970317" />
+    <book title="Human Compatible" isbn="9780525558613" />
+    <book title="The Alignment Problem" isbn="9780393635829" />
+    <book title="Algorithms to Live By" isbn="9781627790369" />
+  </shelf>
+  <shelf>
+    <book title="Hackers and Painters" isbn="9780596006624" />
+    <book title="Code" isbn="9780735611313" />
+    <book title="The Soul of a New Machine" isbn="9780316491976" />
+    <book title="Mindstorms" isbn="9780465046744" />
+    <book title="The Dream Machine" isbn="9781732265110" />
+    <book title="Co-Intelligence" isbn="9780593716717" />
   </shelf>
 </bookcase>
 
-[Back to the Build Week labs](../index.path.md)
+[Back to the labs](../index.path.md)

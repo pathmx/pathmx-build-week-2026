@@ -46,13 +46,117 @@ Greenville field guide is now presented as [The Greenville Coffee
 Scene](../labs/my-greenville/index.demo.md), with its existing route preserved
 for review.
 
-PathMX 0.1.25 built the focused Source with 206 artifacts and the full graph
-with 363 artifacts. Live Player review covered Internship → Priya → Parallel
-Lives → touch → resolved thank-you → Pending persistence; Priya left the weekly
-queue, the 390 × 844 layout had no horizontal overflow, focus restored to her
-plant after closing the panel, browser errors were empty, and `git diff
---check` passed. Reduced-motion, forced-colors, and no-JavaScript behavior were
-inspected in Source but not re-emulated after the final queue refinement.
+The focused Relationship Garden build produced 206 artifacts. After merging
+the current upstream lab and release work, PathMX 0.1.26 built the full root
+graph with 388 artifacts and resolved the Labs, Relationship Garden,
+Greenville, Chess, Chess Opening Lesson, and Kepler routes exactly. Live Player
+smoke confirmed the requested Labs order, the personal-CRM review surface, and
+the Greenville title. The deeper garden review covered Internship → Priya →
+Parallel Lives → touch → resolved thank-you → Pending persistence; Priya left
+the weekly queue, the 390 × 844 layout had no horizontal overflow, focus
+restored to her plant after closing the panel, browser errors were empty, and
+`git diff --check` passed. Reduced-motion, forced-colors, and no-JavaScript
+behavior were inspected in Source but not re-emulated after the final queue
+refinement.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:33:57-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## Active release consumers follow the latest verified PathMX
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Build Week judge commands now use `@fellowhumans/pathmx@latest` while Core
+releases remain active. The Learning Starter also follows `latest`, while its
+committed lockfile and compatibility baseline retain the concrete release that
+passed its build, Question, annotation, component, and Player checks—currently
+0.1.26. The submission freeze therefore locks the accepted static deployment
+and Starter lockfile without turning the public template back into an exact
+manifest pin.
+
+The Starter's normal and candidate suites each built two Paths and 44
+artifacts, and an isolated Player smoke served `/index.path` from 0.1.26. A
+Build Week root build resolved `latest` to 0.1.26 and completed as one Path
+with 372 artifacts and no warnings. The in-progress Cloudflare deployment
+files remain owned by their separate task and are not part of this change.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:05:42-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## PathMX's public status language moves into Labs
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The README, Build Week home, learner guide, Core progress log, readiness guide,
+Devpost working draft, and submission-boundary brief now describe PathMX as a
+Labs-stage project whose Core source remains private while its APIs and product
+boundaries stabilize. They distinguish that source boundary from the
+installable CLI, remove claims that the current CLI is stable or open source,
+and state the intent to open-source substantial portions without promising an
+exact scope, license, or date.
+
+PathMX 0.1.25 remains the verified repository version. Its self-update check
+reports current, and the root scratch build completed as one Path with 369
+artifacts and no warnings; the affected Sources appear in the generated
+manifest. This prose-only pass did not require live Player review.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T16:52:46-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## Hosted bootstrap, release checks, and the eval record align
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The Build Week home now points learners and judges to the canonical raw
+`bootstrap.md`, a one-prompt setup guide, a full technical eval report, and the
+separate concise findings deck. The report records the phased Codex CLI method,
+scenario and profile matrix, deterministic and judge measures, latency data,
+failure-driven instruction changes, three accessible comparison figures, the
+subagent experiment, and explicit limits.
+
+Canonical skill sync now transactionally replaces the complete managed skill
+tree in the current checkout without creating or switching Git branches. The
+same `/learn`, `/teach`, and `/pathmx` packages are byte-identical in the
+Learning Starter and this repository. The unverified project-scoped Terra
+worker was removed after two probes accepted the delegation but launched
+Sol/low children.
+
+PathMX 0.1.25 passed 64 canonical skill tests, the Starter candidate and normal
+compatibility checks, and a clean Build Week root build with 369 artifacts and
+no warnings. Player review covered the new report and revised deck in dark
+mode: sixteen chart rows and four figures rendered without horizontal overflow
+or console warnings, and built metadata confirms the four deck metric cards are
+four component Beats.
+
+The subsequent public hosted-bootstrap Power run passed all deterministic and
+critical checks on PathMX 0.1.25. It recorded 11m07s of model time, a 6m20s
+confirmed-module turn, first useful updates in 4–11 seconds, and two Sol child
+threads without collaboration errors. Quality is green; one five-minute turn
+and a 1m56s silent gap keep learner latency in attention status.
 
 ---
 

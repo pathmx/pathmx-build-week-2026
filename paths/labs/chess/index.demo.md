@@ -10,31 +10,8 @@ route: /labs/chess
 
 # Morphy Opera Game
 
-Components: [Chess Components](./chess.components.md).
-
-This demo uses [chess literate components](./chess.components.md) to render positions from
-FEN, allow local legal moves, and replay a famous game from PGN.
-
-## What to copy
-
-- Start with the [Literate Component definitions](./chess.components.md).
-- Keep the shared
-  [runtime helper](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-runtime.js),
-  [board stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-board.css),
-  and
-  [replay stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/chess/chess-game.css)
-  beside the definitions.
-- Copy [piece labels](./chess-pieces.json) and the vendored
-  [Cburnett SVG set and license](./assets/pieces/cburnett/README.md) when using
-  the default pieces.
-
-Minimum PathMX: `@fellowhumans/pathmx@0.1.9`. This reference uses
-`ctx.play.actions` and intentionally has no 0.1.8 compatibility path.
-
-Reviewed upstream commit:
-[canonical Chess demo](https://github.com/pathmx/pathmx/tree/94e34fb8/paths/demos/chess).
-
----
+Paris, 1858. Paul Morphy against the Duke of Brunswick and Count Isouard.
+Try the open board, then step the annotated replay.
 
 <div class="pmx-wide">
 <chess-board
@@ -43,9 +20,6 @@ Reviewed upstream commit:
   interactive="true"
 ></chess-board>
 </div>
-
-The board above has no persistence and no game-clock semantics. It is only
-local interaction state in one rendered tag instance.
 
 <div class="pmx-wide">
 <chess-board
@@ -74,8 +48,7 @@ local interaction state in one rendered tag instance.
 
   <chess-note ply="0" title="The classic teaching game">
     Morphy develops quickly, opens lines, and treats every move as a demand on
-    Black's overloaded king. The demo starts from normal PGN, not a hand-coded
-    position list.
+    Black's overloaded king.
   </chess-note>
 
   <chess-note ply="7" title="4. dxe5">
@@ -105,7 +78,6 @@ local interaction state in one rendered tag instance.
   </chess-note>
 
   <chess-note ply="33" title="17. Rd8#">
-    The rook reaches d8 with mate. The board, move list, and note panel are all
-    synchronized from the PGN history produced by chess.js.
+    The rook reaches d8 with mate.
   </chess-note>
 </chess-game>

@@ -1,6 +1,6 @@
 ---
 type: slides
-status: ready
+status: draft
 title: Codex learning-system eval review
 date: 2026-07-21
 related:
@@ -18,7 +18,7 @@ play:
 
 ### Method, findings, and changes to the PathMX skills and Learning Starter
 
-**Eval runtime:** PathMX 0.1.22 · Codex CLI · July 21, 2026
+**Eval series:** PathMX 0.1.21–0.1.25 · Codex CLI 0.142.5–0.145.0 · July 21, 2026
 
 ---
 
@@ -127,10 +127,18 @@ boundary exposed the next missing repository contract.
 # Final candidate results
 
 <lab-stats label="Final candidate evaluation metrics">
-  <lab-stat value="100% / 100%" label="Checks / judge" detail="Ambiguous goal"></lab-stat>
-  <lab-stat value="6m56s" label="Complete flow" detail="Slowest turn 3m22s"></lab-stat>
-  <lab-stat value="100% / 100%" label="Checks / judge" detail="Return + adapt"></lab-stat>
-  <lab-stat value="10m07s" label="Five-turn flow" detail="No turn over 5m"></lab-stat>
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Ambiguous goal">
+    <slot name="icon">:lucide-badge-check:</slot>
+  </lab-stat>
+  <lab-stat value="6m56s" label="Complete flow" detail="Slowest turn 3m22s">
+    <slot name="icon">:lucide-timer:</slot>
+  </lab-stat>
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Return + adapt">
+    <slot name="icon">:lucide-refresh-cw:</slot>
+  </lab-stat>
+  <lab-stat value="10m07s" label="Five-turn flow" detail="No turn over 5m">
+    <slot name="icon">:lucide-zap:</slot>
+  </lab-stat>
 </lab-stats>
 
 The learner saw a useful first update in **4–13 seconds** on every measured
@@ -139,6 +147,44 @@ turn. Staged authoring made progress visible while the module was being built.
 [@styles.lab]: ../styles/lab.css
 [@styles]: ./walkthrough.css
 [@lab-stats]: ../styles/lab.components.md
+
+---
+
+<!-- id: release-smoke -->
+
+# Hosted PathMX 0.1.25 passed quality, not latency
+
+| Signal | Result |
+| --- | ---: |
+| Deterministic checks | 100%, critical pass |
+| Total model time | 11m07s |
+| Confirmed module | 6m20s |
+| First useful updates | 4–11s |
+| Longest silence | 1m56s |
+| Child threads | 2 Sol, no errors |
+
+The public raw bootstrap and published Starter completed the full SQL beginner
+flow on the Desktop Power profile. The default eval sandbox could build and
+resolve the route but could not write Player state under `~/.pathmx`; normal
+Player startup remains a manual Codex Desktop check.
+
+---
+
+<!-- id: subagent-finding -->
+
+# Subagents improved cadence, not first-module wall time
+
+| Lane | Workers | Module turn | Longest silence | Checks |
+| --- | ---: | ---: | ---: | ---: |
+| Collaboration disabled | 0 | 3m04s | 1m43s | 100% |
+| Explicit bounded workers | 2 Sol/low | 4m35s | 1m05s | 100% |
+| One-join repeat | 2 Sol/low | 4m24s | 1m10s | 100% |
+
+Codex delegated only after map confirmation and preserved parent ownership of
+the first session, shared state, integration, and handoff. Coordination cost
+outweighed parallel drafting for this small three-session module. Two separate
+Terra/low probes still launched Sol/low children, so the Starter no longer
+ships or advertises an unverified faster worker configuration.
 
 ---
 
@@ -158,6 +204,8 @@ turn. Staged authoring made progress visible while the module was being built.
 - Exercise the published Starter and hosted bootstrap after release.
 - Review the real Codex Desktop Browser and permission experience manually.
 - Reduce silent gaps that still exceeded one minute in some turns.
+- Establish whether a larger later-module task can amortize same-model worker
+  coordination.
 
 ---
 
@@ -165,13 +213,16 @@ turn. Staged authoring made progress visible while the module was being built.
 
 # Recommended next validation
 
-- Publish the Starter and canonical skills against the verified PathMX baseline.
-- Run hosted-bootstrap scenarios in a fresh Codex Desktop project.
-- Repeat fast and default-strength profiles; track quality and waiting separately.
-- Compare repeated runs by phase, quality score, first-update time, and longest
-  silent interval.
+- Run one larger later-module or return pair with collaboration disabled and
+  required.
+- Run the manual Desktop flow to verify normal Player startup, Browser handoff,
+  and permission language outside the eval sandbox.
+- Keep the buffered module—not worker fan-out—as the primary learner-speed
+  mechanism until repeated pairs show a wall-clock improvement.
 
 **Team test guide:** [Run the manual Codex Desktop flow](../guides/self-learning-manual-test.guide.md)
 
 The deck reports the current evidence; it is not a substitute for repeated
 runs or the manual Codex Desktop review.
+
+**Full report:** [Read the method, charts, findings, and limits](../research/learning-agent-evals.brief.md)

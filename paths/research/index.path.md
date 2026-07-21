@@ -2,6 +2,8 @@
 
 Helpful links and references for the build week project.
 
+- [Learning-agent eval technical report](./learning-agent-evals.brief.md) —
+  method, data, charts, instruction changes, subagent experiment, and limits
 - [Campus Constellation: College Networking Skills](./campus-constellation-networking.path.md)
 - [Relationship Garden implementation plan](../andrew/2026-07-21-relationship-garden-implementation.plan.md)
   — Andrew's agent handoff for a playable personal CRM / Parallel Lives garden

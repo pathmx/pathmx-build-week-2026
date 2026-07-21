@@ -1,7 +1,0 @@
-interface:
-  display_name: "PathMX Authoring (retired)"
-  short_description: "Compatibility redirect to the PathMX skill"
-  default_prompt: "Use $pathmx instead; this legacy name only redirects older prompts."
-
-policy:
-  allow_implicit_invocation: false

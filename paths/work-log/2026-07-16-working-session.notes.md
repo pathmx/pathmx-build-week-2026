@@ -123,7 +123,7 @@ captions are already structured enough to support a Khan Academy-style
 mid-video prompt pattern in a future prototype.
 
 Research findings have been added to the repository's research area. For
-offline experiments in the open-source PathMX build, `youtube-dl` or a similar
+offline experiments with the installable PathMX beta, `youtube-dl` or a similar
 tool may be useful, but that path is not part of the contest submission plan.
 
 The team also discussed a GTD-inspired agent skill for task management. Useful

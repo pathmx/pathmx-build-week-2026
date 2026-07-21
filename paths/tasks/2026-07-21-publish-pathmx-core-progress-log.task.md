@@ -21,7 +21,7 @@ confusing release candidates with verified CLI releases.
 
 ## Next Move
 
-`pathmx self-update` now verifies public CLI 0.1.24. Compare the log with the
+`pathmx self-update` now verifies public CLI 0.1.25. Compare the log with the
 latest Core journal, prepend any new verified milestone for that release, then
 freeze the cutoff and finish this task before 8 PM EDT.
 
