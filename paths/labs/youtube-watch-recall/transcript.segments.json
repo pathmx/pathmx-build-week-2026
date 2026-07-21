@@ -1,0 +1,43 @@
+{
+  "videoId": "EYPapE-3FRw",
+  "source": "provided-vtt",
+  "note": "Demo-authored transcript excerpts for a PathMX Build Week lab. These paraphrase the opening ~90 seconds of Richard Feynman's 1964 Cornell Messenger Lecture on the scientific method closely enough to support recall questions, but they were written for this lab and are not scraped from YouTube captions.",
+  "video": {
+    "title": "Feynman on Scientific Method",
+    "url": "https://www.youtube.com/watch?v=EYPapE-3FRw",
+    "channel": "seabala (public upload)",
+    "context": "Excerpt from Richard Feynman's 1964 Messenger Lectures at Cornell University."
+  },
+  "segments": [
+    {
+      "id": "seg-01-guess",
+      "start": 4.0,
+      "end": 18.0,
+      "text": "In general, we look for a new law by the following process. First, we guess it."
+    },
+    {
+      "id": "seg-02-compute",
+      "start": 18.0,
+      "end": 36.0,
+      "text": "Then we compute the consequences of the guess to see what it would imply if this law that we guessed were right."
+    },
+    {
+      "id": "seg-03-compare",
+      "start": 36.0,
+      "end": 54.0,
+      "text": "Then we compare the result of the computation to nature - to experiment or experience - to see if it works."
+    },
+    {
+      "id": "seg-04-key",
+      "start": 54.0,
+      "end": 72.0,
+      "text": "If it disagrees with experiment, it is wrong. In that simple statement is the key to science."
+    },
+    {
+      "id": "seg-05-does-not-matter",
+      "start": 72.0,
+      "end": 88.0,
+      "text": "It doesn't make a difference how beautiful your guess is, how smart you are, who made the guess, or what their name is. If it disagrees with experiment, it is wrong."
+    }
+  ]
+}

@@ -15,10 +15,89 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:28:11-04:00"
+date: "2026-07-21T22:15:00-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## Campus Constellation graduates from research into the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Campus Constellation was moved from `paths/research/` into a new
+[`paths/labs/campus-constellation/`](../labs/campus-constellation/index.demo.md)
+directory alongside its eleven Literate Components and scoped stylesheet, so
+the college-networking mission Path now sits beside the other playable demos
+on the [Labs hub](../labs/index.path.md). The three prefilled learner
+`response` / `submission` fixtures on the `choose-north-star`,
+`set-practice-level`, and `next-route-signal` question Blocks were cleared so
+a new learner arrives at unanswered questions, and the CSS `@scope` selectors
+now target `data-pathmx-source="labs/campus-constellation/index.demo"` so the
+campus-at-night visual system continues to apply after the move. The old
+research entry was rewritten as a graduated pointer stub that keeps inbound
+`related:` links resolving from six task and note Sources, historical
+change-log references were retargeted so the graph builds without unresolved
+links, and the one existing actor Play session was retargeted to the new
+demo path. The [owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
+carries the readiness findings and detailed verification.
+
+Verified with `pathmx build` (PathMX 0.1.25): clean before (384 artifacts) and
+after (24 artifacts written, 0 deleted, 0 warnings) the move. `pathmx route
+paths/labs/campus-constellation/index.demo.md` resolves to
+`/labs/campus-constellation`; the research stub still resolves to
+`/research/campus-constellation-networking.path`. A repository-owned
+`pathmx play` server returned HTTP 200 for both routes and the served demo
+carries every one of the eleven component tags plus the new scoped
+`data-pathmx-source`. Narrow-viewport, keyboard, reduced-motion, forced-color,
+and no-JS behavior were reconfirmed by inspection in the moved Sources and
+served HTML, not by live browser interaction; Andrew or Mark can double-check
+in review.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T21:45:00-04:00"
+-->
+
+## A YouTube watch-and-recall MVP joins the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The [YouTube watch-and-recall lab](../labs/youtube-watch-recall/index.demo.md)
+ships the smallest reliable version of the pattern sketched in the
+[YouTube learning research](../research/youtube-learning-skill.path.md): one
+public, official YouTube embed of Feynman's Cornell Messenger Lecture on the
+scientific method, one demo-authored provided transcript in
+[`transcript.segments.json`](../labs/youtube-watch-recall/transcript.segments.json)
+labeled `source: provided-vtt` — not scraped captions — and five durable
+question Blocks whose hidden `youtube:` topmatter records `videoId`, an
+`evidence.start`/`evidence.end` span, and the same provided-transcript
+source. The lab closes with a copy-ready Codex prompt so a later task can
+read the learner's long-text answers beside the exact grounded span. The
+Labs hub links it as a Demo, and the
+[owning task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md)
+carries the dated activity, verification, and the pending live Player pass.
+
+Verified with `bunx pathmx build paths/index.path.md -o .pathmx-check --clean`
+(PathMX 0.1.25): built 1 path, 394 artifacts, no new warnings; only
+pre-existing unresolved `campus-constellation.components.md` links remain.
+`bunx pathmx route paths/labs/youtube-watch-recall/index.demo.md -o
+.pathmx-check --json` resolves to route `/labs/youtube-watch-recall`. Live
+Player submission review is skipped for now — no repository-owned
+`pathmx play` server was running in this cloud environment — and Andrew
+should complete that pass before closing the task.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:28:11-04:00"
+-->
 
 ## A next-demo shortlist parks post-submission lab ideas
 
