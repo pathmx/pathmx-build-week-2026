@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-16
-due: 2026-07-16
 related:
   - ../research/youtube-learning-skill.path.md
 ---

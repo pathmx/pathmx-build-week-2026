@@ -3,7 +3,6 @@ type: task
 status: in-progress
 owner: Andrew
 date: 2026-07-15
-due: 2026-07-17
 related:
   - ../labs/index.path.md
   - ../labs/campaign-forge/index.demo.md
@@ -72,7 +71,6 @@ Use the same compact pass for each demo:
 | [Chess](../labs/chess/index.demo.md) | A move-based board interaction with replayable state | Check move selection and replay, image and square focus, labels, optional data, and full keyboard operation. |
 | [Tufte theme](../labs/tufte-theme/index.demo.md) | A reading-first visual theme with sidenotes and charts | Review light and dark schemes, sidenotes, chart legibility, narrow layout, print behavior, and visible warnings or caveats. |
 | [Layout components](../labs/layout-components/index.demo.md) | Reusable layout composition and semantic ordering | Confirm reading order, composition, container behavior, narrow layout, focus visibility, and a plain-Markdown fallback. |
-| [Simple learner quiz](../labs/simple-quiz/index.demo.md) | A small answer-and-feedback learning loop | Try answer, submit, forward, revisit, and restored-state paths; confirm useful evidence and clean test-response handling. |
 | [Bookshelf](../labs/bookshelf/index.demo.md) | A compact visual collection interface | Review item composition, overflow, keyboard access, narrow width, readable markup, and behavior without enhancement. |
 | [Kepler orbit](../labs/kepler-orbit/index.demo.md) | A stateful scientific visualization | Check Player and direct-control synchronization, labels, orbit state, presented animation, re-entry, keyboard use, narrow width, reduced motion, and cleanup. |
 | [Focus beats](../labs/focus-components/index.demo.md) | Beat pacing, focus, and typographic presentation | Review entry and exit, replay, focus movement, reduced motion, and whether the pacing clarifies the learning move. |

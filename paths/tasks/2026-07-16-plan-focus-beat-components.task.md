@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-16
-due: 2026-07-18
 related:
   - ../labs/focus-components/index.demo.md
   - ../labs/focus-components/focus.components.md

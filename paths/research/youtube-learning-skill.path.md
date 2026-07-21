@@ -8,7 +8,6 @@ tags:
   - adaptive-learning
 related:
   - ./index.path.md
-  - ../labs/simple-quiz/index.demo.md
   - ../tasks/2026-07-16-add-youtube-learning-research.task.md
 ---
 

@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-15
-due: 2026-07-15
 related:
   - ./index.tasks.md
   - ./2026-07-15-provision-muthurd-space.task.md

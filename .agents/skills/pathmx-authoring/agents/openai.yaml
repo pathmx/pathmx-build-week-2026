@@ -1,4 +1,7 @@
 interface:
-  display_name: "PathMX Authoring"
-  short_description: "Author and verify playable PathMX sources"
-  default_prompt: "Use $pathmx-authoring to create or revise this PathMX source and verify the result."
+  display_name: "PathMX Authoring (retired)"
+  short_description: "Compatibility redirect to the PathMX skill"
+  default_prompt: "Use $pathmx instead; this legacy name only redirects older prompts."
+
+policy:
+  allow_implicit_invocation: false

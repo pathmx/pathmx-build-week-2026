@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-18
-due: 2026-07-20
 related:
   - ../work-log/2026-07-18-andrew-labs-review.notes.md
   - ../research/workspace-link-audit.notes.md

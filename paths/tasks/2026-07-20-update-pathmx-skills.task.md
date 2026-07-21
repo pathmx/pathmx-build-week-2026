@@ -3,7 +3,6 @@ type: task
 status: in-progress
 owner: Tram
 date: 2026-07-20
-due: 2026-07-21
 related:
   - ../work-log/2026-07-20-build-week-checkin.notes.md
   - ../work-log/2026-07-16-working-session.notes.md

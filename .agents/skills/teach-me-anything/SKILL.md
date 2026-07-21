@@ -41,11 +41,10 @@ stable explicit IDs for questions, and keep task wording stable across a
 learning episode. A Literate Component may help the learner explore, but its
 private browser state is not submitted evidence.
 
-Use the
-[simple learner quiz](../../../paths/labs/simple-quiz/index.demo.md) as the
-smallest durable question-and-answer reference. Use the
+Use ordinary PathMX question Blocks with Actor-backed submissions as the
+smallest durable question-and-answer pattern. Use the
 [component proving ground](../../../paths/labs/component-patterns/index.demo.md)
-when the lesson needs a rich interaction. Neither example replaces the full
+when the lesson needs a rich interaction. Neither pattern replaces the full
 linked learning loop above.
 
 ## 4. Observe Durable Evidence

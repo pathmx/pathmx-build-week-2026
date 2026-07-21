@@ -80,7 +80,6 @@ public `pathmx/pathmx-learning-starter` repository works.
 | [Starter init task](../tasks/2026-07-15-spike-starter-init-flow.task.md) and [manual test guide](../labs/self-learning-box/manual-test.guide.md) | `paths/inbox/2026-07-15-pathmx-starter-init-mvp.issue.md`; `paths/docs/pathmx-starter-init-mvp.design.md`; `paths/plans/pathmx-starter-init-mvp.plan.md` |
 | [Layout demo](../labs/layout-components/index.demo.md) | `paths/demos/styles/layout-demo.css`; `paths/demos/layout.demo.md` |
 | [Bookshelf demo](../labs/bookshelf/index.demo.md) | `paths/demos/bookshelf.demo.md`; `paths/demos/bookshelf.components.md` |
-| [Simple Quiz demo](../labs/simple-quiz/index.demo.md) | `paths/demos/simple-quiz/simple-quiz.css`; `paths/demos/simple-quiz/` |
 | [Tufte demo](../labs/tufte-theme/index.demo.md) | `paths/demos/tufte-theme/index.demo.md`; `paths/demos/tufte-theme/styles/tufte-theme.css`; `paths/demos/tufte-theme/` |
 | [Chess demo](../labs/chess/index.demo.md) | `paths/demos/chess/chess-runtime.js`; `paths/demos/chess/chess-board.css`; `paths/demos/chess/chess-game.css`; `paths/demos/chess/` |
 | [3D Globe demo](../labs/three-globe/index.demo.md) | revision `35af1917` targets for `three-globe.demo.md`, `three-globe.components.md`, and `three-globe-network.json` |
