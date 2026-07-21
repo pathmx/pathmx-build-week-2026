@@ -52,3 +52,7 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   personal atlas that connects five researched Greenville coffee shops to city
   context, privacy-safe human threads, one next outing, and a durable field
   note.
+- [YouTube watch and recall](./youtube-watch-recall/index.demo.md) — a one-video,
+  provided-transcript MVP that pairs an official YouTube embed with
+  timestamped Feynman excerpts and durable recall Blocks whose hidden
+  `youtube:` evidence points a Codex follow-up at the exact transcript span.

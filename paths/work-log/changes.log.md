@@ -13,12 +13,49 @@ styles:
     - change-journal
 ---
 
+[@change-published]: ./changes.components.md
+
+<!--
+type: change
+date: "2026-07-21T21:45:00-04:00"
+-->
+
+## A YouTube watch-and-recall MVP joins the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The [YouTube watch-and-recall lab](../labs/youtube-watch-recall/index.demo.md)
+ships the smallest reliable version of the pattern sketched in the
+[YouTube learning research](../research/youtube-learning-skill.path.md): one
+public, official YouTube embed of Feynman's Cornell Messenger Lecture on the
+scientific method, one demo-authored provided transcript in
+[`transcript.segments.json`](../labs/youtube-watch-recall/transcript.segments.json)
+labeled `source: provided-vtt` — not scraped captions — and five durable
+question Blocks whose hidden `youtube:` topmatter records `videoId`, an
+`evidence.start`/`evidence.end` span, and the same provided-transcript
+source. The lab closes with a copy-ready Codex prompt so a later task can
+read the learner's long-text answers beside the exact grounded span. The
+Labs hub links it as a Demo, and the
+[owning task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md)
+carries the dated activity, verification, and the pending live Player pass.
+
+Verified with `bunx pathmx build paths/index.path.md -o .pathmx-check --clean`
+(PathMX 0.1.25): built 1 path, 394 artifacts, no new warnings; only
+pre-existing unresolved `campus-constellation.components.md` links remain.
+`bunx pathmx route paths/labs/youtube-watch-recall/index.demo.md -o
+.pathmx-check --json` resolves to route `/labs/youtube-watch-recall`. Live
+Player submission review is skipped for now — no repository-owned
+`pathmx play` server was running in this cloud environment — and Andrew
+should complete that pass before closing the task.
+
+---
+
 <!--
 type: change
 date: "2026-07-21T17:48:24-04:00"
 -->
-
-[@change-published]: ./changes.components.md
 
 ## Second-wave demo options join the shortlist
 
