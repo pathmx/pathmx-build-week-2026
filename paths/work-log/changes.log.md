@@ -15,10 +15,34 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:28:11-04:00"
+date: "2026-07-21T17:48:24-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## Second-wave demo options join the shortlist
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+While Campus Constellation, YouTube watch-and-recall, and the research bench
+build in parallel, the
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) now
+marks those three as in flight and parks eight second-wave options with Player
+beats, costs, and risks. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) defaults
+the next greenfield to negotiation rehearsal, with debugging dojo as the STEM
+alternate.
+
+Notes-only coordination. Live Player review skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:28:11-04:00"
+-->
 
 ## A next-demo shortlist parks post-submission lab ideas
 

@@ -9,13 +9,15 @@ related:
   - ../labs/index.path.md
   - ../presentation/submission-walkthrough.slides.md
   - ../tasks/2026-07-21-shortlist-next-lab-demos.task.md
+  - ../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md
+  - ../tasks/2026-07-21-graduate-campus-constellation-labs.task.md
+  - ../tasks/2026-07-21-build-research-bench-lab.task.md
 ---
 
 # Next Demo Shortlist
 
-Scratch notes from a July 21 pass after syncing `main` to `4511f6a`. Not team
-doctrine. Use this to pick one post-submission lab, not to restart the video
-hero.
+Scratch notes from a July 21 pass after syncing `main` to `4511f6a`, plus a
+second-wave pass while the first three builds ran. Not team doctrine.
 
 ---
 
@@ -32,19 +34,27 @@ The Labs hub already proves several PathMX learning shapes:
 | Personal field atlas | My Greenville coffee outline |
 | Authoring / visual craft | Tufte, bookshelf, layout components |
 
-Still thin or missing relative to the [wedge notes](./2026-07-17-build-week-wedge-demo-memory.notes.md):
+### In flight (July 21 evening)
+
+| Shape | Lab / PR |
+| --- | --- |
+| Rehearsal room + mission | Campus Constellation → Labs ([PR #8](https://github.com/pathmx/pathmx-build-week-2026/pull/8)) |
+| Research bench | Research Bench ([PR #7](https://github.com/pathmx/pathmx-build-week-2026/pull/7)) |
+| Watch-and-recall | YouTube watch-and-recall ([PR #9](https://github.com/pathmx/pathmx-build-week-2026/pull/9)) |
+
+Still thin after those land:
 
 | Shape | Gap |
 | --- | --- |
-| Rehearsal room + real mission | Campus Constellation lives in research, not Labs |
 | Playbook / runbook | No first-30-days or onboarding Path |
-| Research bench | No claim → evidence → next-question lab |
-| Watch-and-recall | YouTube skill researched, no playable lab |
+| Hard-conversation rehearsal | Interview lab exists; manager/negotiation scenario does not |
 | Portfolio spine | No multi-project growth Path |
+| Embodied / session log | No cooking, music, or Rubik's practice log |
 | Non-classroom learning | Health visit prep, travel pack, family decision log |
+| STEM craft dojo | No debugging / systems / exam-command lab |
 
-`paths/labs/component-patterns/` and `paths/labs/self-learning-box/` are useful
-internals, not learner-facing showcase demos.
+`paths/labs/component-patterns/` and `paths/labs/self-learning-box/` remain
+internals, not showcase demos.
 
 ---
 
@@ -64,20 +74,13 @@ unless Mark explicitly swaps the third cut.
 
 ---
 
-## Recommended Next Demos
+## First-wave picks (already claimed)
 
-Ordered for Build Week aftermath, not for tonight's video.
+### 1. Graduate Campus Constellation into Labs — in flight
 
-### 1. Graduate Campus Constellation into Labs — highest leverage
+See [graduate task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md).
 
-- **Why:** Already authored; Tier S in the wedge notes; pairs with Relationship
-  Garden (rehearse one conversation → tend the relationship afterward).
-- **Demo beat:** Choose a north star → write one ask → leave with one real-world
-  mission and a durable follow-up note.
-- **Cost:** Mostly polish, hub link, and field-guide review—not a greenfield lab.
-- **Risk:** Keep it a mission Path, not a networking theory course.
-
-### 2. Hard-conversation rehearsal room — reuses interview patterns
+### 2. Hard-conversation rehearsal room — still open
 
 - **Why:** Same practice-arena shape as the interview lab, without betting on
   live Realtime voice. Manager feedback, salary negotiation, or awkward
@@ -87,27 +90,15 @@ Ordered for Build Week aftermath, not for tonight's video.
 - **Cost:** Medium. Can fork interview PoC structure and drop voice.
 - **Risk:** Stay specific (one scenario), avoid a generic soft-skills encyclopedia.
 
-### 3. Research bench: "What should I believe?" — unique PathMX claim
+### 3. Research bench — in flight
 
-- **Why:** Shows durable evidence better than chat. Learner leaves with claims,
-  citations, open questions, and a next reading move.
-- **Demo beat:** Pose a contested question → pin two claims → attach sources →
-  rate confidence → ask Codex for the next discriminating question.
-- **Cost:** Medium-high if citation UX is custom; low if Markdown tables +
-  questions are enough for MVP.
-- **Risk:** Do not invent PathMX syntax for citations; stay in ordinary Source.
+See [research-bench task](../tasks/2026-07-21-build-research-bench-lab.task.md).
 
-### 4. YouTube watch-and-recall micro-lab — research already started
+### 4. YouTube watch-and-recall — in flight
 
-- **Why:** [YouTube learning research](../research/youtube-learning-skill.path.md)
-  already frames the boundary; a tiny lab would prove watch → recall → evidence.
-- **Demo beat:** Embed one short video → timestamped recall questions from a
-  provided transcript → save answers as Source for Codex follow-up.
-- **Cost:** Medium. Transcript policy is the hard part; start with a provided
-  `.vtt` only.
-- **Risk:** Unofficial scraping is out. Keep one video, one transcript mode.
+See [YouTube task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md).
 
-### 5. First-30-days onboarding playbook — missing runbook shape
+### 5. First-30-days onboarding playbook — still open
 
 - **Why:** High Impact story for people starting a job; PathMX is strong when
   checklists are actually run and logged.
@@ -117,13 +108,112 @@ Ordered for Build Week aftermath, not for tonight's video.
 - **Risk:** Easy to become generic career advice. Anchor in one fictional or
   personal role.
 
-### Supporting / later only
+---
 
-- Design critique studio or songwriting beat-sheet (Campaign Forge cousins)
-- Debugging dojo (chess-lesson cousin for code)
-- Health-literacy visit prep or travel competence pack (strong Impact, weaker
-  Build Week narrative fit)
-- Portfolio spine across multiple projects (needs multi-session memory story)
+## Second-wave options
+
+Fresh alternatives once the in-flight trio merges. Ranked for PathMX fit
+(durable evidence + one non-chat Player moment), not for video hero duty.
+
+### A. Debugging dojo — strongest STEM cousin to Chess
+
+- **Why:** Chess already shows practice-with-board. A tiny debugging Path shows
+  the same loop for code: hypothesize, try, leave evidence.
+- **Demo beat:** One short buggy function → pick a hypothesis → run a mental or
+  fixture check → log what you learned → Codex suggests the next probe.
+- **Player moment:** Hypothesis chips or a stepper that cannot be a chat bubble.
+- **Cost:** Medium. Stay language-small (one JS or Python fixture).
+- **Risk:** Do not become a full IDE. One bug, one session log.
+
+### B. Offer / salary negotiation rehearsal — specific hard-conversation
+
+- **Why:** Sharper Impact than a generic soft-skills room; pairs with interview
+  lab as “get the job → negotiate the offer.”
+- **Demo beat:** Scenario card → draft opening ask → submit → rubric marks one
+  weak spot (anchor, silence, justification) → revise once → save the attempt.
+- **Player moment:** Side-by-side draft vs rubric, or a timed “hold the silence”
+  Focus Beat.
+- **Cost:** Medium. Reuse interview PoC patterns; no Realtime voice.
+- **Risk:** Keep numbers fictional; avoid legal advice tone.
+
+### C. Design critique studio — Campaign Forge cousin for taste
+
+- **Why:** Studio/workshop shape without fantasy; useful for builders and PMs.
+- **Demo beat:** One small UI or poster artifact → critique through three lenses
+  (clarity, hierarchy, accessibility) → pin one change → Codex proposes a
+  revised brief.
+- **Player moment:** Lens toggles that rewrite the critique checklist in place.
+- **Cost:** Medium if the artifact is local SVG/PNG; low if Markdown wireframe.
+- **Risk:** Do not turn into a full Figma clone.
+
+### D. Doctor-visit prep pack — non-classroom Impact
+
+- **Why:** Proves PathMX outside “education product.” Tomorrow-you needs
+  yesterday’s symptom timeline and questions.
+- **Demo beat:** What changed → timeline → top three questions for the clinician
+  → meds/allergies checklist → printable/copyable visit card in Source.
+- **Player moment:** Ordered timeline builder or fields question that becomes
+  the visit card.
+- **Cost:** Low–medium authoring; almost no custom components.
+- **Risk:** Stay general literacy, not diagnosis. Clear “not medical advice”
+  boundary.
+
+### E. Exam-season command center — meta-learning runbook
+
+- **Why:** Missing runbook shape for students; Focus Beats already exist as
+  punctuation.
+- **Demo beat:** Name the exam → inventory weak topics → plan tonight’s 45
+  minutes → log what was actually studied → adapt tomorrow’s Block.
+- **Player moment:** Tonight’s timebox Beat plus a durable study log table.
+- **Cost:** Low. Mostly questions + Focus Beats.
+- **Risk:** Avoid becoming a generic productivity app with twelve features.
+
+### F. One-day travel competence pack — field guide + mission
+
+- **Why:** My Greenville is place-memory; a travel pack is competence-under-
+  uncertainty for a city you do not live in.
+- **Demo beat:** Arrive constraints → three must-do places → one contingency →
+  after-walk field note that Codex can turn into day two.
+- **Player moment:** Constraint picker that reshapes the day route list.
+- **Cost:** Medium research for one real city; keep personal lore invited.
+- **Risk:** Do not become TripAdvisor. One day, one learner question.
+
+### G. Portfolio spine — multi-session growth proof
+
+- **Why:** Unique PathMX claim over chat tutors: proof across projects.
+- **Demo beat:** Three project cards → one growth claim → evidence links → gap
+  → next build mission.
+- **Player moment:** Spine view where selecting a project reveals evidence and
+  the open gap.
+- **Cost:** Medium–high; needs a tiny multi-Source pattern.
+- **Risk:** Easy to feel empty without real projects. Ship with three fictional
+  but rich fixtures, like Relationship Garden.
+
+### H. Family decision log — “not school” durable judgment
+
+- **Why:** Same research-bench muscle applied to life decisions (trip, pet,
+  move) where chat evaporates and resentment remains.
+- **Demo beat:** Name the decision → criteria → options → who is affected →
+  provisional choice → revisit date.
+- **Player moment:** Criteria weights that reorder options without inventing
+  new PathMX math syntax (simple ranked list is enough).
+- **Cost:** Low authoring.
+- **Risk:** Keep it a decision journal, not a therapy product.
+
+---
+
+## Suggested queue after the in-flight trio
+
+1. **Hard-conversation / negotiation rehearsal** — closes the career practice
+   arc with Campus + interview.
+2. **Debugging dojo** or **design critique studio** — expands craft practice
+   beyond Chess / Campaign Forge.
+3. **Doctor-visit prep** or **first-30-days playbook** — proves Impact outside
+   the classroom.
+4. **Portfolio spine** — only when we want a multi-session memory showcase.
+
+Default next greenfield after merges: **negotiation rehearsal**, unless Andrew
+wants the STEM receipt (**debugging dojo**) instead.
 
 ---
 
@@ -133,13 +223,12 @@ Ordered for Build Week aftermath, not for tonight's video.
 | --- | --- |
 | Chess + Kepler + Campaign Forge | Practice / explore / create (current video range) |
 | Campus Constellation + Relationship Garden | Rehearse one conversation, then tend the person |
-| My Greenville + Relationship Garden | Place atlas + people garden as local life memory |
-| Interview rehearsal + Focus beats | Nerves warmup inside the practice room |
-| Research bench + Dialectic Spiral | Claim evidence beside a conceptual instrument |
-
-Default recommendation after submission: **graduate Campus Constellation**,
-then pick **hard-conversation rehearsal** or **research bench** as the first
-net-new lab.
+| Interview + negotiation rehearsal | Get the job, then negotiate the offer |
+| My Greenville + travel competence pack | Home atlas + away-day competence |
+| Research bench + family decision log | Contested claims + life decisions, same evidence habit |
+| Chess + debugging dojo | Practice arenas for board and code |
+| Focus beats + exam command center | Attention punctuation inside a study runbook |
+| Campaign Forge + design critique studio | Creative workshops for world and interface |
 
 ---
 

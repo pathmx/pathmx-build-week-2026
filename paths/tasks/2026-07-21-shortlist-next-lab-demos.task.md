@@ -22,9 +22,8 @@ coverage, without starting a new submission-night hero.
 
 ## Next Move
 
-Andrew reviews the shortlist, locks one post-submission pick (default:
-graduate Campus Constellation into Labs), and either creates that implementation
-task or parks the others as later-only.
+Andrew picks the next greenfield after the in-flight trio merges. Default:
+negotiation rehearsal; alternate: debugging dojo.
 
 ---
 
@@ -33,12 +32,18 @@ task or parks the others as later-only.
 - Notes live under `paths/andrew/` and link from Andrew's scratchpad.
 - The shortlist names covered shapes, gaps, ranked candidates, and pairings.
 - Submission-day constraint is explicit: no new video hero tonight.
+- Second-wave options are recorded so the board can claim one without re-
+  brainstorming.
 - Dashboard reflects this tracking task until Andrew locks the next build.
 
 ---
 
 ## Activity
 
+- **2026-07-21:** Expanded the shortlist with eight second-wave options
+  (debugging dojo, negotiation rehearsal, design critique, doctor-visit prep,
+  exam command center, travel pack, portfolio spine, family decision log) and
+  marked Campus / YouTube / Research Bench as in flight.
 - **2026-07-21:** Locked three parallel picks from the shortlist: YouTube
   watch-and-recall, Campus Constellation graduation readiness, and the research
   bench. Tracking continues under those implementation tasks; this shortlist
