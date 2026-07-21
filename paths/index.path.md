@@ -2,6 +2,14 @@
 
 Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
+## Start Here
+
+[Open the submission walkthrough](./presentation/submission-walkthrough.slides.md)
+to see the three-minute Build Week presentation: **Learn anything. Keep what
+you learn.**
+
+---
+
 - [Tasks](./tasks/index.tasks.md)
 - [Changes](./work-log/changes.log.md)
 - [Labs](./labs/index.path.md)
@@ -25,7 +33,8 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
 These are the demos, presentation materials, used in the OpenAI Build Week submission.
 
-- [Agent Eval Findings](./presentation/walkthrough.slides.md)
+- [Submission walkthrough](./presentation/submission-walkthrough.slides.md)
+- [Internal eval review](./presentation/walkthrough.slides.md)
 - [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
 - [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
 - [PathMX Skills](https://github.com/pathmx/pathmx-skills)

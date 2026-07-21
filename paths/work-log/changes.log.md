@@ -50,6 +50,51 @@ type: change
 date: "2026-07-21T10:53:07-04:00"
 -->
 
+## The Build Week hub starts at the submission walkthrough
+
+The [Build Week hub](../index.path.md) now opens with a **Start Here** link to
+the dedicated [submission walkthrough](../presentation/submission-walkthrough.slides.md),
+so the intended three-minute presentation is the first clear route for a new
+visitor. The technical [internal eval review](../presentation/walkthrough.slides.md)
+remains available but is explicitly labelled as separate. The owning
+[video task](../tasks/2026-07-20-produce-submission-video.task.md) records the
+navigation decision and the remaining recording checks.
+
+The hero learner request now names the Italian Game as a chess opening instead
+of assuming the audience already recognizes it. The clearer wording remains
+aligned with the actual chess lesson while making the example immediately
+legible to a first-time judge.
+
+PathMX 0.1.22 built the graph successfully; Player review confirmed the link
+is visible on initial hub arrival, opens the submission route, and has no
+browser-console errors. A focused Player pass also confirmed that the clarified
+hero request fits comfortably at presentation size. The three pre-existing
+unsupported Tufte-theme fields remain the only build warnings.
+
+---
+
+## The submission story becomes a dedicated public Path
+
+The new [submission walkthrough](../presentation/submission-walkthrough.slides.md)
+turns the three-minute video into a seven-Block Path: one human learning
+problem, a concrete goal → readable Source → Player proof, durable continuation,
+three contrasting examples, an honest Build Week turning point, and a controlled
+zoom-out from learning to the broader Path concept. Its recurring route motif
+and restrained light/dark presentation styles support the spoken story without
+changing the separate internal evaluation deck.
+
+The owning [video task](../tasks/2026-07-20-produce-submission-video.task.md)
+records the three independent presentation reviews, the pre-existing versus
+Build Week contribution boundary, and the remaining recording decisions.
+PathMX 0.1.22 built the complete graph successfully; a 1280 × 720 Player pass
+covered all seven Blocks, forward and backward navigation, the closing fit, and
+the Chess, Kepler, and Campaign Forge routes. The only warnings were the three
+pre-existing unsupported Tufte-theme fields. Stopwatch rehearsal, live proof of
+the durable learner loop, and final acceptance or replacement of Campaign Forge
+remain before recording.
+
+---
+
 ## The personal learning starter is backed by a repeatable eval loop
 
 <change-published datetime="{{ block.date }}">
