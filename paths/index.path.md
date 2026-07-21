@@ -62,7 +62,7 @@ goal into a structured, playable Path they can keep, revise, and resume.
     first playable map.
   </project-feature>
   <project-feature
-    title="Read the featured eval report"
+    title="Read the eval report"
     href="./research/learning-agent-evals.brief.md"
     cta="Read the report"
   >
