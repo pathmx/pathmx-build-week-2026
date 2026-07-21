@@ -56,3 +56,7 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   provided-transcript MVP that pairs an official YouTube embed with
   timestamped Feynman excerpts and durable recall Blocks whose hidden
   `youtube:` evidence points a Codex follow-up at the exact transcript span.
+- [Campus Constellation](./campus-constellation/index.demo.md) — a 20-minute
+  networking mission Path: pick a North Star, draft one modular ask, rehearse
+  awkward moments with random flashcards, and leave with a 48-hour real-world
+  mission plus a reason-based follow-up.

@@ -71,7 +71,7 @@ beats, with special attention to narrow layout and keyboard focus.
   practice becomes a randomized prompt-first flashcard with explicit reveal
   and next-card controls.
 - **2026-07-15:** Added
-  [`campus-constellation.components.md`](../research/campus-constellation.components.md)
+  [`campus-constellation.components.md`](../labs/campus-constellation/campus-constellation.components.md)
   with a clickable four-orbit relationship map and a five-state recovery
   rehearsal deck. Imported and used both components in the learning path.
   PathMX 0.1.10 built 132 artifacts; compiled output contains both expanded
