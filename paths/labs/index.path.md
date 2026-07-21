@@ -33,3 +33,15 @@ Safe experiments — incomplete, wrong, or discarded when they stop being useful
   personal CRM for transparent weekly attention and one respectful next move.
 - [The Greenville Coffee Scene](./my-greenville/index.demo.md) — five Greenville
   coffee shops as a living field guide.
+- [YouTube watch and recall](./youtube-watch-recall/index.demo.md) — a one-video,
+  provided-transcript MVP that pairs an official YouTube embed with
+  timestamped Feynman excerpts and durable recall Blocks whose hidden
+  `youtube:` evidence points a Codex follow-up at the exact transcript span.
+- [Campus Constellation](./campus-constellation/index.demo.md) — a 20-minute
+  networking mission Path: pick a North Star, draft one modular ask, rehearse
+  awkward moments with random flashcards, and leave with a 48-hour real-world
+  mission plus a reason-based follow-up.
+- [Research Bench: What Should I Believe?](./research-bench/index.demo.md) — a
+  durable evidence bench for one contested question, with pinned competing
+  claims, ordinary Markdown citations, dated confidence and open-questions
+  responses, and a copyable Codex prompt for the next discriminating question.

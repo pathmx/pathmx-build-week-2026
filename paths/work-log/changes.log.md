@@ -48,7 +48,7 @@ for review.
 
 The focused Relationship Garden build produced 206 artifacts. After merging
 the current upstream lab and release work, PathMX 0.1.26 built the full root
-graph with 388 artifacts and resolved the Labs, Relationship Garden,
+graph with 413 artifacts and resolved the Labs, Relationship Garden,
 Greenville, Chess, Chess Opening Lesson, and Kepler routes exactly. Live Player
 smoke confirmed the requested Labs order, the personal-CRM review surface, and
 the Greenville title. The deeper garden review covered Internship → Priya →
@@ -63,10 +63,101 @@ refinement.
 
 <!--
 type: change
-date: "2026-07-21T17:33:57-04:00"
+date: "2026-07-21T17:59:53-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## Three new learning shapes land together on main
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The demo shortlist and its first parallel build wave are now integrated on
+`main`. [Campus Constellation](../labs/campus-constellation/index.demo.md)
+graduated from research into a clean learner-ready mission Path; the
+[Research Bench](../labs/research-bench/index.demo.md) makes competing claims,
+ordinary citations, confidence, and a next question durable; and
+[YouTube watch-and-recall](../labs/youtube-watch-recall/index.demo.md) pairs an
+official embed with provided transcript evidence and five timestamp-grounded
+questions. The [next-demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md)
+records the second wave for a local Codex session to continue.
+
+After updating to PathMX 0.1.26 and merging the latest lab-polish commit, the
+integrated root graph built as one Path with 410 artifacts and no warnings.
+Exact routes resolve to
+`/labs/campus-constellation`, `/labs/research-bench`, and
+`/labs/youtube-watch-recall`. Campus and Research Bench are done; YouTube
+remains in progress only for Andrew's live response-submission pass.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:49:30-04:00"
+-->
+
+## A YouTube watch-and-recall MVP joins the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The [YouTube watch-and-recall lab](../labs/youtube-watch-recall/index.demo.md)
+ships the smallest reliable version of the pattern sketched in the
+[YouTube learning research](../research/youtube-learning-skill.path.md): one
+public, official YouTube embed of Feynman's Cornell Messenger Lecture on the
+scientific method, one demo-authored provided transcript in
+[`transcript.segments.json`](../labs/youtube-watch-recall/transcript.segments.json)
+labeled `source: provided-vtt` — not scraped captions — and five durable
+question Blocks whose hidden `youtube:` topmatter records `videoId`, an
+`evidence.start`/`evidence.end` span, and the same provided-transcript
+source. The lab closes with a copy-ready Codex prompt so a later task can
+read the learner's long-text answers beside the exact grounded span. The
+Labs hub links it as a Demo, and the
+[owning task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md)
+carries the dated activity, verification, and the pending live Player pass.
+
+Verified with `bunx pathmx build paths/index.path.md -o .pathmx-check --clean`
+(PathMX 0.1.25): built 1 path, 394 artifacts, no new warnings; only
+pre-existing unresolved `campus-constellation.components.md` links remain.
+`bunx pathmx route paths/labs/youtube-watch-recall/index.demo.md -o
+.pathmx-check --json` resolves to route `/labs/youtube-watch-recall`. Live
+Player submission review is skipped for now — no repository-owned
+`pathmx play` server was running in this cloud environment — and Andrew
+should complete that pass before closing the task.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:48:24-04:00"
+-->
+
+## Second-wave demo options join the shortlist
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+While Campus Constellation, YouTube watch-and-recall, and the research bench
+build in parallel, the
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) now
+marks those three as in flight and parks eight second-wave options with Player
+beats, costs, and risks. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) defaults
+the next greenfield to negotiation rehearsal, with debugging dojo as the STEM
+alternate.
+
+Notes-only coordination. Live Player review skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:33:57-04:00"
+-->
 
 ## Active release consumers follow the latest verified PathMX
 
@@ -92,10 +183,111 @@ files remain owned by their separate task and are not part of this change.
 
 <!--
 type: change
-date: "2026-07-21T17:05:42-04:00"
+date: "2026-07-21T17:32:30-04:00"
 -->
 
-[@change-published]: ./changes.components.md
+## Campus Constellation graduates from research into the Labs hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Campus Constellation was moved from `paths/research/` into a new
+[`paths/labs/campus-constellation/`](../labs/campus-constellation/index.demo.md)
+directory alongside its eleven Literate Components and scoped stylesheet, so
+the college-networking mission Path now sits beside the other playable demos
+on the [Labs hub](../labs/index.path.md). The three prefilled learner
+`response` / `submission` fixtures on the `choose-north-star`,
+`set-practice-level`, and `next-route-signal` question Blocks were cleared so
+a new learner arrives at unanswered questions, and the CSS `@scope` selectors
+now target `data-pathmx-source="labs/campus-constellation/index.demo"` so the
+campus-at-night visual system continues to apply after the move. The old
+research entry was rewritten as a graduated pointer stub that keeps inbound
+`related:` links resolving from six task and note Sources, historical
+change-log references were retargeted so the graph builds without unresolved
+links. Upstream `main` had already removed the obsolete actor Play session, so
+the integration preserved that deletion. The
+[owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
+carries the readiness findings and detailed verification.
+
+Verified with `pathmx build` (PathMX 0.1.25): clean before (384 artifacts) and
+after (24 artifacts written, 0 deleted, 0 warnings) the move. `pathmx route
+paths/labs/campus-constellation/index.demo.md` resolves to
+`/labs/campus-constellation`; the research stub still resolves to
+`/research/campus-constellation-networking.path`. A repository-owned
+`pathmx play` server returned HTTP 200 for both routes and the served demo
+carries every one of the eleven component tags plus the new scoped
+`data-pathmx-source`. Narrow-viewport, keyboard, reduced-motion, forced-color,
+and no-JS behavior were reconfirmed by inspection in the moved Sources and
+served HTML, not by live browser interaction; Andrew or Mark can double-check
+in review.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:31:30-04:00"
+-->
+
+## A research bench for contested claims joins Labs
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The Labs hub now links a
+[research bench demo](../labs/research-bench/index.demo.md) that turns "should
+you always finish the antibiotic course?" into a durable, playable evidence
+bench: two pinned claims, six ordinary Markdown citations balanced across
+both sides (WHO, U.S. CDC public-facing and stewardship pages, NHS, the
+[BMJ 2017 Llewelyn analysis](https://www.bmj.com/content/358/bmj.j3418), and
+the [JAMA Internal Medicine 2016 Spellberg viewpoint](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2536180)),
+a starting-confidence and a post-reading better-supported single choice, a
+long-text "what would change your mind", a fielded open-questions Block, and
+a copyable Codex prompt that asks for the next discriminating question
+grounded in the bench state. No PathMX citation syntax was invented; no
+learner response or submission is prefilled. The
+[owning task](../tasks/2026-07-21-build-research-bench-lab.task.md) records
+the full activity, verification, and skipped-Play reason.
+
+Verified with `bunx pathmx build paths/index.path.md -o .pathmx-check
+--clean` (PathMX 0.1.25) in an isolated worktree: built 1 path, 387
+artifacts, no warnings. `bunx pathmx route
+paths/labs/research-bench/index.demo.md --json -o .pathmx-check` resolves to
+route `/labs/research-bench`. Live Player review was skipped because no
+repository-owned `pathmx play` server was running in this cloud-agent
+sandbox; the route and Blocks are verified from built metadata.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:28:11-04:00"
+-->
+
+## A next-demo shortlist parks post-submission lab ideas
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+After syncing to `origin/main` at `4511f6a`, Andrew's scratchpad now includes a
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) that
+maps current Labs coverage, names missing learning shapes, and ranks five
+candidates. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) keeps the
+default recommendation to graduate Campus Constellation first and forbids a new
+submission-night video hero.
+
+This is notes-only coordination work. No new lab Source was authored, and live
+Player review was skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:05:42-04:00"
+-->
 
 ## PathMX's public status language moves into Labs
 
@@ -615,7 +807,7 @@ date: "2026-07-17T15:20:40-04:00"
 </change-published>
 
 Two learner-facing surfaces in the
-[Campus Constellation path](../research/campus-constellation-networking.path.md)
+[Campus Constellation path](../labs/campus-constellation/index.demo.md)
 no longer expose persistence or agent internals. The "Choose Your North Star"
 question prompt drops "saved as readable learning evidence," and the
 adaptive-plan closing no longer narrates that Codex updates the path "outside the
@@ -624,7 +816,7 @@ Version-Sensitive Surfaces), that maintainer context now lives in hidden Block
 data — the question's `submission`/`response` topmatter and a `note` on the
 adaptive-plan Block — while the learner copy states only the decision and next
 move. Its companion
-[component family](../research/campus-constellation.components.md) now gives
+[component family](../labs/campus-constellation/campus-constellation.components.md) now gives
 each of eleven learning features an independent interaction and aligns every
 meaningful stage with ordered Player beats. Seven randomized awkward-moment
 flashcards keep the learner on a prompt beat before revealing coaching and
@@ -798,11 +990,11 @@ date: "2026-07-15T23:07:00-04:00"
   Published {{ block.date }}
 </change-published>
 
-The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
+The new [Campus Constellation path](../labs/campus-constellation/index.demo.md)
 helps college students define a networking goal, choose a difficulty, rehearse
 conversations, complete a real-world mission, and use evidence to select their
 next practice. Its companion
-[Literate Components](../research/campus-constellation.components.md) add a
+[Literate Components](../labs/campus-constellation/campus-constellation.components.md) add a
 clickable relationship-orbit map and a five-state awkward-moment rehearsal
 deck, while three durable questions preserve the learner's choices in readable
 Source.
