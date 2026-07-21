@@ -8,6 +8,7 @@ due: 2026-07-21
 related:
   - ../andrew/index.path.md
   - ../andrew/2026-07-17-build-week-wedge-demo-memory.notes.md
+  - ../andrew/2026-07-21-reputation-garden-outline.notes.md
   - ../work-log/2026-07-14-hackathon-meeting.notes.md
 ---
 
@@ -23,8 +24,8 @@ the team hub or landing on `main` until he promotes them.
 
 ## Next Move
 
-Andrew reviews the scratch notes, trims or extends them, then either keeps the
-branch private or promotes selected sections into research / submission story.
+Andrew reviews the Reputation Garden outline, decides naming and whether to
+author a thin lab skeleton next, then promotes selected slices only when ready.
 
 ---
 
@@ -39,6 +40,12 @@ branch private or promotes selected sections into research / submission story.
 
 ## Activity
 
+- **2026-07-21:** Added
+  [Reputation Garden + Parallel Lives outline](../andrew/2026-07-21-reputation-garden-outline.notes.md):
+  experience brief, person/CRM schema, recency wilt postures, Parallel Lives
+  lens, tending loop, preset prompts, MVP slices, and demo story. Still
+  unlinked from the team hub. PathMX scratch build and `git diff --check`
+  recorded with this push; Play review skipped (ordinary notes).
 - **2026-07-17:** Created `paths/andrew/` with a personal index and
   [wedge / demo / memory notes](../andrew/2026-07-17-build-week-wedge-demo-memory.notes.md)
   covering Build Week criteria, B′, local dual-surface wow, demo methods,

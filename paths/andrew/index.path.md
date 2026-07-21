@@ -11,3 +11,4 @@ from the team hub. Keep it on Andrew's branch until selected ideas graduate
 into `paths/research/`, `paths/work-log/`, or the submission story.
 
 - [Demo wedge, wow, and long-term memory](./2026-07-17-build-week-wedge-demo-memory.notes.md)
+- [Reputation Garden + Parallel Lives outline](./2026-07-21-reputation-garden-outline.notes.md)

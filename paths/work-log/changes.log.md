@@ -9,6 +9,21 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Andrew outlines a Reputation Garden relationship studio
+
+Andrew's personal scratchpad now includes a
+[Reputation Garden + Parallel Lives outline](../andrew/2026-07-21-reputation-garden-outline.notes.md)
+beside the earlier
+[wedge notes](../andrew/2026-07-17-build-week-wedge-demo-memory.notes.md). The
+new brief defines a local playable CRM: person Sources, garden beds, recency
+wilt postures, Parallel Lives context lanes, a weekly tending loop, and Codex
+preset prompts — still unlinked from the team hub. Tracked in the
+[owning task](../tasks/2026-07-17-andrew-demo-strategy-notes.task.md). PathMX
+scratch build verification is recorded there; Play review was skipped because
+these are ordinary notes with no new interaction behavior.
+
+---
+
 ## Andrew parks Build Week demo strategy notes off the team hub
 
 Andrew's personal scratchpad now lives under
