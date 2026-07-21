@@ -19,10 +19,16 @@ remains available but is explicitly labelled as separate. The owning
 [video task](../tasks/2026-07-20-produce-submission-video.task.md) records the
 navigation decision and the remaining recording checks.
 
+The hero learner request now names the Italian Game as a chess opening instead
+of assuming the audience already recognizes it. The clearer wording remains
+aligned with the actual chess lesson while making the example immediately
+legible to a first-time judge.
+
 PathMX 0.1.22 built the graph successfully; Player review confirmed the link
 is visible on initial hub arrival, opens the submission route, and has no
-browser-console errors. The three pre-existing unsupported Tufte-theme fields
-remain the only build warnings.
+browser-console errors. A focused Player pass also confirmed that the clarified
+hero request fits comfortably at presentation size. The three pre-existing
+unsupported Tufte-theme fields remain the only build warnings.
 
 ---
 

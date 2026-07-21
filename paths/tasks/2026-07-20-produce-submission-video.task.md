@@ -63,11 +63,16 @@ Forge as the contrasting third example or replace it before recording.
 - **2026-07-21:** PathMX 0.1.22 built the revised deck successfully. A 1280×720
   Player review covered all seven Blocks, confirmed the closing frame fits,
   exercised forward and backward Block navigation, and verified the Chess,
-  Kepler, and Campaign Forge links resolve to their built routes. The deck has
-  325 visible words. A stopwatch rehearsal, the live durable learner loop, and
-  final approval of the third example remain pending; the only build warnings
-  came from pre-existing unsupported fields in the unrelated Tufte theme lab.
+  Kepler, and Campaign Forge links resolve to their built routes. The deck had
+  325 visible words at review. A stopwatch rehearsal, the live durable learner
+  loop, and final approval of the third example remain pending; the only build
+  warnings came from pre-existing unsupported fields in the unrelated Tufte
+  theme lab.
 - **2026-07-21:** The Build Week hub now begins with a **Start Here** link to
   the dedicated [submission walkthrough](../presentation/submission-walkthrough.slides.md).
   The separate technical deck remains labelled as the internal eval review, so
   first-time visitors reach the video presentation rather than the findings deck.
+- **2026-07-21:** The hero learner request now explicitly identifies the
+  Italian Game as a chess opening. This keeps the public copy legible to judges
+  without chess knowledge while staying aligned with the actual demo lesson;
+  the clarified deck has 329 visible words.

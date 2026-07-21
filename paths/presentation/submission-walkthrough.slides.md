@@ -85,8 +85,8 @@ title: One learner, one useful move
 
 # One learner. One useful move.
 
-> Help me learn the Italian Game without memorizing it. I want to understand
-> what each move is doing.
+> Help me learn the Italian Game—a chess opening—without memorizing move
+> sequences. I want to understand what each move is trying to achieve.
 
 <div class="path-route" aria-label="Goal becomes Markdown and opens in the Player">
   <span class="node">Goal</span>
