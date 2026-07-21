@@ -9,6 +9,23 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The Build Week hub starts at the submission walkthrough
+
+The [Build Week hub](../index.path.md) now opens with a **Start Here** link to
+the dedicated [submission walkthrough](../presentation/submission-walkthrough.slides.md),
+so the intended three-minute presentation is the first clear route for a new
+visitor. The technical [internal eval review](../presentation/walkthrough.slides.md)
+remains available but is explicitly labelled as separate. The owning
+[video task](../tasks/2026-07-20-produce-submission-video.task.md) records the
+navigation decision and the remaining recording checks.
+
+PathMX 0.1.22 built the graph successfully; Player review confirmed the link
+is visible on initial hub arrival, opens the submission route, and has no
+browser-console errors. The three pre-existing unsupported Tufte-theme fields
+remain the only build warnings.
+
+---
+
 ## The submission story becomes a dedicated public Path
 
 The new [submission walkthrough](../presentation/submission-walkthrough.slides.md)
