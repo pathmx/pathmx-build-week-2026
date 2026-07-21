@@ -13,11 +13,40 @@ styles:
     - change-journal
 ---
 
+<!--
+type: change
+date: "2026-07-21T17:59:53-04:00"
+-->
+
 [@change-published]: ./changes.components.md
+
+## Three new learning shapes land together on main
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The demo shortlist and its first parallel build wave are now integrated on
+`main`. [Campus Constellation](../labs/campus-constellation/index.demo.md)
+graduated from research into a clean learner-ready mission Path; the
+[Research Bench](../labs/research-bench/index.demo.md) makes competing claims,
+ordinary citations, confidence, and a next question durable; and
+[YouTube watch-and-recall](../labs/youtube-watch-recall/index.demo.md) pairs an
+official embed with provided transcript evidence and five timestamp-grounded
+questions. The [next-demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md)
+records the second wave for a local Codex session to continue.
+
+After updating to PathMX 0.1.26, the integrated root graph built as one Path
+with 407 artifacts and no warnings. Exact routes resolve to
+`/labs/campus-constellation`, `/labs/research-bench`, and
+`/labs/youtube-watch-recall`. Campus and Research Bench are done; YouTube
+remains in progress only for Andrew's live response-submission pass.
+
+---
 
 <!--
 type: change
-date: "2026-07-21T21:45:00-04:00"
+date: "2026-07-21T17:49:30-04:00"
 -->
 
 ## A YouTube watch-and-recall MVP joins the Labs hub
@@ -105,7 +134,7 @@ files remain owned by their separate task and are not part of this change.
 
 <!--
 type: change
-date: "2026-07-21T22:30:00-04:00"
+date: "2026-07-21T17:32:30-04:00"
 -->
 
 ## Campus Constellation graduates from research into the Labs hub
@@ -127,8 +156,9 @@ campus-at-night visual system continues to apply after the move. The old
 research entry was rewritten as a graduated pointer stub that keeps inbound
 `related:` links resolving from six task and note Sources, historical
 change-log references were retargeted so the graph builds without unresolved
-links, and the one existing actor Play session was retargeted to the new
-demo path. The [owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
+links. Upstream `main` had already removed the obsolete actor Play session, so
+the integration preserved that deletion. The
+[owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
 carries the readiness findings and detailed verification.
 
 Verified with `pathmx build` (PathMX 0.1.25): clean before (384 artifacts) and
@@ -147,7 +177,7 @@ in review.
 
 <!--
 type: change
-date: "2026-07-21T21:35:00-04:00"
+date: "2026-07-21T17:31:30-04:00"
 -->
 
 ## A research bench for contested claims joins Labs

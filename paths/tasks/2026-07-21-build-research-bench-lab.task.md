@@ -22,9 +22,8 @@ next discriminating question—all as readable Markdown Source.
 
 ## Next Move
 
-Author `paths/labs/research-bench/index.demo.md` (and light supporting files if
-needed), link it from the Labs hub, verify build/route/Play, and record
-evidence.
+None for this task. Andrew can run a live response-submission pass when
+continuing locally; any resulting interaction issue should get its own task.
 
 ---
 
@@ -90,3 +89,5 @@ evidence.
   verification would outlive the check. The route and Blocks are verified
   from built metadata; a subsequent in-session `pathmx play` will pick this
   Source up on refresh.
+- **Integrated main:** PathMX 0.1.26 built the root graph as 1 Path with 407
+  artifacts and no warnings; route remains `/labs/research-bench`.

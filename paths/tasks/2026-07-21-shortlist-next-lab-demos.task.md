@@ -22,8 +22,8 @@ coverage, without starting a new submission-night hero.
 
 ## Next Move
 
-Andrew picks the next greenfield after the in-flight trio merges. Default:
-negotiation rehearsal; alternate: debugging dojo.
+Andrew picks the next greenfield. Default: negotiation rehearsal; alternate:
+debugging dojo.
 
 ---
 
@@ -40,6 +40,10 @@ negotiation rehearsal; alternate: debugging dojo.
 
 ## Activity
 
+- **2026-07-21:** Campus Constellation, Research Bench, and YouTube
+  watch-and-recall were integrated together on current `main`; the shortlist
+  now points at their exact routes and leaves the YouTube live response pass
+  open under its owning task.
 - **2026-07-21:** Expanded the shortlist with eight second-wave options
   (debugging dojo, negotiation rehearsal, design critique, doctor-visit prep,
   exam command center, travel pack, portfolio spine, family decision log) and

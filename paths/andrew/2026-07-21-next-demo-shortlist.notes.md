@@ -34,13 +34,13 @@ The Labs hub already proves several PathMX learning shapes:
 | Personal field atlas | My Greenville coffee outline |
 | Authoring / visual craft | Tufte, bookshelf, layout components |
 
-### In flight (July 21 evening)
+### Built in the July 21 integration
 
 | Shape | Lab / PR |
 | --- | --- |
-| Rehearsal room + mission | Campus Constellation → Labs ([PR #8](https://github.com/pathmx/pathmx-build-week-2026/pull/8)) |
-| Research bench | Research Bench ([PR #7](https://github.com/pathmx/pathmx-build-week-2026/pull/7)) |
-| Watch-and-recall | YouTube watch-and-recall ([PR #9](https://github.com/pathmx/pathmx-build-week-2026/pull/9)) |
+| Rehearsal room + mission | Campus Constellation at `/labs/campus-constellation` ([PR #8](https://github.com/pathmx/pathmx-build-week-2026/pull/8)) |
+| Research bench | Research Bench at `/labs/research-bench` ([PR #7](https://github.com/pathmx/pathmx-build-week-2026/pull/7)) |
+| Watch-and-recall | YouTube watch-and-recall at `/labs/youtube-watch-recall` ([PR #9](https://github.com/pathmx/pathmx-build-week-2026/pull/9)); live response pass remains |
 
 Still thin after those land:
 
@@ -74,9 +74,9 @@ unless Mark explicitly swaps the third cut.
 
 ---
 
-## First-wave picks (already claimed)
+## First-wave picks
 
-### 1. Graduate Campus Constellation into Labs — in flight
+### 1. Graduate Campus Constellation into Labs — built
 
 See [graduate task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md).
 
@@ -90,11 +90,11 @@ See [graduate task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.
 - **Cost:** Medium. Can fork interview PoC structure and drop voice.
 - **Risk:** Stay specific (one scenario), avoid a generic soft-skills encyclopedia.
 
-### 3. Research bench — in flight
+### 3. Research bench — built
 
 See [research-bench task](../tasks/2026-07-21-build-research-bench-lab.task.md).
 
-### 4. YouTube watch-and-recall — in flight
+### 4. YouTube watch-and-recall — built, live response pass open
 
 See [YouTube task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md).
 
@@ -112,7 +112,7 @@ See [YouTube task](../tasks/2026-07-21-build-youtube-watch-recall-lab.task.md).
 
 ## Second-wave options
 
-Fresh alternatives once the in-flight trio merges. Ranked for PathMX fit
+Fresh alternatives after the first-wave trio. Ranked for PathMX fit
 (durable evidence + one non-chat Player moment), not for video hero duty.
 
 ### A. Debugging dojo — strongest STEM cousin to Chess
@@ -202,7 +202,7 @@ Fresh alternatives once the in-flight trio merges. Ranked for PathMX fit
 
 ---
 
-## Suggested queue after the in-flight trio
+## Suggested next queue
 
 1. **Hard-conversation / negotiation rehearsal** — closes the career practice
    arc with Campus + interview.

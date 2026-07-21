@@ -74,3 +74,7 @@ this task or record follow-ups.
   submission review skipped — no repository-owned `pathmx play` server was
   running on this cloud environment; Andrew should complete that pass
   before closing.
+- **2026-07-21:** Integrated with Campus Constellation and Research Bench on
+  current `main`. PathMX 0.1.26 built 1 Path with 407 artifacts and no
+  warnings; exact route remains `/labs/youtube-watch-recall`. The live
+  response-submission pass remains the only close-out check.

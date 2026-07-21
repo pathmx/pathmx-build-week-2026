@@ -88,9 +88,9 @@ Follow-on lab work continues from the
    points to the Labs demo). The `related:` frontmatter references from six
    other tasks and notes continue to resolve. Historical `changes.log.md`
    references were retargeted to the new labs paths so the build reports zero
-   unresolved-link warnings. The single existing actor Play session
-   (`lenubaotram2606`) had its `root:` / `origin:` retargeted so learner
-   evidence continues to resolve after the move.
+   unresolved-link warnings. The obsolete `lenubaotram2606` actor session was
+   already removed on upstream `main`, so the integration preserved that
+   deletion rather than restoring the old session.
 
 ## Verification
 
@@ -108,6 +108,9 @@ Follow-on lab work continues from the
 - Live keyboard-tab, narrow-viewport, reduced-motion, and no-JS emulation were
   inspected in Source and in the served HTML but not exercised in an active
   browser session; Andrew or Mark can double-check under review.
+- Integrated `main` verification on PathMX 0.1.26 built 1 Path with 407
+  artifacts and no warnings; the exact route remains
+  `/labs/campus-constellation`.
 
 ---
 
