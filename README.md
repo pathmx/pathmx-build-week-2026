@@ -15,6 +15,14 @@ The submission has three parts:
 3. The [playable examples](./paths/labs/index.path.md) explore practice,
    simulation, and creation through the same Markdown-first format.
 
+Canonical public companions:
+
+- [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter) —
+  the learner-facing starter for durable personal learning Paths
+- [PathMX Skills](https://github.com/pathmx/pathmx-skills) — the canonical
+  agent skills for authoring PathMX and guiding personal learning
+  (`bootstrap.md` is the one-prompt entry point)
+
 Start with the public [Learning Labs site](https://build-week.pathmx.net/) or
 the [three-minute submission walkthrough](./paths/presentation/submission-walkthrough.slides.md).
 
@@ -77,9 +85,10 @@ No OpenAI API key, credits, or plugin build is required for the judge path.
    artifact behind the experience.
 
 The one-prompt flow above tests the learner-facing agent skills without
-compiling or packaging a plugin. For repository inspection, the public
-[Learning Starter](https://github.com/pathmx/pathmx-learning-starter) contains
-the same repo-local skills under `.agents/skills/`.
+compiling or packaging a plugin. For repository inspection, see
+[PathMX Skills](https://github.com/pathmx/pathmx-skills) and the public
+[Learning Starter](https://github.com/pathmx/pathmx-learning-starter), which
+ships the same repo-local skills under `.agents/skills/`.
 
 ## Local setup and test
 

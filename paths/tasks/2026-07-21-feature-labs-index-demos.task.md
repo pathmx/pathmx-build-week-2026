@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-21
 related:
@@ -21,10 +21,12 @@ with Chess, Kepler orbit, and Campus Constellation.
 
 ---
 
-## Next Move
+## Result
 
-Restyle `paths/labs/index.path.md` with landing presentation, a featured
-`project-feature` grid, and the remaining demos as a chip-styled list.
+`paths/labs/index.path.md` now uses the shared landing theme, layout
+components, and a top `page-header` Block with three `<project-feature>` cards
+for Chess, Kepler orbit, and Campus Constellation. The remaining demos stay in
+an All demos chip-styled list.
 
 ---
 
@@ -42,3 +44,9 @@ Restyle `paths/labs/index.path.md` with landing presentation, a featured
 
 - **2026-07-21:** Claimed the Labs hub polish so featured demos match the home
   page presentation.
+- **2026-07-21:** Restyled the Labs hub with landing-page / page-header chrome,
+  three featured cards, and an All demos list. Verification: scratch build of
+  `paths/labs/index.path.md` wrote 183 artifacts with resolved card routes
+  (`/labs/chess`, `/labs/kepler-orbit`, `/labs/campus-constellation`); live
+  Player review at `http://localhost:3000/labs/index.path` confirmed the
+  featured grid, wash/header treatment, and chip-styled demo list.
