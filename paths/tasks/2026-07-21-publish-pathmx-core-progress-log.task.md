@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-21
 related:
@@ -19,11 +19,14 @@ confusing release candidates with verified CLI releases.
 
 ---
 
-## Next Move
+## Result
 
-`pathmx self-update` now verifies public CLI 0.1.25. Compare the log with the
-latest Core journal, prepend any new verified milestone for that release, then
-freeze the cutoff and finish this task before 8 PM EDT.
+The public log now reflects the complete July 13–21 Core audit through verified
+PathMX 0.1.26. It records the release range and aggregate scope, final
+authoring/recovery wave, large-graph cache and memory work, secure Starter and
+skill initialization, Markdown and annotation foundation, learner-facing
+Player and Response changes, multi-Root Host architecture, verification, and
+the remaining cold-build memory boundary.
 
 ---
 
@@ -64,3 +67,15 @@ freeze the cutoff and finish this task before 8 PM EDT.
 - **2026-07-21:** `pathmx self-update` later verified the installed binary as
   0.1.24. The living log still needs a final Core-journal compare and any new
   milestone for that release before the cutoff freeze.
+- **2026-07-21:** Completed the final audit against the Core Git and changes
+  journals: 135 commits and 18 tagged releases from the pre-window 0.1.7
+  baseline through verified 0.1.26. Expanded the public log with the final
+  release/recovery wave, large-graph performance and remaining memory boundary,
+  safe Starter/skill initialization, and Markdown/annotation foundations.
+  `pathmx self-update --check` confirms 0.1.26 is current. After fast-forwarding
+  14 concurrent shared-main commits and preserving their dashboard and journal
+  additions, `pathmx build -o .pathmx-check --clean` built the integrated graph
+  as one Path with 410 artifacts and no warnings. Exact route lookup resolves
+  the log at `/work-log/pathmx-changes.log`; `git diff --check` passes. Live
+  Player review was skipped because this pass changes prose and reuses the
+  already-reviewed journal component without changing its layout or behavior.

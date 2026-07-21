@@ -2,6 +2,7 @@
 .pathmx/
 .pathmx-check/
 .pathmx*
+.wrangler/
 node_modules/
 .env
 .env.*

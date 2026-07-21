@@ -15,6 +15,35 @@ styles:
 
 <!--
 type: change
+date: "2026-07-21T18:10:54-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## The Build Week record now covers the complete PathMX Core window
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The [PathMX Core progress log](./pathmx-changes.log.md) now reflects the final
+July 13–21 audit through verified PathMX 0.1.26. Its newest-first milestones
+cover the 135-commit, 18-release window without becoming a commit feed: the
+final authoring and recovery wave, large-graph cache and memory work, safe
+Starter and official-skill initialization, Markdown and annotation
+foundations, learner Responses and Actions, Player UX, and the multi-Root live
+Host. It also names the remaining cold-build memory boundary and the rapid
+release stabilization tail rather than presenting every performance problem as
+finished.
+
+The owning [Core progress-log task](../tasks/2026-07-21-publish-pathmx-core-progress-log.task.md)
+is complete. `pathmx self-update --check` confirms 0.1.26 is current; final
+scratch-build, route, and change-log verification are recorded in that task.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T17:59:53-04:00"
 -->
 

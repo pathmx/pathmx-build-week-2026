@@ -1,7 +1,7 @@
 ---
 status: active
 date: 2026-07-13
-updated: "2026-07-21T13:56:59-04:00"
+updated: "2026-07-21T17:21:12-04:00"
 related:
   - ../index.path.md
   - ./index.path.md
@@ -10,7 +10,7 @@ related:
 
 <!--
 type: change
-date: "2026-07-21T12:23:30-04:00"
+date: "2026-07-21T17:21:12-04:00"
 -->
 
 [@change-published]: ./changes.components.md
@@ -25,10 +25,81 @@ feed or a claim that the framework itself was created during Build Week.
 PathMX is currently in Labs, with its Core source kept private while its APIs
 and product boundaries stabilize, so every entry is written to stand on its
 own.
-This remains a living journal until the 8 PM deadline: new work is prepended,
-and a CLI version is called published only after the public package and its
-installed commands verify together. At this snapshot the latest verified CLI
-is 0.1.25: the public registry, `pathmx self-update`, `pathmx`, and `pmx` agree.
+The final audit compared the Core repository from the July 12 pre-sprint
+baseline through the July 21 release cutoff: 135 commits, 18 tagged releases,
+and 1,132 changed files across implementation, tests, generated assets,
+fixtures, and durable documentation. The public CLI advanced from 0.1.7 to
+0.1.26; 0.1.14 was skipped. A version is called published here only after the
+public package and installed command verify together. At this snapshot
+`pathmx self-update`, `pathmx`, and `pmx` agree on 0.1.26.
+
+## The final release wave closes the largest authoring and recovery gaps
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+PathMX 0.1.24 through 0.1.26 completed the final Core pass. Warm Root adoption
+now reconstructs plugin resolution state instead of reusing a lossy projection,
+so Literate Components, footnotes, and other dependency-owned output survive a
+process restart. Source and Block authors can attach reviewed `styles.classes`
+tokens without fighting Runtime specificity, named Literate slots project only
+into their named regions, and component-only layout wrappers no longer create
+empty Play stops. Play also gained an explicit return to the selected Root
+index while preserving unrelated URL state.
+
+The packed release gate now proves cold Build, complete graph convergence, a
+new linked Source, a real Source-writing Action, warm Play, and Literate
+Component reconstruction. That broader gate matters because 0.1.20 exposed a
+packaging regression and 0.1.21 immediately repaired it; 0.1.23 through 0.1.25
+then hardened cache retention, plugin restoration, navigation, and live
+recovery rather than treating the first green package as sufficient. PathMX
+0.1.26 also replaced `UNLICENSED` package metadata with an explicit DUO-owned
+proprietary beta license while the Labs-stage API and product boundaries
+continue to stabilize.
+
+Two post-0.1.26 Core edits remained local at the cutoff and are not presented
+as shipped: relocating the idle light/dark control, and deciding whether the
+Player's Play-active Literate Component attribute is a public authoring hook.
+The latter is recorded in Core as an open skill/documentation contract issue.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T13:49:01-04:00"
+-->
+
+## Large graphs retain less work and recover much faster
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Build moved graph-wide state out of long-lived Sessions and into bounded,
+durable structures: portable Root input evidence, content-addressed Root state,
+compiled-Block records, deferred-result sidecars, byte-bounded recipe and
+render working sets, revision-bound artifact readers, and Projection Store
+mark-and-sweep collection. Search, Literate rendering, graph payload assembly,
+Tailwind projection, Beat placement, and Beat labels also stopped repeating or
+retaining graph-sized data when exact local facts were available.
+
+The resulting warm path is materially different from the cold path. One
+recorded full build improved from 76.99 seconds to a 2.65-second process-cold
+reuse; later 860-plus-Source runs made the Player available in roughly
+127–268 ms and restored the complete Root in about 1.4–2.2 seconds. A live
+Projection Store that had reached 93.4 GiB gained bounded retention and
+successfully restored after collection. Cold convergence still remained the
+main performance boundary: the latest direct full-build evidence peaked near
+1.84 GiB, above the 1.5 GiB worker target. The log therefore records the large
+warm and retained-memory gains without claiming that cold build work is done.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T12:23:30-04:00"
+-->
 
 ## Play becomes quieter, clearer, and more resilient
 
@@ -147,6 +218,36 @@ shipped across PathMX 0.1.15 through 0.1.18.
 
 <!--
 type: change
+date: "2026-07-18T10:53:51-04:00"
+-->
+
+## The CLI can create a safe Starter and manage official skills
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+`pathmx init <folder> --template <repo>` became a real onboarding boundary
+rather than a documented clone command. It resolves an enabled public GitHub
+Template in the PathMX organization, pins the exact source commit, validates a
+bounded non-executable archive, and writes only into an absent target. Official
+skills are installed by default from the canonical skill repository; an
+existing Space can refresh them with `pathmx init --skills` using an exact
+receipt of commits and file hashes.
+
+The updater preserves unrelated skills, safely adopts byte-identical packages,
+detects edited managed files and discovery-link conflicts before writing, and
+limits `--force` to complete official package directories. Archive traversal,
+collisions, hard links, special entries, oversized downloads, and unexpected
+redirects are rejected. Twenty-seven focused parser, archive, Starter, and
+updater tests plus the complete 118-test CLI suite and typecheck passed. This
+is the Core mechanism behind the one-hosted-instruction learner flow evaluated
+and presented in this Build Week repository.
+
+---
+
+<!--
+type: change
 date: "2026-07-17T23:45:22-04:00"
 -->
 
@@ -259,3 +360,12 @@ typechecks, a 3,534-artifact clean build, and all 28 browser checks passed.
 The CLI also gained `pathmx play --open`, launching the canonical entry route
 directly into Play while preserving ordinary dev, print-URL, and programmatic
 behavior.
+
+The same opening release replaced several competing Markdown scans with one
+exact, linear prepared-source foundation. Links, edits, annotations, Blocks,
+and agent Markdown now share exact source spans rather than substring guesses;
+pathological malformed input no longer becomes quadratic. Table-row
+annotations keep rendered links and Beat identity, fenced-code annotations no
+longer corrupt closing fences, and Unicode Source versions use the same byte
+hash at planning and apply time. The complete Build suite grew through this
+work while the controlled hot-path checks stayed within their accepted budget.
