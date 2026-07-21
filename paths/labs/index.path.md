@@ -1,10 +1,86 @@
+---
+theme:
+  color:
+    bg: "#f3f7f8"
+    fg: "#152024"
+    muted: "#5f6d72"
+    surface: "#ffffff"
+    link: "#0f7a8a"
+    accent: "#0f7a8a"
+    border: "#d3e0e3"
+    focus: "#0f7a8a"
+  prose:
+    size: 1.0625rem
+    leading: 1.68
+  measure: 53rem
+  shape:
+    radius: 0.75rem
+  dark:
+    color:
+      bg: "#0c1416"
+      fg: "#eef6f7"
+      muted: "#9aadb2"
+      surface: "#152225"
+      link: "#5ec8d4"
+      accent: "#5ec8d4"
+      border: "#2a3b3f"
+      focus: "#7ad6e0"
+styles:
+  classes:
+    - landing-page
+---
+
+<!--
+id: labs-header
+styles:
+  classes:
+    - page-header
+-->
+
+[@components]: ./layout-components/layout.components.md
+[@root.styles]: ../styles/base.css
+
 # Build Week Labs
 
+**OpenAI Build Week 2026 · PathMX Learning Labs**
+
 Safe experiments — incomplete, wrong, or discarded when they stop being useful.
+These three are the clearest demos to open first.
+
+<div class="pmx-wide">
+<grid cols="3" gap="4">
+  <project-feature
+    title="Chess"
+    href="./chess/index.demo.md"
+    cta="Play the Opera Game"
+  >
+    <slot name="icon">:lucide-swords:</slot>
+    Morphy's Opera Game on an interactive board with annotated PGN replay.
+  </project-feature>
+  <project-feature
+    title="Kepler orbit"
+    href="./kepler-orbit/index.demo.md"
+    cta="Open the orbit"
+  >
+    <slot name="icon">:lucide-orbit:</slot>
+    Equal areas, unequal speeds: a focus-aware orbital instrument for Kepler's
+    second law.
+  </project-feature>
+  <project-feature
+    title="Campus Constellation"
+    href="./campus-constellation/index.demo.md"
+    cta="Start the mission"
+  >
+    <slot name="icon">:lucide-sparkles:</slot>
+    A 20-minute networking Path: pick a North Star, draft one ask, rehearse
+    awkward moments, and leave with a 48-hour mission.
+  </project-feature>
+</grid>
+</div>
 
 ---
 
-## Demos
+## All demos
 
 - [Dialectic spiral](./dialectic-spiral/index.demo.md) — thesis → antithesis →
   synthesis as ordered, Play-traversable states on a scheme-aware canvas.
