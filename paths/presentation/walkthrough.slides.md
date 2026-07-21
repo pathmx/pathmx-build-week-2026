@@ -18,7 +18,7 @@ play:
 
 ### Method, findings, and changes to the PathMX skills and Learning Starter
 
-**Eval series:** PathMX 0.1.21–0.1.24 · Codex CLI 0.142.5–0.145.0 · July 21, 2026
+**Eval series:** PathMX 0.1.21–0.1.25 · Codex CLI 0.142.5–0.145.0 · July 21, 2026
 
 ---
 
@@ -142,6 +142,26 @@ turn. Staged authoring made progress visible while the module was being built.
 
 ---
 
+<!-- id: release-smoke -->
+
+# Hosted PathMX 0.1.25 passed quality, not latency
+
+| Signal | Result |
+| --- | ---: |
+| Deterministic checks | 100%, critical pass |
+| Total model time | 11m07s |
+| Confirmed module | 6m20s |
+| First useful updates | 4–11s |
+| Longest silence | 1m56s |
+| Child threads | 2 Sol, no errors |
+
+The public raw bootstrap and published Starter completed the full SQL beginner
+flow on the Desktop Power profile. The default eval sandbox could build and
+resolve the route but could not write Player state under `~/.pathmx`; normal
+Player startup remains a manual Codex Desktop check.
+
+---
+
 <!-- id: subagent-finding -->
 
 # Subagents improved cadence, not first-module wall time
@@ -185,10 +205,10 @@ ships or advertises an unverified faster worker configuration.
 
 # Recommended next validation
 
-- After PathMX 0.1.25 publishes, run one hosted-bootstrap `desktop-power`
-  release smoke.
 - Run one larger later-module or return pair with collaboration disabled and
   required.
+- Run the manual Desktop flow to verify normal Player startup, Browser handoff,
+  and permission language outside the eval sandbox.
 - Keep the buffered module—not worker fan-out—as the primary learner-speed
   mechanism until repeated pairs show a wall-clock improvement.
 

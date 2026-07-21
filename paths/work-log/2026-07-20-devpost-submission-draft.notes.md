@@ -211,9 +211,9 @@ which results were worth preserving.
   period, with versions and public behavior evidence.]**
 
 The public submission should stand on its inspectable skills, starter, labs,
-components, research, and evidence. Closed-source PathMX improvements may be
-described as supporting platform work but should not carry the main technical
-claim.
+components, research, and evidence. Private Labs-stage PathMX improvements may
+be described as supporting platform work but should not carry the main
+technical claim.
 
 ### Challenges we ran into
 

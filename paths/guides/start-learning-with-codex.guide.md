@@ -34,7 +34,7 @@ always points to the current canonical bootstrap on the `main` branch of
 Codex should:
 
 1. read the hosted bootstrap before improvising;
-2. check Bun, install or update PathMX to the latest private-beta release, and
+2. check Bun, install or update PathMX to the current Labs release, and
    report the versions it actually used;
 3. create `./learning-space` from the public Learning Starter and read its
    repository instructions;

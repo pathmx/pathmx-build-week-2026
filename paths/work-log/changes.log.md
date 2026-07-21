@@ -43,9 +43,15 @@ Sol/low children.
 PathMX 0.1.25 passed 64 canonical skill tests, the Starter candidate and normal
 compatibility checks, and a clean Build Week root build with 369 artifacts and
 no warnings. Player review covered the new report and revised deck in dark
-mode: twelve chart rows and three figures rendered without horizontal overflow
+mode: sixteen chart rows and four figures rendered without horizontal overflow
 or console warnings, and built metadata confirms the four deck metric cards are
 four component Beats.
+
+The subsequent public hosted-bootstrap Power run passed all deterministic and
+critical checks on PathMX 0.1.25. It recorded 11m07s of model time, a 6m20s
+confirmed-module turn, first useful updates in 4–11 seconds, and two Sol child
+threads without collaboration errors. Quality is green; one five-minute turn
+and a 1m56s silent gap keep learner latency in attention status.
 
 ---
 

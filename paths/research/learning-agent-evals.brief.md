@@ -43,6 +43,9 @@ behind the submission rather than relying only on a demo.
 - The strongest candidate runs reached 100% deterministic checks and 100%
   judge scores, but early default-strength runs still exposed unacceptable
   waits, including a 12m43s turn.
+- The published PathMX 0.1.25 hosted-bootstrap smoke passed every deterministic
+  check; its 11m07s model time and 6m20s module turn still triggered the
+  learner-latency warning.
 - Buffered modules and early persisted maps improved the usable learning
   runway. Two same-model subagents shortened the longest silent interval in
   one comparison, but increased first-module wall time.
@@ -133,9 +136,9 @@ release run.
 | Instruction floor | Lower-reasoning subject | Test whether instructions carry behavior |
 | Judge | Independent structured grader | Review learning quality, not latency |
 
-The current series spans PathMX 0.1.21–0.1.24 and Codex CLI
-0.142.5–0.145.0. PathMX 0.1.25 is the next release-verification target, not a
-runtime already represented by these results.
+The current series spans PathMX 0.1.21–0.1.25 and Codex CLI
+0.142.5–0.145.0. The latest run uses the public bootstrap and Starter on the
+published 0.1.25 release.
 
 ## 3. Measures
 
@@ -211,7 +214,34 @@ This is evidence that staged authoring can make work legible while a complete
 module is being built. It is not yet a stable latency estimate: the candidate
 needs repeated release runs across machines and normal Codex Desktop sessions.
 
-## 7. Subagent experiment
+## 7. Hosted PathMX 0.1.25 release smoke
+
+After publishing the canonical skills and Starter, we ran the SQL beginner
+scenario from the public raw bootstrap URL on the Desktop Power profile.
+
+| Result | Evidence |
+| --- | --- |
+| Repository quality | 100% deterministic checks; every critical check passed |
+| Release contract | Exact dependency and compatibility baseline both 0.1.25 |
+| Model time | 11m07s total; confirmed module 6m20s |
+| Progress visibility | First useful updates in 4–11 seconds |
+| Silence | Longest gap 1m56s; two turns exceeded one minute |
+| Collaboration | Two Sol child threads in the module; no errors |
+
+<eval-bars label="Hosted release smoke timing by phase" caption="Figure 2. PathMX 0.1.25 hosted-bootstrap Power run, normalized to the 6m20s confirmed-module turn. Quality passed; latency remained in attention status.">
+  <eval-bar label="Bootstrap" value="2m12s" percent="35" detail="Public instruction and Starter setup"></eval-bar>
+  <eval-bar label="Preferences" value="55s" percent="14" detail="Learner constraints and style"></eval-bar>
+  <eval-bar label="Point A + map" value="1m40s" percent="26" detail="Persisted proposal before lessons"></eval-bar>
+  <eval-bar label="Confirmed module" value="6m20s" percent="100" detail="Three sessions, review, checkpoint, verification"></eval-bar>
+</eval-bars>
+
+The default eval sandbox blocked global tool updates and Player state under
+`~/.pathmx`. The agent reported the limitation, used the exact project
+dependency, passed the repository build, and supplied the verified route. A
+manual Codex Desktop run remains necessary for normal Player startup and
+integrated Browser handoff.
+
+## 8. Subagent experiment
 
 We then tested whether bounded child agents could shorten the first confirmed
 module build on the fast profile. Collaboration-disabled served as the control.
@@ -223,14 +253,14 @@ module build on the fast profile. Collaboration-disabled served as the control.
 | Explicit bounded workers | 2 Sol/low | 4m35s | 1m05s | 7m28s | 100% checks |
 | One fixed join | 2 Sol/low | 4m24s | 1m10s | 7m55s | 100% checks |
 
-<eval-bars label="First-module duration by collaboration lane" caption="Figure 2. Confirmed-module turn duration, normalized to the 4m35s explicit-worker run. In this sample, worker coordination increased wall time.">
+<eval-bars label="First-module duration by collaboration lane" caption="Figure 3. Confirmed-module turn duration, normalized to the 4m35s explicit-worker run. In this sample, worker coordination increased wall time.">
   <eval-bar label="Collaboration disabled" value="3m04s" percent="67" detail="Control; no workers"></eval-bar>
   <eval-bar label="Optional wording" value="4m08s" percent="90" detail="No workers actually started"></eval-bar>
   <eval-bar label="Explicit workers" value="4m35s" percent="100" detail="Two Sol/low child threads"></eval-bar>
   <eval-bar label="One fixed join" value="4m24s" percent="96" detail="Two Sol/low child threads"></eval-bar>
 </eval-bars>
 
-<eval-bars label="Longest silent interval by collaboration lane" caption="Figure 3. Longest silence during the module turn, normalized to 1m51s. Workers improved cadence after the skill made delegation explicit, but the remaining gap still exceeds the one-minute warning threshold.">
+<eval-bars label="Longest silent interval by collaboration lane" caption="Figure 4. Longest silence during the module turn, normalized to 1m51s. Workers improved cadence after the skill made delegation explicit, but the remaining gap still exceeds the one-minute warning threshold.">
   <eval-bar label="Collaboration disabled" value="1m43s" percent="93" detail="Control"></eval-bar>
   <eval-bar label="Optional wording" value="1m51s" percent="100" detail="No worker start"></eval-bar>
   <eval-bar label="Explicit workers" value="1m05s" percent="59" detail="Two child threads"></eval-bar>
@@ -247,7 +277,7 @@ language and once through a project-scoped named agent. Both child rollouts
 were Sol/low. The Starter therefore does not ship or advertise a faster worker
 configuration that this harness could not verify.
 
-## 8. What the evidence supports
+## 9. What the evidence supports
 
 **Supported by the current runs**
 
@@ -263,12 +293,11 @@ configuration that this harness could not verify.
 **Not yet established**
 
 - Latency variance across repeated runs, machines, and normal Desktop sessions.
-- A successful public release flow on PathMX 0.1.25.
 - Whether larger later-module work can amortize same-model worker coordination.
 - Whether current Codex surfaces will expose a reliable per-worker model choice.
 - The integrated Browser and permission experience across ordinary users.
 
-## 9. Current design decisions
+## 10. Current design decisions
 
 1. Keep the buffered 2–4-session module as the primary learner-speed strategy.
 2. Persist and open the proposed map before substantial module generation.
@@ -279,15 +308,12 @@ configuration that this harness could not verify.
 6. Treat a model switch as unverified unless child rollout evidence confirms it.
 7. Keep the hosted raw `bootstrap.md` as the canonical one-prompt entry.
 
-## 10. Next validation
+## 11. Next validation
 
-After PathMX 0.1.25 is published:
-
-1. run one hosted-bootstrap `desktop-power` release smoke;
-2. run one larger later-module or return-flow pair with collaboration disabled
+1. Run one larger later-module or return-flow pair with collaboration disabled
    and required;
-3. repeat any apparent improvement before claiming a speed effect;
-4. run the matching manual Codex Desktop guide and record permission, Browser,
+2. Repeat any apparent improvement before claiming a speed effect.
+3. Run the matching manual Codex Desktop guide and record permission, Browser,
    Player, first-update, and silent-gap observations.
 
 The exact manual protocol is in

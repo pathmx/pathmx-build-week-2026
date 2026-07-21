@@ -53,10 +53,16 @@ verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
 
 ## Activity
 
+- **2026-07-21:** Standardized the public PathMX status language across the
+  README, Build Week home, learner guide, Core progress log, readiness guide,
+  and Devpost working draft. The sources now distinguish private Labs-stage
+  Core development from the installable Labs-stage CLI, describe
+  stabilization without claiming production stability, and state the intent
+  to open-source substantial portions without promising scope or timing.
 - **2026-07-18:** Claimed by Mark for the Build Week recalibration. The new
   direction keeps the learner and learning agent inside the Player, narrows the
-  learner-facing Starter, and treats proprietary PathMX Core as a packaged
-  pre-existing dependency rather than the submitted repository.
+  learner-facing Starter, and treats private Labs-stage PathMX Core as a
+  packaged pre-existing dependency rather than the submitted repository.
 - **2026-07-18:** The standalone reshape brief built successfully as one Path
   with PathMX 0.1.17. Its generated route is
   `/work-log/2026-07-18-player-native-learning-reshape.brief`.
@@ -79,8 +85,14 @@ verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
   the revised internal deck. PathMX 0.1.25 passed the 64-test canonical suite,
   Starter candidate and normal checks, and a zero-warning 369-artifact Build
   Week build. Player review found no report overflow or console warnings and
-  confirmed the four deck metrics are individual component Beats. A hosted
-  release eval and the paired human Codex Desktop test remain.
+  confirmed the four deck metrics are individual component Beats. The paired
+  human Codex Desktop test remains.
+- **2026-07-21 5:08 PM EDT:** The hosted public-bootstrap SQL Power run passed
+  100% of deterministic and critical checks on PathMX 0.1.25. Model time was
+  11m07s, including a 6m20s module turn; first useful updates arrived in 4–11s,
+  but the 1m56s longest silence keeps latency in attention status. Two Sol
+  child threads ran without errors. The remaining release check is the paired
+  human Desktop/Player test, not another initial-module automation run.
 - **2026-07-21:** Pre-landing verification passed: 55 canonical skill tests,
   byte-identical skill sync in both consumer repositories, the Starter's
   PathMX 0.1.21 compatibility fixture, and a 279-artifact Build Week build on

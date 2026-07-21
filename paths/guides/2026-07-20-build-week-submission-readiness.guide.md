@@ -221,7 +221,7 @@ removing material. Report findings as **must fix**, **disclose clearly**, or
 - [ ] State that Mark Johnson created PathMX before Build Week.
 - [ ] Avoid implying that all of PathMX was created during the event.
 - [ ] Confirm the inspectable public work can carry the submission without
-      relying on closed-source Core changes for its main claim.
+      relying on private Labs-stage Core changes for its main claim.
 
 ### Audit resolution
 
@@ -233,7 +233,7 @@ removing material. Report findings as **must fix**, **disclose clearly**, or
 - [ ] Re-run focused scans after fixes.
 - [ ] Obtain human review of the final public boundary.
 
-**Gate passes when:** no unresolved secret, privacy, proprietary-source,
+**Gate passes when:** no unresolved secret, privacy, private-source,
 licensing, or judge-access blocker remains; required disclosures are assigned;
 and the audit result is linked from the submission task.
 
@@ -250,7 +250,7 @@ and the audit result is linked from the submission task.
 - [ ] Present the working repository as a durable human-agent lab notebook.
 - [ ] Disclose Mark Johnson as PathMX's creator.
 - [ ] Separate the pre-existing PathMX foundation from new Build Week work.
-- [ ] Describe closed-source PathMX work as supporting platform work.
+- [ ] Describe private Labs-stage PathMX work as supporting platform work.
 - [ ] Name how Codex and GPT-5.6 contributed without copying private session
       material into the public story.
 - [ ] Include honest challenges, findings, limitations, and next steps.

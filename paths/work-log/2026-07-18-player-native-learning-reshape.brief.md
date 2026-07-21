@@ -281,16 +281,16 @@ or extend it, but they should not be the product's main interaction model. A
 learner or judge should not need to know a skill name or invoke a separate
 authoring workflow to complete the golden journey.
 
-### PathMX Core stays private
+### PathMX Core remains private during Labs
 
-PathMX is the proprietary, pre-existing platform that runs the product. We
-should not submit the private PathMX Core repository or share it with judging
-accounts.
+PathMX is a pre-existing platform currently in Labs. Its Core source remains
+private while its APIs and product boundaries stabilize. We should not submit
+the private PathMX Core repository or share it with judging accounts.
 
 Judges instead install an exact packaged PathMX version and run the learning
 repository through its documented local commands. The submission must be
-transparent that PathMX is a pre-existing private dependency and clearly name
-the new Build Week work layered on it.
+transparent that PathMX is a pre-existing dependency with private Core source
+and clearly name the new Build Week work layered on it.
 
 This is allowed in principle: the challenge permits existing frameworks and
 pre-existing projects, but requires disclosure of what is new and evidence of

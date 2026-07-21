@@ -127,11 +127,12 @@ and toolchain for authoring curriculum as readable Markdown Sources. PathMX
 builds those Sources into a linked graph and a Player for focused, interactive
 progress. This site and its linked examples are PathMX content.
 
-PathMX Core and the PathMX CLI are currently closed-source and distributed under
-the PathMX Private Beta License. The beta may be installed and used to author,
-build, and play PathMX projects, but its APIs and behavior are not yet stable
-and may change without notice. We expect to evaluate an open-source release
-after the API stabilizes, but no release date or commitment has been made.
+PathMX is currently in Labs: its Core source remains private while its APIs and
+product boundaries stabilize. The installable CLI can be used to author,
+build, and play PathMX projects. Expect rapid changes.
+
+We intend to open-source substantial portions of PathMX once those boundaries
+stabilize, but the exact scope, license, and timing are not yet set.
 
 During Build Week we used Codex to extend that Core alongside the public work
 collected here. See the [PathMX Core progress log](./work-log/pathmx-changes.log.md)
