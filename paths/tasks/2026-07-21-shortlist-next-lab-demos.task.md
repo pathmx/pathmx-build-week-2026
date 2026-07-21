@@ -39,6 +39,10 @@ task or parks the others as later-only.
 
 ## Activity
 
+- **2026-07-21:** Locked three parallel picks from the shortlist: YouTube
+  watch-and-recall, Campus Constellation graduation readiness, and the research
+  bench. Tracking continues under those implementation tasks; this shortlist
+  task can close once they absorb the decision.
 - **2026-07-21:** Synced local `main` to `origin/main` at `4511f6a`. Reviewed
   the Labs hub, wedge notes, walkthrough range cuts, and open Andrew labs.
   Wrote
