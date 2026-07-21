@@ -108,7 +108,7 @@ Follow-on lab work continues from the
 - Live keyboard-tab, narrow-viewport, reduced-motion, and no-JS emulation were
   inspected in Source and in the served HTML but not exercised in an active
   browser session; Andrew or Mark can double-check under review.
-- Integrated `main` verification on PathMX 0.1.26 built 1 Path with 407
+- Integrated `main` verification on PathMX 0.1.26 built 1 Path with 410
   artifacts and no warnings; the exact route remains
   `/labs/campus-constellation`.
 

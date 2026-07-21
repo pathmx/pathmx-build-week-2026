@@ -89,5 +89,5 @@ continuing locally; any resulting interaction issue should get its own task.
   verification would outlive the check. The route and Blocks are verified
   from built metadata; a subsequent in-session `pathmx play` will pick this
   Source up on refresh.
-- **Integrated main:** PathMX 0.1.26 built the root graph as 1 Path with 407
+- **Integrated main:** PathMX 0.1.26 built the root graph as 1 Path with 410
   artifacts and no warnings; route remains `/labs/research-bench`.

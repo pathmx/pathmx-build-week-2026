@@ -36,8 +36,9 @@ official embed with provided transcript evidence and five timestamp-grounded
 questions. The [next-demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md)
 records the second wave for a local Codex session to continue.
 
-After updating to PathMX 0.1.26, the integrated root graph built as one Path
-with 407 artifacts and no warnings. Exact routes resolve to
+After updating to PathMX 0.1.26 and merging the latest lab-polish commit, the
+integrated root graph built as one Path with 410 artifacts and no warnings.
+Exact routes resolve to
 `/labs/campus-constellation`, `/labs/research-bench`, and
 `/labs/youtube-watch-recall`. Campus and Research Bench are done; YouTube
 remains in progress only for Andrew's live response-submission pass.
