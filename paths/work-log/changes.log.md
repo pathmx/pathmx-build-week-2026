@@ -15,6 +15,34 @@ styles:
 
 <!--
 type: change
+date: "2026-07-21T17:05:42-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## PathMX's public status language moves into Labs
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The README, Build Week home, learner guide, Core progress log, readiness guide,
+Devpost working draft, and submission-boundary brief now describe PathMX as a
+Labs-stage project whose Core source remains private while its APIs and product
+boundaries stabilize. They distinguish that source boundary from the
+installable CLI, remove claims that the current CLI is stable or open source,
+and state the intent to open-source substantial portions without promising an
+exact scope, license, or date.
+
+PathMX 0.1.25 remains the verified repository version. Its self-update check
+reports current, and the root scratch build completed as one Path with 369
+artifacts and no warnings; the affected Sources appear in the generated
+manifest. This prose-only pass did not require live Player review.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T16:52:46-04:00"
 -->
 
