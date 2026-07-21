@@ -1,0 +1,147 @@
+{
+  "generatedFor": "relationship-garden-mvp",
+  "asOf": "2026-07-21",
+  "people": [
+    {
+      "id": "priya-nair",
+      "name": "Priya Nair",
+      "source": "./people/priya-nair.person.md",
+      "primaryLife": "alumni-panelist",
+      "lives": [
+        { "id": "alumni-panelist", "label": "Alumni panelist", "bed": "internship" },
+        { "id": "recruiter", "label": "Recruiter coffee", "bed": "internship" }
+      ],
+      "beds": ["internship"],
+      "strength": "warming",
+      "lastTouched": "2026-05-15",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": false,
+      "nextMove": "Send a short alumni-lane thank-you and one sincere question.",
+      "openLoops": ["Thank her for the career-fair conversation"],
+      "met": {
+        "when": "2026-05-15",
+        "where": "Campus career fair",
+        "how": "Asked about transitioning from computer science into product management"
+      },
+      "origin": "Met during a crowded career-fair walkaround. Priya made product work feel learnable by naming one small experiment instead of prescribing a career plan.",
+      "notes": ["Offered warm, specific advice about product internships", "Prefers concrete questions over broad requests to pick her brain"]
+    },
+    {
+      "id": "marcus-chen",
+      "name": "Marcus Chen",
+      "source": "./people/marcus-chen.person.md",
+      "primaryLife": "mentor",
+      "lives": [
+        { "id": "mentor", "label": "Project mentor", "bed": "internship" }
+      ],
+      "beds": ["internship"],
+      "strength": "strong",
+      "lastTouched": "2026-05-01",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": false,
+      "nextMove": "Share the prototype lesson learned, not a generic status update.",
+      "openLoops": ["Send the promised one-paragraph prototype reflection"],
+      "met": {
+        "when": "2026-02-12",
+        "where": "Student builder showcase",
+        "how": "Marcus stayed after his judging shift to ask about the roughest part of the demo"
+      },
+      "origin": "Marcus became a project mentor after treating an unfinished demo as evidence worth discussing rather than something to hide.",
+      "notes": ["Responds well to honest build notes", "Introduced a useful way to separate user evidence from feature enthusiasm"]
+    },
+    {
+      "id": "jordan-okonkwo",
+      "name": "Jordan Okonkwo",
+      "source": "./people/jordan-okonkwo.person.md",
+      "primaryLife": "classmate",
+      "lives": [
+        { "id": "classmate", "label": "Classmate", "bed": "campus" },
+        { "id": "club-lead", "label": "Club lead", "bed": "campus" }
+      ],
+      "beds": ["campus"],
+      "strength": "warming",
+      "lastTouched": "2026-07-18",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": false,
+      "nextMove": "Bring the accessibility test idea to the next club build night.",
+      "openLoops": [],
+      "met": {
+        "when": "2026-01-22",
+        "where": "Human-computer interaction seminar",
+        "how": "Paired on a critique of a confusing campus-service form"
+      },
+      "origin": "Jordan is both a classmate and the lead of a student design club. Those contexts overlap, but requests made in one should not automatically spill into the other.",
+      "notes": ["Cares about keyboard testing before visual polish", "Last conversation ended with a concrete build-night idea"]
+    },
+    {
+      "id": "sam-reyes",
+      "name": "Sam Reyes",
+      "source": "./people/sam-reyes.person.md",
+      "primaryLife": "collaborator",
+      "lives": [
+        { "id": "collaborator", "label": "Creative collaborator", "bed": "craft" }
+      ],
+      "beds": ["craft"],
+      "strength": "warming",
+      "lastTouched": "2026-06-24",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": false,
+      "nextMove": "Send the revised opening and ask which moment still feels emotionally flat.",
+      "openLoops": ["Return notes on Sam's audio sketch"],
+      "met": {
+        "when": "2025-11-08",
+        "where": "Community storytelling workshop",
+        "how": "Traded critiques after both choosing the same difficult prompt"
+      },
+      "origin": "Sam is a generous craft collaborator who makes specific work better. The relationship is strongest when there is an artifact on the table.",
+      "notes": ["Direct critique is welcome when attached to a draft", "Avoid turning every check-in into a project request"]
+    },
+    {
+      "id": "avery-kim",
+      "name": "Avery Kim",
+      "source": "./people/avery-kim.person.md",
+      "primaryLife": "family-friend",
+      "lives": [
+        { "id": "family-friend", "label": "Family friend", "bed": "hometown" }
+      ],
+      "beds": ["hometown"],
+      "strength": "strong",
+      "lastTouched": "2026-02-08",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": true,
+      "nextMove": "No task. Reconnect when there is a real story to share.",
+      "openLoops": [],
+      "met": {
+        "when": "2012-08-01",
+        "where": "Home neighborhood",
+        "how": "Families became friends after years of shared block gatherings"
+      },
+      "origin": "Avery belongs to a long, quiet hometown relationship that does not need a productivity cadence to remain real.",
+      "notes": ["Seasonal contact is normal", "Pinned so recency never becomes guilt"]
+    },
+    {
+      "id": "riley-booth",
+      "name": "Riley Booth",
+      "source": "./people/riley-booth.person.md",
+      "primaryLife": "classmate",
+      "lives": [
+        { "id": "classmate", "label": "Classmate", "bed": "campus" },
+        { "id": "collaborator", "label": "Prototype collaborator", "bed": "craft" }
+      ],
+      "beds": ["campus", "craft"],
+      "strength": "warming",
+      "lastTouched": "2026-06-30",
+      "touchStaleDays": { "recent": 14, "warming": 45, "quiet": 90 },
+      "neverGuiltWilt": false,
+      "nextMove": "Keep the next class check-in social unless Riley brings up the prototype.",
+      "openLoops": ["Decide whether the prototype needs another work session"],
+      "met": {
+        "when": "2026-01-15",
+        "where": "Interaction-design studio",
+        "how": "Started as critique partners, then built a weekend prototype together"
+      },
+      "origin": "Riley is both a classmate and a collaborator. The garden keeps those lives visible so a friendly hallway hello does not become an accidental work meeting.",
+      "notes": ["Enjoys fast prototype sessions", "Context boundary: campus conversation is not automatically project time"]
+    }
+  ]
+}

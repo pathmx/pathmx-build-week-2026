@@ -12,12 +12,42 @@ related:
 
 <!--
 type: change
-date: "2026-07-21T14:45:00-04:00"
+date: "2026-07-21T15:21:17-04:00"
 -->
 
 [@change-published]: ./changes.components.md
 
 # Build Week Changes
+
+## Two local-life labs become reviewable on the Build Week hub
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+[Relationship Garden](../labs/relationship-garden/index.demo.md) now gives the
+hub a playable, local-first stewardship instrument: six fictional people,
+parallel contexts, an in-session touch, and an explicit Codex persistence
+handoff. [My Greenville: Coffee Field Notes](../labs/my-greenville/index.demo.md)
+is linked as a deliberately unfinished personal atlas with five researched
+coffee anchors, dated public evidence, privacy-safe field prompts, and one next
+outing. The [Relationship Garden task](../tasks/2026-07-21-build-relationship-garden-mvp-lab.task.md)
+and [My Greenville task](../tasks/2026-07-21-build-my-greenville-coffee-path.task.md)
+record the remaining human review boundaries.
+
+PathMX 0.1.24 completed a clean scratch build with 3,546 artifacts; exact route
+lookups resolved both new Sources. Live Player review covered the Relationship
+Garden filter → Priya → Parallel Lives → session-touch flow and the Greenville
+arrival route; both had no horizontal overflow at 390 × 844 and no checked
+browser warning/error logs. `git diff --check` passed. The no-JavaScript fallback
+was not repeated in this publish pass.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T14:45:00-04:00"
+-->
 
 ## Andrew lands the Relationship Garden handoff on main
 

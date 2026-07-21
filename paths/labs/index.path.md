@@ -45,3 +45,10 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   local PoC for a Realtime voice interview path, room-style simulation, rubric
   scoring loop, coaching follow-up, evidence packet, and proposed Host Action
   boundary.
+- [Relationship Garden](./relationship-garden/index.demo.md) — a local-first
+  stewardship instrument that makes recency and parallel contexts playable,
+  logs one touch in-session, and hands durable persistence back to Codex.
+- [My Greenville: Coffee Field Notes](./my-greenville/index.demo.md) — a living
+  personal atlas that connects five researched Greenville coffee shops to city
+  context, privacy-safe human threads, one next outing, and a durable field
+  note.
