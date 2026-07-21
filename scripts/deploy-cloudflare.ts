@@ -64,6 +64,11 @@ interface StageResult {
   stageRoot: string;
 }
 
+interface RenderedRedirects {
+  content: string;
+  ruleCount: number;
+}
+
 interface CliOptions {
   action: "bundle" | "deploy" | "dry-run";
   customDomain?: string;
@@ -254,22 +259,46 @@ function parseRoutesManifest(value: unknown): RoutesManifest {
   return { routes: parsedRoutes, version: 1 };
 }
 
-function renderRedirects(routes: RoutesManifest, artifactPaths: Set<string>): string {
-  const lines = ["# Generated from PathMX serve-routes.json. Do not edit this staged copy."];
+function renderRedirects(
+  routes: RoutesManifest,
+  artifacts: ArtifactsManifest,
+  artifactPaths: Set<string>,
+): RenderedRedirects {
+  const lines = ["# Generated from PathMX route and artifact manifests. Do not edit this staged copy."];
+  const rulesBySource = new Map<string, string>();
+  const addRule = (source: string, rule: string): void => {
+    const existing = rulesBySource.get(source);
+    if (existing && existing !== rule) {
+      throw new Error(`Conflicting Cloudflare rules for ${source}.`);
+    }
+    if (!existing) {
+      rulesBySource.set(source, rule);
+      lines.push(rule);
+    }
+  };
+
   for (const [routePath, route] of Object.entries(routes.routes)) {
     if (route.type === "document") {
       if (!artifactPaths.has(route.artifactPath)) {
         throw new Error(`Route ${routePath} references undeclared artifact ${route.artifactPath}.`);
       }
-      lines.push(`${routePath} /${route.artifactPath} 200`);
+      addRule(routePath, `${routePath} /${route.artifactPath} 200`);
     } else {
-      lines.push(`${routePath} ${route.to} ${route.status}`);
+      addRule(routePath, `${routePath} ${route.to} ${route.status}`);
     }
   }
-  if (lines.length - 1 > 2_000) {
+
+  for (const [publicPath, artifact] of Object.entries(artifacts.artifacts)) {
+    const artifactPublicPath = `/${artifact.artifactPath}`;
+    if (publicPath !== artifactPublicPath) {
+      addRule(publicPath, `${publicPath} ${artifactPublicPath} 200`);
+    }
+  }
+
+  if (rulesBySource.size > 2_000) {
     throw new Error("The Path produces more than Cloudflare's 2,000 static redirect-rule limit.");
   }
-  return `${lines.join("\n")}\n`;
+  return { content: `${lines.join("\n")}\n`, ruleCount: rulesBySource.size };
 }
 
 function renderHeaders(artifacts: ArtifactsManifest): string {
@@ -346,7 +375,8 @@ export async function stagePathMXBuild(options: StageOptions): Promise<StageResu
     await copyDeclaredFile(selectedBuildRoot, assetRoot, safeArtifactPath);
   }
 
-  await writeFile(path.join(assetRoot, "_redirects"), renderRedirects(routes, artifactPaths));
+  const renderedRedirects = renderRedirects(routes, artifacts, artifactPaths);
+  await writeFile(path.join(assetRoot, "_redirects"), renderedRedirects.content);
   await writeFile(path.join(assetRoot, "_headers"), renderHeaders(artifacts));
   await writeFile(path.join(stageRoot, "wrangler.jsonc"), renderWranglerConfig(options));
   await writeFile(path.join(stageRoot, STAGE_MARKER), `${JSON.stringify({ type: "pathmx-cloudflare-stage", version: 1 }, null, 2)}\n`);
@@ -354,9 +384,22 @@ export async function stagePathMXBuild(options: StageOptions): Promise<StageResu
   return {
     artifactCount: artifactPaths.size,
     pathId,
-    redirectCount: Object.keys(routes.routes).length,
+    redirectCount: renderedRedirects.ruleCount,
     stageRoot,
   };
+}
+
+export function createPathMXBuildCommand(entry: string, buildRoot: string): string[] {
+  return [
+    "bunx",
+    `@fellowhumans/pathmx@${PATHMX_RELEASE}`,
+    "build",
+    entry,
+    "--player",
+    "-o",
+    buildRoot,
+    "--clean",
+  ];
 }
 
 function assertSafeStageRoot(stageRoot: string, repositoryRoot: string): void {
@@ -415,10 +458,7 @@ async function main(): Promise<void> {
   const stagedCandidate = `${stageRoot}.staging-${process.pid}-${Date.now()}`;
 
   try {
-    await run(
-      ["bunx", `@fellowhumans/pathmx@${PATHMX_RELEASE}`, "build", entry, "-o", buildRoot, "--clean"],
-      repositoryRoot,
-    );
+    await run(createPathMXBuildCommand(entry, buildRoot), repositoryRoot);
     const result = await stagePathMXBuild({
       buildRoot,
       customDomain: options.customDomain,

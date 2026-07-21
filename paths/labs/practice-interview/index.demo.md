@@ -2,7 +2,7 @@
 type: demo
 status: experimental
 title: Practice Interview Simulator
-description: A local PoC for a Realtime voice interview simulator, scoring loop, coaching follow-up, and evidence packet.
+description: A voice practice interview path with scoring, coaching follow-up, and an evidence packet.
 route: /labs/practice-interview
 related:
   - ../../research/practice-interview-voice-agent.path.md
@@ -13,35 +13,25 @@ related:
 
 # Practice Interview Simulator
 
-This lab prototypes the learner experience for a voice-first practice interview
-path. The live Realtime API and custom Host Actions are intentionally not wired
-here; this route proves the path shape, rubric, feedback loop, and durable
-evidence boundary with a local simulation.
-
-[Research and endpoint design](../../research/practice-interview-voice-agent.path.md)
+Pick a role, see the rubric, run a practice session, then leave with a scored
+follow-up and an evidence packet.
 
 ---
 
 <!--
 type: design
 id: what-this-proves
-title: What This Proves
+title: What This Path Needs
 -->
 
-## What This Proves
+## What this path needs
 
-The smallest useful interview path needs six things:
-
-1. a practice mode and question that match the learner's target role;
+1. a practice mode and question that match the target role;
 2. a visible rubric before the answer begins;
-3. a live-session state the learner can trust;
-4. transcript and answer-quality signals while the learner works;
+3. a live-session state you can trust;
+4. transcript and answer-quality signals while you work;
 5. dimension-level scoring with one concrete follow-up question;
-6. a dossier-style evidence packet that can route the next PathMX Block.
-
-The live version should replace the simulated text area with a browser WebRTC
-session, but the evidence contract should stay the same: transcript summary,
-scores, rationale, revision target, and next route.
+6. a dossier-style evidence packet for the next move.
 
 ---
 
@@ -53,10 +43,8 @@ title: Behavioral Interview Loop
 
 ## Behavioral Interview Loop
 
-Use the simulator directly or step through it in Play. Try the strong and rough
-sample answers across the Behavioral, Technical, and Product/System modes. The
-scoring is local and deterministic; it is only a stand-in for the proposed
-`interview.turn.score` endpoint.
+Try the strong and rough sample answers across Behavioral, Technical, and
+Product/System modes.
 
 <interview-rehearsal
   states="setup | answer | score | route"
@@ -65,25 +53,4 @@ scoring is local and deterministic; it is only a stand-in for the proposed
   question="Tell me about a time you handled disagreement on a team."
 />
 
----
-
-<!--
-type: review
-id: reviewer-checks
-title: Reviewer Checks
--->
-
-## Reviewer Checks
-
-Review this as a product spike, not as a released integration.
-
-- Does the four-stage loop feel like enough structure for a first interview
-  path?
-- Are mission choice, live-session state, transcript signals, score, follow-up,
-  and evidence dossier legible without extra explanation?
-- Is the proposed durable evidence small enough to be useful in Source while
-  still capturing the reason for the next practice?
-- Should the first real Action family be interview-specific, or should it prove
-  a reusable custom Action endpoint shape?
-
-[Back to the labs index](../index.path.md)
+[Back to the labs](../index.path.md)
