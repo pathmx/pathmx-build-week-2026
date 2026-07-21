@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Unassigned
 date: 2026-07-17
-due: 2026-07-20
 related:
   - ./index.tasks.md
   - ./2026-07-16-plan-focus-beat-components.task.md

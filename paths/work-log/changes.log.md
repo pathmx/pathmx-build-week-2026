@@ -9,6 +9,36 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The personal learning starter is backed by a repeatable eval loop
+
+The canonical [PathMX skills](https://github.com/pathmx/pathmx-skills) now
+provide one hosted bootstrap, a buffered personal-learning workflow, verified
+PathMX authoring guidance, and a real Codex CLI eval harness. The rebuilt
+[Learning Starter](https://github.com/pathmx/pathmx-learning-starter) keeps one
+Player root, visible milestone state, a complete two-session module scaffold,
+durable activity and annotation records, learner-controlled presentation, and
+checks that reject thin or structurally invalid learning modules. Tram's early
+workflow contribution remains named in the canonical skill tests and design
+history.
+
+The [eval findings walkthrough](../presentation/walkthrough.slides.md) explains
+how default-strength runs exposed latency, weaker-model runs exposed instruction
+gaps, and the hardened fast-profile candidate reached 100% deterministic and
+independent-judge scores on the final ambiguous-goal and return-and-adapt
+scenarios. The linked [manual Codex Desktop guide](../guides/self-learning-manual-test.guide.md)
+lets the team repeat the same flow from the hosted bootstrap.
+
+The canonical suite passed 55 tests, both consumer repositories matched the
+canonical skills byte for byte, and the Starter compatibility fixture passed
+against its exact PathMX 0.1.21 baseline. PathMX 0.1.22 built the 279-artifact
+Build Week graph with only the three pre-existing Tufte-theme warnings. Player
+review confirmed the presentation styles, results cards, and manual-guide link
+with no browser warnings. Published-template variance runs and a complete
+human Codex Desktop pass remain release follow-up in the
+[starter task](../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md).
+
+---
+
 ## A beginner chess-opening lesson exercises the canonical components
 
 [Build Before You Attack](../labs/chess-opening-lesson/index.demo.md) turns the

@@ -29,8 +29,6 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   treatment.
 - [Layout components](./layout-components/index.demo.md) — small author-facing
   layout tags composed into container-responsive page structures.
-- [Simple learner quiz](./simple-quiz/index.demo.md) — ordinary question Blocks
-  that collect and preserve learner evidence through Actor-backed submissions.
 - [Bookshelf](./bookshelf/index.demo.md) — a three-tag Literate Component family
   that keeps semantic book markup, responsive shelf overflow, and the shared
   bookcase visual system in readable component definitions.

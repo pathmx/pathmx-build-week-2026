@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-16
-due: 2026-07-17
 related:
   - ../research/practice-interview-voice-agent.path.md
   - ../labs/practice-interview/index.demo.md

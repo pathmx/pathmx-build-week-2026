@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-15
-due: 2026-07-17
 related:
   - ./2026-07-15-prepare-learner-starter-and-submission.task.md
   - ../work-log/2026-07-14-hackathon-meeting.notes.md

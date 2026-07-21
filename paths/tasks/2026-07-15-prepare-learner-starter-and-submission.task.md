@@ -3,13 +3,14 @@ type: task
 status: in-progress
 owner: Mark
 date: 2026-07-15
-due: 2026-07-21
 related:
   - ../work-log/2026-07-14-hackathon-meeting.notes.md
   - ../work-log/2026-07-18-player-native-learning-reshape.brief.md
   - ../work-log/2026-07-20-build-week-checkin.notes.md
   - ../work-log/2026-07-20-devpost-submission-draft.notes.md
   - ../guides/2026-07-20-build-week-submission-readiness.guide.md
+  - ../guides/self-learning-manual-test.guide.md
+  - ../presentation/walkthrough.slides.md
   - ./2026-07-20-update-pathmx-skills.task.md
   - ./2026-07-20-produce-submission-video.task.md
 ---
@@ -25,11 +26,9 @@ repeatable submission without copying private team material into either repo.
 
 ## Next Move
 
-Wait for Tram's
-[skills update](./2026-07-20-update-pathmx-skills.task.md), then Mark and Tram
-rescaffold the learner Starter around that package. Hold Andrew's review until
-after that rescaffold lands; then lock remaining story decisions and run
-clean-session verification.
+Review the eval findings walkthrough with the team, publish the candidate
+Starter and skills together, then run the hosted-bootstrap lane and the manual
+Codex Desktop flow before treating the kit as release-ready.
 
 ---
 
@@ -65,3 +64,11 @@ clean-session verification.
 - **2026-07-20:** Next blocker is updating `pathmx-skills` (Tram in progress),
   then rescaffolding the Starter (Mark + Tram). Andrew's review waits until
   that rescaffold is done.
+- **2026-07-21:** The real Codex CLI eval loop now covers map-first setup,
+  buffered module authoring, return-and-adapt behavior, deterministic checks,
+  an independent quality judge, and latency warnings. The findings and release
+  limits are summarized in the [team walkthrough](../presentation/walkthrough.slides.md).
+- **2026-07-21:** Pre-landing verification passed: 55 canonical skill tests,
+  byte-identical skill sync in both consumer repositories, the Starter's
+  PathMX 0.1.21 compatibility fixture, and a 279-artifact Build Week build on
+  PathMX 0.1.22. The build retained only three known Tufte-theme warnings.

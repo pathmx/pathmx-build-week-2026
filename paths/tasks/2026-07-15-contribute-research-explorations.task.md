@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Tram
 date: 2026-07-15
-due: 2026-07-18
 related:
   - ../research/index.path.md
   - ../research/campus-constellation-networking.path.md

@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-17
-due: 2026-07-19
 related:
   - ./index.tasks.md
   - ../research/resources.path.md

@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-17
-due: 2026-07-17
 related:
   - ../labs/chess/index.demo.md
   - ../labs/chess/chess.components.md

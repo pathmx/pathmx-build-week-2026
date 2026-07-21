@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-15
-due: 2026-07-15
 related:
   - ../labs/index.path.md
   - ../work-log/changes.log.md

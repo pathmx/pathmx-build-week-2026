@@ -17,9 +17,14 @@ Always check that the latest version of the PathMX CLI is installed:
 pathmx self-update
 ```
 
-- **Important:** Use the `/pathmx` skill for all PathMX content.
-- Treat the repo-local skill as a byte-for-byte mirror of canonical PathMX. Do
-  not customize the copied package here; make reusable changes in canonical
+- **Important:** Use the repo-local `/pathmx` skill for all PathMX content.
+- Use `/path` for the personal learning workflow and `/pathmx` for its PathMX
+  syntax, Player routes, and verification.
+- Treat the repo-local `path` and `pathmx` packages as byte-for-byte mirrors of
+  the canonical skill pack. Do not customize the copied packages here; make
+  reusable changes in canonical and sync them back.
+- `pathmx-authoring` is a retired compatibility name and must not compete with
+  `/pathmx` for new work.
 - Use ordinary readable Markdown as the source of truth.
 - Use type-hinted filenames and relative Markdown links.
 - Separate major playable moments with `---` on its own line.

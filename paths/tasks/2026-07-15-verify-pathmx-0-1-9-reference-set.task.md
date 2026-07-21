@@ -3,12 +3,10 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-15
-due: 2026-07-16
 related:
   - ../labs/index.path.md
   - ../labs/chess/index.demo.md
   - ../labs/layout-components/index.demo.md
-  - ../labs/simple-quiz/index.demo.md
   - ../labs/component-patterns/index.demo.md
   - ../labs/bookshelf/index.demo.md
   - ../labs/kepler-orbit/index.demo.md

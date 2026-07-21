@@ -23,7 +23,7 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
 These are the demos, presentation materials, used in the OpenAI Build Week submission.
 
-- [Video Presentation Slides](./presentation/index.presentation.md)
+- [Eval Findings And Video Presentation Slides](./presentation/walkthrough.slides.md)
 - [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
 - [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
 - [PathMX Skills](https://github.com/pathmx/pathmx-skills)

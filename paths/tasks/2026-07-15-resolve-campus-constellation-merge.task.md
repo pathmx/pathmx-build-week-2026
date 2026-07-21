@@ -3,7 +3,6 @@ type: task
 status: done
 owner: Mark
 date: 2026-07-15
-due: 2026-07-15
 related:
   - ../work-log/changes.log.md
   - ./2026-07-15-contribute-research-explorations.task.md
