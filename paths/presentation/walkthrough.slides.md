@@ -126,15 +126,19 @@ boundary exposed the next missing repository contract.
 
 # Final candidate results
 
-- **100% / 100%** Checks / judge · ambiguous goal
-- **6m56s** Complete flow · slowest turn 3m22s
-- **100% / 100%** Checks / judge · return + adapt
-- **10m07s** Five-turn flow · no turn over 5m
+<lab-stats label="Final candidate evaluation metrics">
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Ambiguous goal"></lab-stat>
+  <lab-stat value="6m56s" label="Complete flow" detail="Slowest turn 3m22s"></lab-stat>
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Return + adapt"></lab-stat>
+  <lab-stat value="10m07s" label="Five-turn flow" detail="No turn over 5m"></lab-stat>
+</lab-stats>
 
 The learner saw a useful first update in **4–13 seconds** on every measured
 turn. Staged authoring made progress visible while the module was being built.
 
+[@styles.lab]: ../styles/lab.css
 [@styles]: ./walkthrough.css
+[@lab-stats]: ../styles/lab.components.md
 
 ---
 

@@ -1,15 +1,60 @@
 ---
 status: active
 date: 2026-07-15
+updated: 2026-07-21
 related:
   - ../index.path.md
   - ./index.path.md
   - ../tasks/2026-07-15-add-change-log-workflow.task.md
+  - ../tasks/2026-07-21-style-change-log-as-blog.task.md
 ---
 
-# 2026-07-15 — Build Week Changes
+<!--
+type: change
+date: "2026-07-21T12:18:29-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+# Build Week Changes
+
+## The changes log becomes a connected build journal
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Every entry in this log now carries its publish timestamp as structured Block
+topmatter and renders it as semantic, locale-aware metadata beneath the title.
+Source-scoped journal styling gives each outcome the spacing of a short blog
+post, while a continuous Path line and filled title nodes make the sequence of
+work visible without turning the log into a card grid.
+
+The [owning task](../tasks/2026-07-21-style-change-log-as-blog.task.md) records
+the data-shape migration, component and visual checks, and any remaining
+follow-up. The reusable `change-published` component keeps the ISO timestamp
+as the durable source while presenting a long date and local time to the
+reader.
+
+PathMX 0.1.22 produced 291 artifacts in a clean full build with only the three
+pre-existing Tufte-theme warnings. The focused Player route rendered all 22
+timestamps in both light and dark schemes at 1280 × 720 and 390 × 844, kept
+the Path line aligned without horizontal overflow, and reported no browser
+errors. The strengthened change-log check, shell syntax check, and
+`git diff --check` also passed.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T10:53:07-04:00"
+-->
 
 ## The personal learning starter is backed by a repeatable eval loop
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The canonical [PathMX skills](https://github.com/pathmx/pathmx-skills) now
 provide one hosted bootstrap, a buffered personal-learning workflow, verified
@@ -49,7 +94,16 @@ pass remain release follow-up in the
 
 ---
 
+<!--
+type: change
+date: "2026-07-19T14:52:53-04:00"
+-->
+
 ## A beginner chess-opening lesson exercises the canonical components
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 [Build Before You Attack](../labs/chess-opening-lesson/index.demo.md) turns the
 canonical Chess Board and Chess Game components into a short beginner lesson
@@ -83,7 +137,16 @@ keyboard and touch review is explicitly still required.
 
 ---
 
+<!--
+type: change
+date: "2026-07-18T21:16:03-04:00"
+-->
+
 ## Labs walkthrough yields a workspace link audit and Player follow-ups
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 Andrew's continuing lab review is now captured in the
 [field-guide task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
@@ -111,7 +174,16 @@ because browser control was unavailable during the audit.
 
 ---
 
+<!--
+type: change
+date: "2026-07-18T15:52:12-04:00"
+-->
+
 ## Andrew's Chess walkthrough becomes navigation review evidence
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 Andrew's [July 18 labs walkthrough](https://www.loom.com/share/0c6e72c323c84ebd8ead8e0256c23f25)
 now appears with the other [shared walkthroughs](../research/resources.path.md),
@@ -137,7 +209,16 @@ separately mentioned login issue.
 
 ---
 
+<!--
+type: change
+date: "2026-07-18T15:26:14-04:00"
+-->
+
 ## Lab reviews gain a shared field guide and concrete Player follow-ups
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [authoring-skill review task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
 now gives Andrew one compact review method and a lab-specific focus for every
@@ -158,7 +239,16 @@ boundaries, and the interaction findings still require focused reproduction.
 
 ---
 
+<!--
+type: change
+date: "2026-07-18T13:31:53-04:00"
+-->
+
 ## The Hegelian Spiral Perplexity artifact becomes a native Dialectic Spiral lab
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [Dialectic Spiral lab](../labs/dialectic-spiral/index.demo.md) ports the
 shared [Hegelian Spiral](https://hegelianspiral.pplx.app/) artifact into the
@@ -178,87 +268,16 @@ the rendered Play pass across schemes, widths, and reduced motion.
 
 ---
 
-## A shared resources and inspiration page collects what the team has been sharing
-
-A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
-from the [research index](../research/index.path.md), gathers the walkthrough
-Looms, generative Perplexity artifacts, UI/product inspiration (Dilum Sanjaya,
-the Spaceholders demo, the Player beat-navigation design spec, the hosted
-reference labs), and the tools on the team's radar (Glaze, Supertonic TTS, and
-the observability/audit-log podcast clip) that had been living only in Slack.
-Personal and private links — family/news artifacts and the Devpost invite — were
-deliberately kept out per the repo guardrails and the research index's
-contributing note.
-
----
-
-## A Dungeons & Dragons campaign workshop joins the lab demos
-
-[Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
-turns one fantasy premise into a campaign promise, faction triangle, five-place
-map, flexible first session, pressure test, and reusable campaign card. It is
-grounded in *The Lanterns of Duskmere* while keeping every planning move
-portable to another tabletop campaign; the [labs index](../labs/index.path.md)
-now links the workshop. Its lantern-lit field-guide presentation now includes
-five focused Literate Components: the lantern pressure clock, an interactive
-faction triangle, the Duskmere field map, a choice-responsive session spine,
-and a deterministic consequence forge. Each keeps its underlying campaign
-model readable without JavaScript and uses native direct controls plus ordered
-Player states where traversal teaches the idea.
-
-The owning [authoring-skill task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
-records Browse and Play review, the mobile layout correction, and the
-Player-level keyboard-navigation observation. PathMX 0.1.13 built the complete
-graph successfully with 203 artifacts; the component Sources resolved in the
-generated manifest, direct selection and Player Context Actions worked, and
-the 390 × 844 layout had no horizontal overflow. Only the three pre-existing
-Tufte theme warnings remain. Mark still needs to manually review keyboard
-activation, reduced motion, and the complete visual flow; Andrew's broader
-reviewed-lab tour remains open.
-
----
-
-## Practice interview voice-agent spike maps the Realtime path
-
-The new
-[Practice Interview Voice Agent](../research/practice-interview-voice-agent.path.md)
-research note records the proposed OpenAI Realtime WebRTC architecture, prompt
-shape, server-side scoring boundary, and unlanded Host Action contracts for
-starting a session, scoring a turn, and saving durable evidence. The companion
-[Practice Interview Simulator](../labs/practice-interview/index.demo.md) lab
-adds an immersive local simulation with a room scene, mission-style interview
-modes, live transcript signals, debrief ranking, targeted follow-up, polish or
-practice routing, and a dossier-style evidence packet so reviewers can inspect
-the learning loop without live OpenAI credentials.
-
-The owning
-[practice-interview task](../tasks/2026-07-16-spike-practice-interview-voice.task.md)
-records the checks. PathMX 0.1.13 is current, the final scratch build passed
-with 178 artifacts and only the known Tufte theme warnings, `git diff --check`
-passed, the expected Sources appeared in the scratch graph, and headless Chrome
-exercised desktop and mobile simulator paths through `/labs/practice-interview`.
-Tram remains the assigned human reviewer.
-
----
-
-## Task workflow now assigns explicit reviewers
-
-The task workflow now records a `reviewer` in every task Source and projects it
-on the [task dashboard](../tasks/index.tasks.md). Reviewer assignment is limited
-to Mark, Tram, or Andrew; owners remain the accountable humans, and the review
-lane now has a named reader for each task.
-
-The change is tracked in the
-[reviewer workflow task](../tasks/2026-07-16-add-task-reviewers.task.md).
-`pathmx self-update` confirmed PathMX 0.1.13 is current, the scratch PathMX
-build passed with only the three known Tufte theme warnings, and
-`git diff --check` passed. Play review was skipped because this is workflow
-prose, frontmatter, and dashboard table work with no new interaction behavior;
-Andrew remains the assigned human reviewer.
-
----
+<!--
+type: change
+date: "2026-07-17T15:20:40-04:00"
+-->
 
 ## Campus Constellation becomes a Play-by-beat practice constellation
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 Two learner-facing surfaces in the
 [Campus Constellation path](../research/campus-constellation-networking.path.md)
@@ -298,7 +317,132 @@ is with Mark for keyboard and visual review.
 
 ---
 
+<!--
+type: change
+date: "2026-07-17T11:12:18-04:00"
+-->
+
+## A shared resources and inspiration page collects what the team has been sharing
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+A new [Shared Resources & Inspiration](../research/resources.path.md) page, linked
+from the [research index](../research/index.path.md), gathers the walkthrough
+Looms, generative Perplexity artifacts, UI/product inspiration (Dilum Sanjaya,
+the Spaceholders demo, the Player beat-navigation design spec, the hosted
+reference labs), and the tools on the team's radar (Glaze, Supertonic TTS, and
+the observability/audit-log podcast clip) that had been living only in Slack.
+Personal and private links — family/news artifacts and the Devpost invite — were
+deliberately kept out per the repo guardrails and the research index's
+contributing note.
+
+---
+
+<!--
+type: change
+date: "2026-07-16T22:25:40-04:00"
+-->
+
+## A Dungeons & Dragons campaign workshop joins the lab demos
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+[Build a Dungeons & Dragons Campaign](../labs/campaign-forge/index.demo.md)
+turns one fantasy premise into a campaign promise, faction triangle, five-place
+map, flexible first session, pressure test, and reusable campaign card. It is
+grounded in *The Lanterns of Duskmere* while keeping every planning move
+portable to another tabletop campaign; the [labs index](../labs/index.path.md)
+now links the workshop. Its lantern-lit field-guide presentation now includes
+five focused Literate Components: the lantern pressure clock, an interactive
+faction triangle, the Duskmere field map, a choice-responsive session spine,
+and a deterministic consequence forge. Each keeps its underlying campaign
+model readable without JavaScript and uses native direct controls plus ordered
+Player states where traversal teaches the idea.
+
+The owning [authoring-skill task](../tasks/2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md)
+records Browse and Play review, the mobile layout correction, and the
+Player-level keyboard-navigation observation. PathMX 0.1.13 built the complete
+graph successfully with 203 artifacts; the component Sources resolved in the
+generated manifest, direct selection and Player Context Actions worked, and
+the 390 × 844 layout had no horizontal overflow. Only the three pre-existing
+Tufte theme warnings remain. Mark still needs to manually review keyboard
+activation, reduced motion, and the complete visual flow; Andrew's broader
+reviewed-lab tour remains open.
+
+---
+
+<!--
+type: change
+date: "2026-07-16T17:23:54-04:00"
+-->
+
+## Practice interview voice-agent spike maps the Realtime path
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The new
+[Practice Interview Voice Agent](../research/practice-interview-voice-agent.path.md)
+research note records the proposed OpenAI Realtime WebRTC architecture, prompt
+shape, server-side scoring boundary, and unlanded Host Action contracts for
+starting a session, scoring a turn, and saving durable evidence. The companion
+[Practice Interview Simulator](../labs/practice-interview/index.demo.md) lab
+adds an immersive local simulation with a room scene, mission-style interview
+modes, live transcript signals, debrief ranking, targeted follow-up, polish or
+practice routing, and a dossier-style evidence packet so reviewers can inspect
+the learning loop without live OpenAI credentials.
+
+The owning
+[practice-interview task](../tasks/2026-07-16-spike-practice-interview-voice.task.md)
+records the checks. PathMX 0.1.13 is current, the final scratch build passed
+with 178 artifacts and only the known Tufte theme warnings, `git diff --check`
+passed, the expected Sources appeared in the scratch graph, and headless Chrome
+exercised desktop and mobile simulator paths through `/labs/practice-interview`.
+Tram remains the assigned human reviewer.
+
+---
+
+<!--
+type: change
+date: "2026-07-16T17:23:54-04:00"
+-->
+
+## Task workflow now assigns explicit reviewers
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The task workflow now records a `reviewer` in every task Source and projects it
+on the [task dashboard](../tasks/index.tasks.md). Reviewer assignment is limited
+to Mark, Tram, or Andrew; owners remain the accountable humans, and the review
+lane now has a named reader for each task.
+
+The change is tracked in the
+[reviewer workflow task](../tasks/2026-07-16-add-task-reviewers.task.md).
+`pathmx self-update` confirmed PathMX 0.1.13 is current, the scratch PathMX
+build passed with only the three known Tufte theme warnings, and
+`git diff --check` passed. Play review was skipped because this is workflow
+prose, frontmatter, and dashboard table work with no new interaction behavior;
+Andrew remains the assigned human reviewer.
+
+---
+
+<!--
+type: change
+date: "2026-07-16T16:35:51-04:00"
+-->
+
 ## The task dashboard drops a stale demo count
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [task dashboard](../tasks/index.tasks.md) result for narrowing the labs
 index no longer hardcodes "six" ready demos. The reviewed 3D globe reference
@@ -308,7 +452,16 @@ as the demo set changes.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T23:07:00-04:00"
+-->
+
 ## Campus Constellation turns college networking into interactive practice
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The new [Campus Constellation path](../research/campus-constellation-networking.path.md)
 helps college students define a networking goal, choose a difficulty, rehearse
@@ -330,7 +483,16 @@ acceptance; detailed evidence is recorded in the
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T22:26:42-04:00"
+-->
+
 ## A reviewed local-resource 3D globe joins the demo set
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [Three Globe reference](../labs/three-globe/index.demo.md) now provides one
 focused, data-backed scene at `/labs/three-globe`. It copies the reviewed
@@ -348,7 +510,16 @@ recorded in the [owning task](../tasks/2026-07-15-add-three-globe-reference.task
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T18:44:14-04:00"
+-->
+
 ## The public Build Week Space now runs PathMX 0.1.10
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 PathMX 0.1.10 is installed on `muthurd`, and the replacement Spaces gateway is
 serving its bundled Player at
@@ -365,7 +536,16 @@ is recorded in the
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T18:12:21-04:00"
+-->
+
 ## The labs hub now lists only ready demos
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [labs index](../labs/index.path.md) now has one plain `Demos` section that
 links Chess, Tufte theme, layout components, the simple learner quiz,
@@ -380,7 +560,16 @@ behavior.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T17:42:58-04:00"
+-->
+
 ## Agents now update the playable changes log before pushing
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The repository now treats this Source as the concise record of landed work.
 Agents prepend one outcome-first entry per `---` Block, link the owning task and
@@ -398,7 +587,16 @@ coordination problem.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T17:42:58-04:00"
+-->
+
 ## Current team handoffs and authoring guidance are focused
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The task board now names one immediate handoff for each collaborator. Andrew
 will explore every reviewed lab and ask a fresh Codex task to apply the
@@ -416,7 +614,16 @@ dashboard reflected the new handoffs after muthurd refreshed.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T17:42:58-04:00"
+-->
+
 ## The PathMX 0.1.9 reference set graduates with Kepler
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The reviewed Build Week examples now cover Chess, layout components, durable
 single-choice questions, Bookshelf, Tufte presentation, slides, component
@@ -434,7 +641,16 @@ is complete.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T17:42:58-04:00"
+-->
+
 ## The Build Week Space is live on muthurd
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 A clean `main` checkout now lives on `muthurd` and serves the repository as the
 read-only [Build Week Space](https://build-week.pathmx.net/). The host runs
@@ -451,7 +667,16 @@ clone.
 
 ---
 
+<!--
+type: change
+date: "2026-07-15T17:42:58-04:00"
+-->
+
 ## Build Week coordination and the Starter MVP test become source-backed
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The workspace now has canonical task Sources, a playable dashboard, clear
 human ownership, repository-level agent instructions, and durable completion

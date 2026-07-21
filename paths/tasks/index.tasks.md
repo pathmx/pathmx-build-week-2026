@@ -23,8 +23,9 @@ work and is not tracked as a Build Week task.
 
 | Task | Owner | Next move |
 | --- | --- | --- |
+| [Style the change log as a blog](./2026-07-21-style-change-log-as-blog.task.md) | Mark | Keep the Path line connected to each centered post when the Block is presented in Play |
 | [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md) | Tram | Push the revised `paths` workflow skill from the Saturday test, then retest with Mark |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Review the eval walkthrough, publish Starter + skills, then run the hosted and manual release lanes |
+| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Review the refined eval walkthrough, publish Starter + skills, then run the hosted and manual release lanes |
 | [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Review the evidence-led deck, rehearse it in Player, and record the verified flow |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time |
 

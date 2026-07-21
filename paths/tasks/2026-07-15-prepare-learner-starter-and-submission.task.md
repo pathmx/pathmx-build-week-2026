@@ -84,3 +84,15 @@ Codex Desktop flow before treating the kit as release-ready.
   only layout and result-card flourishes locally. Player review covered the
   root hub, task dashboard, eval report, and a deliberately exempt Kepler lab
   with no browser warnings.
+- **2026-07-21:** Refined the in-progress base theme with iOS system-blue tones,
+  regular-weight shadowless links, and a reusable `lab-stats` / `lab-stat`
+  Literate Component family. The eval deck now authors its four candidate
+  metrics through that semantic component contract instead of slide-specific
+  list selectors. PathMX 0.1.22 built the root successfully with only the three
+  known Tufte-theme warnings. Live Player review confirmed light and dark
+  palettes, a two-column desktop grid, a one-column 600px layout without
+  horizontal overflow, and no browser warnings. After review, the dark accent
+  was lifted from the denser system blue to `#409cff`; the Player resolved the
+  revised card values to `rgb(64, 156, 255)` against the dark card surface.
+  The light accent was then deepened slightly to `#006ee6` for more definition
+  on the grouped light background.

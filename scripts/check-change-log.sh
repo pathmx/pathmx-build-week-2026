@@ -36,11 +36,41 @@ if [ -n "$repo_work" ] && [ -z "$log_update" ]; then
 fi
 
 awk '
+  function fail(message) {
+    printf "Change-log check failed: Block %d %s.\n", block, message > "/dev/stderr"
+    failed = 1
+  }
+
+  function check_block() {
+    if (headings < 1) {
+      fail("has no change heading")
+    }
+    if (types != 1) {
+      fail("must have exactly one topmatter type: change")
+    }
+    if (dates != 1) {
+      fail("must have exactly one ISO 8601 topmatter date")
+    }
+    if (published != 1) {
+      fail("must render exactly one change-published component")
+    }
+    if (previous_date != "" && block_date > previous_date) {
+      fail("is newer than the Block before it")
+    }
+    previous_date = block_date
+  }
+
   BEGIN {
     frontmatter = 0
+    topmatter = 0
     body = 0
     block = 1
     headings = 0
+    types = 0
+    dates = 0
+    published = 0
+    block_date = ""
+    previous_date = ""
     failed = 0
   }
 
@@ -59,13 +89,39 @@ awk '
     next
   }
 
+  body && $0 == "<!--" {
+    topmatter = 1
+    next
+  }
+
+  topmatter && $0 == "-->" {
+    topmatter = 0
+    next
+  }
+
+  topmatter && $0 == "type: change" {
+    types++
+    next
+  }
+
+  topmatter && /^date: "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9](Z|[+-][0-9][0-9]:[0-9][0-9])"$/ {
+    dates++
+    block_date = substr($0, 8, length($0) - 8)
+    next
+  }
+
+  topmatter {
+    next
+  }
+
   body && $0 == "---" {
-    if (headings < 1) {
-      printf "Change-log check failed: Block %d has no change heading.\n", block > "/dev/stderr"
-      failed = 1
-    }
+    check_block()
     block++
     headings = 0
+    types = 0
+    dates = 0
+    published = 0
+    block_date = ""
     next
   }
 
@@ -73,13 +129,16 @@ awk '
     headings++
   }
 
+  body && /^<change-published datetime="\{\{ block\.date \}\}">$/ {
+    published++
+  }
+
   END {
     if (!body) {
       print "Change-log check failed: expected YAML frontmatter." > "/dev/stderr"
       failed = 1
-    } else if (headings < 1) {
-      printf "Change-log check failed: Block %d has no change heading.\n", block > "/dev/stderr"
-      failed = 1
+    } else {
+      check_block()
     }
     exit failed
   }

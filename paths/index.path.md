@@ -9,7 +9,7 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 - [Work log/notes](./work-log/index.path.md)
 - [Guides](./guides/index.guides.md)
 
-[@root.styles]: ./styles/lab.css
+[@root.styles]: ./styles/base.css
 
 ---
 
