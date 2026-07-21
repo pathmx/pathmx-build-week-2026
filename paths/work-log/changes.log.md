@@ -13,49 +13,7 @@ styles:
     - change-journal
 ---
 
-<!--
-type: change
-date: "2026-07-21T22:15:00-04:00"
--->
-
 [@change-published]: ./changes.components.md
-
-## Campus Constellation graduates from research into the Labs hub
-
-<change-published datetime="{{ block.date }}">
-  Published {{ block.date }}
-</change-published>
-
-Campus Constellation was moved from `paths/research/` into a new
-[`paths/labs/campus-constellation/`](../labs/campus-constellation/index.demo.md)
-directory alongside its eleven Literate Components and scoped stylesheet, so
-the college-networking mission Path now sits beside the other playable demos
-on the [Labs hub](../labs/index.path.md). The three prefilled learner
-`response` / `submission` fixtures on the `choose-north-star`,
-`set-practice-level`, and `next-route-signal` question Blocks were cleared so
-a new learner arrives at unanswered questions, and the CSS `@scope` selectors
-now target `data-pathmx-source="labs/campus-constellation/index.demo"` so the
-campus-at-night visual system continues to apply after the move. The old
-research entry was rewritten as a graduated pointer stub that keeps inbound
-`related:` links resolving from six task and note Sources, historical
-change-log references were retargeted so the graph builds without unresolved
-links, and the one existing actor Play session was retargeted to the new
-demo path. The [owning task](../tasks/2026-07-21-graduate-campus-constellation-labs.task.md)
-carries the readiness findings and detailed verification.
-
-Verified with `pathmx build` (PathMX 0.1.25): clean before (384 artifacts) and
-after (24 artifacts written, 0 deleted, 0 warnings) the move. `pathmx route
-paths/labs/campus-constellation/index.demo.md` resolves to
-`/labs/campus-constellation`; the research stub still resolves to
-`/research/campus-constellation-networking.path`. A repository-owned
-`pathmx play` server returned HTTP 200 for both routes and the served demo
-carries every one of the eleven component tags plus the new scoped
-`data-pathmx-source`. Narrow-viewport, keyboard, reduced-motion, forced-color,
-and no-JS behavior were reconfirmed by inspection in the moved Sources and
-served HTML, not by live browser interaction; Andrew or Mark can double-check
-in review.
-
----
 
 <!--
 type: change

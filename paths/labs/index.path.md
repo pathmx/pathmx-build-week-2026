@@ -56,7 +56,3 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   provided-transcript MVP that pairs an official YouTube embed with
   timestamped Feynman excerpts and durable recall Blocks whose hidden
   `youtube:` evidence points a Codex follow-up at the exact transcript span.
-- [Research Bench: What Should I Believe?](./research-bench/index.demo.md) — a
-  durable evidence bench for one contested question, with pinned competing
-  claims, ordinary Markdown citations, dated confidence and open-questions
-  responses, and a copyable Codex prompt for the next discriminating question.
