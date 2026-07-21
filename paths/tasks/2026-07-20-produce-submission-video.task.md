@@ -9,7 +9,6 @@ related:
   - ../work-log/2026-07-20-devpost-submission-draft.notes.md
   - ../guides/2026-07-20-build-week-submission-readiness.guide.md
   - ../guides/self-learning-manual-test.guide.md
-  - ../presentation/walkthrough.slides.md
 ---
 
 # Produce The Three-Minute Submission Video
@@ -25,9 +24,9 @@ The final deck should live [here](../presentation/walkthrough.slides.md)
 
 ## Next Move
 
-Review the eval findings deck in Player, rehearse its evidence-led story, then
-record the verified Source-to-Player flow and accepted examples in under three
-minutes.
+Develop the dedicated video deck in Player, rehearse its submission story,
+then record the verified Source-to-Player flow and accepted examples in under
+three minutes.
 
 ---
 
@@ -48,10 +47,7 @@ minutes.
   The deck will ground the Markdown workflow, create a small learning space
   with Codex, show the durable result, and tour Kepler, chess, and one final
   example.
-- **2026-07-21:** The [walkthrough deck](../presentation/walkthrough.slides.md)
-  now explains the eval harness, failure-driven hardening, current candidate
-  evidence, latency findings, and remaining release checks. It can serve as a
-  team briefing and the evidence spine for the final demo.
-- **2026-07-21:** Full-graph Player review confirmed the deck's result cards
-  and final [manual-test-guide link](../guides/self-learning-manual-test.guide.md)
-  with no browser warnings. The deck remains ready for team rehearsal.
+- **2026-07-21:** Eval methods and findings moved into a separate
+  [internal-review deck](../presentation/walkthrough.slides.md). The submission
+  video needs its own presentation Source rather than treating the technical
+  review as a marketing narrative.

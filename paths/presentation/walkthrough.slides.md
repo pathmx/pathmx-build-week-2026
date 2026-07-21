@@ -1,12 +1,11 @@
 ---
 type: slides
 status: ready
-title: What the learning-system evals taught us
+title: Codex learning-system eval review
 date: 2026-07-21
 related:
   - ../guides/self-learning-manual-test.guide.md
   - ../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md
-  - ../tasks/2026-07-20-produce-submission-video.task.md
 theme:
   color:
     bg: "#f7f3ea"
@@ -21,6 +20,16 @@ theme:
   measure: 72ch
   shape:
     radius: 0.8rem
+  dark:
+    color:
+      bg: "#101815"
+      fg: "#e9f2ee"
+      accent: "#63d2b8"
+      surface: "#18241f"
+      muted: "#a9bbb4"
+      border: "#3c544b"
+      link: "#8adfcf"
+      focus: "#a8efe2"
 play:
   steps:
     lists: items
@@ -29,106 +38,122 @@ play:
 
 <!-- id: opening -->
 
-# We tested the learning system, not just the lesson
+# Codex learning-system eval review
 
-### What the Codex eval loop taught us about a durable PathMX starter
+### Method, findings, and changes to the PathMX skills and Learning Starter
 
-`bootstrap.md` → learner space → milestone map → complete module → adaptation
+**Review baseline:** PathMX 0.1.22 · Codex CLI · July 21, 2026
 
 ---
 
 <!-- id: problem -->
 
-# A lesson can be good and still make learning feel broken
+# Evaluation objective and acceptance criteria
 
-Our first learning loop stayed too close to the learner's next move.
+Starting from only `bootstrap.md`, could an agent create and maintain a useful
+personal learning repository for a nontechnical learner?
 
-- The learner received too little structure to see achievable progress.
-- Each small step could require another slow agent turn.
-- Installation, context gathering, and authoring competed with learning time.
+- **Structure:** map the full Path before authoring a module.
+- **Learning quality:** supply examples, practice, hints, review, and checks.
+- **Repository quality:** leave valid PathMX and durable progress evidence.
+- **Continuity:** adapt honestly when the learner returns with new evidence.
+- **Responsiveness:** expose useful progress without blocking the learner.
 
-The product requirement became clear: **prepare a coherent learning buffer,
-then adapt at meaningful checkpoints.**
+Quality scores and learner-visible latency were evaluated separately.
 
 ---
 
 <!-- id: harness -->
 
-# The harness rehearses the real journey from one instruction
+# Harness and phase protocol
 
 ```text
-hosted bootstrap
+bootstrap.md
       ↓
-isolated repository + real Codex CLI turns
+temporary repository + real Codex CLI session
       ↓
-onboarding → proposed map → confirmed map → full module → return
+onboard → propose map → confirm map → author module → learner return
       ↓
-repository snapshots + phase contracts + quality judge + latency report
+snapshot checks + phase contracts + independent judge + timing report
 ```
 
-Four learner profiles exercised different failure surfaces: a concrete SQL
-beginner, an ambiguous AI goal, off-screen guitar practice, and a returning
-learner who reports confusion.
+Each phase had an explicit allowed scope and expected repository state. The
+harness retained the real agent transcript, working tree, check output, and
+timing events for later inspection.
+
+---
+
+<!-- id: coverage -->
+
+# Scenario coverage
+
+| Profile | Purpose | Main failure surface |
+| --- | --- | --- |
+| SQL beginner | Concrete technical goal | Scaffolding and exact Player route |
+| Ambiguous AI goal | Goal requires clarification | Question quality and map boundary |
+| Offline guitar | Practice happens away from screen | Modality and durable evidence |
+| Returning learner | Learner reports confusion | Honest progress and adaptation |
+
+Default-strength runs tested the expected quality ceiling. Faster/lower-reasoning
+runs tested whether the repository instructions carried enough of the behavior.
 
 ---
 
 <!-- id: power-finding -->
 
-# The default-strength profile passed quality—and exposed a 12m43s wait
+# Default-strength results: quality passed, latency did not
 
-| Scenario | Quality | Total flow | Experience finding |
-| --- | ---: | ---: | --- |
-| SQL beginner | 100% checks | 8m55s | Buffered module and exact route passed |
-| Ambiguous AI goal | 100% checks + judge | 18m55s | Final turn alone took 12m43s |
-| Offline guitar | 100% checks | 10m51s | Non-screen practice survived the flow |
-| Return with confusion | 100% checks + judge | 13m46s | Progress and feedback stayed honest |
+| Scenario              |             Quality | Total flow | Experience finding                     |
+| --------------------- | ------------------: | ---------: | -------------------------------------- |
+| SQL beginner          |         100% checks |      8m55s | Buffered module and exact route passed |
+| Ambiguous AI goal     | 100% checks + judge |     18m55s | Final turn alone took 12m43s           |
+| Offline guitar        |         100% checks |     10m51s | Non-screen practice survived the flow  |
+| Return with confusion | 100% checks + judge |     13m46s | Progress and feedback stayed honest    |
 
-Quality was not the only acceptance criterion. **Agent latency is part of the
-learner experience.**
+All four flows produced valid artifacts. The 12m43s final turn showed that
+artifact quality alone was not sufficient for an acceptable learning loop.
 
 ---
 
 <!-- id: floor-finding -->
 
-# The weaker profile showed exactly where instructions were doing too little
+# Lower-reasoning runs exposed instruction gaps
 
-| Iteration | What failed | Score |
-| --- | --- | ---: |
-| Initial | Authored a module before map confirmation; help was thin | 90.9% |
-| Map-only revision | Respected the boundary, but left the map in chat | 86.5% |
-| Persisted-map revision | Added an invalid Player root; module support failed | 59%, critical fail |
+| Iteration              | What failed                                              |              Score |
+| ---------------------- | -------------------------------------------------------- | -----------------: |
+| Initial                | Authored a module before map confirmation; help was thin |              90.9% |
+| Map-only revision      | Respected the boundary, but left the map in chat         |              86.5% |
+| Persisted-map revision | Added an invalid Player root; module support failed      | 59%, critical fail |
 
-These were useful failures. Each one isolated a place where a capable agent
-had been compensating for an underspecified system.
+The changing score is less important than the failure sequence: enforcing one
+boundary exposed the next missing repository contract.
 
 ---
 
 <!-- id: contracts -->
 
-# Every failure became a repository contract
+# Findings translated into repository contracts
 
-| Eval finding | Durable change |
-| --- | --- |
-| Premature authoring | Phase contracts enforce map-first confirmation |
-| Chat-only plan | Proposed Paths are persisted and linked with milestone status |
-| Blank-page variance | Path and two-session module scaffolds ship with the skill |
-| Accidental Player roots | The Starter allows one configured root and checks it |
-| Thin learning support | Checks require examples, hints, smaller attempts, review, and checkpoint |
-| Ambiguous navigation | Exact-route guidance rejects broad cache and basename searches |
-| Invisible waiting | Reports track first update, silent gaps, and five-minute turns |
+| Eval finding            | Durable change                                                           |
+| ----------------------- | ------------------------------------------------------------------------ |
+| Premature authoring     | Phase contracts enforce map-first confirmation                           |
+| Chat-only plan          | Proposed Paths are persisted and linked with milestone status            |
+| Blank-page variance     | Path and two-session module scaffolds ship with the skill                |
+| Accidental Player roots | The Starter allows one configured root and checks it                     |
+| Thin learning support   | Checks require examples, hints, smaller attempts, review, and checkpoint |
+| Ambiguous navigation    | Exact-route guidance rejects broad cache and basename searches           |
+| Invisible waiting       | Reports track first update, silent gaps, and five-minute turns           |
 
 ---
 
 <!-- id: candidate -->
 
-# The hardened fast-profile candidate is green
+# Final candidate results
 
-<div class="scorecards">
-  <div class="scorecard"><strong>100% / 100%</strong><span>checks / judge<br>ambiguous goal</span></div>
-  <div class="scorecard"><strong>6m56s</strong><span>complete flow<br>slowest turn 3m22s</span></div>
-  <div class="scorecard"><strong>100% / 100%</strong><span>checks / judge<br>return + adapt</span></div>
-  <div class="scorecard"><strong>10m07s</strong><span>five-turn flow<br>no turn over 5m</span></div>
-</div>
+- **100% / 100%** Checks / judge · ambiguous goal
+- **6m56s** Complete flow · slowest turn 3m22s
+- **100% / 100%** Checks / judge · return + adapt
+- **10m07s** Five-turn flow · no turn over 5m
 
 The learner saw a useful first update in **4–13 seconds** on every measured
 turn. Staged authoring made progress visible while the module was being built.
@@ -139,15 +164,15 @@ turn. Staged authoring made progress visible while the module was being built.
 
 <!-- id: limits -->
 
-# This proves the candidate lane—not the whole release experience
+# Interpretation and limits
 
-**Supported by evidence**
+**Supported**
 
 - The map-first boundary, buffered module, exact route, and return flow work.
 - Strong and faster profiles can produce checked, useful learning artifacts.
 - Failure-driven guardrails improve outcomes without relying on hidden context.
 
-**Still to prove**
+**Not yet established**
 
 - Repeat final-candidate runs to measure variance.
 - Exercise the published Starter and hosted bootstrap after release.
@@ -158,14 +183,15 @@ turn. Staged authoring made progress visible while the module was being built.
 
 <!-- id: next -->
 
-# Next: publish, rehearse manually, then gate on variance
+# Recommended next validation
 
 - Publish the Starter and canonical skills against the verified PathMX baseline.
 - Run hosted-bootstrap scenarios in a fresh Codex Desktop project.
 - Repeat fast and default-strength profiles; track quality and waiting separately.
-- Record only after Source, Player, exact routes, and the return flow pass.
+- Compare repeated runs by phase, quality score, first-update time, and longest
+  silent interval.
 
 **Team test guide:** [Run the manual Codex Desktop flow](../guides/self-learning-manual-test.guide.md)
 
-**The durable artifact is the product:** a personal learning repository that
-both the learner and their future agents can understand.
+The deck reports the current evidence; it is not a substitute for repeated
+runs or the manual Codex Desktop review.

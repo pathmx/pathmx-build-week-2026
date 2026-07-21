@@ -21,20 +21,27 @@ checks that reject thin or structurally invalid learning modules. Tram's early
 workflow contribution remains named in the canonical skill tests and design
 history.
 
-The [eval findings walkthrough](../presentation/walkthrough.slides.md) explains
-how default-strength runs exposed latency, weaker-model runs exposed instruction
-gaps, and the hardened fast-profile candidate reached 100% deterministic and
-independent-judge scores on the final ambiguous-goal and return-and-adapt
-scenarios. The linked [manual Codex Desktop guide](../guides/self-learning-manual-test.guide.md)
-lets the team repeat the same flow from the hosted bootstrap.
+The [internal eval review](../presentation/walkthrough.slides.md) documents the
+objective, harness phases, scenario coverage, scoring method, observed latency,
+failure-driven repository changes, current evidence, and limitations. It shows
+how default-strength runs exposed latency, lower-reasoning runs exposed
+instruction gaps, and the hardened fast-profile candidate reached 100%
+deterministic and independent-judge scores on the final ambiguous-goal and
+return-and-adapt scenarios. The linked
+[manual Codex Desktop guide](../guides/self-learning-manual-test.guide.md) lets
+the team repeat the same flow from the hosted bootstrap.
 
 The canonical suite passed 55 tests, both consumer repositories matched the
 canonical skills byte for byte, and the Starter compatibility fixture passed
 against its exact PathMX 0.1.21 baseline. PathMX 0.1.22 built the 279-artifact
 Build Week graph with only the three pre-existing Tufte-theme warnings. Player
 review confirmed the presentation styles, results cards, and manual-guide link
-with no browser warnings. Published-template variance runs and a complete
-human Codex Desktop pass remain release follow-up in the
+with no browser warnings. A follow-up light/dark Player pass improved the
+deck's type scale, made all four result metrics native Beats, and replaced the
+glowing cards with a flatter theme-responsive treatment. The deck includes a
+source-scoped fallback for a PathMX 0.1.22 dark-palette emission bug while
+retaining the documented dark theme values. Published-template variance runs
+and a complete human Codex Desktop pass remain release follow-up in the
 [starter task](../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md).
 
 ---

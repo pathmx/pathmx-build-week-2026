@@ -72,3 +72,8 @@ Codex Desktop flow before treating the kit as release-ready.
   byte-identical skill sync in both consumer repositories, the Starter's
   PathMX 0.1.21 compatibility fixture, and a 279-artifact Build Week build on
   PathMX 0.1.22. The build retained only three known Tufte-theme warnings.
+- **2026-07-21:** The eval walkthrough is now an internal technical review,
+  separate from the submission-video deck. It documents objectives, harness
+  phases, scenario coverage, scoring, latency, failure-driven changes, current
+  evidence, and limits. Light and dark Player review also confirmed four
+  native result Beats and a flatter report-style treatment.
