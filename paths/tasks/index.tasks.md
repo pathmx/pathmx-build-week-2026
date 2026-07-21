@@ -25,7 +25,7 @@ work and is not tracked as a Build Week task.
 | --- | --- | --- |
 | [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md) | Tram | Push the revised `paths` workflow skill from the Saturday test, then retest with Mark |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md) | Mark | Review the eval walkthrough, publish Starter + skills, then run the hosted and manual release lanes |
-| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Review the evidence-led deck, rehearse it in Player, and record the verified flow |
+| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md) | Mark | Verify the learner loop, rehearse the dedicated submission deck, and lock the third example before recording |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time |
 
 ---

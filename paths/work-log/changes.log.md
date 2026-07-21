@@ -9,6 +9,28 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## The submission story becomes a dedicated public Path
+
+The new [submission walkthrough](../presentation/submission-walkthrough.slides.md)
+turns the three-minute video into a seven-Block Path: one human learning
+problem, a concrete goal → readable Source → Player proof, durable continuation,
+three contrasting examples, an honest Build Week turning point, and a controlled
+zoom-out from learning to the broader Path concept. Its recurring route motif
+and restrained light/dark presentation styles support the spoken story without
+changing the separate internal evaluation deck.
+
+The owning [video task](../tasks/2026-07-20-produce-submission-video.task.md)
+records the three independent presentation reviews, the pre-existing versus
+Build Week contribution boundary, and the remaining recording decisions.
+PathMX 0.1.22 built the complete graph successfully; a 1280 × 720 Player pass
+covered all seven Blocks, forward and backward navigation, the closing fit, and
+the Chess, Kepler, and Campaign Forge routes. The only warnings were the three
+pre-existing unsupported Tufte-theme fields. Stopwatch rehearsal, live proof of
+the durable learner loop, and final acceptance or replacement of Campaign Forge
+remain before recording.
+
+---
+
 ## The personal learning starter is backed by a repeatable eval loop
 
 The canonical [PathMX skills](https://github.com/pathmx/pathmx-skills) now

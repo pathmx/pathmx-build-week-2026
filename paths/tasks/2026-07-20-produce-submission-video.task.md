@@ -18,15 +18,18 @@ related:
 Publish an accurate, audible, under-three-minute demo that uses a PathMX slide
 deck as both the script and a cloneable meta-demo.
 
-The final deck should live [here](../presentation/walkthrough.slides.md)
+The final submission deck should live
+[here](../presentation/submission-walkthrough.slides.md). The technical eval
+review remains in the separate
+[internal-review deck](../presentation/walkthrough.slides.md).
 
 ---
 
 ## Next Move
 
-Develop the dedicated video deck in Player, rehearse its submission story,
-then record the verified Source-to-Player flow and accepted examples in under
-three minutes.
+Verify the full goal → Source → Player → learner action → durable result loop,
+rehearse the dedicated submission deck to 2:45–2:50, and either accept Campaign
+Forge as the contrasting third example or replace it before recording.
 
 ---
 
@@ -51,3 +54,16 @@ three minutes.
   [internal-review deck](../presentation/walkthrough.slides.md). The submission
   video needs its own presentation Source rather than treating the technical
   review as a marketing narrative.
+- **2026-07-21:** Andrew applied three independent presentation reviews to a
+  dedicated seven-Block submission deck. The rewrite uses one human chess goal,
+  a recurring conversation-to-Path route, the full learner-loop proof target,
+  plainspoken example outcomes, the whole-course-generation turning point, an
+  explicit pre-existing/new boundary, and the ownership close. Campaign Forge
+  is the working third example until the team locks or replaces it.
+- **2026-07-21:** PathMX 0.1.22 built the revised deck successfully. A 1280×720
+  Player review covered all seven Blocks, confirmed the closing frame fits,
+  exercised forward and backward Block navigation, and verified the Chess,
+  Kepler, and Campaign Forge links resolve to their built routes. The deck has
+  325 visible words. A stopwatch rehearsal, the live durable learner loop, and
+  final approval of the third example remain pending; the only build warnings
+  came from pre-existing unsupported fields in the unrelated Tufte theme lab.
