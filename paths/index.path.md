@@ -9,15 +9,28 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 - [Work log/notes](./work-log/index.path.md)
 - [Guides](./guides/index.guides.md)
 
-## Current Direction
+---
 
-- [Build Week Reshape: Learning Happens in the Player](./work-log/2026-07-18-player-native-learning-reshape.brief.md)
+## Current Direction/Plans
+
 - [July 20 Build Week Check-In](./work-log/2026-07-20-build-week-checkin.notes.md)
 - [Devpost Submission Draft](./work-log/2026-07-20-devpost-submission-draft.notes.md)
 - [Submission Readiness Checklist](./guides/2026-07-20-build-week-submission-readiness.guide.md)
 
+---
+
+## Submission Work
+
+These are the demos, presentation materials, used in the OpenAI Build Week submission.
+
+- [Video Presentation Slides](./presentation/index.presentation.md)
+- [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
+- [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
+- [PathMX Skills](https://github.com/pathmx/pathmx-skills)
+
+---
+
 ## External Links
 
-- [Build Week Space](https://build-week.pathmx.net/)
+- [Hosted Build Week Space](https://build-week.pathmx.net/)
 - [Devpost Build Week Project](https://devpost.com/software/learn-anything-dt3ewx)
-- [Learner-facing repository](https://github.com/pathmx/pathmx-learning-starter)
