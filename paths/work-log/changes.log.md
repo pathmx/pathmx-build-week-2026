@@ -15,10 +15,46 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:28:11-04:00"
+date: "2026-07-21T21:35:00-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## A research bench for contested claims joins Labs
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The Labs hub now links a
+[research bench demo](../labs/research-bench/index.demo.md) that turns "should
+you always finish the antibiotic course?" into a durable, playable evidence
+bench: two pinned claims, six ordinary Markdown citations balanced across
+both sides (WHO, U.S. CDC public-facing and stewardship pages, NHS, the
+[BMJ 2017 Llewelyn analysis](https://www.bmj.com/content/358/bmj.j3418), and
+the [JAMA Internal Medicine 2016 Spellberg viewpoint](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2536180)),
+a starting-confidence and a post-reading better-supported single choice, a
+long-text "what would change your mind", a fielded open-questions Block, and
+a copyable Codex prompt that asks for the next discriminating question
+grounded in the bench state. No PathMX citation syntax was invented; no
+learner response or submission is prefilled. The
+[owning task](../tasks/2026-07-21-build-research-bench-lab.task.md) records
+the full activity, verification, and skipped-Play reason.
+
+Verified with `bunx pathmx build paths/index.path.md -o .pathmx-check
+--clean` (PathMX 0.1.25) in an isolated worktree: built 1 path, 387
+artifacts, no warnings. `bunx pathmx route
+paths/labs/research-bench/index.demo.md --json -o .pathmx-check` resolves to
+route `/labs/research-bench`. Live Player review was skipped because no
+repository-owned `pathmx play` server was running in this cloud-agent
+sandbox; the route and Blocks are verified from built metadata.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:28:11-04:00"
+-->
 
 ## A next-demo shortlist parks post-submission lab ideas
 
