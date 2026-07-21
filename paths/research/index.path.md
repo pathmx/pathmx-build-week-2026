@@ -5,6 +5,8 @@ Helpful links and references for the build week project.
 - [Learning-agent eval technical report](./learning-agent-evals.brief.md) —
   method, data, charts, instruction changes, subagent experiment, and limits
 - [Campus Constellation: College Networking Skills](./campus-constellation-networking.path.md)
+- [Next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md)
+  — Post-submission lab candidates, coverage gaps, and ranked picks
 - [Relationship Garden implementation plan](../andrew/2026-07-21-relationship-garden-implementation.plan.md)
   — Andrew's agent handoff for a playable personal CRM / Parallel Lives garden
 - [Relationship Garden concept outline](../andrew/2026-07-21-relationship-garden-outline.notes.md)

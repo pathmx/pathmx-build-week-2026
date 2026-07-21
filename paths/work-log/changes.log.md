@@ -15,10 +15,34 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:33:57-04:00"
+date: "2026-07-21T17:48:24-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## Second-wave demo options join the shortlist
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+While Campus Constellation, YouTube watch-and-recall, and the research bench
+build in parallel, the
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) now
+marks those three as in flight and parks eight second-wave options with Player
+beats, costs, and risks. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) defaults
+the next greenfield to negotiation rehearsal, with debugging dojo as the STEM
+alternate.
+
+Notes-only coordination. Live Player review skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:33:57-04:00"
+-->
 
 ## Active release consumers follow the latest verified PathMX
 
@@ -44,10 +68,32 @@ files remain owned by their separate task and are not part of this change.
 
 <!--
 type: change
-date: "2026-07-21T17:05:42-04:00"
+date: "2026-07-21T17:28:11-04:00"
 -->
 
-[@change-published]: ./changes.components.md
+## A next-demo shortlist parks post-submission lab ideas
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+After syncing to `origin/main` at `4511f6a`, Andrew's scratchpad now includes a
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) that
+maps current Labs coverage, names missing learning shapes, and ranks five
+candidates. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) keeps the
+default recommendation to graduate Campus Constellation first and forbids a new
+submission-night video hero.
+
+This is notes-only coordination work. No new lab Source was authored, and live
+Player review was skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:05:42-04:00"
+-->
 
 ## PathMX's public status language moves into Labs
 
