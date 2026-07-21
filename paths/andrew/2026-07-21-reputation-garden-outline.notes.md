@@ -317,7 +317,9 @@ Component over local JSON/Markdown resources.
 
 ## Next Move
 
-Decide naming (Reputation Garden vs softer alternative), then either:
+Implementation handoff for another agent:
 
-1. keep refining this brief, or
-2. author a thin lab skeleton: sample people + static garden component + presets.
+- [Reputation Garden implementation plan](./2026-07-21-reputation-garden-implementation.plan.md)
+
+Naming for MVP is locked there as **Reputation Garden** (soft stewardship
+copy in UI).

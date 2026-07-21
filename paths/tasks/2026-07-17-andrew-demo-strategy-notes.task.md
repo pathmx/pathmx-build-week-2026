@@ -9,6 +9,7 @@ related:
   - ../andrew/index.path.md
   - ../andrew/2026-07-17-build-week-wedge-demo-memory.notes.md
   - ../andrew/2026-07-21-reputation-garden-outline.notes.md
+  - ../andrew/2026-07-21-reputation-garden-implementation.plan.md
   - ../work-log/2026-07-14-hackathon-meeting.notes.md
 ---
 
@@ -24,8 +25,10 @@ the team hub or landing on `main` until he promotes them.
 
 ## Next Move
 
-Andrew reviews the Reputation Garden outline, decides naming and whether to
-author a thin lab skeleton next, then promotes selected slices only when ready.
+Hand the
+[implementation plan](../andrew/2026-07-21-reputation-garden-implementation.plan.md)
+to an implementing agent on a fresh lab branch off `main`, or promote the plan
+into a shared task when ready.
 
 ---
 
@@ -40,6 +43,12 @@ author a thin lab skeleton next, then promotes selected slices only when ready.
 
 ## Activity
 
+- **2026-07-21:** Added agent handoff
+  [implementation plan](../andrew/2026-07-21-reputation-garden-implementation.plan.md)
+  with locked decisions, file map, schemas, component/path specs, slices A–F,
+  verification, and out-of-scope. Still personal / unlinked from team hub.
+  PathMX scratch build + `git diff --check` recorded with this push; Play
+  review skipped (ordinary notes).
 - **2026-07-21:** Added
   [Reputation Garden + Parallel Lives outline](../andrew/2026-07-21-reputation-garden-outline.notes.md):
   experience brief, person/CRM schema, recency wilt postures, Parallel Lives

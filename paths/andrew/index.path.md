@@ -12,3 +12,4 @@ into `paths/research/`, `paths/work-log/`, or the submission story.
 
 - [Demo wedge, wow, and long-term memory](./2026-07-17-build-week-wedge-demo-memory.notes.md)
 - [Reputation Garden + Parallel Lives outline](./2026-07-21-reputation-garden-outline.notes.md)
+- [Reputation Garden implementation plan (agent handoff)](./2026-07-21-reputation-garden-implementation.plan.md)

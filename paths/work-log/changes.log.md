@@ -9,6 +9,22 @@ related:
 
 # 2026-07-15 — Build Week Changes
 
+## Andrew adds an agent-ready Reputation Garden implementation plan
+
+Andrew's personal scratchpad now includes a detailed
+[implementation plan](../andrew/2026-07-21-reputation-garden-implementation.plan.md)
+for the Reputation Garden lab: locked MVP decisions, file map, person/JSON
+schemas, sample cohort, Literate Component and path specs, slices A–F,
+verification, and out-of-scope boundaries. It builds on the
+[concept outline](../andrew/2026-07-21-reputation-garden-outline.notes.md) and
+stays unlinked from the team hub for handoff to an implementing agent. Tracked
+in the
+[owning task](../tasks/2026-07-17-andrew-demo-strategy-notes.task.md). PathMX
+scratch build verification is recorded there; Play review was skipped because
+these are ordinary notes with no new interaction behavior.
+
+---
+
 ## Andrew outlines a Reputation Garden relationship studio
 
 Andrew's personal scratchpad now includes a
