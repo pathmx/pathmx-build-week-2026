@@ -12,9 +12,60 @@ Use the narrowest layer that owns the visual choice.
 | Need | Use |
 | --- | --- |
 | Color, type, measure, or shape tokens | `theme` frontmatter |
+| Select a Source or Block root for reusable CSS | `styles.classes` in frontmatter or Block topmatter |
 | CSS for one Block | `[@styles]` in that Block |
 | CSS for one root graph | `[@root.styles]` in the root Source |
 | CSS inside a component | Component CSS with `:self` |
+
+## Select Source and Block roots
+
+Add project-owned CSS class tokens under `styles.classes`:
+
+```md
+---
+styles:
+  classes: [landing-page]
+---
+
+# Welcome
+
+---
+
+<!--
+id: hero
+styles:
+  classes: [page-header, full-bleed]
+-->
+
+## Start here
+```
+
+The Source renders as `.pmx-document.landing-page`. The Block renders as
+`.pmx-block.pmx-prose.page-header.full-bleed`. Core classes remain first;
+duplicate authored tokens are removed while keeping authored order.
+
+`classes` must be an array with one non-empty CSS class token per entry. An
+entry cannot contain whitespace, and the `pmx-` prefix is reserved for PathMX.
+PathMX does not rename or interpret accepted tokens. Prefer semantic project
+names for durable Sources. Utility tokens work when the repository's local CSS
+pipeline supports them.
+
+Classes select roots; they do not load CSS or add behavior. Pair them with
+`[@styles]`, `[@root.styles]`, or another project stylesheet:
+
+```css
+.pmx-document.landing-page:has(> .pmx-block.page-header:first-child) {
+  padding-block-start: 0;
+}
+
+.pmx-block.page-header > h1:first-child {
+  margin-block-start: 0;
+}
+```
+
+Classes attach only to real Source and Block roots. Included content does not
+gain another `.pmx-block`; put the class on the host Block when an include
+composition needs a styling hook.
 
 ## CSS imports
 
@@ -27,8 +78,10 @@ Use the narrowest layer that owns the visual choice.
 Targets must be local CSS. `@styles` follows its Block. `@root.styles` applies
 to the active root graph and is ignored with a warning outside the root.
 
-Directive scope does not rewrite CSS selectors. Scope rules when they must not
-match other documents:
+Directive scope does not rewrite CSS selectors. Prefer authored
+`styles.classes` when a treatment should be reusable. Use
+`data-pathmx-source` only when a rule deliberately belongs to one Source
+identity:
 
 ```css
 @scope (.pmx-document[data-pathmx-source="paths/example.lesson"]) {
@@ -37,6 +90,11 @@ match other documents:
   }
 }
 ```
+
+PathMX keeps its prose and feature baselines at zero specificity. Later
+authored rules such as `h1 { font-size: ... }` override the default heading
+scale without `!important` or selector-weight tricks. Use `:scope` when its
+structural meaning is useful, not merely to win the cascade.
 
 ## Compose graph and Source styles
 
