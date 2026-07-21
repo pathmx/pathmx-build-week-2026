@@ -60,3 +60,7 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
   networking mission Path: pick a North Star, draft one modular ask, rehearse
   awkward moments with random flashcards, and leave with a 48-hour real-world
   mission plus a reason-based follow-up.
+- [Research Bench: What Should I Believe?](./research-bench/index.demo.md) — a
+  durable evidence bench for one contested question, with pinned competing
+  claims, ordinary Markdown citations, dated confidence and open-questions
+  responses, and a copyable Codex prompt for the next discriminating question.
