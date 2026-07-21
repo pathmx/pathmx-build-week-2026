@@ -127,10 +127,18 @@ boundary exposed the next missing repository contract.
 # Final candidate results
 
 <lab-stats label="Final candidate evaluation metrics">
-  <lab-stat value="100% / 100%" label="Checks / judge" detail="Ambiguous goal"></lab-stat>
-  <lab-stat value="6m56s" label="Complete flow" detail="Slowest turn 3m22s"></lab-stat>
-  <lab-stat value="100% / 100%" label="Checks / judge" detail="Return + adapt"></lab-stat>
-  <lab-stat value="10m07s" label="Five-turn flow" detail="No turn over 5m"></lab-stat>
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Ambiguous goal">
+    <slot name="icon">:lucide-badge-check:</slot>
+  </lab-stat>
+  <lab-stat value="6m56s" label="Complete flow" detail="Slowest turn 3m22s">
+    <slot name="icon">:lucide-timer:</slot>
+  </lab-stat>
+  <lab-stat value="100% / 100%" label="Checks / judge" detail="Return + adapt">
+    <slot name="icon">:lucide-refresh-cw:</slot>
+  </lab-stat>
+  <lab-stat value="10m07s" label="Five-turn flow" detail="No turn over 5m">
+    <slot name="icon">:lucide-zap:</slot>
+  </lab-stat>
 </lab-stats>
 
 The learner saw a useful first update in **4–13 seconds** on every measured

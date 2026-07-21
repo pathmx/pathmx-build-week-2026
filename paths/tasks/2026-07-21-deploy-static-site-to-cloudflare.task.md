@@ -70,3 +70,13 @@ script's `--help` output rather than the judge-facing README.
 - **2026-07-21:** Updated README's build and Play commands to `@latest` during
   active release cutting. Keep this task open until both surfaces are pinned
   to the release accepted at the 7:30 PM submission freeze.
+- **2026-07-21:** Live custom-domain review found that plain `pathmx build`
+  emits rendered documents without the embedded Player shell. Updated the
+  release command to pass the supported `--player` flag and added a regression
+  check for that deployment invariant.
+- **2026-07-21:** The embedded shell exposed a second static-host seam: Player
+  modules import stable public chunk URLs while the build stores content-hashed
+  artifact filenames. Added Cloudflare rewrites for every manifest public path
+  that differs from its artifact path. Local Wrangler parsed all 243 rules;
+  the Player mounted Browse, Explore, and Start Play controls with no console
+  errors. The corrected bundle is ready to redeploy.

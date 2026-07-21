@@ -1,0 +1,183 @@
+/* Technical report treatment for the learning-agent eval brief. */
+@scope (.pmx-document.eval-report) {
+  :scope {
+    --eval-accent-soft: color-mix(
+      in oklch,
+      var(--pmx-color-accent) 12%,
+      var(--pmx-color-surface)
+    );
+    --eval-rule: color-mix(
+      in oklch,
+      var(--pmx-color-border) 82%,
+      transparent
+    );
+    --eval-code-bg: color-mix(
+      in oklch,
+      var(--pmx-color-accent) 7%,
+      var(--pmx-color-bg)
+    );
+    --eval-mono: var(
+      --pmx-font-mono,
+      "Geist Mono",
+      "SFMono-Regular",
+      Consolas,
+      "Liberation Mono",
+      Menlo,
+      monospace
+    );
+
+    /* Align PathMX / Shiki code chrome with the cool report surface. */
+    --pmx-code-bg: var(--eval-code-bg);
+    --pmx-code-fg: var(--pmx-color-fg);
+  }
+
+  :scope > .pmx-block:first-child {
+    padding-block-start: clamp(1.5rem, 4cqi, 2.5rem);
+  }
+
+  :scope > .pmx-block:first-child > h1:first-of-type {
+    max-inline-size: 22ch;
+    margin-block-end: 0.45em;
+  }
+
+  :scope > .pmx-block:first-child > h3:first-of-type {
+    margin-block: 0 0.65em;
+    color: var(--pmx-color-muted);
+    font-size: 0.92rem;
+    font-weight: 620;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  :scope > .pmx-block:first-child > h3:first-of-type + p {
+    margin-block: 0 1.4rem;
+    color: var(--pmx-color-muted);
+    font-family: var(--eval-mono);
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    margin-block: 2.4em 0.65em;
+    padding-block-end: 0.4em;
+    border-block-end: 1px solid var(--eval-rule);
+  }
+
+  h2 + p,
+  h2 + table,
+  h2 + ul {
+    margin-block-start: 1rem;
+  }
+
+  :scope > .pmx-block:first-child > ul {
+    display: grid;
+    gap: 0.65rem;
+    margin-block: 1.35rem;
+    padding: clamp(1rem, 2.4cqi, 1.25rem);
+    list-style: none;
+    border: 1px solid var(--eval-rule);
+    border-radius: max(var(--pmx-shape-radius, 0.75rem), 1rem);
+    background: var(--eval-accent-soft);
+  }
+
+  :scope > .pmx-block:first-child > ul > li {
+    position: relative;
+    margin: 0;
+    padding-inline-start: 1.15rem;
+  }
+
+  :scope > .pmx-block:first-child > ul > li::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0.55em;
+    inset-inline-start: 0;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+    border-radius: 999px;
+    background: var(--pmx-color-accent);
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+
+  th {
+    color: var(--pmx-color-muted);
+    font-size: 0.82rem;
+    font-weight: 650;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  pre,
+  :where(code) {
+    font-family: var(--eval-mono);
+  }
+
+  .pmx-code-block,
+  :scope > .pmx-block > pre {
+    border-color: var(--eval-rule);
+    border-radius: max(var(--pmx-shape-radius, 0.75rem), 0.9rem);
+    background: var(--eval-code-bg);
+    color: var(--pmx-color-fg);
+    box-shadow: none;
+  }
+
+  .pmx-code-block > pre,
+  .pmx-code-block .shiki,
+  .pmx-code-block pre code {
+    background: transparent !important;
+    color: inherit;
+  }
+
+  .pmx-code-block > pre {
+    padding: 1rem 1.15rem;
+  }
+
+  .pmx-mermaid {
+    margin-block: 1.5rem 1.75rem;
+    padding: clamp(1rem, 2.4cqi, 1.35rem);
+    border: 1px solid var(--eval-rule);
+    border-radius: max(var(--pmx-shape-radius, 0.75rem), 1rem);
+    background: var(--eval-code-bg);
+    overflow-x: auto;
+  }
+
+  .pmx-mermaid-svg,
+  .pmx-mermaid svg {
+    display: block;
+    margin-inline: auto;
+    max-inline-size: 100%;
+    height: auto;
+  }
+
+  /* PathMX emits Nord defaults as inline SVG vars; retint to the report theme. */
+  .pmx-mermaid svg {
+    --bg: var(--eval-code-bg) !important;
+    --fg: var(--pmx-color-fg) !important;
+    --line: color-mix(
+      in oklch,
+      var(--pmx-color-border) 70%,
+      var(--pmx-color-muted)
+    ) !important;
+    --accent: var(--pmx-color-accent) !important;
+    --muted: var(--pmx-color-muted) !important;
+    --surface: color-mix(
+      in oklch,
+      var(--pmx-color-accent) 10%,
+      var(--pmx-color-surface)
+    ) !important;
+    --border: var(--pmx-color-border) !important;
+  }
+
+  .eval-bars {
+    padding: clamp(1rem, 2.5cqi, 1.35rem);
+    border: 1px solid var(--eval-rule);
+    border-radius: max(var(--pmx-shape-radius, 0.75rem), 1rem);
+    background: var(--pmx-color-surface);
+  }
+
+  .lab-stats {
+    margin-block: 1.75rem 0.5rem;
+  }
+}

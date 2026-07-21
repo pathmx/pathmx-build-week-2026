@@ -37,21 +37,10 @@ theme:
 
 <p class="tufte-subtitle">A source-local essay theme for evidence, explanation, and the useful edge of the page</p>
 
-<p class="tufte-byline">PathMX demo · July 2026</p>
+<p class="tufte-byline">July 2026</p>
 
-<aside class="tufte-source-note">
-  <strong>What to copy.</strong> The
-  <a href="https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/tufte-theme/index.demo.md">landing Source</a>
-  contains the theme tokens and responsive sidenote markup; the
-  <a href="https://github.com/pathmx/pathmx/blob/da752ad5/paths/demos/tufte-theme/styles/tufte-theme.css">scoped stylesheet</a>
-  owns the editorial
-  presentation. Minimum PathMX: <code>@fellowhumans/pathmx@0.1.9</code>.
-  Reviewed upstream commit: <a href="https://github.com/pathmx/pathmx/tree/da752ad5/paths/demos/tufte-theme">canonical Tufte theme demo</a>.
-</aside>
-
-This demo adapts ideas from [Tufte CSS](https://edwardtufte.github.io/tufte-css/):
-quiet typography, a generous margin, and graphics kept close to the argument.
-It is an authored stylesheet—not a new runtime preset.
+Quiet typography, a generous margin, and graphics kept close to the argument —
+ideas adapted from [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
 ---
 
@@ -74,7 +63,7 @@ the same note in the reading flow.
   </blockquote>
   <blockquote>
     <p>Use the margin for context that matters, but should not interrupt the sentence carrying the argument.</p>
-    <footer>PathMX authoring principle</footer>
+    <footer>Editorial principle</footer>
   </blockquote>
 </div>
 
@@ -151,18 +140,10 @@ remain readable while the action stays unmistakable.<label for="sn-links" class=
 
 ---
 
-## A useful experiment, not a universal answer
-
-Tufte CSS describes itself as a starting point rather than a final design goal.
-This demo takes the same stance. The stylesheet is scoped to this source and
-uses the current PathMX theme tokens, document root, and block structure. It
-does not add a new package, component dialect, or global style contract.
-
-That makes it useful evidence that the runtime can remain quiet while authored
-CSS gives a particular document a strong editorial voice.
-
 <aside class="tufte-source-note">
-  <strong>Source and attribution.</strong> This original PathMX adaptation is informed by the MIT-licensed <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS project</a> and its public demonstration. It uses a local system-font stack rather than redistributing ET Book.
+  <strong>Attribution.</strong> Informed by the MIT-licensed
+  <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS project</a>.
+  Uses a local system-font stack rather than redistributing ET Book.
 </aside>
 
-[Back to the Build Week labs](../index.path.md)
+[Back to the labs](../index.path.md)

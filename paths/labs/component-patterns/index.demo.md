@@ -4,29 +4,16 @@ status: experimental
 
 [@patterns]: ./interaction-patterns.components.md
 
-# Literate Component Proving Ground
+# Interaction Patterns
 
-These examples are reference implementations for Andrew and other Build Week
-agents. Copy the smallest pattern that matches the experiment; do not combine
-all three into every interaction.
-
-Minimum PathMX: `@fellowhumans/pathmx@0.1.9`. The durable Outlier Studio uses
-`ctx.response` and `responses.save` and intentionally has no 0.1.8
-compatibility path.
-
-| Pattern        | Use it for                                       | Canonical seam                                   |
-| -------------- | ------------------------------------------------ | ------------------------------------------------ |
-| Model Stepper  | Meaningful stages the Player should traverse     | ordered `states` and `state.set`                 |
-| Outlier Studio | Direct manipulation plus explicit durable evidence | `ctx.response`, local draft state, and `responses.save` |
-| Sample Stream  | Async data plus continuous work                  | `ctx.data`, loading/failure UI, and `ctx.effect` |
+Three small interaction patterns: staged reasoning, a direct-manipulation
+studio with a saved observation, and an async sample stream.
 
 ---
 
 ## Player-Visible Model Steps
 
-The states are ordered with `|`, so Predict, Inspect, and Explain become
-meaningful steps on the component's Beat. The buttons and Player controls use
-the same `state` channel.
+Predict, Inspect, and Explain are ordered stages on one Beat.
 
 <model-stepper
 states="predict | inspect | explain"
@@ -61,9 +48,7 @@ response:
 
 ## Data-Driven Direct Manipulation
 
-Moving the slider changes a private draft. Save writes only the final
-observation into this Block's readable `response` data. Reloading reconstructs
-the component from `ctx.response`; intermediate slider positions stay local.
+Move the slider, then save the observation you want to keep.
 
 <outlier-studio
   values="12,13,12,14,13,60"
@@ -76,27 +61,7 @@ the component from `ctx.response`; intermediate slider positions stay local.
 
 ## Async Data And Presented Lifetime
 
-The stream loads a local JSON resource, renders an explicit loading or failure
-message, and advances only while the component is presented. Enter and leave
-this Beat in Play to verify that its interval stops and resumes without
-overlap.
+A local JSON stream that loads, fails loudly when needed, and only advances
+while this Beat is presented.
 
 <sample-stream label="Delivery-time samples" />
-
----
-
-## Copy Rules
-
-1. Keep each script scoped to its supplied `el`; never scan the page.
-2. Use ordered component state only for stages the Player should understand.
-3. Keep exploratory browser state out of learner evidence.
-4. Put one hidden `response` control in the coordinating component when the
-   stable Block maps `save: responses.save`.
-5. Show loading, failure, and reduced-motion behavior in authored UI.
-6. Put intervals, animation frames, audio, and render loops in
-   `ctx.effect(..., { when: "presented" })`.
-7. Link any proposed new runtime or Player capability from a design review;
-   do not prototype it as an undocumented local API.
-
-Review the full literate definitions in
-[Interaction Patterns](./interaction-patterns.components.md).

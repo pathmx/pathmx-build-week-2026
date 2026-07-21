@@ -16,21 +16,8 @@ theme:
 
 # Focus Beats
 
-Focus beats are punctuation for attention. Each one is a small, quiet mark in
-the flow — a rest, a breath, a held question, a timebox — that curriculum can
-drop between moves to shape how a lesson feels to play through.
-
-The family's design rules:
-
-- A beat is typographic, not a widget. No cards, no chrome, no dashboards;
-  whitespace and stillness carry the design.
-- The Player does the pacing. Advancing the lesson is the interaction; a beat
-  makes that moment feel intentional.
-- A beat never blocks, scores, diagnoses, plays audio, or records. All state
-  stays in the browser.
-
-The micro-lesson below uses all four beats in earnest. Play it end to end
-first; the author-facing grammar follows it.
+Punctuation for attention: a rest, a breath, a held question, a timebox. Play
+the short estimation lesson below.
 
 ---
 
@@ -86,44 +73,4 @@ factor of two each, and their errors tend to cancel.
   in your head.
 </beat-think>
 
----
-
-<!--
-id: grammar
-title: The Grammar
--->
-
-## The grammar
-
-Four beats, one authoring shape each. All of them read as plain Markdown, keep
-state in the browser, and never gate forward movement.
-
-| Beat | The move | Props |
-| --- | --- | --- |
-| `<beat-pause>` | A typographic rest. With `seconds`, its three dots fill quietly while the learner sits with the moment. | `seconds` (optional) |
-| `<beat-breathe>` | A short breath cycle before demanding work. Runs only while presented, settles on its own, and stays settled. | `cycles` (3), `inhale` (4), `exhale` (6) |
-| `<beat-think>` | A held question. The prompt stands alone as its own Beat; advancing — or Reveal in Browse — uncovers the continuation. | `cue`, `reveal` |
-| `<beat-timer>` | A timebox for doing, not reading. Learner-started, pausable, pauses itself off-Beat, never auto-advances. | `minutes` (2), `cue` |
-
-Authored, a beat reads as one quiet line in the source:
-
-```md
-<beat-pause seconds="6">Hold your number. Don't revise it yet.</beat-pause>
-
-<beat-think prompt="Before any arithmetic: 10, 100, or 1,000?">
-  Most instincts land near 100.
-</beat-think>
-```
-
----
-
-## Boundaries
-
-- All beat state is browser-local. A durable reflection or answer belongs to a
-  question Block with a real response contract, never to a beat.
-- Timing and breathing are private interaction state, not Player states;
-  skipping forward never steps a learner through animation phases.
-- Reduced motion swaps animation for immediate state changes and plain text.
-- Without JavaScript, every beat renders as readable prose.
-
-[Back to the labs index](../index.path.md)
+[Back to the labs](../index.path.md)

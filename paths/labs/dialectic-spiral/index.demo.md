@@ -34,7 +34,7 @@ theme:
 [@spiral]: ./dialectic-spiral.components.md
 [@styles]: ./styles/dialectic-spiral-demo.css
 
-<p class="spiral-demo__kicker">A generative artifact, rebuilt natively</p>
+<p class="spiral-demo__kicker">Thesis · antithesis · synthesis</p>
 
 # The spiral of thought.
 
@@ -116,12 +116,8 @@ title: Lineage
 
 # Where this came from.
 
-This lab is a native port of the
-[Hegelian Spiral](https://hegelianspiral.pplx.app/) from the team's
-[shared Perplexity artifacts](../../research/resources.path.md). The original
-autoplays once; here the spiral's stages are ordered component states, so the
-Player's own forward step performs each sublation. The cross-artifact style
-ideas worth reusing are collected in the
-[design notes](../../research/perplexity-artifact-design-notes.notes.md).
+After the
+[Hegelian Spiral](https://hegelianspiral.pplx.app/)
+artifact. Here each sublation is a Play step.
 
-[Back to the labs index](../index.path.md)
+[Back to the labs](../index.path.md)

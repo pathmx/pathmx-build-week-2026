@@ -7,6 +7,32 @@ related:
   - ../guides/self-learning-manual-test.guide.md
   - ../presentation/walkthrough.slides.md
   - ../index.path.md
+theme:
+  color:
+    bg: "#f3f7f8"
+    fg: "#152024"
+    muted: "#5f6d72"
+    surface: "#ffffff"
+    link: "#0f7a8a"
+    accent: "#0f7a8a"
+    border: "#d3e0e3"
+    focus: "#0f7a8a"
+  prose:
+    size: 1.0625rem
+    leading: 1.7
+  measure: 48rem
+  shape:
+    radius: 0.85rem
+  dark:
+    color:
+      bg: "#0c1416"
+      fg: "#eef6f7"
+      muted: "#9aadb2"
+      surface: "#152225"
+      link: "#5ec8d4"
+      accent: "#5ec8d4"
+      border: "#2a3b3f"
+      focus: "#7ad6e0"
 styles:
   classes:
     - eval-report
@@ -14,6 +40,7 @@ styles:
 
 [@charts]: ./learning-agent-evals.components.md
 [@lab-stats]: ../styles/lab.components.md
+[@styles]: ./learning-agent-evals.css
 
 # Evaluating a repository-guided learning agent
 
@@ -51,10 +78,18 @@ behind the submission rather than relying only on a demo.
   one comparison, but increased first-module wall time.
 
 <lab-stats label="Current evidence summary">
-  <lab-stat value="4" label="Learner scenarios" detail="Concrete, ambiguous, offline, and returning"></lab-stat>
-  <lab-stat value="5" label="Measured phases" detail="Onboard through learner return"></lab-stat>
-  <lab-stat value="100%" label="Candidate checks" detail="Selected final candidate flows"></lab-stat>
-  <lab-stat value="4–13s" label="First useful update" detail="Every measured candidate turn"></lab-stat>
+  <lab-stat value="4" label="Learner scenarios" detail="Concrete, ambiguous, offline, and returning">
+    <slot name="icon">:lucide-users:</slot>
+  </lab-stat>
+  <lab-stat value="5" label="Measured phases" detail="Onboard through learner return">
+    <slot name="icon">:lucide-layers:</slot>
+  </lab-stat>
+  <lab-stat value="100%" label="Candidate checks" detail="Selected final candidate flows">
+    <slot name="icon">:lucide-badge-check:</slot>
+  </lab-stat>
+  <lab-stat value="4–13s" label="First useful update" detail="Every measured candidate turn">
+    <slot name="icon">:lucide-zap:</slot>
+  </lab-stat>
 </lab-stats>
 
 ---
@@ -103,14 +138,22 @@ The harness runs the real Codex CLI in an isolated temporary repository. It
 uses a multi-turn scenario rather than asking one model call to simulate the
 entire journey.
 
-```text
-hosted bootstrap
-      ↓
-isolated repository + real Codex CLI thread
-      ↓
-onboard → proposed map → confirmed map → complete module → learner return
-      ↓
-snapshots + phase contracts + repository checks + optional judge + timing
+```mermaid
+flowchart TB
+  bootstrap["hosted bootstrap"]
+  repo["isolated repository + real Codex CLI thread"]
+  bootstrap --> repo
+  repo --> phases
+
+  subgraph phases ["Learner journey"]
+    direction LR
+    onboard["onboard"] --> proposed["proposed map"]
+    proposed --> confirmed["confirmed map"]
+    confirmed --> module["complete module"]
+    module --> ret["learner return"]
+  end
+
+  phases --> evidence["snapshots · phase contracts · repository checks · optional judge · timing"]
 ```
 
 At every phase the harness records the transcript, repository snapshot, Git

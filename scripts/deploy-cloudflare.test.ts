@@ -3,7 +3,7 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
-import { stagePathMXBuild } from "./deploy-cloudflare";
+import { createPathMXBuildCommand, stagePathMXBuild } from "./deploy-cloudflare";
 
 const temporaryRoots: string[] = [];
 
@@ -35,7 +35,7 @@ async function fixture(): Promise<{ buildRoot: string; root: string; stageRoot: 
   await writeFile(path.join(outputRoot, "stale.txt"), "must not deploy\n");
   await writeFile(path.join(outputRoot, "artifacts.json"), JSON.stringify({
     artifacts: {
-      "/assets/runtime.1234.js": {
+      "/assets/runtime.js": {
         artifactPath: "assets/runtime.1234.js",
         cachePolicy: { mode: "immutable" },
       },
@@ -66,11 +66,14 @@ describe("stagePathMXBuild", () => {
       stageRoot,
     });
 
-    expect(result).toMatchObject({ artifactCount: 5, pathId: "index.path", redirectCount: 3 });
+    expect(result).toMatchObject({ artifactCount: 5, pathId: "index.path", redirectCount: 4 });
     expect(await readFile(path.join(stageRoot, "assets/index.path.html"), "utf8")).toContain("Learning Labs");
     expect(await Bun.file(path.join(stageRoot, "assets/stale.txt")).exists()).toBe(false);
     expect(await readFile(path.join(stageRoot, "assets/_redirects"), "utf8")).toContain(
       "/index.path /index.path.html 200",
+    );
+    expect(await readFile(path.join(stageRoot, "assets/_redirects"), "utf8")).toContain(
+      "/assets/runtime.js /assets/runtime.1234.js 200",
     );
     expect(await readFile(path.join(stageRoot, "assets/_headers"), "utf8")).toContain(
       "Cache-Control: public, max-age=31536000, immutable",
@@ -93,3 +96,17 @@ describe("stagePathMXBuild", () => {
   });
 });
 
+describe("createPathMXBuildCommand", () => {
+  test("requests the embedded Player shell", () => {
+    expect(createPathMXBuildCommand("paths/index.path.md", "/tmp/build")).toEqual([
+      "bunx",
+      "@fellowhumans/pathmx@latest",
+      "build",
+      "paths/index.path.md",
+      "--player",
+      "-o",
+      "/tmp/build",
+      "--clean",
+    ]);
+  });
+});
