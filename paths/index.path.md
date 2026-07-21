@@ -1,14 +1,43 @@
-# PathMX Build Week 2026
+[components]: ./labs/layout-components/layout.components.md
+[@root.styles]: ./styles/base.css
 
-Team hub for building and evaluating a Codex-guided PathMX learning experience.
+# Exploring Learning with Agents - PathMX Build Week 2026
 
-## Start Here
+**Open AI Build Week 2026**
 
-[Open the submission walkthrough](./presentation/submission-walkthrough.slides.md)
-to see the three-minute Build Week presentation: **Learn anything. Keep what
-you learn.**
+## What we built
+
+Our contribution is an exploration of using a markdown-first workflows (via PathMX) to create interactive learning experiences along side of agents. We used the same markdown workflows to build out the tooling and demos themselves.
+
+<!-- use layout components to show featured work in a grid, each card should link to a guide on the page -->
 
 ---
+
+## Our Team
+
+TODO: write out team bios/cards/contributions
+
+- Mark Johnson
+- Tram Le
+- Andrew Miller
+
+---
+
+## PathMX
+
+Our workflow and lab examples are authored using [PathMX](https://pathmx.dev). PathMX (**Path**s **M**arkdown e**X**tension) is a methodology and toolchain for authoring curriculum-as-code. Its kind of like a Next.js for markdown-based knowledge wikis. This site, along with all the linked examples are authored using PathMX.
+
+<!-- add tailwind classes for small/italic text? -->
+<aside class="italic text-sm">
+PathMX is currently in a private beta and is closed-source, but significant progress was made using Codex along side of our work here.
+
+See the [pathmx progress log](./work-log/pathmx-changes.log.md) for what was built during the build week window.
+
+</aside>
+
+## How we built this
+
+Our team built out our work using in the same repository (very meta). Having our workflows and work live alongside the agents in the same workspace lets us all work together with the same shared context.
 
 - [Tasks](./tasks/index.tasks.md)
 - [Changes](./work-log/changes.log.md)
@@ -16,8 +45,6 @@ you learn.**
 - [Research/Reference](./research/index.path.md)
 - [Work log/notes](./work-log/index.path.md)
 - [Guides](./guides/index.guides.md)
-
-[@root.styles]: ./styles/base.css
 
 ---
 
@@ -29,19 +56,12 @@ you learn.**
 
 ---
 
-## Submission Work
+## Featured Work
 
-These are the demos, presentation materials, used in the OpenAI Build Week submission.
+These are the demos, presentation materials, and other work we built during the build week.
 
 - [Submission walkthrough](./presentation/submission-walkthrough.slides.md)
-- [Internal eval review](./presentation/walkthrough.slides.md)
+- [Agent Loop Evals](./presentation/walkthrough.slides.md)
 - [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
 - [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
 - [PathMX Skills](https://github.com/pathmx/pathmx-skills)
-
----
-
-## External Links
-
-- [Hosted Build Week Space](https://build-week.pathmx.net/)
-- [Devpost Build Week Project](https://devpost.com/software/learn-anything-dt3ewx)

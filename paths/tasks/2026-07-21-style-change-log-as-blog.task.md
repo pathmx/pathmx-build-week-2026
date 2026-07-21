@@ -31,8 +31,9 @@ title. The repository check enforces the new shape.
 
 ## Next Move
 
-Keep the entry rail and title node connected when Player presents a Block in
-Play mode, then repeat the desktop, mobile, light, and dark checks.
+Resolve the existing task-dashboard merge conflict, then close this task and
+move its dashboard row to Done without disturbing the concurrent submission
+work.
 
 ---
 
@@ -72,3 +73,11 @@ Play mode, then repeat the desktop, mobile, light, and dark checks.
 - **2026-07-21:** Reopened for a Play-specific layout correction after the
   presented Block widened to the Player canvas and left the rail at the
   viewport edge while centering the post content.
+- **2026-07-21:** Matched the Player's centered content inset so the rail and
+  title node share one responsive axis in Play mode. Browser review passed at
+  desktop and mobile widths in light and dark schemes with less than 0.01 px
+  center variance, no horizontal overflow, and no console messages. PathMX
+  0.1.23 rebuilt all 295 artifacts with only the three pre-existing
+  Tufte-theme warnings, and the focused CSS whitespace check passed. The task
+  remains in progress because `paths/tasks/index.tasks.md` already has an
+  unrelated unresolved merge conflict and cannot be moved safely to Done.

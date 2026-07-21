@@ -61,7 +61,11 @@ Props:
 }
 
 :self[data-tone="accent"] {
-  background: color-mix(in oklch, var(--pmx-color-accent) 12%, var(--pmx-color-surface));
+  background: color-mix(
+    in oklch,
+    var(--pmx-color-accent) 12%,
+    var(--pmx-color-surface)
+  );
 }
 
 :self[data-border="subtle"] {
@@ -348,7 +352,10 @@ Props:
   }
 
   :self[data-fit="auto"] {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-min, 14rem), 100%), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--layout-min, 14rem), 100%), 1fr)
+    );
   }
 }
 
@@ -459,6 +466,7 @@ Compose the small layout primitives around ordinary markdown content:
 
       A compact vertical stack.
     </vstack>
+
   </box>
   <box padding="4" rounded="lg" border="subtle" tone="surface">
     <center min="8rem">
