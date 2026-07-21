@@ -53,6 +53,13 @@ verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
 
 ## Activity
 
+- **2026-07-21 5:34 PM EDT:** During active release cutting, the Build Week
+  judge commands and deployment follow `@fellowhumans/pathmx@latest` rather
+  than an exact CLI version. The Learning Starter also declares `latest`; its
+  lockfile and compatibility baseline retain the last verified resolution,
+  currently 0.1.26. The 7:30 PM freeze locks the accepted static deployment
+  and Starter lockfile, not the dependency declaration. A latest-release root
+  build passed as one Path with 372 artifacts and no warnings.
 - **2026-07-21:** Standardized the public PathMX status language across the
   README, Build Week home, learner guide, Core progress log, readiness guide,
   and Devpost working draft. The sources now distinguish private Labs-stage

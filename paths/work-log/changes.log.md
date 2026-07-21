@@ -15,6 +15,35 @@ styles:
 
 <!--
 type: change
+date: "2026-07-21T17:33:57-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## Active release consumers follow the latest verified PathMX
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Build Week judge commands now use `@fellowhumans/pathmx@latest` while Core
+releases remain active. The Learning Starter also follows `latest`, while its
+committed lockfile and compatibility baseline retain the concrete release that
+passed its build, Question, annotation, component, and Player checks—currently
+0.1.26. The submission freeze therefore locks the accepted static deployment
+and Starter lockfile without turning the public template back into an exact
+manifest pin.
+
+The Starter's normal and candidate suites each built two Paths and 44
+artifacts, and an isolated Player smoke served `/index.path` from 0.1.26. A
+Build Week root build resolved `latest` to 0.1.26 and completed as one Path
+with 372 artifacts and no warnings. The in-progress Cloudflare deployment
+files remain owned by their separate task and are not part of this change.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T17:05:42-04:00"
 -->
 
