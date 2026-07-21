@@ -40,7 +40,7 @@ styles:
 [@components]: ./labs/layout-components/layout.components.md
 [@root.styles]: ./styles/base.css
 
-# Learn Anything with Codex
+# Learn with Codex
 
 **OpenAI Build Week 2026 · PathMX Learning Labs**
 
@@ -84,7 +84,7 @@ goal into a structured, playable Path they can keep, revise, and resume.
 
 ---
 
-## Try the learner flow
+## Try the (experimental) learner flow
 
 Open an empty writable folder in Codex Desktop and send this prompt:
 
@@ -94,6 +94,8 @@ Follow the instructions at https://raw.githubusercontent.com/pathmx/pathmx-skill
 
 The hosted file is the canonical entry point. The agent takes it from there;
 you do not need to clone this repository or know Bun, Git, or PathMX first.
+
+**Note: when we say experimental, we mean it. See the [eval results](./research/learning-agent-evals.brief.md) for more details on how things went.**
 
 ---
 
@@ -122,12 +124,12 @@ you do not need to clone this repository or know Bun, Git, or PathMX first.
 
 ## PathMX
 
-Our workflow and lab examples use [PathMX](https://pathmx.dev), a methodology
+Our workflow and lab examples use [PathMX](https://pathmx.dev), a new methodology
 and toolchain for authoring curriculum as readable Markdown Sources. PathMX
 builds those Sources into a linked graph and a Player for focused, interactive
 progress. This site and its linked examples are PathMX content.
 
-PathMX is currently in Labs: its Core source remains private while its APIs and
+PathMX is currently in Labs: its core source remains private while its APIs and
 product boundaries stabilize. The installable CLI can be used to author,
 build, and play PathMX projects. Expect rapid changes.
 
