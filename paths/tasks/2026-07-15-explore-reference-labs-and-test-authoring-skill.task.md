@@ -28,12 +28,10 @@ small, coherent lab change.
 
 ## Next Move
 
-Andrew continues the field-guide tour with Campaign Forge: reproduce the
-focused-Beat, code-Beat, and arrow-key behavior; record when pointer interaction
-changes keyboard ownership; and test one visual-scale change at a time in the
-local live preview. Mark then reviews the campaign field-guide theme, all five
-component flows, direct-control keyboard behavior, and reduced-motion result in
-Play.
+For submission: confirm Campaign Forge as the locked third showcase example or
+name a replacement with a judge route. In parallel, finish the Campaign Forge
+field-guide pass—reproduce focused-Beat, code-Beat, and arrow-key ownership
+after pointer interaction—then hand Mark the theme and keyboard review.
 
 ---
 

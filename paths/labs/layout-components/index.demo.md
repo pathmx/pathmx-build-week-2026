@@ -18,7 +18,8 @@ route: /labs/layout-components
 ## What to copy
 
 - Import the [layout component definitions](./layout.components.md) for
-  `<box>`, `<hstack>`, `<vstack>`, `<zstack>`, `<grid>`, and `<center>`.
+  `<box>`, `<hstack>`, `<vstack>`, `<zstack>`, `<grid>`, `<center>`,
+  `<project-feature>`, and `<team-member>`.
 - Copy the
   [demo stylesheet](https://github.com/pathmx/pathmx/blob/94e34fb8/paths/demos/styles/layout-demo.css)
   only when reusing this lab's example cards and workspace presentation.
@@ -138,9 +139,68 @@ Reviewed upstream commit:
 
 ---
 
+## Project Feature Cards
+
+Use `<project-feature>` for linked hub teasers. Spatial layout stays on
+`<grid>`; the card owns label, title, summary, and CTA chrome.
+
+<div class="pmx-wide">
+<grid cols="3" gap="4">
+  <project-feature
+    title="Project feature one"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-orbit:</slot>
+    Placeholder summary for the first featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature two"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-swords:</slot>
+    Placeholder summary for the second featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature three"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-sparkles:</slot>
+    Placeholder summary for the third featured project.
+  </project-feature>
+</grid>
+</div>
+
+---
+
+## Team Member Cards
+
+Use `<team-member>` for hub bios. Initials fill the avatar until a portrait
+lands in the `avatar` slot.
+
+<div class="pmx-wide">
+<grid cols="3" gap="4">
+  <team-member name="Ada Example" role="Guide author" initials="AE">
+    Placeholder bio for a teammate card.
+  </team-member>
+  <team-member name="Ned Example" role="Lab builder" initials="NE">
+    Placeholder bio for a teammate card.
+  </team-member>
+  <team-member name="Joy Example" role="Research lead" initials="JE">
+    Placeholder bio for a teammate card.
+  </team-member>
+</grid>
+</div>
+
+---
+
 ## Authoring Notes
 
-The layout components are deliberately small. They do not replace product components,
-charts, cards, or app shells. They provide consistent spacing and responsive
-composition so demos can stay readable while each domain-specific tag keeps its
-own visual language.
+The layout primitives stay small and spatially focused. `<project-feature>` and
+`<team-member>` are the opinionated cards in the set; keep domain-specific
+widgets in their own component families.

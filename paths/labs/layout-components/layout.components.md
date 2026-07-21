@@ -9,12 +9,12 @@ Design review notes from the first-pass components:
 
 - Keep the authoring API small and predictable.
 - Preserve existing tag names: `<box>`, `<hstack>`, `<vstack>`, `<zstack>`,
-  `<grid>`, and `<center>`.
+  `<grid>`, `<center>`, `<project-feature>`, and `<team-member>`.
 - Use scoped CSS and data attributes instead of Tailwind utility strings.
 - Make `min-inline-size: 0` and margin cleanup part of every primitive, because
   composed widgets should not accidentally overflow their grid/flex cell.
-- Do not make these primitives visually opinionated. `box` has optional neutral
-  framing, but it should not become the project card component.
+- Keep the spatial primitives visually quiet. `box` has optional neutral
+  framing, but project cards belong on `<project-feature>`.
 
 ---
 
@@ -430,6 +430,314 @@ Props:
 
 ---
 
+# Project Feature
+
+Opinionated feature card for hub pages and featured-work grids. Use it when a
+composition needs a linked project teaser with a label, title, short summary,
+and clear call to action. Keep spatial arrangement on `<grid>` or the stacks;
+this tag owns the card chrome.
+
+Props:
+
+- `title`: feature heading, defaults to `Project feature`
+- `label`: small eyebrow above the title, defaults to `Feature`
+- `href`: destination URL or Source path, defaults to `#`
+- `cta`: footer action text, defaults to `Explore`
+
+Slots:
+
+- `icon`: optional Lucide shortcode (decorative). Prefer
+  `:lucide-name:` in the slot body; shortcodes are ignored in HTML
+  attributes, so do not pass the icon through a prop.
+
+## HTML
+
+```html
+<a
+  class="project-feature"
+  href="{{ href: # }}"
+  aria-label="{{ title: Project feature }}"
+>
+  <span class="project-feature-icon"><slot name="icon" /></span>
+  <p class="project-feature-label">{{ label: Feature }}</p>
+  <h3 class="project-feature-title">{{ title: Project feature }}</h3>
+  <div class="project-feature-body">
+    <slot />
+  </div>
+  <span class="project-feature-cta">{{ cta: Explore }}</span>
+</a>
+```
+
+## CSS
+
+```css
+:self {
+  display: grid;
+  align-content: start;
+  gap: 0.95rem;
+  min-inline-size: 0;
+  min-block-size: 100%;
+  padding: clamp(1.2rem, 2.6cqi, 1.5rem);
+  border: 1px solid color-mix(in oklch, var(--pmx-color-border) 78%, transparent);
+  border-radius: 1rem;
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in oklch, var(--pmx-color-accent) 10%, var(--pmx-color-surface)),
+      var(--pmx-color-surface) 42%
+    );
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 0.85rem 1.8rem color-mix(in oklch, var(--pmx-color-fg) 8%, transparent);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+:self:hover,
+:self:focus-visible {
+  border-color: color-mix(in oklch, var(--pmx-color-accent) 42%, var(--pmx-color-border));
+  box-shadow: 0 1rem 2rem color-mix(in oklch, var(--pmx-color-accent) 14%, transparent);
+  outline: none;
+}
+
+:self:focus-visible {
+  outline: 2px solid var(--pmx-color-focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :self:hover,
+  :self:focus-visible {
+    transform: translateY(-0.12rem);
+  }
+}
+
+.project-feature-label,
+.project-feature-title,
+.project-feature-body,
+.project-feature-body > *,
+.project-feature-cta {
+  margin: 0;
+}
+
+.project-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.4rem;
+  block-size: 2.4rem;
+  border-radius: 0.7rem;
+  background: color-mix(in oklch, var(--pmx-color-accent) 14%, transparent);
+  color: var(--pmx-color-accent);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.project-feature-icon:empty {
+  display: none;
+}
+
+/* Workaround: named slot assignments currently also land in the default
+   slot body. Tracked in pathmx inbox
+   2026-07-21-literate-named-slot-default-leak.issue.md */
+.project-feature-body > slot[name="icon"] {
+  display: none;
+}
+
+.project-feature-label {
+  color: color-mix(in oklch, var(--pmx-color-accent) 72%, var(--pmx-color-fg));
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.project-feature-title {
+  max-inline-size: 16ch;
+  color: var(--pmx-color-fg);
+  font-size: clamp(1.15rem, 2.2cqi, 1.35rem);
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.project-feature-body {
+  color: var(--pmx-color-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-feature-body > * + * {
+  margin-block-start: 0.55rem;
+}
+
+.project-feature-cta {
+  justify-self: start;
+  margin-block-start: 0.35rem;
+  color: var(--pmx-color-link);
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.project-feature-cta::after {
+  content: " →";
+}
+```
+
+---
+
+# Team Member
+
+Bio card for hub team grids. Supports a short role line, yielded bio copy, and
+an avatar region that can hold initials now and a photo later.
+
+Props:
+
+- `name`: display name, defaults to `Teammate`
+- `role`: short role or contribution line, defaults to `Contributor`
+- `initials`: fallback avatar text when the avatar slot is empty, defaults to `?`
+
+Slots:
+
+- `avatar`: optional photo or custom mark. Prefer an `<img>` here when a
+  portrait is ready; otherwise the `initials` prop fills the circle.
+- default: bio / contribution summary
+
+## HTML
+
+```html
+<article class="team-member" aria-label="{{ name: Teammate }}">
+  <div class="team-member-avatar" aria-hidden="true">
+    <span class="team-member-initials">{{ initials: TM }}</span>
+    <slot name="avatar" />
+  </div>
+  <div class="team-member-copy">
+    <h3 class="team-member-name">{{ name: Teammate }}</h3>
+    <p class="team-member-role">{{ role: Contributor }}</p>
+    <div class="team-member-bio">
+      <slot />
+    </div>
+  </div>
+</article>
+```
+
+## CSS
+
+```css
+:self {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.95rem 1rem;
+  align-items: start;
+  min-inline-size: 0;
+  min-block-size: 100%;
+  padding: clamp(1.05rem, 2.2cqi, 1.3rem);
+  border: 1px solid color-mix(in oklch, var(--pmx-color-border) 78%, transparent);
+  border-radius: 1rem;
+  background: var(--pmx-color-surface);
+  box-shadow: 0 0.75rem 1.6rem color-mix(in oklch, var(--pmx-color-fg) 7%, transparent);
+}
+
+.team-member-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: 3.4rem;
+  block-size: 3.4rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklch, var(--pmx-color-border) 70%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--pmx-color-accent) 14%, var(--pmx-color-surface));
+  color: var(--pmx-color-accent);
+  font-size: 0.92rem;
+  font-weight: 780;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.team-member-initials {
+  grid-area: 1 / 1;
+}
+
+.team-member-avatar img,
+.team-member-avatar .pmx-icon {
+  grid-area: 1 / 1;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.team-member-avatar:has(img) {
+  background: var(--pmx-color-surface);
+  color: transparent;
+}
+
+.team-member-avatar:has(img) .team-member-initials {
+  display: none;
+}
+
+.team-member-copy {
+  display: grid;
+  gap: 0.35rem;
+  min-inline-size: 0;
+}
+
+.team-member-name,
+.team-member-role,
+.team-member-bio,
+.team-member-bio > * {
+  margin: 0;
+}
+
+.team-member-name {
+  color: var(--pmx-color-fg);
+  font-size: 1.08rem;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.team-member-role {
+  color: color-mix(in oklch, var(--pmx-color-accent) 72%, var(--pmx-color-fg));
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.team-member-bio {
+  color: var(--pmx-color-muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.team-member-bio > * + * {
+  margin-block-start: 0.5rem;
+}
+
+/* Workaround: named slot assignments currently also land in the default
+   slot body. Tracked in pathmx inbox
+   2026-07-21-literate-named-slot-default-leak.issue.md */
+.team-member-bio > slot[name="avatar"] {
+  display: none;
+}
+
+@container pathmx-runtime (max-width: 28rem) {
+  :self {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+  }
+}
+```
+
+---
+
 **Example**
 
 Compose the small layout primitives around ordinary markdown content:
@@ -457,6 +765,40 @@ Compose the small layout primitives around ordinary markdown content:
 </grid>
 ```
 
+Featured project teasers use the dedicated card:
+
+```html
+<grid cols="3" gap="4">
+  <project-feature
+    title="Project feature one"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-orbit:</slot>
+    Placeholder summary for the first featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature two"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-swords:</slot>
+    Placeholder summary for the second featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature three"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-sparkles:</slot>
+    Placeholder summary for the third featured project.
+  </project-feature>
+</grid>
+```
+
 **Result**
 
 <grid cols="3" gap="4">
@@ -479,4 +821,34 @@ Compose the small layout primitives around ordinary markdown content:
       <span>Right</span>
     </hstack>
   </box>
+</grid>
+
+<grid cols="3" gap="4">
+  <project-feature
+    title="Project feature one"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-orbit:</slot>
+    Placeholder summary for the first featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature two"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-swords:</slot>
+    Placeholder summary for the second featured project.
+  </project-feature>
+  <project-feature
+    title="Project feature three"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-sparkles:</slot>
+    Placeholder summary for the third featured project.
+  </project-feature>
 </grid>

@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-21
 related:
@@ -25,15 +25,8 @@ entry titles.
 The change log is now a newest-first build journal: every entry owns a quoted
 ISO timestamp in Block topmatter, renders localized semantic publication
 metadata, and aligns to a continuous Path line with a filled node beside its
-title. The repository check enforces the new shape.
-
----
-
-## Next Move
-
-Resolve the existing task-dashboard merge conflict, then close this task and
-move its dashboard row to Done without disturbing the concurrent submission
-work.
+title. The repository check enforces the new shape. Play-mode centering keeps
+the rail on the same axis as each post title.
 
 ---
 
@@ -78,6 +71,6 @@ work.
   desktop and mobile widths in light and dark schemes with less than 0.01 px
   center variance, no horizontal overflow, and no console messages. PathMX
   0.1.23 rebuilt all 295 artifacts with only the three pre-existing
-  Tufte-theme warnings, and the focused CSS whitespace check passed. The task
-  remains in progress because `paths/tasks/index.tasks.md` already has an
-  unrelated unresolved merge conflict and cannot be moved safely to Done.
+  Tufte-theme warnings, and the focused CSS whitespace check passed.
+- **2026-07-21:** Closed after the task-dashboard merge conflict was cleared
+  and the board refresh moved this row to Done.

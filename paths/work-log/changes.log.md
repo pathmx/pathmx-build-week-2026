@@ -7,6 +7,41 @@ related:
   - ./index.path.md
   - ../tasks/2026-07-15-add-change-log-workflow.task.md
   - ../tasks/2026-07-21-style-change-log-as-blog.task.md
+  - ../tasks/2026-07-21-add-project-feature-cards.task.md
+---
+
+<!--
+type: change
+date: "2026-07-21T14:23:27-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+# Build Week Changes
+
+## The Build Week hub gains reusable feature and team cards
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The home page now uses shared layout cards for featured work and team bios,
+Lucide icons in hub links, softer header atmosphere, and chip-style lists,
+while the repo-local skill pack renames the personal workflow from `/path` to
+`/learn` and `/teach`.
+
+The [owning task](../tasks/2026-07-21-add-project-feature-cards.task.md) covers
+`<project-feature>` and the placeholder hub cards; `<team-member>`, list-chip
+styling, and larger heading type live in `layout.components.md` and
+`styles/base.css`. PathMX Core follow-ups for Block `surface` styles and the
+named-slot leak were filed in the Core inbox rather than papered over here
+beyond a temporary CSS hide.
+
+Verification: `pathmx build -o .pathmx-check` succeeded with only the known
+Tufte-theme and unrelated work-log link warnings. Live Player review confirmed
+the three feature cards, three team cards with initials, iconified hub lists,
+and header wash on `/index.path`.
+
 ---
 
 <!--
@@ -15,8 +50,6 @@ date: "2026-07-21T12:18:29-04:00"
 -->
 
 [@change-published]: ./changes.components.md
-
-# Build Week Changes
 
 ## The changes log becomes a connected build journal
 

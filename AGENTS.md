@@ -18,11 +18,12 @@ pathmx self-update
 ```
 
 - **Important:** Use the repo-local `/pathmx` skill for all PathMX content.
-- Use `/path` for the personal learning workflow and `/pathmx` for its PathMX
-  syntax, Player routes, and verification.
-- Treat the repo-local `path` and `pathmx` packages as byte-for-byte mirrors of
-  the canonical skill pack. Do not customize the copied packages here; make
-  reusable changes in canonical and sync them back.
+- Use `/learn` for the personal learning workflow, `/teach` for reusable paths
+  intended for multiple learners, and `/pathmx` for PathMX syntax, Player
+  routes, and verification.
+- Treat the repo-local `learn`, `teach`, and `pathmx` packages as byte-for-byte
+  mirrors of the canonical skill pack. Do not customize the copied packages
+  here; make reusable changes in canonical and sync them back.
 - `pathmx-authoring` is a retired compatibility name and must not compete with
   `/pathmx` for new work.
 - Use ordinary readable Markdown as the source of truth.

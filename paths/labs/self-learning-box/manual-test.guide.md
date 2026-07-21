@@ -165,7 +165,7 @@ starter_space=pathmx-learning-test-mark
 cd "$starter_space"
 test -f AGENTS.md
 test -f paths/index.path.md
-test -f .agents/skills/path/SKILL.md
+test -f .agents/skills/learn/SKILL.md
 test -f .agents/skills/pathmx/SKILL.md
 test -f .agents/pathmx-skills.receipt.json
 test -L .claude/skills

@@ -12,7 +12,7 @@ related:
 
 Use this guide to test the real learner journey from one bootstrap instruction.
 Do not give Codex private Build Week context, explain the repository layout, or
-name the `/path` and `/pathmx` skills. The instructions should carry that load.
+name the `/learn` and `/pathmx` skills. The instructions should carry that load.
 
 The expected loop is deliberately buffered:
 
@@ -180,7 +180,7 @@ From the created repository, verify:
 test -d .git
 test -z "$(git remote)"
 test -f AGENTS.md
-test -f .agents/skills/path/SKILL.md
+test -f .agents/skills/learn/SKILL.md
 test -f .agents/skills/pathmx/SKILL.md
 test -f paths/index.path.md
 test -f paths/learner.profile.md

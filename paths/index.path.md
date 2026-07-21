@@ -1,25 +1,69 @@
-[components]: ./labs/layout-components/layout.components.md
+[@components]: ./labs/layout-components/layout.components.md
 [@root.styles]: ./styles/base.css
 
-# Exploring Learning with Agents - PathMX Build Week 2026
+# Exploring Learning with Agents
 
 **Open AI Build Week 2026**
 
 ## What we built
 
-Our contribution is an exploration of using a markdown-first workflows (via PathMX) to create interactive learning experiences along side of agents. We used the same markdown workflows to build out the tooling and demos themselves.
+Our contribution is an exploration of using a markdown-first knowledge graphs and workflows to create interactive learning experiences along side of OpenAI Codex.
 
-<!-- use layout components to show featured work in a grid, each card should link to a guide on the page -->
+<div class="pmx-wide">
+<grid cols="3" gap="4">
+  <project-feature
+    title="Project feature one"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-orbit:</slot>
+    Placeholder for the first featured project. Swap in title, summary, and
+    destination once the showcase picks lock.
+  </project-feature>
+  <project-feature
+    title="Project feature two"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-swords:</slot>
+    Placeholder for the second featured project. Link each card to its guide or
+    playable demo when ready.
+  </project-feature>
+  <project-feature
+    title="Project feature three"
+    label="TBD"
+    href="#"
+    cta="Coming soon"
+  >
+    <slot name="icon">:lucide-sparkles:</slot>
+    Placeholder for the third featured project. Keep the grid at three cards so
+    the hub layout stays stable.
+  </project-feature>
+</grid>
+</div>
 
 ---
 
 ## Our Team
 
-TODO: write out team bios/cards/contributions
-
-- Mark Johnson
-- Tram Le
-- Andrew Miller
+<div class="pmx-wide">
+<grid cols="3" gap="4">
+  <team-member name="Mark Johnson" role="Contribution TBD" initials="MJ">
+    Placeholder bio for Mark. Swap in a short contribution note and avatar
+    photo when ready.
+  </team-member>
+  <team-member name="Tram Le" role="Contribution TBD" initials="TL">
+    Placeholder bio for Tram. Swap in a short contribution note and avatar
+    photo when ready.
+  </team-member>
+  <team-member name="Andrew Miller" role="Contribution TBD" initials="AM">
+    Placeholder bio for Andrew. Swap in a short contribution note and avatar
+    photo when ready.
+  </team-member>
+</grid>
+</div>
 
 ---
 
@@ -29,9 +73,12 @@ Our workflow and lab examples are authored using [PathMX](https://pathmx.dev). P
 
 <!-- add tailwind classes for small/italic text? -->
 <aside class="italic text-sm">
-PathMX is currently in a private beta and is closed-source, but significant progress was made using Codex along side of our work here.
+PathMX is currently in private beta and its Core repository is closed-source.
+During Build Week we used Codex to extend that Core alongside the public work
+collected here.
 
-See the [pathmx progress log](./work-log/pathmx-changes.log.md) for what was built during the build week window.
+See the [PathMX Core progress log](./work-log/pathmx-changes.log.md) for a
+self-contained, living account of what landed during the Build Week window.
 
 </aside>
 
@@ -39,20 +86,12 @@ See the [pathmx progress log](./work-log/pathmx-changes.log.md) for what was bui
 
 Our team built out our work using in the same repository (very meta). Having our workflows and work live alongside the agents in the same workspace lets us all work together with the same shared context.
 
-- [Tasks](./tasks/index.tasks.md)
-- [Changes](./work-log/changes.log.md)
-- [Labs](./labs/index.path.md)
-- [Research/Reference](./research/index.path.md)
-- [Work log/notes](./work-log/index.path.md)
-- [Guides](./guides/index.guides.md)
-
----
-
-## Current Direction/Plans
-
-- [July 20 Build Week Check-In](./work-log/2026-07-20-build-week-checkin.notes.md)
-- [Devpost Submission Draft](./work-log/2026-07-20-devpost-submission-draft.notes.md)
-- [Submission Readiness Checklist](./guides/2026-07-20-build-week-submission-readiness.guide.md)
+- [:lucide-list-todo: Tasks](./tasks/index.tasks.md): The working queue for our team and our agents.
+- [:lucide-git-commit-horizontal: Changes](./work-log/changes.log.md): The living log of what was built during the build week.
+- [:lucide-flask-conical: Labs](./labs/index.path.md): Lab experiments and demos.
+- [:lucide-library: Research/Reference](./research/index.path.md): Research and reference materials.
+- [:lucide-notebook-pen: Work log/notes](./work-log/index.path.md): Work log and notes.
+- [:lucide-book-open: Guides](./guides/index.guides.md): Guides and documentation.
 
 ---
 

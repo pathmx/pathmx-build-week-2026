@@ -46,3 +46,5 @@ the revised workflow with Mark before the Starter rescaffold.
   [July 16 working session](../work-log/2026-07-16-working-session.notes.md)
   already noted that Learner Starter skills and the `paths/` folder still need
   to match useful Build Week patterns.
+- **2026-07-21:** Still the Starter rescaffold blocker on the refreshed board.
+  No push evidence yet; next move unchanged.

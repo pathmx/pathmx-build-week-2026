@@ -2,6 +2,7 @@
 type: task-dashboard
 status: active
 date: 2026-07-15
+updated: 2026-07-21
 ---
 
 # Build Week Tasks
@@ -21,15 +22,13 @@ work and is not tracked as a Build Week task.
 
 ## In Progress
 
-| Task                                                                                                                        | Owner  | Next move                                                                                                    |
-| --------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------ |
-| [Style the change log as a blog](./2026-07-21-style-change-log-as-blog.task.md)                                             | Mark   | Keep the Path line connected to each centered post when the Block is presented in Play                       |
-| [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md)                                               | Tram   | Push the revised `paths` workflow skill from the Saturday test, then retest with Mark                        |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md)                   | Mark   | Review the refined eval walkthrough, publish Starter + skills, then run the hosted and manual release lanes  |
-| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md)                                  | Mark   | Review the evidence-led deck, rehearse it in Player, and record the verified flow                            |
-| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md)                   | Mark   | Review the eval walkthrough, publish Starter + skills, then run the hosted and manual release lanes          |
-| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md)                                  | Mark   | Verify the learner loop, rehearse the dedicated submission deck, and lock the third example before recording |
-| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Reproduce Campaign Forge focus and arrow-key behavior, then test one local visual-scale change at a time     |
+| Task                                                                                                                        | Owner  | Next move                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md)                                  | Mark   | Rehearse the dedicated deck to 2:45–2:50, verify the live learner loop, lock the third example, then record and verify YouTube by 7 PM |
+| [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md)                   | Mark   | After the `paths` skill lands, rescaffold and publish the Starter, run hosted + manual release lanes, then freeze Devpost fields       |
+| [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md)                                               | Tram   | Push the revised `paths` workflow skill from the Saturday test, then retest with Mark before Starter rescaffold                        |
+| [Publish the PathMX Core progress log](./2026-07-21-publish-pathmx-core-progress-log.task.md)                               | Mark   | CLI 0.1.24 is now verified; refresh against the Core journal, prepend any new milestone, and freeze before the 8 PM cutoff             |
+| [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Lock or replace Campaign Forge as the third showcase; finish the Campaign Forge focus and arrow-key field-guide pass                   |
 
 ---
 
@@ -37,6 +36,8 @@ work and is not tracked as a Build Week task.
 
 | Task                                                                                                          | Owner      | Result                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Add project feature cards](./2026-07-21-add-project-feature-cards.task.md)                                   | Mark       | `<project-feature>` added to layout components; three TBD placeholders on the home page and layout demo                                                                |
+| [Style the change log as a blog](./2026-07-21-style-change-log-as-blog.task.md)                               | Mark       | Newest-first journal with structured timestamps, semantic publish metadata, Path-line posts, and Play-mode rail alignment                                              |
 | [Build Focus Components](./2026-07-16-plan-focus-beat-components.task.md)                                     | Mark       | Focus Beats experiment landed as a minimal typographic lab (`beat-pause`, `beat-breathe`, `beat-think`, `beat-timer`); Core cursor-hint follow-up captured in research |
 | [Fix Chess Piece Disappearing During Moves](./2026-07-17-fix-chess-piece-disappearing.task.md)                | Mark       | Interactive board keeps moved pieces visible; external-link cleanup remains open as Core follow-up                                                                     |
 | [Build a chess opening lesson with the canonical components](./2026-07-19-build-chess-opening-lesson.task.md) | Andrew     | Official lesson linked from the Labs hub with every half-move exposed sequentially in Player                                                                           |

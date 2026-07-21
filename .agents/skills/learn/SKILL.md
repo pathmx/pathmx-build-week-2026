@@ -1,9 +1,9 @@
 ---
-name: path
-description: Start, plan, teach, and resume personal learning in a PathMX learning space. Use automatically when one learner asks to learn, study, practice, build a curriculum, continue a learning path, review progress, or turn a goal into guided lessons, including when a new personal learning repository must be created.
+name: learn
+description: Start, plan, guide, and resume personal learning in a PathMX learning space. Use automatically when one learner asks to learn, study, practice, build a personal curriculum, continue a learning path, review progress, or turn a goal into guided lessons, including when a new personal learning repository must be created. Use teach instead when authoring one path for multiple learners.
 ---
 
-# Personal Learning Path
+# Learn with PathMX
 
 Build a durable personal learning space for one learner. Use the installed
 `pathmx` skill for PathMX syntax, Player routes, and verification.
@@ -73,7 +73,9 @@ Turn onboarding evidence into:
 - **later modules:** provisional titles and outcomes.
 
 Write the proposed map into the learning repository before showing it to the
-learner. Use the bundled `assets/path/index.path.md` scaffold so every one of
+learner. Use the shared
+[`library/templates/learn/path/index.path.md`](../pathmx/library/templates/learn/path/index.path.md)
+scaffold so every one of
 the 3–7 milestones has one visible `planned`, `ready`, `in progress`,
 `demonstrated`, or `paused` status plus an evidence target. Link the proposed
 foreground Path from the home Source. This first useful artifact should be
@@ -110,9 +112,10 @@ Before calling the module ready, check every session for a worked example, an
 optional hint or smaller attempt, and an immediate rationale, self-check, or
 rubric. Keep focused review and an optional stretch task ready in the module.
 
-For a standard two-session module, copy the bundled `assets/module/` scaffold
-into the new module directory and replace its author notes. Add or remove
-session files only when the learner's confirmed rhythm calls for it.
+For a standard two-session module, copy the shared
+[`library/templates/learn/module/`](../pathmx/library/templates/learn/module/)
+scaffold into the new module directory and replace its author notes. Add or
+remove session files only when the learner's confirmed rhythm calls for it.
 
 Work in visible stages when the agent surface supports progress updates:
 
@@ -235,9 +238,11 @@ paths/
 - A module index links its fully prepared sessions and checkpoint.
 - Completed Sources remain history. Do not silently rewrite past evidence.
 
-Read the [buffered loop](./references/buffered-loop.md) and the compact
-[worked example](./references/worked-example.md) when planning or changing a
-path.
+Read the [buffered loop](./references/buffered-loop.md) when planning or
+changing a path. Use the shared PathMX [library](../pathmx/library/index.md) to
+choose verified patterns, templates, components, and examples. The compact
+[SQL example](../pathmx/library/examples/learn-sql-foundations/paths/sql-foundations/index.path.md)
+shows one complete personal module.
 
 ## Learning rules
 

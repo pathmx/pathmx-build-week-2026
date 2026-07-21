@@ -27,9 +27,10 @@ review remains in the separate
 
 ## Next Move
 
-Verify the full goal → Source → Player → learner action → durable result loop,
-rehearse the dedicated submission deck to 2:45–2:50, and either accept Campaign
-Forge as the contrasting third example or replace it before recording.
+Run one stopwatch rehearsal of the dedicated submission deck to 2:45–2:50,
+verify the live durable learner loop on camera, lock or replace Campaign Forge
+as the third example, then record, upload, and verify public YouTube playback
+by 7:00 PM EDT.
 
 ---
 

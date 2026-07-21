@@ -26,9 +26,9 @@ repeatable submission without copying private team material into either repo.
 
 ## Next Move
 
-Review the eval findings walkthrough with the team, publish the candidate
-Starter and skills together, then run the hosted-bootstrap lane and the manual
-Codex Desktop flow before treating the kit as release-ready.
+After Tram pushes the revised `paths` skill, rescaffold and publish the
+Learning Starter with that package, run the hosted-bootstrap and manual Codex
+Desktop lanes, then freeze Devpost fields against the verified public boundary.
 
 ---
 
@@ -96,3 +96,8 @@ Codex Desktop flow before treating the kit as release-ready.
   revised card values to `rgb(64, 156, 255)` against the dark card surface.
   The light accent was then deepened slightly to `#006ee6` for more definition
   on the grouped light background.
+- **2026-07-21:** Board refresh: remaining submission blockers are Tram's
+  `paths` skill push, Starter rescaffold + release lanes, Devpost freeze, and
+  the video recording. The dedicated submission walkthrough and internal eval
+  review decks are already separated; featured hub cards and team bios remain
+  open polish on the home page.
