@@ -80,10 +80,14 @@ errors. The strengthened change-log check, shell syntax check, and
 
 <!--
 type: change
-date: "2026-07-21T10:53:07-04:00"
+date: "2026-07-21T12:14:02-04:00"
 -->
 
 ## The Build Week hub starts at the submission walkthrough
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The [Build Week hub](../index.path.md) now opens with a **Start Here** link to
 the dedicated [submission walkthrough](../presentation/submission-walkthrough.slides.md),
@@ -106,7 +110,16 @@ unsupported Tufte-theme fields remain the only build warnings.
 
 ---
 
+<!--
+type: change
+date: "2026-07-21T11:25:33-04:00"
+-->
+
 ## The submission story becomes a dedicated public Path
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
 
 The new [submission walkthrough](../presentation/submission-walkthrough.slides.md)
 turns the three-minute video into a seven-Block Path: one human learning
@@ -127,6 +140,11 @@ the durable learner loop, and final acceptance or replacement of Campaign Forge
 remain before recording.
 
 ---
+
+<!--
+type: change
+date: "2026-07-21T10:53:07-04:00"
+-->
 
 ## The personal learning starter is backed by a repeatable eval loop
 
