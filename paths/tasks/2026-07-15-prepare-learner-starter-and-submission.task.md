@@ -77,3 +77,10 @@ Codex Desktop flow before treating the kit as release-ready.
   phases, scenario coverage, scoring, latency, failure-driven changes, current
   evidence, and limits. Light and dark Player review also confirmed four
   native result Beats and a flatter report-style treatment.
+- **2026-07-21:** The Build Week root now supplies a technical lab design
+  system inspired by `pathmx.dev`: monospaced hierarchy, compact measure,
+  warm neutral text, brick-red interactions, and flat bordered surfaces in
+  light and dark modes. The eval deck inherits those graph defaults and keeps
+  only layout and result-card flourishes locally. Player review covered the
+  root hub, task dashboard, eval report, and a deliberately exempt Kepler lab
+  with no browser warnings.

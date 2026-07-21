@@ -9,6 +9,8 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 - [Work log/notes](./work-log/index.path.md)
 - [Guides](./guides/index.guides.md)
 
+[@root.styles]: ./styles/lab.css
+
 ---
 
 ## Current Direction/Plans
@@ -23,7 +25,7 @@ Team hub for building and evaluating a Codex-guided PathMX learning experience.
 
 These are the demos, presentation materials, used in the OpenAI Build Week submission.
 
-- [Eval Findings And Video Presentation Slides](./presentation/walkthrough.slides.md)
+- [Agent Eval Findings](./presentation/walkthrough.slides.md)
 - [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week)
 - [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
 - [PathMX Skills](https://github.com/pathmx/pathmx-skills)

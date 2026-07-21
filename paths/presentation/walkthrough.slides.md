@@ -6,30 +6,6 @@ date: 2026-07-21
 related:
   - ../guides/self-learning-manual-test.guide.md
   - ../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md
-theme:
-  color:
-    bg: "#f7f3ea"
-    fg: "#1d2a26"
-    accent: "#147d6c"
-    surface: "#fffdf8"
-    muted: "#5e6e68"
-    border: "#cad8d2"
-  prose:
-    size: 1.12rem
-    leading: 1.45
-  measure: 72ch
-  shape:
-    radius: 0.8rem
-  dark:
-    color:
-      bg: "#101815"
-      fg: "#e9f2ee"
-      accent: "#63d2b8"
-      surface: "#18241f"
-      muted: "#a9bbb4"
-      border: "#3c544b"
-      link: "#8adfcf"
-      focus: "#a8efe2"
 play:
   steps:
     lists: items

@@ -38,10 +38,13 @@ Build Week graph with only the three pre-existing Tufte-theme warnings. Player
 review confirmed the presentation styles, results cards, and manual-guide link
 with no browser warnings. A follow-up light/dark Player pass improved the
 deck's type scale, made all four result metrics native Beats, and replaced the
-glowing cards with a flatter theme-responsive treatment. The deck includes a
-source-scoped fallback for a PathMX 0.1.22 dark-palette emission bug while
-retaining the documented dark theme values. Published-template variance runs
-and a complete human Codex Desktop pass remain release follow-up in the
+glowing cards with a flatter theme-responsive treatment. A root-level
+[lab stylesheet](../styles/lab.css), informed by the technical visual system
+on `pathmx.dev`, now gives the complete graph a monospaced, compact, flat
+light/dark baseline. Presentation styling is limited to wider report blocks
+and the metric-grid flourish; intentionally bespoke labs retain their own
+themes. Published-template variance runs and a complete human Codex Desktop
+pass remain release follow-up in the
 [starter task](../tasks/2026-07-15-prepare-learner-starter-and-submission.task.md).
 
 ---
