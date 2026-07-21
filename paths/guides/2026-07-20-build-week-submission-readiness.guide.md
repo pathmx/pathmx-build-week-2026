@@ -33,6 +33,43 @@ submission target: **7:30 PM EDT**, leaving a 30-minute recovery buffer.
 
 ---
 
+## July 21 Organizer Stop Check — 3:05 PM EDT
+
+This is the short, live stop-check derived from the organizer's five-hour
+warning. It supplements the deeper gates below. A checked item has direct
+evidence; an unchecked item is still a submission blocker or needs a final
+human verification.
+
+- [ ] Run the submitted project from a fresh clone exactly as the README says.
+- [ ] Upload the under-three-minute video to YouTube (unlisted is acceptable)
+      and verify signed-out playback, clear audio, legibility, and the final
+      URL.
+- [ ] Confirm the required voiceover explicitly explains both Codex and
+      GPT-5.6, not only generic AI use.
+- [ ] Enter a `/feedback` session ID from an official Codex interface directly
+      in Devpost. Never copy the ID into this repository.
+- [ ] Because the primary repository is private, share it with both required
+      judging accounts and verify access. At 3:05 PM EDT, GitHub showed only
+      the four team collaborators and no pending repository invitations.
+- [ ] The README update now explains Codex/GPT-5.6 use, the pre-existing/new
+      boundary, exact local setup, and a public test path that needs no rebuild;
+      include it in the final reviewed push before checking this item.
+- [x] Devpost lists Mark Johnson, Le Tram, and Andrew Miller as current
+      teammates with no unconfirmed status shown.
+- [ ] Finish the Devpost project story/media and Additional Info. At 3:05 PM
+      EDT, the project was **Draft — 2/5 steps done**; category, repository URL,
+      `/feedback` session ID, project story, and video URL were not complete.
+- [ ] Read the final Devpost description aloud and rewrite any phrasing that
+      does not sound like the team before pasting it into the form.
+- [ ] Submit by 7:30 PM EDT, then return to **My projects** and confirm the
+      project is green and says **Submitted**, not Draft.
+
+**Immediate stop conditions:** do not wait on the video upload, private-repo
+sharing, `/feedback`, or final Submit action. These are deadline-critical and
+cannot be inferred from local files.
+
+---
+
 ## July 20 Check-In — Immediate Handoff
 
 ### Accepted working direction:

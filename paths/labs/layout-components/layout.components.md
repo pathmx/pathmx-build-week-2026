@@ -533,13 +533,6 @@ Slots:
   display: none;
 }
 
-/* Workaround: named slot assignments currently also land in the default
-   slot body. Tracked in pathmx inbox
-   2026-07-21-literate-named-slot-default-leak.issue.md */
-.project-feature-body > slot[name="icon"] {
-  display: none;
-}
-
 .project-feature-label {
   color: color-mix(in oklch, var(--pmx-color-accent) 72%, var(--pmx-color-fg));
   font-size: 0.76rem;
@@ -713,13 +706,6 @@ Slots:
 
 .team-member-bio > * + * {
   margin-block-start: 0.5rem;
-}
-
-/* Workaround: named slot assignments currently also land in the default
-   slot body. Tracked in pathmx inbox
-   2026-07-21-literate-named-slot-default-leak.issue.md */
-.team-member-bio > slot[name="avatar"] {
-  display: none;
 }
 
 @container pathmx-runtime (max-width: 28rem) {

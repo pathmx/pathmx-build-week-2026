@@ -1,13 +1,22 @@
-# PathMX Build Week 2026
+# Learn Anything — PathMX Learning Labs
 
-Team workspace for OpenAI Build Week 2026: task coordination, project
-decisions, learning labs, evaluations, demo preparation, and submission
-evidence.
+What if a useful conversation with an agent became a learning path you could
+keep, change, and continue tomorrow? Our OpenAI Build Week 2026 project uses
+Codex and PathMX to turn ordinary Markdown into focused, playable learning
+experiences.
 
-The reusable learner-facing template lives in the separate
-`pathmx-learning-starter` repository. PathMX Core implementation stays in the
-main `pathmx` repository. This workspace should not become a second product or
-a place for unreviewed Core patches.
+The submission has three parts:
+
+1. This **Learning Labs** repository records the experiments, decisions,
+   evaluations, and evidence.
+2. The public
+   [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter)
+   gives a learner a durable workspace with the agent skills included.
+3. The [playable examples](./paths/labs/index.path.md) explore practice,
+   simulation, and creation through the same Markdown-first format.
+
+Start with the public [Learning Labs site](https://build-week.pathmx.net/) or
+the [three-minute submission walkthrough](./paths/presentation/submission-walkthrough.slides.md).
 
 ## Working claim
 
@@ -15,20 +24,82 @@ Codex is the conversation and orchestration surface. PathMX is the durable,
 playable learning surface. The learner leaves with a living curriculum,
 evidence of learning, and a next step—not only a chat transcript.
 
-## Current contributor setup
+## How Codex and GPT-5.6 were used
+
+We worked in Codex with GPT-5.6 throughout Build Week. It helped us research
+learning patterns, author and revise Markdown Sources, implement interactive
+components, diagnose Player behavior, run verification, maintain the task
+graph, and synthesize evaluation findings. The repository itself is the
+durable record of that collaboration: see the [task
+dashboard](./paths/tasks/index.tasks.md), [technical eval
+review](./paths/presentation/walkthrough.slides.md), and [change
+log](./paths/work-log/changes.log.md).
+
+The team chose the product direction, set the learning goals, reviewed the
+experiences as learners, and accepted or rejected the results. Codex and
+GPT-5.6 accelerated the work; they did not replace those decisions.
+
+## What existed before Build Week
+
+Mark Johnson created the PathMX methodology, framework, and Player before the
+event. During Build Week, the team built or meaningfully extended the Learning
+Labs workspace, learner Starter, agent skills, interactive examples, reusable
+components, evaluation harness and evidence, and the workflow for preserving
+human-agent decisions. Closed-source PathMX Core changes supported the public
+work but are not the submission's primary technical claim.
+
+The [PathMX Core progress log](./paths/work-log/pathmx-changes.log.md) records
+that boundary without exposing the private Core repository.
+
+## Start with one Codex prompt
+
+Open an empty writable folder in Codex Desktop and send:
+
+```text
+Follow the instructions at https://raw.githubusercontent.com/pathmx/pathmx-skills/main/bootstrap.md. Create a new learning space in ./learning-space and help me learn [your topic or goal].
+```
+
+That hosted file is the canonical bootstrap. The agent checks or installs Bun,
+sets up the latest stable PathMX CLI, creates a repository from the Learning
+Starter, asks a short set of learner questions, and launches the Player. See
+the [judge and learner walkthrough](./paths/guides/start-learning-with-codex.guide.md)
+for expected checkpoints and fallbacks.
+
+## Try it without rebuilding this project
+
+No OpenAI API key, credits, or plugin build is required for the judge path.
+
+1. Open the [public Learning Labs site](https://build-week.pathmx.net/).
+2. Follow the submission walkthrough.
+3. Open a featured example and use its visible Player controls.
+4. Inspect the linked Markdown Source in this repository to see the durable
+   artifact behind the experience.
+
+The one-prompt flow above tests the learner-facing agent skills without
+compiling or packaging a plugin. For repository inspection, the public
+[Learning Starter](https://github.com/pathmx/pathmx-learning-starter) contains
+the same repo-local skills under `.agents/skills/`.
+
+## Local setup and test
+
+Prerequisite: [Bun](https://bun.sh/). The verified submission CLI version is
+PathMX `0.1.24`.
 
 ```sh
-bun add -g @fellowhumans/pathmx@latest
-pathmx self-update
-pathmx --version
-pathmx play
+bunx @fellowhumans/pathmx@0.1.24 build paths/index.path.md -o .pathmx-check --clean
+bunx @fellowhumans/pathmx@0.1.24 play
 ```
+
+The first command is the reproducible build check. The second launches the
+Player for local review. The primary judge path does not require credentials;
+AI image generation in unrelated experiments is optional and is not part of
+the required test.
 
 ## Repository shape
 
 ```text
 AGENTS.md
-.agents/skills/pathmx-authoring/SKILL.md
+.agents/skills/pathmx/SKILL.md
 paths/
 ├── index.path.md
 ├── tasks/index.tasks.md
@@ -55,3 +126,6 @@ team administration through the agreed private channel.
 
 Active Build Week execution. Current ownership, blockers, next moves, and
 completion evidence live in the [task dashboard](./paths/tasks/index.tasks.md).
+
+Current limitation: the demonstrated loop is local and single-player. Shared
+and multi-user Paths remain future work.

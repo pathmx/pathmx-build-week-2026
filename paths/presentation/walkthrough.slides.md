@@ -18,7 +18,7 @@ play:
 
 ### Method, findings, and changes to the PathMX skills and Learning Starter
 
-**Review baseline:** PathMX 0.1.22 · Codex CLI · July 21, 2026
+**Eval runtime:** PathMX 0.1.22 · Codex CLI · July 21, 2026
 
 ---
 

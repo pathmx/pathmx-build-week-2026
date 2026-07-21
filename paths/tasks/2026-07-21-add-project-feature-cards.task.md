@@ -13,17 +13,16 @@ related:
 
 ## Outcome
 
-Add a reusable project-feature card to the shared layout components and place
-three placeholder cards on the Build Week home page for the TBD featured
-projects.
+Add a reusable project-feature card to the shared layout components and use it
+to make the Build Week home page's three primary review paths explicit.
 
 ---
 
 ## Result
 
 `<project-feature>` now lives with the shared layout components. The home page
-and layout demo each show three placeholder cards in a responsive grid; swap
-title, summary, and `href` when the showcase picks lock.
+uses three responsive cards for the hosted learner bootstrap, technical eval
+review, and playable lab index; the layout demo retains fictional examples.
 
 ---
 
@@ -32,7 +31,7 @@ title, summary, and `href` when the showcase picks lock.
 - `layout.components.md` defines a `<project-feature>` card with title, label,
   href, and yielded description.
 - The layout demo shows the card in a three-column grid.
-- `index.path.md` imports the layout components and shows three placeholder
+- `index.path.md` imports the layout components and shows three real
   project-feature cards under "What we built".
 - A PathMX scratch build passes for the changed Sources.
 
@@ -51,3 +50,11 @@ title, summary, and `href` when the showcase picks lock.
 - **2026-07-21:** Hub polish follow-up: removed feature-card hover lift that
   clipped against the block, dropped list hover border/underline shift, and
   added short Featured Work descriptions.
+- **2026-07-21:** After Core fixes landed on the local Player, dropped the
+  named-slot CSS hide workaround, restored ordinary heading selectors (no
+  `:scope` specificity boost), and moved hub header styling onto authored
+  `styles.classes` (`landing-page` / `page-header`).
+- **2026-07-21:** Replaced the TBD home cards with the actual judge and learner
+  paths: one-prompt bootstrap, technical eval report, and labs hub. The home
+  page now also gives each teammate a concrete contribution summary, including
+  Tram's learner testing and its direct influence on the buffered loop.

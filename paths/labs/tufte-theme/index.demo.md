@@ -17,9 +17,8 @@ theme:
     heading: 'Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif'
     mono: 'Consolas, "Liberation Mono", Menlo, monospace'
   prose:
-    width: 78rem
-    lineHeight: 1.58
-    blockGap: 1.15rem
+    leading: 1.58
+  measure: 78rem
   dark:
     color:
       bg: "#151513"
@@ -135,7 +134,7 @@ rules at the top and bottom, with a lighter rule under the header—the familiar
 | Tufte-inspired  | 55% canvas   | Notes beside the claim| Tap to disclose       |
 | Full-width media| Whole canvas | Caption below         | Scales inline         |
 
-Inline code such as `theme.prose.width` stays typographically distinct without
+Inline code such as `theme.measure` and `theme.prose.leading` stays typographically distinct without
 becoming a badge. Longer examples keep their own horizontal scrolling:
 
 ```yaml
@@ -143,8 +142,8 @@ theme:
   font:
     body: 'Palatino, "Palatino Linotype", Georgia, serif'
   prose:
-    width: 78rem
-    lineHeight: 1.58
+    leading: 1.58
+  measure: 78rem
 ```
 
 Links keep the text color and use an underline because the sentence should

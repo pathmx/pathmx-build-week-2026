@@ -21,5 +21,5 @@ help the team reconstruct what happened and what comes next.
 
 ## Related Links
 
-- [Devpost Submission Draft](./work-log/2026-07-20-devpost-submission-draft.notes.md)
-- [Submission Readiness Checklist](./guides/2026-07-20-build-week-submission-readiness.guide.md)
+- [Devpost Submission Draft](./2026-07-20-devpost-submission-draft.notes.md)
+- [Submission Readiness Checklist](../guides/2026-07-20-build-week-submission-readiness.guide.md)

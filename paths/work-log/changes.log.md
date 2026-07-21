@@ -8,6 +8,9 @@ related:
   - ../tasks/2026-07-15-add-change-log-workflow.task.md
   - ../tasks/2026-07-21-style-change-log-as-blog.task.md
   - ../tasks/2026-07-21-add-project-feature-cards.task.md
+styles:
+  classes:
+    - change-journal
 ---
 
 <!--

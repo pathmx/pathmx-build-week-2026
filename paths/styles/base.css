@@ -1,43 +1,19 @@
-/* A Source with theme frontmatter owns its palette and typography. */
-@scope (
-  html:not(:has(style[data-pathmx-theme-source])) .pmx-document
-) {
+/* Graph-wide structural defaults. Source theme frontmatter owns local tokens. */
+@scope (.pmx-document) {
   :scope {
     --base-font-sans: Inter, ui-sans-serif, system-ui, -apple-system,
       BlinkMacSystemFont, "Segoe UI", sans-serif;
     --base-font-mono: "Geist Mono", "SFMono-Regular", Consolas,
       "Liberation Mono", Menlo, monospace;
-    --pmx-color-bg: #f2f2f7;
-    --pmx-color-fg: #1d1d1f;
-    --pmx-color-accent: #006ee6;
-    --pmx-color-surface: #ffffff;
-    --pmx-color-muted: #6e6e73;
-    --pmx-color-border: #d2d2d7;
-    --pmx-color-link: #006ee6;
-    --pmx-color-focus: #006ee6;
-    --pmx-font-body: var(--base-font-sans);
-    --pmx-font-heading: var(--base-font-sans);
-    --pmx-font-mono: var(--base-font-mono);
-    --pmx-document-measure: 53rem;
-    --pmx-shape-radius: 0.75rem;
+    --base-document-measure: 53rem;
+    --base-shape-radius: 0.75rem;
 
     background: var(--pmx-color-bg);
     color: var(--pmx-color-fg);
-    font-family: var(--base-font-sans);
+    font-family: var(--pmx-font-body, var(--base-font-sans));
     font-size: 1.0625rem;
     line-height: 1.68;
     text-rendering: optimizeLegibility;
-  }
-
-  :scope[data-pathmx-color-scheme="dark"] {
-    --pmx-color-bg: #000000;
-    --pmx-color-fg: #f5f5f7;
-    --pmx-color-accent: #409cff;
-    --pmx-color-surface: #1c1c1e;
-    --pmx-color-muted: #98989d;
-    --pmx-color-border: #38383a;
-    --pmx-color-link: #409cff;
-    --pmx-color-focus: #409cff;
   }
 
   ::selection {
@@ -45,8 +21,14 @@
   }
 
   :scope > .pmx-block {
-    inline-size: min(var(--pmx-document-measure), 100%);
-    max-inline-size: var(--pmx-document-measure);
+    inline-size: min(
+      var(--pmx-document-measure, var(--base-document-measure)),
+      100%
+    );
+    max-inline-size: var(
+      --pmx-document-measure,
+      var(--base-document-measure)
+    );
     margin-inline: auto;
     padding-inline: clamp(0.85rem, 2.8cqi, 1.35rem);
   }
@@ -59,7 +41,7 @@
 
   :where(h1, h2, h3, h4, h5, h6) {
     color: var(--pmx-color-fg);
-    font-family: var(--base-font-sans);
+    font-family: var(--pmx-font-heading, var(--base-font-sans));
     font-weight: 720;
     letter-spacing: -0.04em;
     text-wrap: balance;
@@ -133,10 +115,10 @@
   :not(pre) > code {
     padding: 0.12em 0.35em;
     border: 1px solid var(--pmx-color-border);
-    border-radius: var(--pmx-shape-radius);
+    border-radius: var(--pmx-shape-radius, var(--base-shape-radius));
     background: var(--pmx-color-surface);
     color: var(--pmx-color-accent);
-    font-family: var(--base-font-mono);
+    font-family: var(--pmx-font-mono, var(--base-font-mono));
     font-size: 0.95em;
   }
 
@@ -144,11 +126,11 @@
     overflow: auto;
     padding: 1.1rem 1.2rem;
     border: 1px solid var(--pmx-color-border);
-    border-radius: var(--pmx-shape-radius);
+    border-radius: var(--pmx-shape-radius, var(--base-shape-radius));
     background: var(--pmx-color-surface);
     color: var(--pmx-color-fg);
     box-shadow: none;
-    font-family: var(--base-font-mono);
+    font-family: var(--pmx-font-mono, var(--base-font-mono));
     font-size: 0.98rem;
     line-height: 1.65;
   }
@@ -178,7 +160,7 @@
 
   th {
     color: var(--pmx-color-muted);
-    font-family: var(--base-font-mono);
+    font-family: var(--pmx-font-mono, var(--base-font-mono));
     font-size: 0.86rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -209,58 +191,58 @@
   }
 }
 
-/* Soft header atmosphere for the Build Week home page.
-   Paint the wash on the document itself (not a block pseudo) so it
-   reaches the viewport top under the Player chrome. Move the default
-   document top padding onto the first block so content keeps its inset. */
-@scope (.pmx-document[data-pathmx-source="index.path"]) {
-  :scope {
-    padding-block-start: 0;
-    background:
-      radial-gradient(
-        ellipse 90% 28rem at 12% 0%,
-        color-mix(in oklch, var(--pmx-color-accent) 34%, transparent),
-        transparent 70%
-      ),
-      radial-gradient(
-        ellipse 70% 22rem at 90% 0%,
-        color-mix(in oklch, var(--pmx-color-accent) 20%, transparent),
-        transparent 65%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(in oklch, var(--pmx-color-accent) 12%, var(--pmx-color-surface))
-          0%,
-        color-mix(in oklch, var(--pmx-color-surface) 40%, transparent) 8rem,
-        transparent 24rem
-      ),
-      var(--pmx-color-bg);
-  }
+/* Build Week landing presentation via authored styles.classes.
+   Wash on the landing Source; header inset on the page-header Block.
+   The :first-child clause stays only because yielding document top padding
+   requires a leading header Block. */
+.pmx-document.landing-page:has(> .pmx-block.page-header:first-child) {
+  padding-block-start: 0;
+  background:
+    radial-gradient(
+      ellipse 90% 28rem at 12% 0%,
+      color-mix(in oklch, var(--pmx-color-accent) 34%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 22rem at 90% 0%,
+      color-mix(in oklch, var(--pmx-color-accent) 20%, transparent),
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--pmx-color-accent) 12%, var(--pmx-color-surface))
+        0%,
+      color-mix(in oklch, var(--pmx-color-surface) 40%, transparent) 8rem,
+      transparent 24rem
+    ),
+    var(--pmx-color-bg);
+}
 
-  :scope > .pmx-block:first-of-type {
-    padding-block: clamp(1.15em, 4.5vh, 2.75rem) clamp(1.25rem, 3cqi, 2rem);
-  }
+.pmx-block.page-header {
+  padding-block: clamp(1.15em, 4.5vh, 2.75rem) clamp(1.25rem, 3cqi, 2rem);
+}
 
-  :scope > .pmx-block:first-of-type > h1:first-child {
-    margin-block: 0 0.45em;
-  }
+.pmx-block.page-header > h1:first-child {
+  margin-block: 0 0.45em;
+}
 
-  :scope > .pmx-block:first-of-type > h1 + p {
-    margin-block: 0 0.35rem;
-  }
+.pmx-block.page-header > h1 + p {
+  margin-block: 0 0.35rem;
+}
 
-  :scope > .pmx-block:first-of-type > h2 {
-    margin-block: 2.1em 0.75em;
-  }
+.pmx-block.page-header > h2 {
+  margin-block: 2.1em 0.75em;
+}
 
-  :scope > .pmx-block:first-of-type > h2 + p {
-    margin-block: 0 1.6rem;
-  }
+.pmx-block.page-header > h2 + p {
+  margin-block: 0 1.6rem;
+}
 
-  :scope > .pmx-block:first-of-type .pmx-wide {
-    margin-block-start: 0.35rem;
-  }
+.pmx-block.page-header .pmx-wide {
+  margin-block-start: 0.35rem;
+}
 
+@scope (.pmx-document.landing-page) {
   /* Hub lists read as soft chips instead of default bullets. */
   :scope > .pmx-block > ul {
     list-style: none;
@@ -308,8 +290,7 @@
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li {
-    /* Inline flow so "Title: description" wraps mid-sentence instead of
-       treating the colon+blurb as a separate flex item on narrow widths. */
+    /* Inline flow so title + blurb wrap as one sentence on narrow widths. */
     display: block;
     padding: 0.78rem 1.05rem;
     border: 1px solid color-mix(in oklch, var(--pmx-color-border) 78%, transparent);
@@ -328,11 +309,15 @@
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li > a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+    display: inline;
     font-weight: 680;
     text-decoration: none;
+  }
+
+  :scope > .pmx-block > ul:has(> li > a) > li > a .pmx-icon {
+    display: inline-block;
+    margin-inline-end: 0.35em;
+    vertical-align: -0.12em;
   }
 
   :scope > .pmx-block > ul:has(> li > a) > li > a:hover,
@@ -347,18 +332,18 @@
 }
 
 /* The change log is an outcome journal: one post per Block on a shared Path. */
-@scope (.pmx-document[data-pathmx-source="work-log/changes.log"]) {
+@scope (.pmx-document.change-journal) {
   :scope {
     --change-path-gutter: clamp(1.15rem, 3cqi, 1.75rem);
     --change-post-gap: clamp(1.4rem, 3.5cqi, 2.25rem);
     --change-node-size: 0.82rem;
-    --pmx-document-measure: 60rem;
+    --change-document-measure: 60rem;
   }
 
   :scope > .pmx-block {
     position: relative;
-    inline-size: min(var(--pmx-document-measure), 100%);
-    max-inline-size: var(--pmx-document-measure);
+    inline-size: min(var(--change-document-measure), 100%);
+    max-inline-size: var(--change-document-measure);
     margin-block: 0;
     margin-inline: auto;
     padding-block: 0 clamp(3.75rem, 8cqi, 6rem);
@@ -378,7 +363,7 @@
   :scope.pmx-document[data-pathmx-presentation="slides"] > .pmx-block {
     --change-play-edge: max(
       0px,
-      calc((100% - var(--pmx-document-measure)) / 2)
+      calc((100% - var(--change-document-measure)) / 2)
     );
 
     padding-inline-start: calc(

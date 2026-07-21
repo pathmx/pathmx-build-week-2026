@@ -10,6 +10,7 @@ related:
   - ../work-log/2026-07-20-devpost-submission-draft.notes.md
   - ../guides/2026-07-20-build-week-submission-readiness.guide.md
   - ../guides/self-learning-manual-test.guide.md
+  - ../guides/start-learning-with-codex.guide.md
   - ../presentation/walkthrough.slides.md
   - ./2026-07-20-update-pathmx-skills.task.md
   - ./2026-07-20-produce-submission-video.task.md
@@ -26,9 +27,11 @@ repeatable submission without copying private team material into either repo.
 
 ## Next Move
 
-After Tram pushes the revised `paths` skill, rescaffold and publish the
-Learning Starter with that package, run the hosted-bootstrap and manual Codex
-Desktop lanes, then freeze Devpost fields against the verified public boundary.
+Share the private primary repository with both required judging accounts,
+finish the required Devpost fields including `/feedback`, complete a fresh
+README-only test, and freeze the human-reviewed story. In parallel, record and
+verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
+**Submitted** state on My projects.
 
 ---
 
@@ -37,6 +40,8 @@ Desktop lanes, then freeze Devpost fields against the verified public boundary.
 - Reusable learner-facing content lives in the starter repository.
 - The Starter ships the updated `pathmx-skills` package and a fresh scaffold.
 - A clean learner can install or update PathMX and launch the experience.
+- Judges and learners can start from one agent-reachable hosted bootstrap URL
+  without first cloning a repository.
 - Andrew reviews only after the rescaffold is in place.
 - Submission links contain no private invitations, credentials, learner data,
   raw transcripts, or Codex task identifiers.
@@ -101,3 +106,26 @@ Desktop lanes, then freeze Devpost fields against the verified public boundary.
   the video recording. The dedicated submission walkthrough and internal eval
   review decks are already separated; featured hub cards and team bios remain
   open polish on the home page.
+- **2026-07-21 3:05 PM EDT:** Audited the organizer's five-hour warning against
+  live GitHub and Devpost state. Devpost remained **Draft — 2/5 steps done**.
+  The three named teammates appeared as current teammates with no unconfirmed
+  status, but the required category, repository URL, `/feedback` session ID,
+  project story, and video URL were incomplete. The primary GitHub repository
+  was private and showed only the four team collaborators with no pending
+  judging-account invitations. Updated the
+  [submission-readiness guide](../guides/2026-07-20-build-week-submission-readiness.guide.md)
+  with a short stop-check and rewrote the README to document Codex/GPT-5.6,
+  provenance, exact local setup, and a no-rebuild public judge path. Private
+  form values and account details remain outside the repository.
+- **2026-07-21 3:15 PM EDT:** PathMX 0.1.24 built the current root into a
+  scratch directory as one Path with 305 artifacts. The first pass exposed two
+  broken relative links in the work-log hub; both were corrected, and the
+  second build retained only the three known Tufte-theme warnings outside the
+  required judge route. `git diff --check` passed, and both the public Learning
+  Labs site and public Starter repository returned HTTP 200. This verifies the
+  current worktree, not the still-required fresh-clone test of the final pushed
+  commit.
+- **2026-07-21:** Added the public one-prompt entry using the canonical raw
+  GitHub `bootstrap.md`, a short judge/learner walkthrough, and matching home
+  and README links. The flow keeps setup instructions in `pathmx-skills`
+  rather than duplicating them in the submission repository.

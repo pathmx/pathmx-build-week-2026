@@ -26,6 +26,8 @@ pathmx self-update
   here; make reusable changes in canonical and sync them back.
 - `pathmx-authoring` is a retired compatibility name and must not compete with
   `/pathmx` for new work.
+- `teach-me-anything` and `path` are retired workflow names. Do not recreate
+  them; personal learning uses `/learn`.
 - Use ordinary readable Markdown as the source of truth.
 - Use type-hinted filenames and relative Markdown links.
 - Separate major playable moments with `---` on its own line.
