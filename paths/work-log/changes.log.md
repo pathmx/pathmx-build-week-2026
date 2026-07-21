@@ -15,10 +15,34 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T17:05:42-04:00"
+date: "2026-07-21T17:28:11-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## A next-demo shortlist parks post-submission lab ideas
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+After syncing to `origin/main` at `4511f6a`, Andrew's scratchpad now includes a
+[next demo shortlist](../andrew/2026-07-21-next-demo-shortlist.notes.md) that
+maps current Labs coverage, names missing learning shapes, and ranks five
+candidates. The owning
+[shortlist task](../tasks/2026-07-21-shortlist-next-lab-demos.task.md) keeps the
+default recommendation to graduate Campus Constellation first and forbids a new
+submission-night video hero.
+
+This is notes-only coordination work. No new lab Source was authored, and live
+Player review was skipped.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T17:05:42-04:00"
+-->
 
 ## PathMX's public status language moves into Labs
 
