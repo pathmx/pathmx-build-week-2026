@@ -15,6 +15,42 @@ styles:
 
 <!--
 type: change
+date: "2026-07-21T16:52:46-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## Hosted bootstrap, release checks, and the eval record align
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The Build Week home now points learners and judges to the canonical raw
+`bootstrap.md`, a one-prompt setup guide, a full technical eval report, and the
+separate concise findings deck. The report records the phased Codex CLI method,
+scenario and profile matrix, deterministic and judge measures, latency data,
+failure-driven instruction changes, three accessible comparison figures, the
+subagent experiment, and explicit limits.
+
+Canonical skill sync now transactionally replaces the complete managed skill
+tree in the current checkout without creating or switching Git branches. The
+same `/learn`, `/teach`, and `/pathmx` packages are byte-identical in the
+Learning Starter and this repository. The unverified project-scoped Terra
+worker was removed after two probes accepted the delegation but launched
+Sol/low children.
+
+PathMX 0.1.25 passed 64 canonical skill tests, the Starter candidate and normal
+compatibility checks, and a clean Build Week root build with 369 artifacts and
+no warnings. Player review covered the new report and revised deck in dark
+mode: twelve chart rows and three figures rendered without horizontal overflow
+or console warnings, and built metadata confirms the four deck metric cards are
+four component Beats.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T15:36:32-04:00"
 -->
 

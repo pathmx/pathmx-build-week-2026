@@ -83,11 +83,11 @@ the same repo-local skills under `.agents/skills/`.
 ## Local setup and test
 
 Prerequisite: [Bun](https://bun.sh/). The verified submission CLI version is
-PathMX `0.1.24`.
+PathMX `0.1.25`.
 
 ```sh
-bunx @fellowhumans/pathmx@0.1.24 build paths/index.path.md -o .pathmx-check --clean
-bunx @fellowhumans/pathmx@0.1.24 play
+bunx @fellowhumans/pathmx@0.1.25 build paths/index.path.md -o .pathmx-check --clean
+bunx @fellowhumans/pathmx@0.1.25 play
 ```
 
 The first command is the reproducible build check. The second launches the

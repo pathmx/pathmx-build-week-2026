@@ -1,14 +1,14 @@
 ---
 theme:
   color:
-    bg: "#f4f5fb"
-    fg: "#191b26"
-    muted: "#666a7b"
+    bg: "#f3f7f8"
+    fg: "#152024"
+    muted: "#5f6d72"
     surface: "#ffffff"
-    link: "#4148cb"
-    accent: "#4148cb"
-    border: "#d9dbea"
-    focus: "#4148cb"
+    link: "#0f7a8a"
+    accent: "#0f7a8a"
+    border: "#d3e0e3"
+    focus: "#0f7a8a"
   prose:
     size: 1.0625rem
     leading: 1.68
@@ -17,14 +17,14 @@ theme:
     radius: 0.75rem
   dark:
     color:
-      bg: "#0e1018"
-      fg: "#f3f4fb"
-      muted: "#a7abba"
-      surface: "#191c29"
-      link: "#969bff"
-      accent: "#969bff"
-      border: "#34384b"
-      focus: "#aeb2ff"
+      bg: "#0c1416"
+      fg: "#eef6f7"
+      muted: "#9aadb2"
+      surface: "#152225"
+      link: "#5ec8d4"
+      accent: "#5ec8d4"
+      border: "#2a3b3f"
+      focus: "#7ad6e0"
 styles:
   classes:
     - landing-page
@@ -53,7 +53,6 @@ goal into a structured, playable Path they can keep, revise, and resume.
 <grid cols="3" gap="4">
   <project-feature
     title="Start a learning space"
-    label="Start here"
     href="./guides/start-learning-with-codex.guide.md"
     cta="Copy the prompt"
   >
@@ -63,18 +62,16 @@ goal into a structured, playable Path they can keep, revise, and resume.
     first playable map.
   </project-feature>
   <project-feature
-    title="Review the agent-loop evals"
-    label="Evidence"
-    href="./presentation/walkthrough.slides.md"
+    title="Read the featured eval report"
+    href="./research/learning-agent-evals.brief.md"
     cta="Read the report"
   >
     <slot name="icon">:lucide-gauge:</slot>
-    See the real Codex CLI harness, phase contracts, scoring rubric, latency
-    measurements, failures, and the instruction changes those failures drove.
+    Inspect the submission's real Codex CLI harness, phase contracts, scoring
+    rubric, latency data, charts, failures, and the shipped changes they drove.
   </project-feature>
   <project-feature
     title="Explore the learning labs"
-    label="Playground"
     href="./labs/index.path.md"
     cta="Open the labs"
   >
@@ -130,15 +127,16 @@ and toolchain for authoring curriculum as readable Markdown Sources. PathMX
 builds those Sources into a linked graph and a Player for focused, interactive
 progress. This site and its linked examples are PathMX content.
 
-<aside class="italic text-sm">
-PathMX is currently in private beta and its Core repository is closed-source.
+PathMX Core and the PathMX CLI are currently closed-source and distributed under
+the PathMX Private Beta License. The beta may be installed and used to author,
+build, and play PathMX projects, but its APIs and behavior are not yet stable
+and may change without notice. We expect to evaluate an open-source release
+after the API stabilizes, but no release date or commitment has been made.
+
 During Build Week we used Codex to extend that Core alongside the public work
-collected here.
-
-See the [PathMX Core progress log](./work-log/pathmx-changes.log.md) for a
-self-contained, living account of what landed during the Build Week window.
-
-</aside>
+collected here. See the [PathMX Core progress log](./work-log/pathmx-changes.log.md)
+for a self-contained, living account of what landed during the Build Week
+window.
 
 ## How we built this
 
@@ -160,7 +158,8 @@ reconstructing it from chat history.
 These are the demos, presentation materials, and other work we built during the build week.
 
 - [Submission walkthrough](./presentation/submission-walkthrough.slides.md) — The three-minute public Path that tells the learning story end to end.
-- [Agent Loop Evals](./presentation/walkthrough.slides.md) — Internal review of the eval harness, scoring evidence, and what the agent loop proved.
+- [Featured: Learning-Agent Evals](./research/learning-agent-evals.brief.md) — Build Week technical report with method, scoring evidence, latency data, charts, changes, and limits.
+- [Eval Findings Deck](./presentation/walkthrough.slides.md) — Concise internal-review walkthrough of the same evidence.
 - [PathMX Build Week (this repository)](https://github.com/pathmx/pathmx-build-week-2026) — Labs, tasks, and the living record of Build Week collaboration.
 - [PathMX Learning Starter](https://github.com/pathmx/pathmx-learning-starter) — The learner-facing starter for durable personal learning Paths.
 - [PathMX Skills](https://github.com/pathmx/pathmx-skills) — Canonical agent skills for authoring PathMX and guiding personal learning.

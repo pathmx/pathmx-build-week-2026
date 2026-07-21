@@ -47,23 +47,25 @@
     text-wrap: balance;
   }
 
+  /* Graph-wide type: a modest step up from PathMX prose defaults
+     (2.25em / 1.75em / 1.35em). Hero scale lives on `.landing-page` only. */
   h1 {
-    max-inline-size: 14ch;
+    max-inline-size: 20ch;
     margin-block: 0 0.7em;
-    font-size: clamp(3.5rem, 9cqi, 6.25rem);
-    line-height: 0.96;
+    font-size: clamp(2.35rem, 5cqi, 3.15rem);
+    line-height: 1.05;
   }
 
   h2 {
-    margin-block: 2.4em 0.6em;
-    font-size: clamp(1.9rem, 4.6cqi, 2.85rem);
-    line-height: 1.1;
+    margin-block: 2.2em 0.55em;
+    font-size: clamp(1.55rem, 3.2cqi, 2.1rem);
+    line-height: 1.15;
   }
 
   h3 {
-    margin-block: 2em 0.55em;
-    font-size: clamp(1.28rem, 2.8cqi, 1.65rem);
-    line-height: 1.22;
+    margin-block: 1.8em 0.5em;
+    font-size: clamp(1.2rem, 2.2cqi, 1.45rem);
+    line-height: 1.25;
   }
 
   :where(p, ul, ol, blockquote, table, pre) {
@@ -182,7 +184,7 @@
 
   @media (max-width: 640px) {
     h1 {
-      font-size: clamp(2.85rem, 13.5vw, 4.25rem);
+      font-size: clamp(2.15rem, 8.5vw, 2.75rem);
     }
 
     :where(th, td) {
@@ -222,6 +224,74 @@
   padding-block: clamp(1.15em, 4.5vh, 2.75rem) clamp(1.25rem, 3cqi, 2rem);
 }
 
+/* Landing hero: full-bleed constellation-style grid under the wash.
+   Pure CSS gradients + mask (no paint work beyond one pseudo) — cheap.
+   Mask mirrors the landing wash so the grid only reads where the glow is. */
+.pmx-document.landing-page > .pmx-block.page-header {
+  position: relative;
+  isolation: isolate;
+}
+
+.pmx-document.landing-page > .pmx-block.page-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-block-start: 0;
+  inset-block-end: auto;
+  inset-inline: calc(50% - 50vw);
+  inline-size: 100vw;
+  /* Reach the wash falloff, not just the short header Block. */
+  block-size: 28rem;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      color-mix(in oklch, var(--pmx-color-accent) 20%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--pmx-color-accent) 20%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 1.5rem 1.5rem;
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 90% 28rem at 12% 0%,
+      rgb(0 0 0 / 0.95) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 22rem at 90% 0%,
+      rgb(0 0 0 / 0.7) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(0 0 0 / 0.55) 0%,
+      rgb(0 0 0 / 0.22) 8rem,
+      transparent 24rem
+    );
+  mask-image:
+    radial-gradient(
+      ellipse 90% 28rem at 12% 0%,
+      rgb(0 0 0 / 0.95) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 22rem at 90% 0%,
+      rgb(0 0 0 / 0.7) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(0 0 0 / 0.55) 0%,
+      rgb(0 0 0 / 0.22) 8rem,
+      transparent 24rem
+    );
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
+
 .pmx-block.page-header > h1:first-child {
   margin-block: 0 0.45em;
 }
@@ -243,6 +313,29 @@
 }
 
 @scope (.pmx-document.landing-page) {
+  /* Home hub only: display-scale headings. */
+  h1 {
+    max-inline-size: 14ch;
+    font-size: clamp(3.5rem, 9cqi, 6.25rem);
+    line-height: 0.96;
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 4.6cqi, 2.85rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: clamp(1.28rem, 2.8cqi, 1.65rem);
+    line-height: 1.22;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: clamp(2.85rem, 13.5vw, 4.25rem);
+    }
+  }
+
   /* Hub lists read as soft chips instead of default bullets. */
   :scope > .pmx-block > ul {
     list-style: none;

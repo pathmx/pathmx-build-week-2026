@@ -29,7 +29,7 @@ work and is not tracked as a Build Week task.
 | [Produce the three-minute submission video](./2026-07-20-produce-submission-video.task.md)                                  | Mark   | Rehearse the dedicated deck to 2:45–2:50, verify the live learner loop, lock the third example, then record and verify YouTube by 7 PM |
 | [Prepare the learner starter and submission](./2026-07-15-prepare-learner-starter-and-submission.task.md)                   | Mark   | Share the private repo with both judge accounts, finish Devpost + `/feedback`, fresh-test, submit by 7:30, and confirm green Submitted |
 | [Update the PathMX skills package](./2026-07-20-update-pathmx-skills.task.md)                                               | Tram   | Retest the shipped `/learn` workflow with Mark in Codex Desktop and record learner-language or waiting-time gaps                       |
-| [Publish the PathMX Core progress log](./2026-07-21-publish-pathmx-core-progress-log.task.md)                               | Mark   | CLI 0.1.24 is now verified; refresh against the Core journal, prepend any new milestone, and freeze before the 8 PM cutoff             |
+| [Publish the PathMX Core progress log](./2026-07-21-publish-pathmx-core-progress-log.task.md)                               | Mark   | CLI 0.1.25 is now verified; refresh against the Core journal, prepend any new milestone, and freeze before the 8 PM cutoff             |
 | [Explore reference labs and test the authoring skill](./2026-07-15-explore-reference-labs-and-test-authoring-skill.task.md) | Andrew | Lock or replace Campaign Forge as the third showcase; finish the Campaign Forge focus and arrow-key field-guide pass                   |
 
 ---

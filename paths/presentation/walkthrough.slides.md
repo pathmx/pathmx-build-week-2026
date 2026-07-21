@@ -1,6 +1,6 @@
 ---
 type: slides
-status: ready
+status: draft
 title: Codex learning-system eval review
 date: 2026-07-21
 related:
@@ -18,7 +18,7 @@ play:
 
 ### Method, findings, and changes to the PathMX skills and Learning Starter
 
-**Eval runtime:** PathMX 0.1.22 · Codex CLI · July 21, 2026
+**Eval series:** PathMX 0.1.21–0.1.24 · Codex CLI 0.142.5–0.145.0 · July 21, 2026
 
 ---
 
@@ -142,6 +142,24 @@ turn. Staged authoring made progress visible while the module was being built.
 
 ---
 
+<!-- id: subagent-finding -->
+
+# Subagents improved cadence, not first-module wall time
+
+| Lane | Workers | Module turn | Longest silence | Checks |
+| --- | ---: | ---: | ---: | ---: |
+| Collaboration disabled | 0 | 3m04s | 1m43s | 100% |
+| Explicit bounded workers | 2 Sol/low | 4m35s | 1m05s | 100% |
+| One-join repeat | 2 Sol/low | 4m24s | 1m10s | 100% |
+
+Codex delegated only after map confirmation and preserved parent ownership of
+the first session, shared state, integration, and handoff. Coordination cost
+outweighed parallel drafting for this small three-session module. Two separate
+Terra/low probes still launched Sol/low children, so the Starter no longer
+ships or advertises an unverified faster worker configuration.
+
+---
+
 <!-- id: limits -->
 
 # Interpretation and limits
@@ -158,6 +176,8 @@ turn. Staged authoring made progress visible while the module was being built.
 - Exercise the published Starter and hosted bootstrap after release.
 - Review the real Codex Desktop Browser and permission experience manually.
 - Reduce silent gaps that still exceeded one minute in some turns.
+- Establish whether a larger later-module task can amortize same-model worker
+  coordination.
 
 ---
 
@@ -165,13 +185,16 @@ turn. Staged authoring made progress visible while the module was being built.
 
 # Recommended next validation
 
-- Publish the Starter and canonical skills against the verified PathMX baseline.
-- Run hosted-bootstrap scenarios in a fresh Codex Desktop project.
-- Repeat fast and default-strength profiles; track quality and waiting separately.
-- Compare repeated runs by phase, quality score, first-update time, and longest
-  silent interval.
+- After PathMX 0.1.25 publishes, run one hosted-bootstrap `desktop-power`
+  release smoke.
+- Run one larger later-module or return pair with collaboration disabled and
+  required.
+- Keep the buffered module—not worker fan-out—as the primary learner-speed
+  mechanism until repeated pairs show a wall-clock improvement.
 
 **Team test guide:** [Run the manual Codex Desktop flow](../guides/self-learning-manual-test.guide.md)
 
 The deck reports the current evidence; it is not a substitute for repeated
 runs or the manual Codex Desktop review.
+
+**Full report:** [Read the method, charts, findings, and limits](../research/learning-agent-evals.brief.md)

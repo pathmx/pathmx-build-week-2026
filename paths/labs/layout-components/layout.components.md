@@ -433,14 +433,13 @@ Props:
 # Project Feature
 
 Opinionated feature card for hub pages and featured-work grids. Use it when a
-composition needs a linked project teaser with a label, title, short summary,
+composition needs a linked project teaser with an icon, title, short summary,
 and clear call to action. Keep spatial arrangement on `<grid>` or the stacks;
 this tag owns the card chrome.
 
 Props:
 
 - `title`: feature heading, defaults to `Project feature`
-- `label`: small eyebrow above the title, defaults to `Feature`
 - `href`: destination URL or Source path, defaults to `#`
 - `cta`: footer action text, defaults to `Explore`
 
@@ -458,9 +457,10 @@ Slots:
   href="{{ href: # }}"
   aria-label="{{ title: Project feature }}"
 >
-  <span class="project-feature-icon"><slot name="icon" /></span>
-  <p class="project-feature-label">{{ label: Feature }}</p>
-  <h3 class="project-feature-title">{{ title: Project feature }}</h3>
+  <div class="project-feature-heading">
+    <span class="project-feature-icon"><slot name="icon" /></span>
+    <h3 class="project-feature-title">{{ title: Project feature }}</h3>
+  </div>
   <div class="project-feature-body">
     <slot />
   </div>
@@ -508,7 +508,7 @@ Slots:
   outline-offset: 2px;
 }
 
-.project-feature-label,
+.project-feature-heading,
 .project-feature-title,
 .project-feature-body,
 .project-feature-body > *,
@@ -516,8 +516,16 @@ Slots:
   margin: 0;
 }
 
+.project-feature-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-inline-size: 0;
+}
+
 .project-feature-icon {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   inline-size: 2.4rem;
@@ -533,17 +541,9 @@ Slots:
   display: none;
 }
 
-.project-feature-label {
-  color: color-mix(in oklch, var(--pmx-color-accent) 72%, var(--pmx-color-fg));
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
 .project-feature-title {
-  max-inline-size: 16ch;
+  flex: 1 1 auto;
+  min-inline-size: 0;
   color: var(--pmx-color-fg);
   font-size: clamp(1.15rem, 2.2cqi, 1.35rem);
   font-weight: 720;
@@ -751,7 +751,6 @@ Featured project teasers use the dedicated card:
 <grid cols="3" gap="4">
   <project-feature
     title="Project feature one"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -760,7 +759,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature two"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -769,7 +767,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature three"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -806,7 +803,6 @@ Featured project teasers use the dedicated card:
 <grid cols="3" gap="4">
   <project-feature
     title="Project feature one"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -815,7 +811,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature two"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -824,7 +819,6 @@ Featured project teasers use the dedicated card:
   </project-feature>
   <project-feature
     title="Project feature three"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >

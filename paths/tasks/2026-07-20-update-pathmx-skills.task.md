@@ -56,3 +56,10 @@ push or rescaffold.
   Canonical sync and automated checks landed in both consumer repositories.
   The remaining work is the paired Codex Desktop retest, not another Starter
   rescaffold.
+- **2026-07-21:** Skill sync now performs a rollback-safe complete replacement
+  of the managed skill tree directly in the current checkout, with no temporary
+  Git branch. Canonical, Starter, and Build Week copies are byte-identical.
+  Subagent evaluation found that explicit two-worker instructions shortened the
+  longest silent interval but increased first-module wall time; two worker-model
+  probes still inherited Sol/low, so the unverified Terra configuration was
+  removed.

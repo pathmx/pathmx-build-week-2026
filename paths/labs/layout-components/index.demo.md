@@ -142,13 +142,12 @@ Reviewed upstream commit:
 ## Project Feature Cards
 
 Use `<project-feature>` for linked hub teasers. Spatial layout stays on
-`<grid>`; the card owns label, title, summary, and CTA chrome.
+`<grid>`; the card owns icon, title, summary, and CTA chrome.
 
 <div class="pmx-wide">
 <grid cols="3" gap="4">
   <project-feature
     title="Project feature one"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -157,7 +156,6 @@ Use `<project-feature>` for linked hub teasers. Spatial layout stays on
   </project-feature>
   <project-feature
     title="Project feature two"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >
@@ -166,7 +164,6 @@ Use `<project-feature>` for linked hub teasers. Spatial layout stays on
   </project-feature>
   <project-feature
     title="Project feature three"
-    label="TBD"
     href="#"
     cta="Coming soon"
   >

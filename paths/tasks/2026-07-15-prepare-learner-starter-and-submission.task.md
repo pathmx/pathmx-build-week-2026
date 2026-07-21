@@ -73,6 +73,14 @@ verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
   buffered module authoring, return-and-adapt behavior, deterministic checks,
   an independent quality judge, and latency warnings. The findings and release
   limits are summarized in the [team walkthrough](../presentation/walkthrough.slides.md).
+- **2026-07-21 4:53 PM EDT:** Published-entry preparation now includes the
+  canonical raw bootstrap URL, a one-prompt judge guide, the full
+  [learning-agent eval report](../research/learning-agent-evals.brief.md), and
+  the revised internal deck. PathMX 0.1.25 passed the 64-test canonical suite,
+  Starter candidate and normal checks, and a zero-warning 369-artifact Build
+  Week build. Player review found no report overflow or console warnings and
+  confirmed the four deck metrics are individual component Beats. A hosted
+  release eval and the paired human Codex Desktop test remain.
 - **2026-07-21:** Pre-landing verification passed: 55 canonical skill tests,
   byte-identical skill sync in both consumer repositories, the Starter's
   PathMX 0.1.21 compatibility fixture, and a 279-artifact Build Week build on
