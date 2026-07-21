@@ -12,6 +12,37 @@ related:
 
 <!--
 type: change
+date: "2026-07-21T15:36:32-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## Learning skills add a bounded parallel runway
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The repo-local `/learn` mirror now keeps the learner conversation, shared
+indexes, profile, activity state, and placement decisions with the parent agent
+while allowing two or three direct workers to research or draft separate later
+session files after the learner confirms the map. A shared vocabulary and
+scenario contract, one owner per file, focused worker checks, and a fixed join
+point keep coordination from becoming another source of learner waiting.
+
+The synchronized PathMX reference also documents the accepted
+`styles.classes` Source and Block selector contract and the lower-specificity
+prose baseline. Its fixture proof remains in the canonical skills repository;
+the Build Week content continues to follow the installed PathMX version.
+
+Verification: the canonical skills suite passed 61 tests. This repository's
+full PathMX build produced 106 artifacts with only the three known unsupported
+Tufte-theme fields.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T14:23:27-04:00"
 -->
 
