@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-21
 related:
@@ -19,12 +19,12 @@ the result through Cloudflare Workers Static Assets.
 
 ## Result
 
-`scripts/deploy-cloudflare.ts` now builds the latest published PathMX CLI into
-scratch space, copies only manifest-declared files, emits native Cloudflare
-route and header rules, and writes a static-only Wrangler project. The default
-command only stages the bundle; `--dry-run` validates it and `--deploy` first
-checks Wrangler authentication before publishing. Operator usage stays in the
-script's `--help` output rather than the judge-facing README.
+`scripts/deploy-cloudflare.ts` stages a Player-embedded static bundle, emits
+Cloudflare-native routes/headers (including public-chunk rewrites), and deploys
+through Workers Static Assets. At the submission freeze the corrected bundle
+was redeployed to `build-week.pathmx.net` on PathMX `@latest` (0.1.27): 426
+staged files, 263 routes, custom domain live, Version ID
+`6861e7b2-acd6-4992-b8e6-e67daf3441cb`.
 
 ---
 
@@ -80,3 +80,7 @@ script's `--help` output rather than the judge-facing README.
   that differs from its artifact path. Local Wrangler parsed all 243 rules;
   the Player mounted Browse, Explore, and Start Play controls with no console
   errors. The corrected bundle is ready to redeploy.
+- **2026-07-21 ~7:55 PM EDT:** Redeployed with
+  `bun scripts/deploy-cloudflare.ts --deploy --domain build-week.pathmx.net`
+  on PathMX 0.1.27. Staged 426 files / 263 routes; Wrangler uploaded the delta
+  and published `build-week.pathmx.net`. Closed at the submission freeze.

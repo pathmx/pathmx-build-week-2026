@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Tram
 date: 2026-07-20
 related:
@@ -19,12 +19,12 @@ Saturday learner-test findings and keep the Learning Starter synchronized.
 
 ---
 
-## Next Move
+## Result
 
-Tram and Mark run the current hosted-bootstrap flow together in Codex Desktop
-and record any remaining learner-language or waiting-time gaps in the manual
-test guide. The canonical pack and Starter are no longer blocked on a skill
-push or rescaffold.
+Buffered `/learn`, reusable `/teach`, and `/pathmx` syntax skills shipped with
+byte-identical copies in canonical, Starter, and Build Week. Automated skill
+sync and checks passed. Paired Codex Desktop retest for remaining
+learner-language or waiting-time gaps deferred past the submission freeze.
 
 ---
 
@@ -63,3 +63,5 @@ push or rescaffold.
   longest silent interval but increased first-module wall time; two worker-model
   probes still inherited Sol/low, so the unverified Terra configuration was
   removed.
+- **2026-07-21:** Closed at the submission freeze with the skill pack and
+  Starter sync shipped; paired Desktop retest remains an optional follow-up.

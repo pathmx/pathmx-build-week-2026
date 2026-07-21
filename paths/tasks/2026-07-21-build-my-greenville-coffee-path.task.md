@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 date: 2026-07-21
 related:
@@ -19,11 +19,13 @@ a rankings directory.
 
 ---
 
-## Next Move
+## Result
 
-Play the linked outline from the Labs hub, review its voice, and decide which
-places belong in a truly personal Greenville before building the signature
-atlas interaction.
+Playable outline at `/labs/my-greenville` linked from the Labs hub: five-place
+coffee atlas with dated public facts, invited personal lore, outing mission,
+and after-visit field note. Build, route, and wide/narrow Player checks
+passed. Personal-voice lock and signature atlas interaction deferred past the
+submission freeze.
 
 ---
 
@@ -70,3 +72,5 @@ atlas interaction.
   with 182 artifacts and the three known Tufte warnings, and exact route lookup
   returned `http://localhost:3000/labs/my-greenville`. Personal voice and atlas
   interaction review remain open.
+- **2026-07-21:** Closed at the submission freeze with the outline shipped for
+  review; personal anchors and atlas interaction remain post-submission.

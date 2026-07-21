@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 date: 2026-07-15
 related:
@@ -26,12 +26,12 @@ small, coherent lab change.
 
 ---
 
-## Next Move
+## Result
 
-For submission: confirm Campaign Forge as the locked third showcase example or
-name a replacement with a judge route. In parallel, finish the Campaign Forge
-field-guide pass—reproduce focused-Beat, code-Beat, and arrow-key ownership
-after pointer interaction—then hand Mark the theme and keyboard review.
+Campaign Forge remains the working third showcase example in the submission
+walkthrough; chess opening lesson and other reviewed labs exercised the
+authoring skill during Build Week. Remaining Campaign Forge focus /
+arrow-key field-guide pass deferred past the submission freeze.
 
 ---
 
@@ -180,3 +180,6 @@ change, or its own acceptance criteria.
   immediate lab tour and agent-driven authoring test. The repo-local
   `pathmx-authoring` skill was synchronized byte-for-byte from the current
   `~/sources/pathmx` checkout at `c50ab7c` before handoff.
+- **2026-07-21:** Closed at the submission freeze with Campaign Forge kept as
+  the working third showcase; remaining field-guide keyboard ownership pass
+  deferred.

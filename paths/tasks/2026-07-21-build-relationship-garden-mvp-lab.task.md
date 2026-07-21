@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 reviewer: Mark
 date: 2026-07-21
@@ -20,11 +20,13 @@ touch in-session, and carry a precise persistence prompt back to Codex.
 
 ---
 
-## Next Move
+## Result
 
-Andrew reviews the live garden's stewardship tone and Priya demo flow. If it
-is ready to share, prepend the owning change-log Block, rerun the outgoing
-change-log check, then commit and publish the implementation.
+MVP playable at `/labs/relationship-garden` with six person Sources, bed
+filters, Parallel Lives, in-session touch logging, and five Codex prompts.
+Focused/root builds, exact routes, and wide/narrow/keyboard/reduced-motion /
+no-JS Player checks passed. Stewardship-tone approval and change-log publish
+pass deferred past the submission freeze.
 
 ---
 
@@ -73,3 +75,6 @@ change-log check, then commit and publish the implementation.
   local headless browser. The change log and outgoing checker remain skipped
   because no commit or push was requested; the task stays in progress for
   Andrew's review and publishing decision.
+- **2026-07-21:** Closed at the submission freeze with the verified MVP in
+  place; final stewardship approval and change-log publish remain optional
+  follow-up.

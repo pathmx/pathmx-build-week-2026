@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 date: 2026-07-21
 related:
@@ -20,12 +20,13 @@ evidence using one YouTube embed and a provided transcript only.
 
 ---
 
-## Next Move
+## Result
 
-Andrew reviews the live Player pass for `/labs/youtube-watch-recall`: watch
-the embed, submit at least one single-choice and one long-text response,
-confirm `response` data lands under each question Block, and either close
-this task or record follow-ups.
+Playable MVP landed at `/labs/youtube-watch-recall`: official nocookie embed,
+provided-transcript segments, five timestamp-grounded durable questions, Labs
+hub link, and verified root build/route on PathMX 0.1.26. Live Player response
+submission review was skipped before the freeze and remains an optional
+follow-up.
 
 ---
 
@@ -79,3 +80,5 @@ this task or record follow-ups.
   0.1.26 built 1 Path with 410 artifacts and no warnings; exact route remains
   `/labs/youtube-watch-recall`. The live response-submission pass remains the
   only close-out check.
+- **2026-07-21:** Closed at the submission freeze with the MVP shipped and the
+  live response-submission pass explicitly skipped.

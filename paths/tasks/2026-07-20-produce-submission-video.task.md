@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-20
 related:
@@ -25,12 +25,14 @@ review remains in the separate
 
 ---
 
-## Next Move
+## Result
 
-Run one stopwatch rehearsal of the dedicated submission deck to 2:45–2:50,
-verify the live durable learner loop on camera, lock or replace Campaign Forge
-as the third example, then record, upload, and verify public YouTube playback
-by 7:00 PM EDT.
+Dedicated
+[submission walkthrough](../presentation/submission-walkthrough.slides.md)
+is the hub Start Here Path: seven Blocks, Italian Game framing, Chess / Kepler /
+Campaign Forge examples, and Player-verified routes. Recording, YouTube upload,
+and signed-out playback verification are human Devpost media steps outside this
+repository board and were not re-verified here at freeze.
 
 ---
 
@@ -77,3 +79,6 @@ by 7:00 PM EDT.
   Italian Game as a chess opening. This keeps the public copy legible to judges
   without chess knowledge while staying aligned with the actual demo lesson;
   the clarified deck has 329 visible words.
+- **2026-07-21:** Closed at the submission freeze with the durable deck and
+  hub entry in place. YouTube URL and signed-out playback stay in the private
+  Devpost checklist rather than this task board.

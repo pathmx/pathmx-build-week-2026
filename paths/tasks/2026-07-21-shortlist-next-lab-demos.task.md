@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 date: 2026-07-21
 related:
@@ -20,10 +20,14 @@ coverage, without starting a new submission-night hero.
 
 ---
 
-## Next Move
+## Result
 
-Andrew picks the next greenfield. Default: negotiation rehearsal; alternate:
-debugging dojo.
+First-wave picks (YouTube watch-and-recall, Campus Constellation, Research
+Bench) were claimed, built, and integrated on `main`. Second-wave options and
+the default next greenfield (negotiation rehearsal; debugging dojo alternate)
+remain in
+[next-demo shortlist notes](../andrew/2026-07-21-next-demo-shortlist.notes.md)
+for post-submission work.
 
 ---
 
@@ -58,3 +62,5 @@ debugging dojo.
   [next-demo-shortlist notes](../andrew/2026-07-21-next-demo-shortlist.notes.md)
   with five ranked candidates and a default recommendation to graduate Campus
   Constellation first.
+- **2026-07-21:** Closed at the submission freeze after the first-wave trio
+  absorbed the shortlist decision; second-wave picks stay in the notes.

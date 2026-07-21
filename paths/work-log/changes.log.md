@@ -8,6 +8,7 @@ related:
   - ../tasks/2026-07-15-add-change-log-workflow.task.md
   - ../tasks/2026-07-21-style-change-log-as-blog.task.md
   - ../tasks/2026-07-21-add-project-feature-cards.task.md
+  - ../tasks/2026-07-21-feature-labs-index-demos.task.md
 styles:
   classes:
     - change-journal
@@ -15,10 +16,37 @@ styles:
 
 <!--
 type: change
-date: "2026-07-21T18:10:54-04:00"
+date: "2026-07-21T19:55:22-04:00"
 -->
 
 [@change-published]: ./changes.components.md
+
+## The Labs hub leads with Chess, Kepler, and Campus Constellation
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+The [Labs hub](../labs/index.path.md) now opens like the Build Week home page:
+shared landing theme, a top `page-header` Block, and three
+`<project-feature>` cards for [Chess](../labs/chess/index.demo.md),
+[Kepler orbit](../labs/kepler-orbit/index.demo.md), and
+[Campus Constellation](../labs/campus-constellation/index.demo.md). The rest of
+the catalog stays in a chip-styled All demos list so judges still have one
+place to browse every ready experiment.
+
+The owning
+[Labs feature task](../tasks/2026-07-21-feature-labs-index-demos.task.md) is
+complete. A focused scratch build resolved the three card routes
+(`/labs/chess`, `/labs/kepler-orbit`, `/labs/campus-constellation`), and live
+Player review confirmed the featured grid, header wash, and demo list.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T18:10:54-04:00"
+-->
 
 ## The Build Week record now covers the complete PathMX Core window
 

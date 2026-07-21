@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Mark
 date: 2026-07-15
 related:
@@ -25,13 +25,14 @@ repeatable submission without copying private team material into either repo.
 
 ---
 
-## Next Move
+## Result
 
-Share the private primary repository with both required judging accounts,
-finish the required Devpost fields including `/feedback`, complete a fresh
-README-only test, and freeze the human-reviewed story. In parallel, record and
-verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
-**Submitted** state on My projects.
+Learner Starter, skills pack, hosted bootstrap, eval report, submission
+walkthrough, and public Build Week site are ready for judges. Static site
+redeployed to `build-week.pathmx.net` on PathMX 0.1.27 at freeze. Private
+Devpost fields, judging-account shares, `/feedback` ID, and green Submitted
+confirmation stay outside the repository and were not re-verified in this
+close-out.
 
 ---
 
@@ -156,3 +157,6 @@ verify the public video by 7:00 PM EDT; submit by 7:30 PM and confirm the green
   GitHub `bootstrap.md`, a short judge/learner walkthrough, and matching home
   and README links. The flow keeps setup instructions in `pathmx-skills`
   rather than duplicating them in the submission repository.
+- **2026-07-21 ~7:55 PM EDT:** Closed the repository board at the submission
+  freeze after the Cloudflare redeploy. Human Devpost submit confirmation and
+  private form fields remain outside this task file.
