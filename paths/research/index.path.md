@@ -3,6 +3,9 @@
 Helpful links and references for the build week project.
 
 - [Campus Constellation: College Networking Skills](./campus-constellation-networking.path.md)
+- [Relationship Garden implementation plan](../andrew/2026-07-21-relationship-garden-implementation.plan.md)
+  — Andrew's agent handoff for a playable personal CRM / Parallel Lives garden
+- [Relationship Garden concept outline](../andrew/2026-07-21-relationship-garden-outline.notes.md)
 - [Play Cursor Hints](./play-cursor-hints.path.md)
 - [Practice Interview Voice Agent](./practice-interview-voice-agent.path.md)
 - [YouTube Learning Skill](./youtube-learning-skill.path.md)

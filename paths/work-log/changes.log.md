@@ -12,12 +12,40 @@ related:
 
 <!--
 type: change
-date: "2026-07-21T14:23:27-04:00"
+date: "2026-07-21T14:45:00-04:00"
 -->
 
 [@change-published]: ./changes.components.md
 
 # Build Week Changes
+
+## Andrew lands the Relationship Garden handoff on main
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+Andrew's strategy scratchpad now lives on `main` under
+[`paths/andrew/`](../andrew/index.path.md), including the
+[Relationship Garden concept outline](../andrew/2026-07-21-relationship-garden-outline.notes.md)
+and the agent-ready
+[implementation plan](../andrew/2026-07-21-relationship-garden-implementation.plan.md).
+The working name is **Relationship Garden** (lab id `relationship-garden`)
+rather than Reputation Garden, to keep stewardship tone over extractive CRM
+language. The research index links both docs so implementing agents can find
+the handoff without a private branch. Tracked in the
+[owning task](../tasks/2026-07-17-andrew-demo-strategy-notes.task.md).
+
+PathMX scratch build verification is recorded with the landing commit; Play
+review was skipped because these are ordinary notes with no new interaction
+behavior.
+
+---
+
+<!--
+type: change
+date: "2026-07-21T14:23:27-04:00"
+-->
 
 ## The Build Week hub gains reusable feature and team cards
 
