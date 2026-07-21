@@ -2,9 +2,9 @@
 type: demo
 status: playable
 title: Relationship Garden
-description: A local-first garden for remembering who matters, keeping parallel contexts visible, and tending one quiet relationship without guilt.
+description: A local-first personal CRM for remembering context, following through, and keeping one respectful next move clear.
 route: /labs/relationship-garden
-tags: [relationships, local-memory, stewardship, parallel-lives]
+tags: [relationships, local-memory, personal-crm, stewardship, parallel-lives]
 related:
   - ../../tasks/2026-07-21-build-relationship-garden-mvp-lab.task.md
   - ../../andrew/2026-07-21-relationship-garden-implementation.plan.md
@@ -28,14 +28,15 @@ play:
 
 # Relationship Garden
 
-## Tend relationships, not a pipeline
+## A personal CRM that remembers why someone matters
 
-A contact list remembers names. A relationship garden remembers **why a person
-matters, which parts of life you share, what has gone quiet, and what one human
-next move might be**.
+A contact list remembers names. Relationship Garden is a local-first personal
+CRM that remembers **why a person matters, which parts of life you share, what
+needs follow-through, and what one human next move might be**.
 
-This is not inbox surveillance, a lead score, or a nag machine. It reads six
-fictional local Sources. Recency is useful, but it is never a verdict on care.
+It reads six fictional local Sources and turns explicit open loops plus recency
+into a transparent weekly review. There is no inbox surveillance, hidden lead
+score, or nag machine. Recency is useful, but it is never a verdict on care.
 
 > The question is not “Who should I extract value from?” It is “Who have I not
 > talked to in a while—whom I still care about?”
@@ -48,7 +49,7 @@ id: choose-bed
 title: Choose one bed
 -->
 
-## Give this week one North Star
+## Choose what you are tending this week
 
 A garden bed groups relationships around a part of life. It is a lens, not a
 box a person can never leave.
@@ -71,17 +72,20 @@ id: garden-glance
 title: Tend one quiet relationship
 -->
 
-## Let the garden answer one small question
+## Close one relationship loop
 
 Use the instrument in this order:
 
 1. Filter to **Internship**.
-2. Select **Priya Nair** and read how you met.
-3. Turn **Parallel Lives** on.
+2. In **This week's relationship review**, open **Priya Nair** and read the
+   plain-language reason she appears now.
+3. Read how you met, then turn **Parallel Lives** on.
 4. Notice why alumni-panelist and recruiter-coffee are not interchangeable.
 5. Log a touch with a tiny fictional note, such as “Sent a thank-you and asked
    which product experiment taught her the most.”
-6. Watch Priya return to **Recently tended**, then copy the persistence prompt.
+6. Mark the thank-you open loop resolved and keep or revise the one next move.
+7. Watch Priya return to **Recently tended** and leave the weekly queue, then
+   copy the persistence prompt.
 
 <relationship-garden label="Fictional Relationship Garden demonstration"></relationship-garden>
 
@@ -93,7 +97,7 @@ id: read-parallel-lives
 title: Read Parallel Lives
 -->
 
-## The same person can meet you in more than one life
+## Context keeps a useful CRM human
 
 Priya appears once in the garden, but her panel keeps two contexts visible:
 **Alumni panelist** and **Recruiter coffee**. The lens adds every life as a chip
@@ -102,7 +106,8 @@ without duplicating the human.
 That boundary matters. A thoughtful alumni-lane thank-you may fit today; a
 casual message that silently becomes a recruiting ask may not.
 
-Parallel Lives is not more segmentation. It is a reminder to approach the
+Parallel Lives supports the relationship review; it is not the product's main
+score or another segmentation scheme. It reminds you to approach the
 relationship through the context that actually earned the trust.
 
 ---
@@ -116,7 +121,8 @@ title: Log a touch without pretending it persisted
 ## Watering changes the session, not the Source
 
 The garden responds immediately when you log a touch: the date changes,
-freshness is recomputed, and the plant stands upright. That feedback is
+freshness is recomputed, the plant stands upright, and the weekly review is
+recalculated. You may also keep or revise the next move. That feedback is
 browser-local.
 
 The interface says **Pending persistence** because no PathMX Host Action or
@@ -140,8 +146,8 @@ title: Carry the touch back to Source
 
 ## Tomorrow's agent should see the same human
 
-The Return prompt names the person, date, channel, note, and both records that
-must stay in sync. A real persistence turn updates:
+The Return prompt names the person, date, channel, note, and next move. A real
+persistence turn updates:
 
 1. [people/priya-nair.person.md](./people/priya-nair.person.md), the readable
    human and agent truth; and
@@ -184,12 +190,14 @@ title: What this proves
 The [chess opening lesson](../chess-opening-lesson/index.demo.md) is a practice
 instrument: each move teaches a capability.
 
-Relationship Garden is a life-memory instrument: each return preserves origin,
-context, recency, and one next move without flattening a person into a lead.
+Relationship Garden is a relationship-management instrument: each return
+preserves origin, context, recency, follow-through, and one next move without
+flattening a person into a lead.
 
 Both are ordinary Markdown. Both become playable. Both give tomorrow's agent a
 durable place to begin.
 
-> Tend one human clearly. Let the garden stay unfinished.
+> Remember the context. Close one loop. Leave tomorrow's agent a truthful next
+> move.
 
 [Back to the labs index](../index.path.md)

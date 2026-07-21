@@ -11,19 +11,22 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 
 ## Demos
 
+- [Chess](./chess/index.demo.md) — a self-contained Literate Component example
+  with component resources, keyboard board interaction, and Play Context
+  Actions.
+- [Chess Opening Lesson](./chess-opening-lesson/index.demo.md) — a short
+  beginner lesson that uses the canonical Chess Game and Chess Board components
+  to teach center control, development, and king safety through replay and
+  practice.
+- [Kepler Orbit](./kepler-orbit/index.demo.md) — a focus-aware orbital field
+  instrument with ordered learning states, direct controls, reduced-motion
+  behavior, and animation scoped to the presented component Beat.
 - [Dialectic spiral](./dialectic-spiral/index.demo.md) — a native port of the
   Hegelian Spiral Perplexity artifact: a scheme-aware canvas instrument whose
   thesis→antithesis→synthesis stages are ordered, Play-traversable states.
 - [Dungeons & Dragons campaign workshop](./campaign-forge/index.demo.md) — a
   portable, Block-paced exercise that turns one fantasy premise into factions,
   places, a flexible first session, and a reusable campaign card.
-- [Chess](./chess/index.demo.md) — a self-contained Literate Component example
-  with component resources, keyboard board interaction, and Play Context
-  Actions.
-- [Chess opening lesson](./chess-opening-lesson/index.demo.md) — a short
-  beginner lesson that uses the canonical Chess Game and Chess Board components
-  to teach center control, development, and king safety through replay and
-  practice.
 - [Tufte theme](./tufte-theme/index.demo.md) — source-local theme tokens and a
   scoped editorial stylesheet with responsive sidenotes, charts, and print
   treatment.
@@ -32,9 +35,6 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 - [Bookshelf](./bookshelf/index.demo.md) — a three-tag Literate Component family
   that keeps semantic book markup, responsive shelf overflow, and the shared
   bookcase visual system in readable component definitions.
-- [Kepler orbit](./kepler-orbit/index.demo.md) — a focus-aware orbital field
-  instrument with ordered learning states, direct controls, reduced-motion
-  behavior, and animation scoped to the presented component Beat.
 - [Focus beats](./focus-components/index.demo.md) — minimal pause, breath,
   held-question, and timebox beats that pace attention typographically, tested
   inside a playable estimation micro-lesson.
@@ -48,7 +48,6 @@ Labs are safe experiments. They may be incomplete, wrong, or discarded.
 - [Relationship Garden](./relationship-garden/index.demo.md) — a local-first
   stewardship instrument that makes recency and parallel contexts playable,
   logs one touch in-session, and hands durable persistence back to Codex.
-- [My Greenville: Coffee Field Notes](./my-greenville/index.demo.md) — a living
-  personal atlas that connects five researched Greenville coffee shops to city
-  context, privacy-safe human threads, one next outing, and a durable field
-  note.
+- [The Greenville Coffee Scene](./my-greenville/index.demo.md) — a living field
+  guide that connects five researched Greenville coffee shops to city context,
+  privacy-safe human threads, one next outing, and a durable field note.

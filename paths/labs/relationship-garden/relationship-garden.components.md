@@ -36,10 +36,10 @@ componentName: relationship-garden
 >
   <header class="rg-header">
     <div>
-      <p class="rg-kicker">A local memory you can tend</p>
-      <h3>Your relationship garden</h3>
+      <p class="rg-kicker">A local-first personal CRM</p>
+      <h3>Your relationship manager</h3>
     </div>
-    <p>Recency is a signal, not a score. Dormant never means dead.</p>
+    <p>Remember context, follow through, and keep one human next move clear.</p>
   </header>
 
   <div class="rg-toolbar">
@@ -59,18 +59,33 @@ componentName: relationship-garden
     Loading the local garden…
   </p>
 
+  <section class="rg-attention" aria-labelledby="rg-attention-title">
+    <header>
+      <div>
+        <p class="rg-kicker">This week's relationship review</p>
+        <h4 id="rg-attention-title">Why someone might need attention now</h4>
+      </div>
+      <span data-attention-summary>Reading explicit open loops and recency…</span>
+    </header>
+    <ol data-attention-list></ol>
+    <p class="rg-attention__note">
+      No hidden score: priorities come only from written open loops, recency,
+      and your no-guilt pins.
+    </p>
+  </section>
+
   <div class="rg-layout">
     <section class="rg-plot-shell" aria-labelledby="rg-plot-title">
       <header>
         <div>
-          <p class="rg-kicker">Garden glance</p>
+          <p class="rg-kicker">Relationship map</p>
           <h4 id="rg-plot-title">Who might welcome attention?</h4>
         </div>
         <span data-count>Six fictional people</span>
       </header>
       <div class="rg-plot" data-plot></div>
       <div class="rg-fallback" data-fallback>
-        <p><strong>Static garden index</strong></p>
+        <p><strong>Static next-touch index</strong></p>
         <ul>
           <li>Priya Nair · Internship · last touched 2026-05-15 · send an alumni-lane thank-you.</li>
           <li>Marcus Chen · Internship · last touched 2026-05-01 · share the prototype lesson learned.</li>
@@ -96,6 +111,7 @@ componentName: relationship-garden
       <p data-origin></p>
 
       <dl class="rg-facts">
+        <div><dt>Why now</dt><dd data-why-now></dd></div>
         <div><dt>Met</dt><dd data-met></dd></div>
         <div><dt>Last touched</dt><dd data-last-touched></dd></div>
         <div><dt>Next move</dt><dd data-next-move></dd></div>
@@ -136,8 +152,21 @@ componentName: relationship-garden
               required
             />
           </label>
+          <label class="rg-form__note">
+            Next move after this touch
+            <input
+              type="text"
+              data-touch-next-move
+              maxlength="180"
+              placeholder="One respectful follow-up, or No task"
+            />
+          </label>
+          <label class="rg-form__check">
+            <input type="checkbox" data-touch-close-loop />
+            Mark the current open loop resolved
+          </label>
         </fieldset>
-        <button class="rg-primary" type="submit">Water this relationship</button>
+        <button class="rg-primary" type="submit">Log touch and update review</button>
       </form>
 
       <p class="rg-pending" data-pending hidden aria-live="polite"></p>
@@ -211,6 +240,7 @@ componentName: relationship-garden
 }
 
 .rg-header,
+.rg-attention > header,
 .rg-panel__header,
 .rg-plot-shell > header,
 .rg-copy-row {
@@ -302,6 +332,7 @@ componentName: relationship-garden
 }
 
 .rg-plot-shell,
+.rg-attention,
 .rg-panel,
 .rg-preset {
   min-inline-size: 0;
@@ -315,6 +346,63 @@ componentName: relationship-garden
   color: color-mix(in srgb, var(--rg-ink) 65%, transparent);
   font-size: 0.78rem;
   white-space: nowrap;
+}
+
+.rg-attention {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.rg-attention > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rg-attention > header > span,
+.rg-attention__note {
+  color: color-mix(in srgb, var(--rg-ink) 65%, transparent);
+  font-size: 0.78rem;
+}
+
+.rg-attention > header > span {
+  max-inline-size: 24ch;
+  text-align: end;
+}
+
+.rg-attention ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rg-attention li {
+  min-inline-size: 0;
+}
+
+:self .rg-attention__person {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  inline-size: 100%;
+  min-block-size: 100%;
+  border-radius: 0.75rem;
+  text-align: start;
+}
+
+.rg-attention__person strong,
+.rg-attention__person span {
+  overflow-wrap: anywhere;
+}
+
+.rg-attention__person span {
+  color: color-mix(in srgb, currentColor 72%, transparent);
+  font-size: 0.74rem;
+  font-weight: 600;
 }
 
 .rg-plot {
@@ -570,6 +658,16 @@ componentName: relationship-garden
   grid-column: 1 / -1;
 }
 
+.rg-form__check {
+  grid-column: 1 / -1;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+
+:self .rg-form__check input {
+  inline-size: auto;
+}
+
 :self input,
 :self select,
 :self textarea {
@@ -611,6 +709,7 @@ componentName: relationship-garden
 
 @container pathmx-runtime (max-width: 36rem) {
   .rg-header,
+  .rg-attention > header,
   .rg-toolbar,
   .rg-panel__header,
   .rg-plot-shell > header {
@@ -620,6 +719,15 @@ componentName: relationship-garden
 
   .rg-lens {
     inline-size: 100%;
+  }
+
+  .rg-attention > header > span {
+    max-inline-size: none;
+    text-align: start;
+  }
+
+  .rg-attention ol {
+    grid-template-columns: 1fr;
   }
 
   .rg-plot {
@@ -648,6 +756,7 @@ componentName: relationship-garden
 @media (forced-colors: active) {
   :self button,
   .rg-plot-shell,
+  .rg-attention,
   .rg-panel,
   .rg-preset,
   :self input,
@@ -669,10 +778,13 @@ const plot = $("[data-plot]")
 const fallback = $("[data-fallback]")
 const status = $("[data-status]")
 const count = $("[data-count]")
+const attentionList = $("[data-attention-list]")
+const attentionSummary = $("[data-attention-summary]")
 const panel = $("[data-panel]")
 const nameOutput = $("[data-name]")
 const livesOutput = $("[data-lives]")
 const freshnessOutput = $("[data-freshness]")
+const whyNowOutput = $("[data-why-now]")
 const originOutput = $("[data-origin]")
 const metOutput = $("[data-met]")
 const lastTouchedOutput = $("[data-last-touched]")
@@ -686,6 +798,8 @@ const form = $("[data-touch-form]")
 const touchDate = $("[data-touch-date]")
 const touchChannel = $("[data-touch-channel]")
 const touchNote = $("[data-touch-note]")
+const touchNextMove = $("[data-touch-next-move]")
+const touchCloseLoop = $("[data-touch-close-loop]")
 const pending = $("[data-pending]")
 const preset = $("[data-preset]")
 const copyButton = $("[data-copy]")
@@ -700,8 +814,16 @@ const local = ctx.state(function () {
   }
 })
 let people = []
+let lastTriggerId = ""
 
-touchDate.value = new Date().toISOString().slice(0, 10)
+function localISODate() {
+  const now = new Date()
+  const offset = now.getTimezoneOffset() * 60000
+  return new Date(now.getTime() - offset).toISOString().slice(0, 10)
+}
+
+touchDate.value = localISODate()
+touchDate.max = localISODate()
 
 function titleCase(value) {
   return String(value)
@@ -722,7 +844,10 @@ function freshnessFor(person) {
   const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
   const age = Number.isFinite(touched)
     ? Math.max(0, Math.floor((today - touched) / 86400000))
-    : 0
+    : null
+  if (age === null) {
+    return { id: "unknown", rawId: "unknown", age: null, label: "Last touch unknown" }
+  }
   let id = "dormant"
   if (age <= recent) id = "recent"
   else if (age <= warming) id = "warming"
@@ -750,6 +875,103 @@ function selectedPerson() {
   return people.find(function (person) {
     return person.id === local.selected
   })
+}
+
+function attentionFor(person) {
+  const freshness = freshnessFor(person)
+  const openCount = Array.isArray(person.openLoops) ? person.openLoops.length : 0
+  if (person.neverGuiltWilt) {
+    return { rank: -1, label: "Resting by choice · no task" }
+  }
+  if (openCount && (freshness.rawId === "quiet" || freshness.rawId === "dormant")) {
+    return {
+      rank: 300 + (freshness.age || 0),
+      label:
+        "Follow through · " +
+        String(openCount) +
+        (openCount === 1 ? " open loop" : " open loops") +
+        " · " +
+        String(freshness.age) +
+        " days quiet",
+    }
+  }
+  if (openCount) {
+    return {
+      rank: 200 + (freshness.age || 0),
+      label:
+        "Follow through · " +
+        String(openCount) +
+        (openCount === 1 ? " open loop" : " open loops"),
+    }
+  }
+  if (freshness.rawId === "quiet" || freshness.rawId === "dormant") {
+    return {
+      rank: 100 + (freshness.age || 0),
+      label: "Reconnect · " + String(freshness.age) + " days since last touch",
+    }
+  }
+  return { rank: 0, label: "No follow-through needed this week" }
+}
+
+function visiblePeople() {
+  return people.filter(function (person) {
+    return local.filter === "all" || person.beds.includes(local.filter)
+  })
+}
+
+function renderAttention() {
+  const priorities = visiblePeople()
+    .map(function (person) {
+      return { person: person, attention: attentionFor(person) }
+    })
+    .filter(function (item) {
+      return item.attention.rank > 0
+    })
+    .sort(function (a, b) {
+      return b.attention.rank - a.attention.rank
+    })
+    .slice(0, 3)
+
+  if (!priorities.length) {
+    const item = document.createElement("li")
+    item.textContent = "Nothing in this focus area needs follow-through right now."
+    attentionList.replaceChildren(item)
+    attentionSummary.textContent = "A calm week is a valid result."
+    return
+  }
+
+  const items = priorities.map(function (item) {
+    const row = document.createElement("li")
+    const button = document.createElement("button")
+    const name = document.createElement("strong")
+    const reason = document.createElement("span")
+    const move = document.createElement("span")
+    button.type = "button"
+    button.className = "rg-attention__person"
+    button.dataset.attentionPerson = item.person.id
+    name.textContent = item.person.name
+    reason.textContent = item.attention.label
+    move.textContent = "Next: " + item.person.nextMove
+    button.append(name, reason, move)
+    on(button, "click", function () {
+      lastTriggerId = item.person.id
+      local.selected = item.person.id
+      renderPlot()
+      renderPanel()
+      status.textContent =
+        "Selected " + item.person.name + " from this week's relationship review."
+      requestAnimationFrame(function () {
+        nameOutput.focus()
+      })
+    })
+    row.append(button)
+    return row
+  })
+  attentionList.replaceChildren.apply(attentionList, items)
+  attentionSummary.textContent =
+    String(priorities.length) +
+    (priorities.length === 1 ? " transparent priority" : " transparent priorities") +
+    (local.filter === "all" ? " across all focus areas" : " in " + titleCase(local.filter))
 }
 
 function makePlant(person) {
@@ -815,19 +1037,21 @@ function makePlant(person) {
   }
 
   on(button, "click", function () {
+    lastTriggerId = person.id
     local.selected = person.id
     renderPlot()
     renderPanel()
     status.textContent =
       "Selected " + person.name + ". Read the person story before choosing a touch."
+    requestAnimationFrame(function () {
+      nameOutput.focus()
+    })
   })
   return button
 }
 
 function renderPlot() {
-  const visible = people.filter(function (person) {
-    return local.filter === "all" || person.beds.includes(local.filter)
-  })
+  const visible = visiblePeople()
   if (!visible.length) {
     const empty = document.createElement("p")
     empty.className = "rg-empty"
@@ -851,6 +1075,7 @@ function renderPlot() {
   })
   lensButton.setAttribute("aria-pressed", String(local.lens))
   lensButton.textContent = "Parallel Lives: " + (local.lens ? "on" : "off")
+  renderAttention()
 }
 
 function renderPanel() {
@@ -862,12 +1087,14 @@ function renderPanel() {
 
   const freshness = freshnessFor(person)
   panel.hidden = false
+  nameOutput.tabIndex = -1
   nameOutput.textContent = person.name
   freshnessOutput.textContent =
     freshness.label +
-    " · " +
-    String(freshness.age) +
-    " days since the last recorded touch"
+    (freshness.age === null
+      ? ""
+      : " · " + String(freshness.age) + " days since the last recorded touch")
+  whyNowOutput.textContent = attentionFor(person).label
   originOutput.textContent = person.origin
   metOutput.textContent =
     person.met.when +
@@ -890,6 +1117,9 @@ function renderPanel() {
     }),
   )
   caution.hidden = person.lives.length < 2
+  touchNextMove.value = person.nextMove || ""
+  touchCloseLoop.checked = person.openLoops.length > 0
+  touchCloseLoop.disabled = person.openLoops.length === 0
   sourceLink.href =
     "/labs/relationship-garden/people/" + person.id + ".person"
   const saved = local.pending[person.id]
@@ -934,10 +1164,17 @@ on(lensButton, "click", function () {
 })
 
 on(closeButton, "click", function () {
+  const restoreId = lastTriggerId
   local.selected = ""
   renderPlot()
   renderPanel()
   status.textContent = "Person details closed. The whole garden is visible."
+  requestAnimationFrame(function () {
+    const restore =
+      $("[data-attention-person='" + restoreId + "']") ||
+      $("[data-person-id='" + restoreId + "']")
+    if (restore) restore.focus()
+  })
 })
 
 on(form, "submit", function (event) {
@@ -949,12 +1186,23 @@ on(form, "submit", function (event) {
     touchNote.focus()
     return
   }
+  if (touchDate.value > localISODate()) {
+    touchDate.setCustomValidity("A touch cannot be logged in the future.")
+    touchDate.reportValidity()
+    touchDate.focus()
+    return
+  }
+  touchDate.setCustomValidity("")
+  const nextMove = touchNextMove.value.trim() || "No task"
+  const resolvedLoops = touchCloseLoop.checked ? person.openLoops.slice() : []
   const touch = {
     date: touchDate.value,
     channel: touchChannel.value,
     note: note,
   }
   person.lastTouched = touch.date
+  person.nextMove = nextMove
+  if (resolvedLoops.length) person.openLoops = []
   local.pending[person.id] = touch
   preset.value =
     "I tended " +
@@ -965,7 +1213,13 @@ on(form, "submit", function (event) {
     touch.channel +
     ': "' +
     touch.note +
-    '". Update lastTouched, Touches, and freshness fields in both the person Source and JSON mirror. Propose a next move only if one is needed.'
+    '" Update lastTouched and append this event under Touches in the person Source. Set nextMove to "' +
+    nextMove +
+    '" in both the person Source and JSON mirror.' +
+    (resolvedLoops.length
+      ? ' Remove the resolved open loop from both records: "' + resolvedLoops.join("; ") + '".'
+      : "") +
+    " Do not invent any other relationship details."
   renderPlot()
   renderPanel()
   status.textContent =

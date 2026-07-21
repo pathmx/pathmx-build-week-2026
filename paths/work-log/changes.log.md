@@ -15,6 +15,49 @@ styles:
 
 <!--
 type: change
+date: "2026-07-21T18:00:42-04:00"
+-->
+
+[@change-published]: ./changes.components.md
+
+## The lab showcase leads with practice, exploration, and tending
+
+<change-published datetime="{{ block.date }}">
+  Published {{ block.date }}
+</change-published>
+
+[Relationship Garden](../labs/relationship-garden/index.demo.md) now leads
+with a useful local-first personal CRM loop: a transparent weekly attention
+queue explains why someone appears, the person panel keeps origin and parallel
+contexts visible, and one touch can close an explicit open loop while setting
+the next move. The exact pending-persistence prompt carries the touch, resolved
+loop, and next move back to readable Source without claiming automatic saves or
+introducing inbox, calendar, contact, or sales-pipeline behavior.
+
+Andrew locked the garden as the third showcase in place of Campaign Forge. The
+[submission deck](../presentation/submission-walkthrough.slides.md) now frames
+the examples as **Practice → Explore → Tend**, and the [owning
+task](../tasks/2026-07-21-build-relationship-garden-mvp-lab.task.md) records the
+verified judge route and remaining video handoff.
+
+The [Labs hub](../labs/index.path.md) now leads with Chess, Chess Opening
+Lesson, and Kepler Orbit while preserving every other demo link. The unfinished
+Greenville field guide is now presented as [The Greenville Coffee
+Scene](../labs/my-greenville/index.demo.md), with its existing route preserved
+for review.
+
+PathMX 0.1.25 built the focused Source with 206 artifacts and the full graph
+with 363 artifacts. Live Player review covered Internship → Priya → Parallel
+Lives → touch → resolved thank-you → Pending persistence; Priya left the weekly
+queue, the 390 × 844 layout had no horizontal overflow, focus restored to her
+plant after closing the panel, browser errors were empty, and `git diff
+--check` passed. Reduced-motion, forced-colors, and no-JavaScript behavior were
+inspected in Source but not re-emulated after the final queue refinement.
+
+---
+
+<!--
+type: change
 date: "2026-07-21T15:36:32-04:00"
 -->
 
@@ -62,11 +105,11 @@ date: "2026-07-21T15:21:17-04:00"
 [Relationship Garden](../labs/relationship-garden/index.demo.md) now gives the
 hub a playable, local-first stewardship instrument: six fictional people,
 parallel contexts, an in-session touch, and an explicit Codex persistence
-handoff. [My Greenville: Coffee Field Notes](../labs/my-greenville/index.demo.md)
-is linked as a deliberately unfinished personal atlas with five researched
+handoff. [The Greenville Coffee Scene](../labs/my-greenville/index.demo.md)
+is linked as a deliberately unfinished field guide with five researched
 coffee anchors, dated public evidence, privacy-safe field prompts, and one next
 outing. The [Relationship Garden task](../tasks/2026-07-21-build-relationship-garden-mvp-lab.task.md)
-and [My Greenville task](../tasks/2026-07-21-build-my-greenville-coffee-path.task.md)
+and [Greenville Coffee Scene task](../tasks/2026-07-21-build-my-greenville-coffee-path.task.md)
 record the remaining human review boundaries.
 
 PathMX 0.1.24 completed a clean scratch build with 3,546 artifacts; exact route

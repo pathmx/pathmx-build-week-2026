@@ -28,9 +28,8 @@ review remains in the separate
 ## Next Move
 
 Run one stopwatch rehearsal of the dedicated submission deck to 2:45–2:50,
-verify the live durable learner loop on camera, lock or replace Campaign Forge
-as the third example, then record, upload, and verify public YouTube playback
-by 7:00 PM EDT.
+verify the live durable learner loop and Relationship Garden cut on camera,
+then record, upload, and verify public YouTube playback by 7:00 PM EDT.
 
 ---
 
@@ -77,3 +76,8 @@ by 7:00 PM EDT.
   Italian Game as a chess opening. This keeps the public copy legible to judges
   without chess knowledge while staying aligned with the actual demo lesson;
   the clarified deck has 329 visible words.
+- **2026-07-21:** Andrew locked Relationship Garden as the third showcase in
+  place of Campaign Forge. The deck now frames the range as **Practice →
+  Explore → Tend** and links the verified `/labs/relationship-garden` judge
+  route. The short cut should show Internship → Priya → resolved thank-you →
+  Pending persistence; the earlier Campaign Forge review remains historical.

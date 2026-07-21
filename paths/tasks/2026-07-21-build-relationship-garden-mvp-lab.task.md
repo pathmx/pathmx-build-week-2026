@@ -1,6 +1,6 @@
 ---
 type: task
-status: in-progress
+status: done
 owner: Andrew
 reviewer: Mark
 date: 2026-07-21
@@ -14,17 +14,17 @@ related:
 
 ## Outcome
 
-Create a readable, playable Relationship Garden lab where a learner can notice
-one quiet relationship, understand its parallel contexts, log a respectful
-touch in-session, and carry a precise persistence prompt back to Codex.
+Create a readable, playable local-first personal CRM where a learner can see
+why one relationship needs attention, understand its parallel contexts, choose
+and log a respectful next move, and carry a precise persistence prompt back to
+Codex.
 
 ---
 
 ## Next Move
 
-Andrew reviews the live garden's stewardship tone and Priya demo flow. If it
-is ready to share, prepend the owning change-log Block, rerun the outgoing
-change-log check, then commit and publish the implementation.
+Mark rehearses the locked Relationship Garden judge cut in the submission
+deck: Internship → Priya → resolve thank-you → Pending persistence.
 
 ---
 
@@ -33,6 +33,10 @@ change-log check, then commit and publish the implementation.
 - Six fictional person Sources and the JSON resource mirror remain in sync.
 - The garden supports bed filtering, recency postures, person selection,
   Parallel Lives, and an in-session log-touch flow.
+- A weekly attention queue explains its priorities from explicit recency and
+  open-loop data without an opaque score.
+- The Priya flow supports one next-move update and generates an exact prompt
+  for persisting the touch and next move.
 - The demo and five-prompt ritual are readable in Markdown and playable at
   `/labs/relationship-garden`.
 - Build, exact-route, wide/narrow Player, keyboard, reduced-motion, and
@@ -42,6 +46,28 @@ change-log check, then commit and publish the implementation.
 
 ## Activity
 
+- **2026-07-21:** Andrew rejected Campaign Forge as the third showcase and
+  locked Relationship Garden instead. Three read-only agent reviews converged
+  on a local-first personal CRM centered on one transparent weekly
+  follow-through loop rather than a larger field set, connector layer, or
+  sales pipeline.
+- **2026-07-21:** Added a three-person weekly attention queue derived only from
+  explicit open loops, recency, and no-guilt pins; a visible “why now” in the
+  person panel; an editable post-touch next move; an explicit resolved-loop
+  control; local-calendar date handling; future-date rejection; unknown-date
+  handling; and focus restoration after closing a person.
+- **2026-07-21:** PathMX 0.1.25 built the focused Source as one Path with 206
+  artifacts and the final root graph with 363 artifacts; exact route lookup
+  returned `/labs/relationship-garden`, the component script parsed
+  independently, and `git diff --check` passed. The fresh local Player verified
+  Internship → Priya → Parallel Lives → touch →
+  resolved thank-you: Priya moved from 67-day quiet to recently tended, left
+  the two-person queue, kept the revised next move, and generated a precise
+  pending-persistence prompt. Browser errors were empty. At 390×844 the
+  document, component, and attention queue had no horizontal overflow; closing
+  the panel restored focus to Priya. The readable no-JavaScript next-touch
+  index, reduced-motion rule, and forced-colors treatment were inspected in
+  Source but not re-emulated after this copy-and-queue refinement.
 - **2026-07-21:** Claimed the implementation handoff after syncing `main` to
   `e0e663b`. Confirmed native PathMX `0.1.24`; preserved the unrelated
   in-progress My Greenville work while reconciling the upstream task board.

@@ -28,10 +28,10 @@ small, coherent lab change.
 
 ## Next Move
 
-For submission: confirm Campaign Forge as the locked third showcase example or
-name a replacement with a judge route. In parallel, finish the Campaign Forge
-field-guide pass—reproduce focused-Beat, code-Beat, and arrow-key ownership
-after pointer interaction—then hand Mark the theme and keyboard review.
+Relationship Garden replaces Campaign Forge as the locked third showcase.
+After submission, finish the independent Campaign Forge field-guide pass:
+reproduce focused-Beat, code-Beat, and arrow-key ownership after pointer
+interaction, then hand Mark the theme and keyboard review.
 
 ---
 

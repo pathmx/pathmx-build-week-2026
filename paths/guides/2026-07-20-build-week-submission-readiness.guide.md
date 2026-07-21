@@ -110,7 +110,8 @@ cannot be inferred from local files.
       playable examples.
 - [ ] Choose the final project name within Devpost's 60-character limit.
 - [ ] Approve an elevator pitch within the 200-character limit.
-- [ ] Accept Kepler, chess, and Andrew's third example as the final showcase.
+- [ ] Accept Kepler and chess alongside the selected Relationship Garden as
+      the final showcase.
 - [ ] Select one backup experiment based on reproducibility, not novelty.
 - [ ] Decide whether interactive chess is both a lesson experiment and the
       Starter's finished example.
@@ -288,7 +289,7 @@ For each primary experiment and backup:
 
 - [ ] Kepler experiment accepted.
 - [ ] Interactive chess lesson accepted.
-- [ ] Andrew's third example accepted.
+- [x] Relationship Garden accepted as Andrew's third example.
 - [ ] Backup experiment accepted or explicitly dropped.
 - [ ] The selected examples form one argument rather than an unrelated feature
       gallery.

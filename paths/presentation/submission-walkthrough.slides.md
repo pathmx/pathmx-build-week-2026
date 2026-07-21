@@ -143,11 +143,13 @@ title: Three different experiences
   an opening and explains each move.
 - **Explore:** [Kepler](../labs/kepler-orbit/index.demo.md) changes speed and
   lets the orbit respond.
-- **Create:** [Campaign Forge](../labs/campaign-forge/index.demo.md) compares
-  possibilities and shapes a playable artifact.
+- **Tend:** [Relationship Garden](../labs/relationship-garden/index.demo.md)
+  remembers context, closes one open loop, and carries the next move back to
+  durable Source.
 
-<!-- Recording move: give each example one short visual cut. Keep Campaign
-Forge only if the team accepts it as the final contrasting example. -->
+<!-- Recording move: give each example one short visual cut. In Relationship
+Garden, filter to Internship, open Priya, close the thank-you loop, and show the
+Pending persistence handoff. -->
 
 <!-- Video target: 1:45–2:10 -->
 

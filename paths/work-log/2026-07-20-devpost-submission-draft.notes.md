@@ -42,7 +42,8 @@ The July 20 check-in accepted these working decisions:
 - Use **portable, executable curriculum** as the central concept.
 - Present one submission package with a Build Week lab, a Learning Starter,
   and playable examples.
-- Feature Kepler and interactive chess, with Andrew selecting a third example.
+- Feature Kepler, interactive chess, and Andrew's selected third example:
+  Relationship Garden.
 - Keep bring-your-own-agent and durable, remixable Source central to the
   workflow.
 - Demonstrate the current single-player experience; stateful and multi-user
@@ -55,7 +56,7 @@ The July 20 check-in accepted these working decisions:
 The team must still decide or verify:
 
 1. Final project name and elevator pitch.
-2. Andrew's third example and whether a backup remains necessary.
+2. Whether a backup remains necessary behind Relationship Garden.
 3. Exact public repository placement and URLs for the lab, Starter, and
    examples.
 4. The exact five-minute judge journey and final under-three-minute script.
@@ -153,8 +154,10 @@ The submission has three connected parts:
    structure and two complementary Agent Skills: a `pathmx` authoring skill
    and a `paths` learning-workflow skill.
 3. **Playable examples** that show the range of the method: a Kepler orbit
-   instrument, an interactive chess lesson, and a third example selected by
-   the team.
+   instrument for exploration, an interactive chess lesson for practice, and
+   Relationship Garden—a local-first personal relationship manager that
+   preserves why someone matters, closes one respectful open loop, and hands
+   an intentional update back to Codex.
 
 The learner brings the agent they already use — such as Codex, Cursor, or
 Claude — instead of being locked into a hosted tutor. The agent can read and
@@ -303,7 +306,8 @@ Candidate accomplishments — keep only claims supported by final verification:
 ### Inputs Mark Needs From The Team
 
 - [ ] Andrew's **What it does** draft.
-- [ ] Andrew's third example and judge route.
+- [x] Andrew's third example and judge route: Relationship Garden at
+      `/labs/relationship-garden`.
 - [ ] Tram's pushed `paths` skill update and joint retest.
 - [ ] Team approval of the project name, elevator pitch, public claims,
       repository URLs, and final script.
@@ -378,7 +382,7 @@ Working video arc:
 - **0:00–0:25:** transient chat versus portable, executable curriculum.
 - **0:25–0:45:** the Build Week lab, Learning Starter, and playable examples.
 - **0:45–1:30:** a fresh Codex session creates a small path and durable Source.
-- **1:30–2:35:** Kepler, interactive chess, and the third example.
+- **1:30–2:35:** Kepler, interactive chess, and Relationship Garden.
 - **2:35–2:50:** the durable Codex lab notebook, finding, and limitation.
 - **2:50–3:00:** what was new during Build Week and what comes next.
 
@@ -490,7 +494,7 @@ two divergent procedures]**
 
 | Story claim | Evidence required | Remaining work |
 | --- | --- | --- |
-| Coherent showcase | Verified Kepler and chess routes plus Andrew's third example | Team accepts the third example and backup decision |
+| Coherent showcase | Verified Kepler, chess, and Relationship Garden routes | Decide only whether a backup remains necessary |
 | A repeatable research method | Hypothesis, artifact, evidence, finding, and limitation for each selection | Add concise research framing to the selected labs |
 | The Starter supports an ongoing relationship | One reliable skill-driven adaptation of a finished example | Finish the skill, sample workspace, and exact test journey |
 | The work is playable | Clean local and public routes | Verify selected labs locally and on the Build Week Space |
@@ -503,11 +507,11 @@ two divergent procedures]**
 
 ### Priority order
 
-1. **Decide:** title, thesis, third example, backup, repository URLs, claims,
-   and owner/reviewer lanes.
+1. **Decide:** title, thesis, backup, repository URLs, claims, and
+   owner/reviewer lanes. Relationship Garden is locked as the third example.
 2. **Finish the anchor:** teach skill, Starter example, and one bounded
    adaptation.
-3. **Curate:** frame and verify Kepler, chess, and the third example.
+3. **Curate:** frame and verify Kepler, chess, and Relationship Garden.
 4. **Prove:** README, provenance, Codex evidence, clean-clone test, and public
    routes.
 5. **Submit:** final story, media, video, private form fields, and manual

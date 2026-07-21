@@ -8,28 +8,28 @@ related:
   - ../research/campus-constellation-networking.path.md
 ---
 
-# Build A My Greenville Coffee Path
+# Build The Greenville Coffee Scene
 
 ## Outcome
 
-Create a readable, playable first outline for a personal Greenville, South
-Carolina atlas centered on local coffee shops. The demo should connect places,
-people, scenes, and lived notes to one useful next outing instead of imitating
-a rankings directory.
+Create a readable, playable first outline for **The Greenville Coffee Scene**,
+a living field guide centered on local coffee shops. The demo should connect
+places, people, city stories, and lived notes to one useful next outing instead
+of imitating a rankings directory.
 
 ---
 
 ## Next Move
 
 Play the linked outline from the Labs hub, review its voice, and decide which
-places belong in a truly personal Greenville before building the signature
-atlas interaction.
+places belong in the scene before building the signature field-guide
+interaction.
 
 ---
 
 ## Done When
 
-- The Source frames one personal question and a five-place starter atlas.
+- The Source frames one personal question and a five-place starter scene.
 - Current public facts are linked to primary or authoritative sources, while
   personal lore remains explicitly invited rather than invented.
 - The Player journey ends in one outing or reconnection mission and a durable
@@ -70,3 +70,10 @@ atlas interaction.
   with 182 artifacts and the three known Tufte warnings, and exact route lookup
   returned `http://localhost:3000/labs/my-greenville`. Personal voice and atlas
   interaction review remain open.
+- **2026-07-21:** Reframed the visible concept as **The Greenville Coffee
+  Scene** across the canonical Source, Labs hub, task projection, and current
+  change reference while preserving the `my-greenville` directory and stable
+  `/labs/my-greenville` route. PathMX 0.1.26 built the focused Source as one
+  Path with 15 artifacts, and exact scratch-output route lookup confirmed the
+  unchanged route. This pass changed framing only; the prior wide/narrow Player
+  review remains the current visual evidence.

@@ -1,10 +1,10 @@
 ---
 type: field-guide
 status: outline
-title: "My Greenville: Coffee Field Notes"
-description: A living personal atlas that uses five Greenville coffee shops to connect places, people, city stories, and one next outing.
+title: "The Greenville Coffee Scene"
+description: A living field guide to five Greenville coffee shops, the city stories around them, and one next outing.
 route: /labs/my-greenville
-tags: [greenville, coffee, local-lore, personal-atlas]
+tags: [greenville, coffee, local-lore, coffee-scene]
 related:
   - ../../tasks/2026-07-21-build-my-greenville-coffee-path.task.md
   - ../../research/campus-constellation-networking.path.md
@@ -14,12 +14,12 @@ play:
     tables: rows
 ---
 
-# My Greenville
+# The Greenville Coffee Scene
 
-## Coffee field notes for a city you are still learning
+## Five doors into a city you are still learning
 
 This is not a ranking of Greenville coffee shops. It is the beginning of a
-personal atlas: five places, the public stories we can verify, the lived
+living scene guide: five places, the public stories we can verify, the lived
 stories only you can add, and one reason to go back into the city.
 
 Start with a real need:
@@ -43,7 +43,7 @@ id: evidence-before-lore
 title: Separate evidence from lore
 -->
 
-## A living atlas should show what it knows
+## A living scene guide should show what it knows
 
 Every entry uses three layers:
 
@@ -51,7 +51,7 @@ Every entry uses three layers:
 | --- | --- | --- |
 | **Public fact** | Address, business history, or a city record with a link | Recheck when the source changes |
 | **Field note** | What you observed on a dated visit | Add context instead of claiming permanence |
-| **Personal lore** | Why the place matters to you and who or what it connects | Rewrite as your Greenville changes |
+| **Personal lore** | Why the place matters to you and who or what it connects | Rewrite as your relationship with the scene changes |
 
 The first layer is researched below. The other two are intentionally
 unfinished. This Path should not invent your memories for you.
@@ -149,7 +149,7 @@ title: Read the city beneath the stops
 
 ## Coffee is the doorway, not the whole story
 
-Greenville's official historic-resources survey gives the atlas a deeper
+Greenville's official historic-resources survey gives the scene guide a deeper
 question: how do commerce, labor, mobility, and reinvention remain visible in
 the city people use today?
 
@@ -263,7 +263,7 @@ Public source last checked: YYYY-MM-DD
 - One human ritual or interaction:
 - One thing that contradicted my expectation:
 
-## Why it matters to my Greenville
+## Why it matters in the Greenville coffee scene
 
 This place connects to...
 
@@ -286,10 +286,10 @@ more honest and more useful.
 <!--
 type: reflection
 id: rewrite-the-atlas
-title: Let Greenville answer back
+title: Let the scene answer back
 -->
 
-## Let the visit rewrite the atlas
+## Let the visit rewrite the scene guide
 
 When you return, change one thing:
 
@@ -303,5 +303,5 @@ That is the loop:
 
 > **Remember → connect → choose → go → notice → rewrite**
 
-The goal is not to finish Greenville. It is to keep a Greenville that becomes
+The goal is not to finish Greenville. It is to keep a scene guide that becomes
 more recognizably yours.

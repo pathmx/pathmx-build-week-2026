@@ -15,6 +15,36 @@ Personal concept brief for a playable relationship map that doubles as a local
 personal CRM. Implementation handoff lives beside this file and is linked from
 the research index for agents on `main`.
 
+## Submission Focus: A Local-First Personal CRM
+
+Relationship Garden is the third showcase example. Its main value is not the
+plant metaphor; it is one useful relationship-management loop that a reviewer
+can understand in under a minute:
+
+1. Open a transparent weekly attention queue.
+2. See **why Priya now**: the relationship is quiet and a thank-you remains
+   open.
+3. Read how the relationship began and keep her alumni and recruiter contexts
+   distinct.
+4. Choose one respectful next move, act in the world, and log the touch.
+5. Update the next move, then copy the exact prompt that persists both changes
+   into readable local Source.
+
+The queue may use only explicit fields already owned by the learner—recency,
+open loops, next move, and the no-guilt pin. It must explain its reason in
+plain language; there is no hidden relationship score.
+
+**In this slice:** a weekly review queue, a visible “why now,” one editable next
+move after a touch, and the honest Codex persistence handoff.
+
+**Not in this slice:** inbox, calendar, contact, LinkedIn, or social imports;
+automatic messages; reminders; lead stages; opaque scoring; server
+persistence; or a general-purpose sales CRM.
+
+**Judge route:** `/labs/relationship-garden` → Internship → Priya → Parallel
+Lives → log touch and update next move → Pending persistence → copy prompt →
+open Priya's Markdown Source.
+
 **Working name (locked for MVP):** Relationship Garden.  
 Earlier alternatives considered: Reputation Garden (too extractive),
 Constellation Garden, People Garden. Parallel Lives is a view mode inside it,
